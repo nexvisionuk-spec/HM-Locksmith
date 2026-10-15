@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220" role="img" aria-label="The H&amp;M Group, established 2009">
+  <defs>
+    <linearGradient id="hmred" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b8313a"/>
+      <stop offset="1" stop-color="#9a222b"/>
+    </linearGradient>
+  </defs>
+  <circle cx="110" cy="110" r="108" fill="url(#hmred)"/>
+  <circle cx="110" cy="110" r="96" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="1.5"/>
+  <g fill="#ffffff" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif">
+    <text x="110" y="74" font-size="15" letter-spacing="7" font-weight="400">THE</text>
+    <text x="110" y="128" font-size="58" font-weight="700" letter-spacing="1">H&amp;M</text>
+    <text x="110" y="156" font-size="17" letter-spacing="9" font-weight="400">GROUP</text>
+    <line x1="64" y1="178" x2="88" y2="178" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1"/>
+    <line x1="132" y1="178" x2="156" y2="178" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1"/>
+    <text x="110" y="183" font-size="12" letter-spacing="3" font-weight="400">EST. 2009</text>
+  </g>
+</svg>
