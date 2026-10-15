@@ -434,3 +434,62 @@ html.js .reveal.in { opacity: 1; transform: none; }
 .footer-map__head a { margin-left: auto; color: var(--gold-300); font-weight: 700; white-space: nowrap; }
 .footer-map iframe { width: 100%; height: 200px; border: 0; display: block; background: #fff; }
 @media (max-width: 680px) { .footer-map__grid { grid-template-columns: 1fr; } }
+
+/* ==========================================================================
+   Landing pages (Doors / Emergency Locksmith)
+   ========================================================================== */
+.btn--wa { background: #25d366; color: #fff; }
+.btn--wa:hover { background: #1db957; color: #fff; transform: scale(1.02); box-shadow: var(--shadow-md); }
+
+/* Trust-tick lists */
+.ticklist { list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 11px; }
+.ticklist li { display: flex; gap: 11px; align-items: flex-start; font-weight: 600; font-size: 1rem; }
+.ticklist li::before { content: "✓"; color: var(--gold-400); font-weight: 800; flex: none; }
+.ticklist--hero li { color: #e8eef4; }
+.ticklist--2 { grid-template-columns: 1fr 1fr; gap: 11px 28px; }
+@media (max-width: 560px){ .ticklist--2 { grid-template-columns: 1fr; } }
+
+/* Door service cards (image + benefits + CTA) */
+.door-card { background: #fff; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; transition: transform .15s ease, box-shadow .15s ease; }
+.door-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.door-card__img { aspect-ratio: 16/11; width: 100%; object-fit: cover; display: block; }
+.door-card__body { padding: 26px; display: flex; flex-direction: column; flex: 1; }
+.door-card .tagline { color: var(--gold-500); font-weight: 700; font-family: var(--font-head); font-size: .95rem; margin: 0 0 10px; }
+.door-card h3 { margin: 0 0 10px; }
+.door-card p { color: var(--ink-500); font-size: .96rem; }
+.door-card .ticklist { margin-top: 8px; margin-bottom: 22px; }
+.door-card .ticklist li { font-size: .92rem; }
+.door-card .btn { margin-top: auto; }
+
+/* Before / after slider */
+.ba-wrap { max-width: 920px; margin: 0 auto; }
+.ba { position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 16/10; box-shadow: var(--shadow-md); user-select: none; touch-action: none; }
+.ba img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+.ba .ba-after { clip-path: inset(0 0 0 var(--pos, 50%)); }
+.ba .ba-tag { position: absolute; top: 14px; padding: 5px 12px; border-radius: 999px; font-family: var(--font-head); font-weight: 700; font-size: .78rem; letter-spacing: .05em; color: #fff; background: rgba(20,20,20,.72); }
+.ba .ba-tag.before { left: 14px; }
+.ba .ba-tag.after { right: 14px; }
+.ba-line { position: absolute; top: 0; bottom: 0; left: var(--pos, 50%); width: 3px; background: #fff; transform: translateX(-1.5px); box-shadow: 0 0 10px rgba(0,0,0,.35); }
+.ba-knob { position: absolute; top: 50%; left: var(--pos, 50%); width: 42px; height: 42px; transform: translate(-50%,-50%); background: #fff; border-radius: 50%; display: grid; place-items: center; box-shadow: 0 4px 14px rgba(0,0,0,.3); color: var(--gold-500); font-weight: 800; }
+.ba-range { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; }
+
+/* Coverage areas */
+.coverage { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 18px; }
+.coverage__item { border: 1px solid var(--line); border-radius: 12px; padding: 20px; background: #fff; }
+.coverage__item h4 { color: var(--gold-500); font-size: 1.02rem; margin: 0 0 6px; }
+.coverage__item p { margin: 0; color: var(--ink-500); font-size: .93rem; }
+
+/* Sticky mobile contact bar */
+.sticky-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 90; display: none; grid-template-columns: 1fr 1fr; box-shadow: 0 -4px 18px rgba(0,0,0,.2); }
+.sticky-bar a { padding: 15px 10px; text-align: center; font-family: var(--font-head); font-weight: 800; font-size: 1rem; color: #fff; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.sticky-bar .sb-call { background: var(--gold-400); }
+.sticky-bar .sb-call:active { background: var(--gold-500); }
+.sticky-bar .sb-wa { background: #25d366; }
+@media (max-width: 860px) {
+  .lp .nav__phone, .lp .nav__cta .btn { display: none; }
+  .lp .sticky-bar { display: grid; }
+  .lp .floating-call { display: none; }
+  .lp .hmchat-launch { bottom: 74px; }
+  .lp .hmchat-teaser { bottom: 142px; }
+  .lp { padding-bottom: 56px; }
+}

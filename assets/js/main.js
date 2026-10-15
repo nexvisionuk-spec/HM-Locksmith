@@ -89,6 +89,15 @@
     });
   });
 
+  /* Before / after slider */
+  document.querySelectorAll(".ba").forEach(function (ba) {
+    var range = ba.querySelector(".ba-range");
+    if (!range) return;
+    function set(v) { ba.style.setProperty("--pos", v + "%"); }
+    set(range.value || 50);
+    range.addEventListener("input", function () { set(range.value); });
+  });
+
   /* Year in footer */
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = new Date().getFullYear();
