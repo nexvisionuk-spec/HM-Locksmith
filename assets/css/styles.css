@@ -4,24 +4,24 @@
    ========================================================================== */
 
 :root {
-  /* "navy-*" tokens now hold the dark charcoal family (headers/footers/overlays) */
-  --navy-900: #15161a;
-  --navy-800: #1e2026;
-  --navy-700: #2b2e36;
-  --navy-600: #3d414b;
+  /* "navy-*" tokens now hold a NEUTRAL near-black family (no blue tint) */
+  --navy-900: #141414;
+  --navy-800: #1d1d1f;
+  --navy-700: #2a2a2c;
+  --navy-600: #3a3a3d;
   /* "gold-*" tokens now hold the brand RED family (accents, primary buttons) */
   --gold-500: #a62330;
   --gold-400: #c62f39;
   --gold-300: #e2545c;
   --red-500: #e63946;
   --red-600: #cc2f3c;
-  --ink-900: #11212f;
-  --ink-700: #33475b;
-  --ink-500: #5a6b7b;
-  --line: #e3e8ee;
+  --ink-900: #1a1a1a;
+  --ink-700: #3d3d3f;
+  --ink-500: #6e6e70;
+  --line: #e6e6e6;
   --bg: #ffffff;
-  --bg-soft: #f5f7fa;
-  --bg-softer: #eef2f7;
+  --bg-soft: #f7f6f6;
+  --bg-softer: #efeeee;
   --white: #ffffff;
   --radius: 14px;
   --radius-sm: 9px;
@@ -200,7 +200,7 @@ p { margin: 0 0 1rem; }
    ========================================================================== */
 .trustbar { background: var(--navy-900); padding: 22px 0; }
 .trustbar .container { display: flex; align-items: center; justify-content: center; gap: 14px 40px; flex-wrap: wrap; }
-.trustbar span { color: #9fb1c4; font-weight: 700; font-family: var(--font-head); letter-spacing: .04em; font-size: .95rem; display: inline-flex; align-items: center; gap: 10px; }
+.trustbar span { color: #b0b0b2; font-weight: 700; font-family: var(--font-head); letter-spacing: .04em; font-size: .95rem; display: inline-flex; align-items: center; gap: 10px; }
 .trustbar .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold-400); }
 
 /* ==========================================================================
@@ -309,20 +309,20 @@ p { margin: 0 0 1rem; }
 .page-banner { background: linear-gradient(120deg, rgba(18,19,23,.92), rgba(40,42,52,.82)), var(--navy-800); color: #fff; padding: 66px 0; text-align: center; }
 .page-banner h1 { color: #fff; margin-bottom: 10px; }
 .page-banner p { color: #cdd8e4; max-width: 640px; margin: 0 auto; }
-.breadcrumb { font-size: .88rem; color: #9fb1c4; margin-bottom: 18px; }
+.breadcrumb { font-size: .88rem; color: #b0b0b2; margin-bottom: 18px; }
 .breadcrumb a { color: #cdd8e4; }
 
 /* ==========================================================================
    Footer
    ========================================================================== */
-.site-footer { background: var(--navy-900); color: #9fb1c4; padding: 64px 0 0; }
+.site-footer { background: var(--navy-900); color: #b0b0b2; padding: 64px 0 0; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 36px; padding-bottom: 46px; }
 .site-footer h4 { color: #fff; font-size: 1rem; margin-bottom: 18px; letter-spacing: .02em; }
 .site-footer a { color: #b9c6d6; }
 .site-footer a:hover { color: var(--gold-400); }
 .footer-links { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; font-size: .95rem; }
 .footer-brand .brand { color: #fff; margin-bottom: 14px; }
-.footer-brand .brand__name small { color: #8a9bae; }
+.footer-brand .brand__name small { color: #9a9a9c; }
 .footer-brand p { font-size: .95rem; max-width: 320px; }
 .footer-contact { display: grid; gap: 14px; font-size: .95rem; }
 .footer-contact strong { color: #fff; display: block; font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 4px; }
@@ -378,4 +378,4 @@ html.js .reveal.in { opacity: 1; transform: none; }
 
 /* Form success/visually-hidden */
 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-.form-success { background: #e9f7ef; border: 1px solid #b7e4c7; color: #1b5e37; padding: 14px 16px; border-radius: 10px; font-weight: 600; display: none; }
+.form-success { background: #fbeced; border: 1px solid #f0c3c6; color: #a62330; padding: 14px 16px; border-radius: 10px; font-weight: 600; display: none; }
