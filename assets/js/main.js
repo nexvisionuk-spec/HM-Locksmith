@@ -42,15 +42,35 @@
     });
   }
 
-  if ("IntersectionObserver" in window && reveals.length) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
-    reveals.forEach(function (el) { io.observe(el); });
-  } else {
+  if (reveals.length && reduceMotion) {
     reveals.forEach(function (el) { el.classList.add("in"); });
+  } else if (reveals.length) {
+    // Direct, bulletproof in-view check (never leaves content hidden)
+    var pending = Array.prototype.slice.call(reveals);
+    function showInView() {
+      for (var i = pending.length - 1; i >= 0; i--) {
+        var r = pending[i].getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.9 && r.bottom > 0) {
+          pending[i].classList.add("in");
+          pending.splice(i, 1);
+        }
+      }
+    }
+    var revQueued = false;
+    function onRevScroll() {
+      if (revQueued) return;
+      revQueued = true;
+      requestAnimationFrame(function () { showInView(); revQueued = false; });
+    }
+    window.addEventListener("scroll", onRevScroll, { passive: true });
+    window.addEventListener("resize", onRevScroll);
+    window.addEventListener("load", showInView);
+    showInView();
+    // Failsafe: nothing stays invisible, even if scroll events never fire
+    setTimeout(function () {
+      pending.forEach(function (el) { el.classList.add("in"); });
+      pending.length = 0;
+    }, 3500);
   }
 
   /* Scroll progress bar */
