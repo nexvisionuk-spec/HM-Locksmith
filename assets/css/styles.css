@@ -496,3 +496,13 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .lp .hmchat-teaser { bottom: 142px; }
   .lp { padding-bottom: 56px; }
 }
+
+/* ---- Mobile: hide top info bar, show contact inside burger menu ---- */
+.nav__contact { display: none; }
+@media (max-width: 860px) {
+  .topbar { display: none; }
+  .site-header.is-open .nav__contact { display: block; border-top: 1px solid var(--line); margin-top: 6px; padding: 12px 14px 4px; }
+  .site-header.is-open .nav__contact strong { display: block; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-500); margin-bottom: 6px; font-family: var(--font-head); }
+  .site-header.is-open .nav__contact a { display: block; padding: 8px 0; font-family: var(--font-head); font-weight: 700; color: var(--navy-800); font-size: 1rem; }
+  .site-header.is-open .nav__contact a:hover { color: var(--gold-500); }
+}
