@@ -141,7 +141,7 @@
       el.teaser.hidden = false;
       void el.teaser.offsetWidth; // reflow so the transition runs
       el.teaser.classList.add("in");
-    }, 3000);
+    }, 9000);
   }
 
   /* ------------------------------------------------------------- render */
