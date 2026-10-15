@@ -506,3 +506,8 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .site-header.is-open .nav__contact a { display: block; padding: 8px 0; font-family: var(--font-head); font-weight: 700; color: var(--navy-800); font-size: 1rem; }
   .site-header.is-open .nav__contact a:hover { color: var(--gold-500); }
 }
+
+/* ---- Footer single location map ---- */
+.footer-map__single .footer-map__item { max-width: 100%; }
+.footer-map__single iframe { height: 340px; }
+@media (max-width: 680px) { .footer-map__single iframe { height: 260px; } }
