@@ -423,3 +423,14 @@ html.js .reveal.in { opacity: 1; transform: none; }
 .booking-bar select:focus, .booking-bar input:focus { outline: 0; border-color: var(--gold-400); box-shadow: 0 0 0 3px rgba(196,18,48,.16); }
 .booking-bar .btn { height: 52px; white-space: nowrap; }
 @media (max-width: 760px) { .booking-bar { margin-top: -14px; } .booking-bar__form { grid-template-columns: 1fr; } }
+
+/* ---- Footer location maps (site-wide) ---- */
+.footer-map { padding-bottom: 38px; border-bottom: 1px solid rgba(255,255,255,.1); margin-bottom: 40px; }
+.footer-map h4 { color: #fff; font-size: 1rem; margin-bottom: 16px; letter-spacing: .02em; }
+.footer-map__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.footer-map__item { border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,.14); background: #0f0f10; }
+.footer-map__head { padding: 12px 14px; font-size: .88rem; color: #b0b0b2; display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+.footer-map__head strong { color: #fff; font-family: var(--font-head); }
+.footer-map__head a { margin-left: auto; color: var(--gold-300); font-weight: 700; white-space: nowrap; }
+.footer-map iframe { width: 100%; height: 200px; border: 0; display: block; background: #fff; }
+@media (max-width: 680px) { .footer-map__grid { grid-template-columns: 1fr; } }
