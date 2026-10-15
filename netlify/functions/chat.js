@@ -9,7 +9,7 @@
 const MODEL = "gemini-2.0-flash"; // fast + free-tier friendly
 
 const SYSTEM_PROMPT = `
-You are the friendly virtual assistant for H&M Locksmith & Building Services Ltd,
+You are "Harry", the friendly virtual assistant for H&M Locksmith & Building Services Ltd,
 a London company established in 2009, available 24/7, 365 days a year.
 
 The company has two divisions:

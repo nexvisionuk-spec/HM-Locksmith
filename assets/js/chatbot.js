@@ -31,7 +31,7 @@
 
   /* Guided question flow (also the fallback when AI is off/unavailable) */
   var STEPS = [
-    { key: "service", prompt: "Hi! 👋 I'm the H&M virtual assistant — we're here 24/7. What do you need help with today?", chips: SERVICES },
+    { key: "service", prompt: "Hi! 👋 I'm Harry, the H&M virtual assistant — we're here 24/7. What do you need help with today?", chips: SERVICES },
     { key: "name",    prompt: "Great, I can help with that. 😊 First, what's your name?" },
     { key: "phone",   prompt: "Thanks{name}! What's the best phone number for our team to reach you on?", validate: "phone" },
     { key: "area",    prompt: "And what's your postcode or area in London?" },
@@ -58,14 +58,28 @@
       '<span class="ic">💬</span><span class="label-sm">Chat with us</span><span class="pulse"></span>';
     launch.addEventListener("click", openPanel);
 
+    // Proactive greeting teaser (shows shortly after arrival, once per session)
+    var teaser = document.createElement("div");
+    teaser.className = "hmchat-teaser";
+    teaser.setAttribute("role", "button");
+    teaser.setAttribute("tabindex", "0");
+    teaser.innerHTML =
+      '<button class="hmchat-teaser-x" aria-label="Dismiss">&times;</button>' +
+      '<p><strong>👋 Hi, I\'m Harry!</strong><br>Locked out or after a quote? I\'m here 24/7 — tap to chat.</p>';
+    teaser.hidden = true;
+    teaser.addEventListener("click", function (e) {
+      if (e.target.classList.contains("hmchat-teaser-x")) { e.stopPropagation(); dismissTeaser(); return; }
+      openPanel();
+    });
+
     var panel = document.createElement("div");
     panel.className = "hmchat panel hmchat-panel";
     panel.setAttribute("role", "dialog");
     panel.setAttribute("aria-label", "H&M chat assistant");
     panel.innerHTML =
       '<div class="hmchat-head">' +
-        '<span class="av">H&M</span>' +
-        '<div><h4>H&M Assistant</h4><p><span class="online"></span> Online now · replies in seconds</p></div>' +
+        '<img class="av" src="/assets/images/logo-badge.svg" alt="H&amp;M Group logo" width="46" height="46">' +
+        '<div><h4>Harry</h4><p><span class="online"></span> H&amp;M Assistant · online 24/7</p></div>' +
         '<button class="close" aria-label="Close chat">&times;</button>' +
       '</div>' +
       '<div class="hmchat-body" id="hmchatBody" aria-live="polite"></div>' +
@@ -80,8 +94,10 @@
 
     document.body.appendChild(launch);
     document.body.appendChild(panel);
+    document.body.appendChild(teaser);
 
     el.launch = launch;
+    el.teaser = teaser;
     el.panel = panel;
     el.body = panel.querySelector("#hmchatBody");
     el.chips = panel.querySelector("#hmchatChips");
@@ -96,10 +112,12 @@
       handleUser(v);
     });
     state.built = true;
+    maybeShowTeaser();
   }
 
   function openPanel() {
     build();
+    dismissTeaser();
     state.open = true;
     el.panel.classList.add("is-open");
     el.launch.hidden = true;
@@ -110,6 +128,20 @@
     state.open = false;
     el.panel.classList.remove("is-open");
     el.launch.hidden = false;
+  }
+
+  function dismissTeaser() {
+    if (el.teaser) { el.teaser.classList.remove("in"); el.teaser.hidden = true; }
+    try { sessionStorage.setItem("hmchat_teaser", "1"); } catch (e) {}
+  }
+  function maybeShowTeaser() {
+    try { if (sessionStorage.getItem("hmchat_teaser")) return; } catch (e) {}
+    setTimeout(function () {
+      if (state.open || !el.teaser) return;
+      el.teaser.hidden = false;
+      void el.teaser.offsetWidth; // reflow so the transition runs
+      el.teaser.classList.add("in");
+    }, 3000);
   }
 
   /* ------------------------------------------------------------- render */
