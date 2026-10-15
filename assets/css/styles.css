@@ -379,3 +379,22 @@ html.js .reveal.in { opacity: 1; transform: none; }
 /* Form success/visually-hidden */
 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .form-success { background: #fbeced; border: 1px solid #f0c3c6; color: #a62330; padding: 14px 16px; border-radius: 10px; font-weight: 600; display: none; }
+
+/* ---- Find Us / location maps ---- */
+.map-grid { gap: 28px; }
+.map-card { background: var(--navy-900); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--line); }
+.map-card__head { padding: 18px 22px; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.map-card__head h3 { color: #fff; margin: 0; font-size: 1.15rem; }
+.map-card__head p { color: #b8b8ba; margin: 0; font-size: .92rem; }
+.map-card__head a { color: var(--gold-300); font-weight: 700; font-size: .9rem; font-family: var(--font-head); white-space: nowrap; }
+.map-card iframe { width: 100%; height: 300px; border: 0; display: block; background: #fff; }
+@media (max-width: 680px) { .map-card iframe { height: 240px; } }
+
+/* ---- Detailed service bullet lists ---- */
+.svc-points { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 8px; }
+.svc-points li { position: relative; padding-left: 24px; font-size: .93rem; color: var(--ink-700); line-height: 1.5; }
+.svc-points li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--gold-400); font-weight: 800; }
+
+/* ---- Clickable Google rating line ---- */
+.reviews-link { color: var(--ink-700); font-weight: 600; font-size: 1rem; display: inline-block; }
+.reviews-link:hover { color: var(--gold-500); }

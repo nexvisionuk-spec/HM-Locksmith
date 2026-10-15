@@ -55,7 +55,7 @@
     launch.className = "hmchat-launch";
     launch.setAttribute("aria-label", "Open chat assistant");
     launch.innerHTML =
-      '<span class="ic">💬</span><span class="label-sm">Chat with us</span><span class="pulse"></span>';
+      '<span class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.6-.8L3 21l1.9-5.4A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z"/></svg></span><span class="label-sm">Chat with us</span>';
     launch.addEventListener("click", openPanel);
 
     // Proactive greeting teaser (shows shortly after arrival, once per session)
