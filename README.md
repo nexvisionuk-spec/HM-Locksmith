@@ -72,6 +72,49 @@ If you host somewhere **other than Netlify**, the forms need a different handler
 
 ---
 
+## 🤖 AI Assistant (chatbot) — free, 24/7 lead capture
+
+A chat widget (bottom-right on every page) greets visitors, answers their
+questions, collects their details, and **sends the enquiry to the owner's
+WhatsApp** — with an **email/form backup** so no lead is ever lost. It runs 24/7
+and costs nothing.
+
+**Files:** `assets/js/chatbot.js`, `assets/css/chatbot.css`,
+`netlify/functions/chat.js` (the secure AI proxy).
+
+### 1. Set the owner's WhatsApp number (required)
+Open `assets/js/chatbot.js` and edit the `CONFIG` block at the top:
+```js
+whatsapp: "447956128990",   // owner's WhatsApp, international format, digits only
+```
+UK mobile `07956 128990` → `447956128990` (drop the leading 0, add `44`).
+> Currently set to the old site's mobile (07956 128 990) as a placeholder — **confirm/replace it.**
+> ⚠️ WhatsApp needs a **mobile** number that has WhatsApp installed — the 0203 landlines won't work.
+
+### 2. Turn on the real AI (Google Gemini — free tier)
+Without a key, the bot runs a friendly **guided Q&A** (still captures leads).
+To enable natural AI answers:
+1. Get a free API key at **https://aistudio.google.com/apikey** (Google account needed).
+2. In **Netlify → Site settings → Environment variables**, add:
+   - **Key:** `GEMINI_API_KEY`  **Value:** *your key*
+3. Redeploy (Netlify → Deploys → Trigger deploy). Done.
+
+The key lives only on Netlify's servers (in the function) — it's **never** exposed
+in the website code. Uses `gemini-2.0-flash` on the free tier; the function
+automatically falls back to the guided flow if the key is missing or a limit is hit.
+
+### Where the leads go
+- **WhatsApp:** the customer taps "Send to team on WhatsApp" and the full enquiry +
+  chat transcript arrives on the owner's WhatsApp.
+- **Email/dashboard backup:** every chat lead is also posted to **Netlify → Forms**
+  (form name `chatbot-lead`). Set up email alerts in Site settings → Forms → notifications.
+
+### Upgrade later (optional)
+To auto-send to WhatsApp without the customer tapping (true "push"), you'd add the
+WhatsApp Business API (e.g. via Twilio) — that's a paid service and a later step.
+
+---
+
 ## 🖼️ Images — temporary, swap when ready
 
 All photos in `assets/images/` are **professional royalty-free placeholders** (from Unsplash).

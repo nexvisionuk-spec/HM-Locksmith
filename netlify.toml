@@ -4,6 +4,10 @@
 [build]
   publish = "."
   command = ""
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
 
 # Nicer URLs: allow /about instead of /about.html
 [[redirects]]

@@ -328,7 +328,7 @@ p { margin: 0 0 1rem; }
 /* ==========================================================================
    Floating call button (mobile)
    ========================================================================== */
-.floating-call { position: fixed; right: 18px; bottom: 18px; z-index: 80; display: none; }
+.floating-call { position: fixed; left: 18px; bottom: 18px; z-index: 80; display: none; }
 .floating-call a { display: inline-flex; align-items: center; gap: 9px; background: var(--red-500); color: #fff; font-weight: 800; font-family: var(--font-head); padding: 14px 20px; border-radius: 999px; box-shadow: var(--shadow-lg); }
 
 /* ==========================================================================
