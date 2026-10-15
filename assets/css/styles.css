@@ -384,12 +384,42 @@ p { margin: 0 0 1rem; }
 /* Reveal on scroll — progressive enhancement only.
    Content is fully visible by default; hidden/animated ONLY when JS is active
    (html.js set synchronously in <head>), so no-JS users and crawlers see everything. */
-.reveal { transition: opacity .5s ease, transform .5s ease; }
-html.js .reveal { opacity: 0; transform: translateY(18px); }
+/* ===== Scroll animations ===== */
+.reveal { transition: opacity .6s cubic-bezier(.2,.7,.2,1), transform .6s cubic-bezier(.2,.7,.2,1), clip-path .8s cubic-bezier(.76,0,.24,1); will-change: opacity, transform; }
+html.js .reveal { opacity: 0; transform: translateY(22px); }
 html.js .reveal.in { opacity: 1; transform: none; }
+
+/* Pop / scale-in — stats, badges, widgets */
+html.js .reveal--pop { transform: scale(.9); transition: opacity .55s ease, transform .55s cubic-bezier(.2,1.4,.4,1); }
+html.js .reveal--pop.in { transform: scale(1); }
+
+/* Slide from the sides — alternating feature rows */
+html.js .reveal--left { transform: translateX(-46px); }
+html.js .reveal--left.in { transform: none; }
+html.js .reveal--right { transform: translateX(46px); }
+html.js .reveal--right.in { transform: none; }
+
+/* Image reveal (wipe) — photos / media */
+html.js .reveal--wipe { opacity: 1; clip-path: inset(0 100% 0 0); }
+html.js .reveal--wipe.in { clip-path: inset(0 0 0 0); }
+
+/* Auto-stagger (set by JS as --d) */
+html.js .reveal { transition-delay: var(--d, 0ms); }
+
 @media (prefers-reduced-motion: reduce) {
-  html.js .reveal { opacity: 1; transform: none; transition: none; }
+  html.js .reveal,
+  html.js .reveal--pop,
+  html.js .reveal--left,
+  html.js .reveal--right,
+  html.js .reveal--wipe {
+    opacity: 1 !important; transform: none !important; clip-path: none !important;
+    transition: none !important; transition-delay: 0ms !important;
+  }
 }
+
+/* Scroll progress bar (injected into every page) */
+#scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0; background: var(--gold-400); z-index: 1200; transition: width .08s linear; pointer-events: none; }
+@media (prefers-reduced-motion: reduce) { #scroll-progress { display: none; } }
 
 /* Form success/visually-hidden */
 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

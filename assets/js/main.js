@@ -26,17 +26,50 @@
     });
   });
 
-  /* Scroll reveal */
+  /* Scroll reveal (+ auto-stagger for grouped items) */
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var reveals = document.querySelectorAll(".reveal");
+
+  if (!reduceMotion) {
+    // Stagger siblings that share a parent: 0ms, 90ms, 180ms … (capped)
+    var groups = {};
+    reveals.forEach(function (el) {
+      var p = el.parentNode;
+      if (!p) return;
+      if (!p.__revIdx) p.__revIdx = 0;
+      var i = p.__revIdx++;
+      if (i > 0) el.style.setProperty("--d", Math.min(i * 90, 450) + "ms");
+    });
+  }
+
   if ("IntersectionObserver" in window && reveals.length) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
     reveals.forEach(function (el) { io.observe(el); });
   } else {
     reveals.forEach(function (el) { el.classList.add("in"); });
+  }
+
+  /* Scroll progress bar */
+  if (!reduceMotion) {
+    var bar = document.createElement("div");
+    bar.id = "scroll-progress";
+    document.body.appendChild(bar);
+    var ticking = false;
+    function updateBar() {
+      var d = document.documentElement;
+      var max = (d.scrollHeight - d.clientHeight) || 1;
+      var top = d.scrollTop || document.body.scrollTop || 0;
+      bar.style.width = Math.max(0, Math.min(100, (top / max) * 100)) + "%";
+      ticking = false;
+    }
+    window.addEventListener("scroll", function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(updateBar); }
+    }, { passive: true });
+    updateBar();
   }
 
   /* Animated stat counters */
