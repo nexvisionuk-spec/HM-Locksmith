@@ -1,0 +1,13 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# Node (not required for this static site, but safe to ignore)
+node_modules/
+npm-debug.log*
+
+# Netlify
+.netlify/
