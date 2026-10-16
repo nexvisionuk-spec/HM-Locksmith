@@ -1,9 +1,0 @@
-<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;padding:0;background:#fff}</style></head><body>
-<iframe id="pg" style="border:0;display:block"></iframe>
-<script>
-var w=parseInt(new URLSearchParams(location.search).get('w'))||1440;
-var ifr=document.getElementById('pg');
-ifr.style.cssText='width:'+w+'px;height:16000px;border:0;display:block';
-ifr.src='/';
-ifr.addEventListener('load',function(){var d=this.contentDocument;var s=d.createElement('style');s.textContent='header,.top_panel{display:none!important}';d.head.appendChild(s);});
-</script></body></html>
