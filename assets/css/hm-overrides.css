@@ -7,6 +7,78 @@
    3) Header layout fix for tablet / small-laptop widths (768px - 1279px)
    ========================================================================== */
 
+/* ---------- 0a. Locations row (Office + Store side-by-side) ---------- */
+.hm-locations-row {
+  width: 100%;
+  max-width: 1200px;
+  margin: 50px auto 0;
+  padding: 0 20px;
+}
+.hm-locations-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+}
+.hm-locations-col {
+  flex: 1 1 280px;
+  min-width: 0;
+  max-width: 480px;
+  color: #ffffff;
+}
+.hm-locations-title {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: .02em;
+}
+.hm-locations-col p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+/* ---------- 0b. Footer map (static image, both locations) ---------- */
+.hm-footer-map {
+  width: 100%;
+  max-width: 1200px;
+  margin: 28px auto 30px;
+  padding: 0 20px;
+}
+.hm-map-link {
+  display: block;
+  width: 100%;
+  line-height: 0;          /* kill the inline-image baseline gap */
+}
+.hm-map-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 0;
+  background: #1a1a1a;     /* matches dark footer bar until image loads */
+  transition: opacity .15s ease;
+}
+.hm-map-link:hover .hm-map-img,
+.hm-map-link:focus-visible .hm-map-img {
+  opacity: .85;
+}
+
+@media (max-width: 767px) {
+  .hm-map-img { max-height: 240px; }
+  .hm-footer-map { margin: 22px auto 20px; }
+  .hm-locations-row { margin-top: 36px; }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .hm-map-img { max-height: 320px; }
+  .hm-locations-grid { gap: 30px; }
+}
+
 /* ---------- 0. Footer credit link ---------- */
 .hm-credit-link {
   color: inherit;                       /* match surrounding white text on dark bar */
