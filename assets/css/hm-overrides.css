@@ -355,6 +355,72 @@ input[type="button"]:hover,
   }
 }
 
+/* ---------- 5. Real customer testimonials (replaces empty widget) ---------- */
+.hm-testimonials {
+  --hm-tr: #c41230;
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 10px;
+}
+@media (max-width: 1024px) { .hm-testimonials { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px)  { .hm-testimonials { grid-template-columns: 1fr; } }
+.hm-testimonials .hm-t-card {
+  background: #ffffff;
+  border: 1px solid #ececec;
+  border-radius: 10px;
+  padding: 24px 22px 22px;
+  box-shadow: 0 10px 28px rgba(20,20,20,.05);
+  display: flex;
+  flex-direction: column;
+}
+.hm-testimonials .hm-t-head { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.hm-testimonials .hm-t-avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--hm-tr); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 15px;
+  font-family: 'Hanken Grotesk', Arial, sans-serif;
+}
+.hm-testimonials .hm-t-name {
+  font-family: 'Hanken Grotesk', Arial, sans-serif;
+  font-weight: 700; font-size: 16px; color: #141414; line-height: 1.2;
+}
+.hm-testimonials .hm-t-when { font-size: 12px; color: #777; }
+.hm-testimonials .hm-t-stars {
+  color: #f5a623; font-size: 15px; letter-spacing: 2px; margin: 4px 0 10px;
+}
+.hm-testimonials .hm-t-text {
+  color: #333; font-size: 15px; line-height: 1.6; margin: 0 0 14px;
+  flex: 1 1 auto;
+}
+.hm-testimonials .hm-t-branch {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  color: #666; border-top: 1px solid #ececec; padding-top: 12px;
+}
+.hm-testimonials .hm-t-branch strong { color: var(--hm-tr); font-weight: 700; }
+.hm-testimonials .hm-t-google {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-left: auto; font-size: 12px; color: #666; text-decoration: none;
+}
+.hm-testimonials .hm-t-google:hover { color: var(--hm-tr); }
+
+.hm-reviews-cta {
+  margin-top: 28px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center;
+}
+.hm-reviews-cta a {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #141414; color: #fff; text-decoration: none;
+  padding: 12px 20px; border-radius: 6px;
+  font-family: 'Hanken Grotesk', Arial, sans-serif;
+  font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  transition: background .15s ease;
+}
+.hm-reviews-cta a:hover { background: var(--hm-tr); }
+.hm-reviews-cta a.hm-reviews-cta-ghost { background: transparent; color: #141414; border: 2px solid #141414; }
+.hm-reviews-cta a.hm-reviews-cta-ghost:hover { background: var(--hm-tr); color: #fff; border-color: var(--hm-tr); }
+
 /* ==========================================================================
    4) FOOTER — mobile & tablet tidy-up  (scoped below 1280px, where the theme
    switches the footer to its desktop 4-column layout)
