@@ -132,6 +132,51 @@
   }
 }
 
+/* ---------- 0d. Mobile slide-out menu: white panel, dark links ---------- */
+/* Theme default paints this panel a dark warm grey (#2E2828) with white
+   links - a leftover from the original brown palette. The rest of the site
+   is white/red/black, so make the panel white with dark links. */
+.trx-addons-mobile-menu-outer-container {
+  background-color: #ffffff !important;
+  border-right: 1px solid #ececec;
+}
+.trx-addons-mobile-menu,
+.trx-addons-main-mobile-menu,
+.trx-addons-mobile-menu-container {
+  background-color: transparent !important;
+}
+.trx-addons-mobile-menu .trx-addons-menu-link,
+.trx-addons-mobile-menu .trx-addons-submenu-link,
+.trx-addons-mobile-menu-container .trx-addons-menu-link,
+.trx-addons-mobile-menu-container .trx-addons-submenu-link {
+  color: #141414 !important;
+}
+.trx-addons-mobile-menu .trx-addons-menu-link:hover,
+.trx-addons-mobile-menu-container .trx-addons-menu-link:hover,
+.trx-addons-mobile-menu .trx-addons-submenu-link:hover {
+  color: var(--gold-400, #c41230) !important;
+}
+/* dropdown panels inside the menu */
+.trx-addons-mobile-menu-container .trx-addons-submenu {
+  background-color: #ffffff !important;
+  border-color: #ececec !important;
+  box-shadow: none !important;
+}
+/* the caret + close icons must be dark on white */
+.trx-addons-mobile-menu .trx-addons-dropdown-icon,
+.trx-addons-mobile-menu-container .trx-addons-dropdown-icon,
+.trx-addons-mobile-menu .trx-addons-dropdown-icon svg path,
+.trx-addons-mobile-menu-container .trx-addons-dropdown-icon svg path {
+  color: #141414 !important;
+  fill: #141414 !important;
+}
+.trx-addons-mobile-menu-close,
+.trx-addons-mobile-menu-close i,
+.trx-addons-mobile-menu-close svg path {
+  color: #141414 !important;
+  fill: #141414 !important;
+}
+
 /* ---------- 0. Footer credit link ---------- */
 .hm-credit-link {
   color: inherit;                       /* match surrounding white text on dark bar */
