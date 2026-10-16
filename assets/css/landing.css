@@ -65,7 +65,7 @@
   .hm-landing .hm-grid--3 { grid-template-columns:1fr; }
 }
 .hm-landing .hm-card { background:#fff; border:1px solid var(--hm-line); border-radius:10px;
-  padding:28px; box-shadow:0 12px 34px rgba(20,20,20,.06); }
+  padding:28px; box-shadow:0 12px 34px rgba(20,20,20,.06); display:flex; flex-direction:column; }
 .hm-landing .hm-sec--dark .hm-card { background:var(--hm-dark2); border-color:#2a2a2a; }
 .hm-landing .hm-card h3 { font-family:var(--hm-font); font-size:22px; margin:0 0 10px; letter-spacing:-.01em; }
 .hm-landing .hm-card .hm-tag { display:inline-block; font-size:12px; font-weight:700; letter-spacing:.1em;
@@ -74,7 +74,7 @@
 .hm-landing .hm-sec--dark .hm-card p { color:rgba(255,255,255,.75); }
 .hm-landing .hm-ticks--dark li { list-style:none; margin:7px 0; padding-left:26px; position:relative; font-size:15px; }
 .hm-landing .hm-ticks--dark li:before { content:"\2713"; position:absolute; left:0; color:var(--hm-red); font-weight:800; }
-.hm-landing .hm-card .hm-btn { margin-top:18px; }
+.hm-landing .hm-card .hm-btn { margin-top:auto; align-self:flex-start; white-space:nowrap; padding:15px 20px; font-size:14px; letter-spacing:.03em; }
 
 /* ---------- full-width CTA band ---------- */
 .hm-landing .hm-band { padding:54px 0; background:var(--hm-red); color:#fff; text-align:center; }
