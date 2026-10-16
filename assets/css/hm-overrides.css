@@ -243,10 +243,62 @@ input[type="button"]:hover,
   color: #C41230 !important;
 }
 
-/* ---------- 3. Header: tablet / small-laptop (768px - 1279px) ----------
+/* ---------- 3. Header: tablet / small-laptop (768px - 1366px) ----------
    Below the desktop breakpoint the theme hid the desktop logo + menu but kept
    the desktop stacking, leaving a tiny logo and a two-row, over-tall bar.
    Lay it out as one row: logo left, phone + hamburger right.            */
+
+/* 3a. Extend the clean mobile-style header up to 1366px (large-tablet /
+   small-laptop range): user wants logo + phone pill + burger across tablet
+   sizes, instead of the full desktop top strip + nav row that Elementor
+   switches on at >=1280px. */
+@media (min-width: 1280px) and (max-width: 1366px) {
+  /* hide the desktop top strip + main desktop row (nav + emergency pill) */
+  .top_panel .elementor-element-01dd775,
+  .top_panel .elementor-element-1445ceab { display: none !important; }
+  /* force the mobile header row to show at these widths */
+  .top_panel .elementor-element-481bca {
+    display: flex !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  /* same single-row layout as the smaller tablet rule below */
+  .top_panel .elementor-element-1f85929 {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+  .top_panel .elementor-element-525999b0,
+  .top_panel .elementor-element-7d032b8b {
+    width: auto !important;
+    flex: 0 0 auto !important;
+    max-width: none !important;
+  }
+  .top_panel .elementor-element-7d032b8b {
+    justify-content: flex-end !important;
+    align-items: center !important;
+    gap: 18px !important;
+  }
+  .top_panel .elementor-element-c717ae7 a {
+    width: auto !important;
+    height: auto !important;
+    display: inline-block !important;
+  }
+  .top_panel .elementor-element-c717ae7 img,
+  .top_panel .elementor-element-c717ae7 .logo_image {
+    width: auto !important;
+    height: auto !important;
+    max-width: none !important;
+    max-height: 46px !important;
+  }
+  .top_panel,
+  .top_panel .elementor-4911 { min-height: 0 !important; }
+}
+
 @media (min-width: 768px) and (max-width: 1279px) {
 
   .top_panel .elementor-element-481bca {
