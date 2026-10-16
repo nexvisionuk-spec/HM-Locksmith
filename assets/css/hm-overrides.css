@@ -96,7 +96,9 @@ input[type="button"]:hover,
     gap: 18px !important;
   }
 
-  /* the mobile logo was rendering at 26x21px - size it properly */
+  /* the mobile logo: the theme only caps max-height (26px) and lets the width
+     flow. Forcing a width squashed the square logo into 130x26 - so set the
+     height instead and let the width stay automatic. */
   .top_panel .elementor-element-c717ae7 a {
     width: auto !important;
     height: auto !important;
@@ -104,9 +106,10 @@ input[type="button"]:hover,
   }
   .top_panel .elementor-element-c717ae7 img,
   .top_panel .elementor-element-c717ae7 .logo_image {
-    width: 130px !important;
+    width: auto !important;
     height: auto !important;
     max-width: none !important;
+    max-height: 46px !important;
   }
 
   /* header must not grow taller than its content */
