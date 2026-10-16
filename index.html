@@ -3,430 +3,49 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Emergency Locksmith &amp; Building Services in London | H&amp;M Locksmith &amp; Building Services</title>
-  <meta name="description" content="24/7 emergency locksmiths and trusted building services across London. 30-minute response, fixed pricing and certified tradespeople since 2009. Call 0203 105 1145.">
-  <link rel="canonical" href="https://www.hmlocksmithandbuildingservices.co.uk/">
-  <meta name="theme-color" content="#b8313a">
-  <meta name="robots" content="index, follow">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="H&amp;M Locksmith &amp; Building Services">
-  <meta property="og:title" content="Emergency Locksmith &amp; Building Services in London">
-  <meta property="og:description" content="24/7 emergency locksmiths and trusted building services across London. 30-minute response, fixed pricing, certified since 2009.">
-  <meta property="og:url" content="https://www.hmlocksmithandbuildingservices.co.uk/">
-  <meta property="og:image" content="https://www.hmlocksmithandbuildingservices.co.uk/assets/images/hero.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-
+  <title>H&amp;M Locksmith &amp; Building Services — London</title>
+  <meta name="description" content="H&M Locksmith & Building Services — 24/7 locksmith, security and building services across London. New website coming soon.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#111111">
   <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-  <script>document.documentElement.classList.add("js")</script>
-  <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="stylesheet" href="/assets/css/chatbot.css">
-
-  <!-- LocalBusiness structured data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Locksmith",
-    "name": "H&M Locksmith & Building Services Ltd",
-    "image": "https://www.hmlocksmithandbuildingservices.co.uk/assets/images/hero.jpg",
-    "url": "https://www.hmlocksmithandbuildingservices.co.uk/",
-    "telephone": "+442031051145",
-    "email": "info@hmlocksmithandsecurity.co.uk",
-    "priceRange": "££",
-    "foundingDate": "2009",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "124 Wilton Road",
-      "addressLocality": "London",
-      "postalCode": "SW1V 1AJ",
-      "addressCountry": "GB"
-    },
-    "areaServed": { "@type": "City", "name": "London" },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-      "opens": "00:00", "closes": "23:59"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "52"
-    },
-    "department": [
-      { "@type": "Locksmith", "name": "H&M Locksmith & Security", "telephone": "+442031051145", "email": "info@hmlocksmithandsecurity.co.uk" },
-      { "@type": "HomeAndConstructionBusiness", "name": "H&M Domestic & Building", "telephone": "+442033024022", "email": "info@hmlocksmithservices.co.uk" }
-    ]
-  }
-  </script>
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; min-height: 100vh; display: grid; place-items: center;
+      background: #111; color: #f4f4f4; text-align: center; padding: 32px;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    .holding { max-width: 520px; }
+    .holding img { width: 92px; height: 92px; margin: 0 auto 26px; display: block; }
+    .holding h1 { font-size: 1.5rem; font-weight: 700; letter-spacing: -.01em; margin: 0 0 10px; }
+    .holding p { color: #b8b8ba; line-height: 1.6; margin: 0 0 24px; }
+    .holding .phones { display: flex; flex-wrap: wrap; gap: 10px 22px; justify-content: center; }
+    .holding .phones a { color: #fff; font-weight: 700; text-decoration: none; }
+    .holding .phones small { display: block; color: #8a8a8c; font-weight: 500; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 2px; }
+  </style>
 </head>
 <body>
 
-  <!-- Hidden form so Netlify registers chatbot lead submissions (captured via JS) -->
+  <!-- Hidden Netlify form so chatbot lead submissions are captured -->
   <form name="chatbot-lead" data-netlify="true" netlify-honeypot="bot-field" hidden>
     <input type="text" name="service"><input type="text" name="name"><input type="tel" name="phone">
     <input type="text" name="area"><input type="text" name="urgency"><textarea name="details"></textarea>
     <textarea name="transcript"></textarea><input name="bot-field">
   </form>
 
-  <!-- ===== Top bar ===== -->
-  <div class="topbar">
-    <div class="container">
-      <div class="topbar__left">
-        <span><span class="topbar__badge">24/7 Emergency</span> London-wide</span>
-        <span>✉ <a href="mailto:info@hmlocksmithandsecurity.co.uk">info@hmlocksmithandsecurity.co.uk</a></span>
-      </div>
-      <div class="topbar__right">
-        <span>Locksmith: <a href="tel:+442031051145">0203 105 1145</a> &nbsp;·&nbsp; Building: <a href="tel:+442033024022">0203 302 4022</a></span>
-      </div>
+  <main class="holding">
+    <img src="/assets/images/logo-badge.svg" alt="H&M Locksmith & Building Services">
+    <h1>Our new website is on its way</h1>
+    <p>H&amp;M Locksmith &amp; Building Services — 24/7 locksmith, security and building work across London. In the meantime, call us or chat with Harry below.</p>
+    <div class="phones">
+      <a href="tel:+442031051145"><small>Locksmith &amp; Security</small>0203 105 1145</a>
+      <a href="tel:+442033024022"><small>Domestic &amp; Building</small>0203 302 4022</a>
     </div>
-  </div>
-
-  <!-- ===== Header ===== -->
-  <header class="site-header" id="siteHeader">
-    <div class="container nav">
-      <a href="/" class="brand" aria-label="H&M Locksmith & Building Services home">
-        <img class="brand__badge" src="/assets/images/logo-badge.svg" alt="The H&M Group — Locksmith & Building Services, est. 2009" width="50" height="50">
-        <span class="brand__name">Locksmith &amp; Building<small>Services · London since 2009</small></span>
-      </a>
-      <ul class="nav__menu">
-        <li class="is-active"><a href="/">Home</a></li>
-        <li><a href="/about.html">About</a></li>
-        <li class="has-dropdown">
-          <a href="/services.html">Services ▾</a>
-          <ul class="dropdown">
-            <li><a href="/locksmith.html">🔒 Locksmith &amp; Security</a></li>
-            <li><a href="/building.html">🏗️ Domestic &amp; Building</a></li>
-            <li><a href="/doors.html">🚪 Doors — Composite, uPVC &amp; Fire</a></li>
-            <li><a href="/emergency-locksmith.html">🚨 24/7 Emergency Locksmith</a></li>
-            <li><a href="/services.html">All Services</a></li>
-          </ul>
-        </li>
-        <li><a href="/contact.html">Contact</a></li>
-        <li class="nav__contact">
-          <strong>Call us 24/7</strong>
-          <a href="tel:+442031051145">📞 24/7 Emergency — 0203 105 1145</a>
-          <a href="tel:+442033024022">📞 Doors &amp; Building — 0203 302 4022</a>
-          <a href="mailto:info@hmlocksmithandsecurity.co.uk">✉ info@hmlocksmithandsecurity.co.uk</a>
-        </li>
-      </ul>
-      <div class="nav__cta">
-        <a href="tel:+442031051145" class="nav__phone">0203 105 1145<small>24/7 Emergency Line</small></a>
-        <a href="/contact.html" class="btn btn--primary">Get a Quote</a>
-        <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
-      </div>
-    </div>
-  </header>
-
-  <!-- ===== Hero ===== -->
-  <section class="hero">
-    <img src="/assets/images/hero.jpg" alt="Smart door lock being operated by a mobile phone" class="hero__media" loading="eager" width="1200" height="800">
-    <div class="container">
-      <div class="hero__inner">
-        <div>
-          <span class="hero__badge">⚡ 30-Minute Emergency Response</span>
-          <h1>London's Trusted <span class="accent">Locksmiths</span> &amp; Building Specialists</h1>
-          <p class="hero__lead">From emergency lockouts to full refurbishments — one reliable team for your home or business. Serving London 24 hours a day, 365 days a year since 2009.</p>
-          <div class="hero__actions">
-            <a href="tel:+442031051145" class="btn btn--emergency btn--lg">📞 Call 0203 105 1145</a>
-            <a href="https://wa.me/447956128990?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="btn btn--wa btn--lg">Message Us on WhatsApp</a>
-            <a href="#quote" class="btn btn--ghost btn--lg">Request a Free Quote</a>
-          </div>
-          <ul class="hero__points">
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Fixed, upfront pricing</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Certified tradespeople</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> No call-out fee</li>
-          </ul>
-        </div>
-
-        <!-- Quote card -->
-        <div class="quote-card" id="quote">
-          <h3>Request a Free Quote</h3>
-          <p class="sub">Tell us what you need — we'll call you straight back.</p>
-          <form name="quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-ajax action="/thank-you.html">
-            <input type="hidden" name="form-name" value="quote">
-            <p class="vh"><label>Don't fill this out: <input name="bot-field"></label></p>
-            <div class="field">
-              <label for="q-name">Full name</label>
-              <input id="q-name" name="name" type="text" required placeholder="Your name">
-            </div>
-            <div class="field">
-              <label for="q-phone">Phone number</label>
-              <input id="q-phone" name="phone" type="tel" required placeholder="e.g. 07xxx xxx xxx">
-            </div>
-            <div class="field">
-              <label for="q-service">Service needed</label>
-              <select id="q-service" name="service" required>
-                <option value="">Please choose…</option>
-                <option>Emergency lockout</option>
-                <option>Lock repair / replacement</option>
-                <option>Auto locksmith / car keys</option>
-                <option>Home &amp; business security</option>
-                <option>CCTV &amp; alarms</option>
-                <option>Building &amp; refurbishment</option>
-                <option>Electrical</option>
-                <option>Plumbing &amp; heating</option>
-                <option>Painting &amp; decorating</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <button type="submit" class="btn btn--primary btn--block btn--lg">Get My Free Quote</button>
-            <p class="form-note">Or call us 24/7 on <a href="tel:+442031051145">0203 105 1145</a>. We aim to respond in 30 minutes.</p>
-            <div class="form-success" role="status">Thanks! We've received your request and will call you back shortly.</div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Trust bar ===== -->
-  <div class="trustbar">
-    <div class="container">
-      <span><span class="dot"></span> NICEIC Approved</span>
-      <span><span class="dot"></span> Gas Safe Registered</span>
-      <span><span class="dot"></span> SafeContractor Approved</span>
-      <span><span class="dot"></span> FIRAS Certified</span>
-      <span><span class="dot"></span> Fully Insured</span>
-    </div>
-  </div>
-
-  <!-- ===== Stats ===== -->
-  <section class="section section--navy">
-    <div class="container">
-      <div class="stats">
-        <div class="stat reveal reveal--pop"><div class="stat__num"><span data-count="15" data-suffix="+">15+</span></div><div class="stat__label">Years serving London</div></div>
-        <div class="stat reveal reveal--pop"><div class="stat__num"><span data-count="5.0" data-suffix="★">5.0★</span></div><div class="stat__label">Average customer rating</div></div>
-        <div class="stat reveal reveal--pop"><div class="stat__num"><span data-count="30" data-suffix="min">30min</span></div><div class="stat__label">Typical response time</div></div>
-        <div class="stat reveal reveal--pop"><div class="stat__num"><span data-count="24" data-suffix="/7">24/7</span></div><div class="stat__label">365 days a year</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Services ===== -->
-  <section class="section" id="services">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">What We Do</span>
-        <h2>One trusted team for security &amp; building work</h2>
-        <p>Whether you're locked out at midnight or planning a full renovation, our two specialist divisions have London covered — with the same certified, reliable people behind both.</p>
-      </div>
-
-      <div class="grid grid--3">
-        <article class="svc-tile reveal"><img src="/assets/images/locksmith.jpg" alt="House keys with a model home" loading="lazy"><div class="svc-tile__body"><h3>Emergency Locksmith</h3><p>Lockouts, lost keys &amp; break-in repairs — 24/7.</p></div></article>
-        <article class="svc-tile reveal"><img src="/assets/images/autolocksmith.jpg" alt="Driver inside a car at dusk" loading="lazy"><div class="svc-tile__body"><h3>Auto Locksmith</h3><p>Car key programming, repair &amp; replacement.</p></div></article>
-        <article class="svc-tile reveal"><img src="/assets/images/security.jpg" alt="Heavy security vault door" loading="lazy"><div class="svc-tile__body"><h3>Home &amp; Business Security</h3><p>Lock upgrades, safes &amp; security surveys.</p></div></article>
-        <article class="svc-tile reveal"><img src="/assets/images/cctv.jpg" alt="Bank of CCTV cameras on a wall" loading="lazy"><div class="svc-tile__body"><h3>CCTV &amp; Alarms</h3><p>Camera systems, alarms &amp; door entry.</p></div></article>
-        <article class="svc-tile reveal"><img src="/assets/images/building.jpg" alt="Builders on a construction site" loading="lazy"><div class="svc-tile__body"><h3>Building &amp; Refurbishment</h3><p>Renovations, extensions &amp; repairs.</p></div></article>
-        <article class="svc-tile reveal"><img src="/assets/images/electrical.jpg" alt="Electrician beside a consumer unit" loading="lazy"><div class="svc-tile__body"><h3>Electrical</h3><p>Rewires, EICR certificates &amp; fault finding.</p></div></article>
-        <article class="svc-tile reveal"><img src="/assets/images/heating-plumbing.jpg" alt="Gas pipework and plumbing" loading="lazy"><div class="svc-tile__body"><h3>Plumbing &amp; Heating</h3><p>Gas Safe boiler, heating &amp; plumbing work.</p></div></article>
-        <article class="svc-tile reveal"><img src="/assets/images/painting.jpg" alt="Paint roller applying paint to a wall" loading="lazy"><div class="svc-tile__body"><h3>Painting &amp; Decorating</h3><p>Interior &amp; exterior painting and plastering.</p></div></article>
-        <article class="svc-tile reveal"><img src="/assets/images/joinery.jpg" alt="Bespoke fitted joinery" loading="lazy"><div class="svc-tile__body"><h3>Bespoke Joinery</h3><p>Fitted furniture, doors &amp; carpentry.</p></div></article>
-      </div>
-
-      <div class="center" style="margin-top:40px">
-        <a href="/services.html" class="btn btn--dark btn--lg">View All Services</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Why choose us ===== -->
-  <section class="section section--soft">
-    <div class="container">
-      <div class="split">
-        <div class="split__media reveal reveal--wipe"><img src="/assets/images/team.jpg" alt="Certified tradespeople at work"></div>
-        <div class="reveal reveal--right">
-          <span class="eyebrow">Why H&amp;M</span>
-          <h2>Reliable work, honest prices, since 2009</h2>
-          <p>We're a London-based, family-run team of locksmiths, security engineers and builders. From a single lock change to a whole-property refurbishment, you'll deal with one trusted company from start to finish.</p>
-          <ul class="feature-list">
-            <li>
-              <span class="fi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-              <div><h4>Fast 24/7 response</h4><p>On-site across London in around 30 minutes, day or night.</p></div>
-            </li>
-            <li>
-              <span class="fi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z"/></svg></span>
-              <div><h4>Certified &amp; insured</h4><p>NICEIC, Gas Safe &amp; SafeContractor accredited, fully insured work.</p></div>
-            </li>
-            <li>
-              <span class="fi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
-              <div><h4>Fixed, upfront pricing</h4><p>Clear quotes before we start — no hidden fees, no surprises.</p></div>
-            </li>
-            <li>
-              <span class="fi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 2 3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></span>
-              <div><h4>5.0★ rated service</h4><p>Trusted by homeowners, landlords &amp; businesses right across London.</p></div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Process ===== -->
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">How It Works</span>
-        <h2>Getting help is simple</h2>
-      </div>
-      <div class="steps">
-        <div class="step reveal"><div class="step__num">01</div><h3>Call or request a quote</h3><p>Tell us what you need, day or night. We answer 24/7.</p></div>
-        <div class="step reveal"><div class="step__num">02</div><h3>We give a fixed price</h3><p>A clear, upfront quote before any work begins.</p></div>
-        <div class="step reveal"><div class="step__num">03</div><h3>We're on our way</h3><p>A certified engineer reaches you in around 30 minutes.</p></div>
-        <div class="step reveal"><div class="step__num">04</div><h3>Job done right</h3><p>Tidy, guaranteed workmanship — first time.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Emergency CTA band ===== -->
-  <section class="section" style="padding-top:0">
-    <div class="container">
-      <div class="cta-band reveal">
-        <div>
-          <h2>Locked out or need urgent help?</h2>
-          <p>Our emergency team is available 24 hours a day, right across London.</p>
-        </div>
-        <div class="cta-band__actions">
-          <a href="tel:+442031051145" class="btn btn--emergency btn--lg">🔒 Locksmith: 0203 105 1145</a>
-          <a href="tel:+442033024022" class="btn btn--primary btn--lg">🏗️ Building: 0203 302 4022</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Sectors ===== -->
-  <section class="section section--soft">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Who We Help</span>
-        <h2>Trusted by homeowners &amp; businesses alike</h2>
-      </div>
-      <div class="grid grid--3">
-        <div class="card reveal"><div class="card__icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></div><h3>Homeowners</h3><p>Lockouts, lock upgrades, home security, repairs and full renovations for your property.</p></div>
-        <div class="card reveal"><div class="card__icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M6 21V7l6-4 6 4v14"/><path d="M10 9h.01M14 9h.01M10 13h.01M14 13h.01"/></svg></div><h3>Landlords &amp; Letting Agents</h3><p>Fast turnarounds between tenancies, EICR &amp; gas safety certificates, and reactive maintenance.</p></div>
-        <div class="card reveal"><div class="card__icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 4v16"/></svg></div><h3>Commercial &amp; Retail</h3><p>Shopfronts, offices, restaurants and bars — security, maintenance and refurbishment.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Testimonials ===== -->
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Reviews</span>
-        <h2>What our customers say</h2>
-      </div>
-      <div class="grid grid--3">
-        <div class="testi reveal">
-          <div class="testi__stars">★★★★★</div>
-          <p>"Work done to quote, and clean and tidy at completion. They handle our rental properties across Central London — annual gas safety checks, EICR certificates and repairs. Highly recommended."</p>
-          <div class="testi__who"><div class="testi__avatar">MC</div><div><strong>Margaret Collins</strong><span>Property Manager, Central London</span></div></div>
-        </div>
-        <div class="testi reveal">
-          <div class="testi__stars">★★★★★</div>
-          <p>"Great service, very professional and efficient. Would highly recommend!"</p>
-          <div class="testi__who"><div class="testi__avatar">BS</div><div><strong>Bee Serroukh</strong><span>Google review · London</span></div></div>
-        </div>
-        <div class="testi reveal">
-          <div class="testi__stars">★★★★★</div>
-          <p>"Efficient and reliable. Thank you."</p>
-          <div class="testi__who"><div class="testi__avatar">BG</div><div><strong>Bertram Graf</strong><span>Local Guide · Google review</span></div></div>
-        </div>
-      </div>
-      <div class="center" style="margin-top:28px">
-        <a class="reviews-link" href="https://www.google.com/maps/search/?api=1&amp;query=H%26M+Locksmith+and+Security+LTD+609+Harrow+Road+London+W10+4RA" target="_blank" rel="noopener">★★★★★ Rated 5.0 on Google — 52 reviews and counting</a>
-        <div style="margin-top:20px">
-          <a class="btn btn--dark" href="https://www.google.com/maps/search/?api=1&amp;query=H%26M+Locksmith+and+Security+LTD+609+Harrow+Road+London+W10+4RA" target="_blank" rel="noopener">See all reviews on Google →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FAQ ===== -->
-  <section class="section section--soft">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">FAQs</span>
-        <h2>Questions, answered</h2>
-      </div>
-      <div class="faq">
-        <div class="faq__item"><button class="faq__q" aria-expanded="false">How quickly can you get to me?<span class="chev">▾</span></button><div class="faq__a"><p>For emergencies anywhere in London we typically reach you in around 30 minutes, 24 hours a day, 365 days a year.</p></div></div>
-        <div class="faq__item"><button class="faq__q" aria-expanded="false">Do you charge a call-out fee?<span class="chev">▾</span></button><div class="faq__a"><p>No. We give you a clear, fixed price before any work starts — there's no separate call-out charge and no hidden extras.</p></div></div>
-        <div class="faq__item"><button class="faq__q" aria-expanded="false">Are your tradespeople certified and insured?<span class="chev">▾</span></button><div class="faq__a"><p>Yes. Our team is fully insured and our work is backed by recognised accreditations including NICEIC, Gas Safe and SafeContractor.</p></div></div>
-        <div class="faq__item"><button class="faq__q" aria-expanded="false">Do you cover both locksmith and building work?<span class="chev">▾</span></button><div class="faq__a"><p>We do. Our two divisions — H&amp;M Locksmith &amp; Security and H&amp;M Domestic &amp; Building — mean one trusted company can handle everything from an emergency lockout to a full refurbishment.</p></div></div>
-        <div class="faq__item"><button class="faq__q" aria-expanded="false">Which areas of London do you cover?<span class="chev">▾</span></button><div class="faq__a"><p>We cover all of Central London and the surrounding boroughs. Not sure if we reach you? Just call and ask — the answer is almost always yes.</p></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Final CTA ===== -->
-  <section class="section section--navy center">
-    <div class="container narrow">
-      <h2>Ready to get started?</h2>
-      <p style="font-size:1.1rem;margin-bottom:28px">Call us 24/7 or request a free, no-obligation quote today.</p>
-      <div class="hero__actions" style="justify-content:center">
-        <a href="tel:+442031051145" class="btn btn--emergency btn--lg">Call 0203 105 1145</a>
-        <a href="/contact.html" class="btn btn--primary btn--lg">Request a Quote</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Footer ===== -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-map">
-        <h4>Find Us</h4>
-        <div class="footer-map__single">
-          <div class="footer-map__item">
-            <div class="footer-map__head"><strong>Store</strong> 609 Harrow Road, London, W10 4RA <a href="https://www.google.com/maps/dir/?api=1&amp;destination=609+Harrow+Road,+London,+W10+4RA" target="_blank" rel="noopener">Directions &#8594;</a></div>
-            <iframe title="Map to H&amp;M store, 609 Harrow Road, London W10 4RA" src="https://www.google.com/maps?q=609+Harrow+Road,+London,+W10+4RA&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="/" class="brand"><img class="brand__badge" src="/assets/images/logo-badge.svg" alt="The H&M Group — Locksmith & Building Services, est. 2009" width="50" height="50"><span class="brand__name">Locksmith &amp; Building<small>Services · London since 2009</small></span></a>
-          <p>London's trusted team for 24/7 emergency locksmith work, security systems and complete building &amp; refurbishment services. Certified, insured and family-run.</p>
-        </div>
-        <div>
-          <h4>Services</h4>
-          <ul class="footer-links">
-            <li><a href="/locksmith.html">Emergency Locksmith</a></li>
-            <li><a href="/locksmith.html">Auto Locksmith</a></li>
-            <li><a href="/locksmith.html">CCTV &amp; Alarms</a></li>
-            <li><a href="/building.html">Building &amp; Refurbishment</a></li>
-            <li><a href="/building.html">Electrical &amp; Plumbing</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Company</h4>
-          <ul class="footer-links">
-            <li><a href="/about.html">About Us</a></li>
-            <li><a href="/services.html">All Services</a></li>
-            <li><a href="/contact.html">Contact</a></li>
-            <li><a href="/contact.html">Get a Quote</a></li>
-            <li><a href="/terms.html">Terms &amp; Conditions</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Get in Touch</h4>
-          <div class="footer-contact">
-            <div><strong>Locksmith &amp; Security</strong><a href="tel:+442031051145">0203 105 1145</a><br><a href="mailto:info@hmlocksmithandsecurity.co.uk">info@hmlocksmithandsecurity.co.uk</a></div>
-            <div><strong>Domestic &amp; Building</strong><a href="tel:+442033024022">0203 302 4022</a><br><a href="mailto:info@hmlocksmithservices.co.uk">info@hmlocksmithservices.co.uk</a></div>
-            <div><strong>Office</strong>124 Wilton Road, London, SW1V 1AJ<br>Store: 609 Harrow Road, London, W10 4RA</div>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© <span data-year>2025</span> H&amp;M Locksmith &amp; Building Services Ltd. All rights reserved.</span>
-        <span><a href="/terms.html">Terms &amp; Conditions</a> · Available 24/7 · 365 days a year · Covering all London</span>
-      </div>
-    </div>
-  </footer>
-
-  <div class="floating-call"><a href="tel:+442031051145">📞 Call Now</a></div>
+  </main>
 
   <script src="/assets/js/chatbot.js" defer></script>
-  <script src="/assets/js/main.js" defer></script>
 </body>
 </html>
