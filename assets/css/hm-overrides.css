@@ -45,41 +45,51 @@
   color: #ffffff;
 }
 
-/* ---------- 0b. Footer map (static image, both locations) ---------- */
+/* ---------- 0b. Footer map (static image, per-location clickable pins) ---------- */
 .hm-footer-map {
   width: 100%;
   max-width: 1200px;
   margin: 28px auto 30px;
   padding: 0 20px;
 }
-.hm-map-link {
+.hm-map-wrap {
+  position: relative;
   display: block;
-  width: 100%;
-  line-height: 0;          /* kill the inline-image baseline gap */
+  line-height: 0;               /* kill the inline-image baseline gap */
+  border-radius: 6px;
+  overflow: hidden;
 }
 .hm-map-img {
   display: block;
   width: 100%;
-  height: auto;
-  max-height: 420px;
-  object-fit: cover;
-  border-radius: 6px;
+  height: auto;                 /* never cropped, so hotspots stay aligned */
   border: 0;
-  background: #1a1a1a;     /* matches dark footer bar until image loads */
-  transition: opacity .15s ease;
+  background: #1a1a1a;          /* matches dark footer bar until image loads */
 }
-.hm-map-link:hover .hm-map-img,
-.hm-map-link:focus-visible .hm-map-img {
-  opacity: .85;
+/* Transparent hotspots sitting over each pin - each opens only that location */
+.hm-pin {
+  position: absolute;
+  display: block;
+  border-radius: 8px;
+  background: transparent;
+  transition: background .15s ease, box-shadow .15s ease;
 }
+.hm-pin:hover,
+.hm-pin:focus-visible {
+  background: rgba(196, 18, 48, .14);
+  box-shadow: inset 0 0 0 2px rgba(196, 18, 48, .55);
+}
+.hm-pin-store  { left: 29.55%; top: 16.84%; width: 27.36%; height: 13.47%; }
+.hm-pin-office { left: 65.91%; top: 69.70%; width: 27.53%; height: 13.47%; }
 
 @media (max-width: 767px) {
-  .hm-map-img { max-height: 240px; }
   .hm-footer-map { margin: 22px auto 20px; }
   .hm-locations-row { margin-top: 36px; }
+  /* larger tap targets on phones */
+  .hm-pin-store  { left: 25%; top: 11%; width: 36%; height: 24%; }
+  .hm-pin-office { left: 61%; top: 65%; width: 37%; height: 24%; }
 }
 @media (min-width: 768px) and (max-width: 1279px) {
-  .hm-map-img { max-height: 320px; }
   .hm-locations-grid { gap: 30px; }
 }
 
