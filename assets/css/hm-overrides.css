@@ -412,14 +412,14 @@ input[type="button"]:hover,
 .hm-reviews-cta a {
   display: inline-flex; align-items: center; gap: 8px;
   background: #141414; color: #fff; text-decoration: none;
-  padding: 12px 20px; border-radius: 6px;
+  padding: 12px 20px; border-radius: 6px; border: 2px solid #141414;
   font-family: 'Hanken Grotesk', Arial, sans-serif;
   font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
-  transition: background .15s ease;
+  transition: background .15s ease, border-color .15s ease;
   white-space: nowrap;
   max-width: 100%;
 }
-.hm-reviews-cta a:hover { background: #c41230; color: #fff; }
+.hm-reviews-cta a:hover { background: #c41230; color: #fff; border-color: #c41230; }
 .hm-reviews-cta a.hm-reviews-cta-ghost { background: transparent; color: #141414; border: 2px solid #141414; }
 .hm-reviews-cta a.hm-reviews-cta-ghost:hover { background: #c41230; color: #fff; border-color: #c41230; }
 
