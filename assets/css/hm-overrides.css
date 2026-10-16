@@ -537,4 +537,7 @@ input[type="button"]:hover,
   .footer_wrap .elementor-element-1dc555c { gap: 34px !important; }
 }
 
+/* WhatsApp item in the mobile burger menu */
+.hm-wa-menu-item .hm-wa-icon { width: 16px; height: 16px; flex: none; margin-right: 8px; }
+
 
