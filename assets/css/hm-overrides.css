@@ -1,0 +1,117 @@
+/* ==========================================================================
+   H&M — site overrides
+   Loaded LAST on every page so these rules always win.
+   1) Buttons are brand red (#C41230), not the theme's orange accent
+   2) Button hover: white background, red text
+   3) Header layout fix for tablet / small-laptop widths (768px - 1279px)
+   ========================================================================== */
+
+/* ---------- 1. Buttons: brand red ---------- */
+.elementor-button,
+.elementor-button.elementor-size-sm,
+.elementor-button.elementor-size-md,
+.elementor-button.elementor-size-lg,
+.elementor-button.elementor-size-xl,
+a.elementor-button,
+.elementor-button-link,
+.wp-block-button__link,
+button[type="submit"],
+input[type="submit"],
+input[type="button"],
+.trx_addons_button,
+.sc_button {
+  background-color: #C41230 !important;
+  border-color: #C41230 !important;
+  color: #ffffff !important;
+}
+
+/* keep icon + label in step with the button colour */
+.elementor-button .elementor-button-text,
+.elementor-button .elementor-button-content-wrapper,
+.elementor-button span,
+.elementor-button div {
+  color: inherit !important;
+}
+.elementor-button svg,
+.elementor-button .e-font-icon-svg {
+  fill: currentColor !important;
+  color: inherit !important;
+}
+.elementor-button svg path {
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
+/* ---------- 2. Button hover: white background, red text ---------- */
+.elementor-button:hover,
+.elementor-button:focus,
+.elementor-button:focus-visible,
+a.elementor-button:hover,
+.elementor-button-link:hover,
+.wp-block-button__link:hover,
+button[type="submit"]:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+.trx_addons_button:hover,
+.sc_button:hover {
+  background-color: #ffffff !important;
+  border-color: #C41230 !important;
+  color: #C41230 !important;
+}
+
+/* ---------- 3. Header: tablet / small-laptop (768px - 1279px) ----------
+   Below the desktop breakpoint the theme hid the desktop logo + menu but kept
+   the desktop stacking, leaving a tiny logo and a two-row, over-tall bar.
+   Lay it out as one row: logo left, phone + hamburger right.            */
+@media (min-width: 768px) and (max-width: 1279px) {
+
+  .top_panel .elementor-element-481bca {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  /* the header row: stack -> single row */
+  .top_panel .elementor-element-1f85929 {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  /* let both sides hug their content instead of holding 60% / 40% */
+  .top_panel .elementor-element-525999b0,
+  .top_panel .elementor-element-7d032b8b {
+    width: auto !important;
+    flex: 0 0 auto !important;
+    max-width: none !important;
+  }
+
+  /* phone + hamburger stay pinned to the right */
+  .top_panel .elementor-element-7d032b8b {
+    justify-content: flex-end !important;
+    align-items: center !important;
+    gap: 18px !important;
+  }
+
+  /* the mobile logo was rendering at 26x21px - size it properly */
+  .top_panel .elementor-element-c717ae7 a {
+    width: auto !important;
+    height: auto !important;
+    display: inline-block !important;
+  }
+  .top_panel .elementor-element-c717ae7 img,
+  .top_panel .elementor-element-c717ae7 .logo_image {
+    width: 130px !important;
+    height: auto !important;
+    max-width: none !important;
+  }
+
+  /* header must not grow taller than its content */
+  .top_panel,
+  .top_panel .elementor-4911 {
+    min-height: 0 !important;
+  }
+}
