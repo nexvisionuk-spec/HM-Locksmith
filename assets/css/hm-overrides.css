@@ -93,6 +93,45 @@
   .hm-locations-grid { gap: 30px; }
 }
 
+/* ---------- 0c. Counter numbers: keep figures on ONE line ---------- */
+/* The theme sizes these in vw, which outgrows their card at desktop/tablet
+   widths, so "1,000" wrapped into "1,00" + "0". Never break mid-figure. */
+.trx-addons-counter-number-wrap,
+.trx-addons-counter-number-title-wrap,
+.trx-addons-counter-number,
+.trx-addons-counter-number-prefix,
+.trx-addons-counter-number-suffix,
+.trx-addons-counter-number .odometer-digit,
+.trx-addons-counter-number .odometer-value {
+  white-space: nowrap !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+}
+/* Let the figure scale to its card instead of overflowing.
+   The 4-up stat grid (shared by every service page) sizes its numbers in vw,
+   which outgrows the card on desktop/tablet, so size them against the CARD
+   width (cqw) instead - they then shrink to fit rather than break. */
+.elementor-element-867250a .elementor-widget-trx_elm_counter,
+.elementor-element-39bc871 .elementor-widget-trx_elm_counter {
+  container-type: inline-size;
+}
+@media (min-width: 768px) {
+  .elementor-element-867250a .trx-addons-counter-number-wrap,
+  .elementor-element-39bc871 .trx-addons-counter-number-wrap {
+    font-size: 33cqw !important;   /* ~0.33 x card width; "1,000+" needs 0.35 */
+    line-height: 1.12;
+  }
+}
+/* Fallback for browsers without container queries */
+@supports not (font-size: 1cqw) {
+  @media (min-width: 768px) {
+    .elementor-element-867250a .trx-addons-counter-number-wrap,
+    .elementor-element-39bc871 .trx-addons-counter-number-wrap {
+      font-size: 4.3vw !important;
+    }
+  }
+}
+
 /* ---------- 0. Footer credit link ---------- */
 .hm-credit-link {
   color: inherit;                       /* match surrounding white text on dark bar */
