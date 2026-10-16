@@ -1,10 +1,24 @@
 /* ==========================================================================
    H&M — site overrides
    Loaded LAST on every page so these rules always win.
+   0) "Site by" credit link in footer bottom bar
    1) Buttons are brand red (#C41230), not the theme's orange accent
    2) Button hover: white background, red text
    3) Header layout fix for tablet / small-laptop widths (768px - 1279px)
    ========================================================================== */
+
+/* ---------- 0. Footer credit link ---------- */
+.hm-credit-link {
+  color: inherit;                       /* match surrounding white text on dark bar */
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color .15s ease, border-color .15s ease;
+}
+.hm-credit-link:hover,
+.hm-credit-link:focus-visible {
+  color: var(--gold-400, #c41230);      /* brand red hover on dark section */
+  border-bottom-color: var(--gold-400, #c41230);
+}
 
 /* ---------- 1. Buttons: brand red ---------- */
 .elementor-button,
