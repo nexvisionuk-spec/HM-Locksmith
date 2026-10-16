@@ -421,14 +421,22 @@ input[type="button"]:hover,
 .hm-reviews-cta a.hm-reviews-cta-ghost { background: transparent; color: #141414; border: 2px solid #141414; }
 .hm-reviews-cta a.hm-reviews-cta-ghost:hover { background: var(--hm-tr); color: #fff; border-color: var(--hm-tr); }
 
-/* ---- testimonial carousel: one review centred, arrows either side ---- */
+/* ---- testimonial carousel: one review centred, arrows outside the box ---- */
 .hm-testimonials {
   display: block;
-  position: relative;
-  overflow: hidden;
-  max-width: 860px;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
+}
+.hm-t-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.hm-t-viewport {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
 }
 .hm-t-track {
   display: flex;
@@ -441,12 +449,9 @@ input[type="button"]:hover,
   margin: 0;
 }
 .hm-t-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 3;
-  width: 46px;
-  height: 46px;
+  flex: none;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   border: 1px solid #ddd;
   background: #fff;
@@ -462,8 +467,6 @@ input[type="button"]:hover,
   transition: background .15s ease, color .15s ease, border-color .15s ease;
 }
 .hm-t-arrow:hover { background: #c41230; color: #fff; border-color: #c41230; }
-.hm-t-arrow.prev { left: 0; }
-.hm-t-arrow.next { right: 0; }
 .hm-t-dots {
   display: flex;
   justify-content: center;
@@ -477,6 +480,7 @@ input[type="button"]:hover,
 }
 .hm-t-dots button.is-active { background: #c41230; transform: scale(1.25); }
 @media (max-width: 640px) {
+  .hm-t-row { gap: 10px; }
   .hm-t-arrow { width: 40px; height: 40px; font-size: 22px; }
 }
 

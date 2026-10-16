@@ -11,10 +11,8 @@
     var cards = Array.prototype.slice.call(root.querySelectorAll(":scope > .hm-t-card"));
     if (!cards.length) return;
 
-    var track = document.createElement("div");
-    track.className = "hm-t-track";
-    cards.forEach(function (c) { track.appendChild(c); });
-    root.appendChild(track);
+    var row = document.createElement("div");
+    row.className = "hm-t-row";
 
     var prev = document.createElement("button");
     prev.className = "hm-t-arrow prev";
@@ -28,8 +26,17 @@
     next.setAttribute("aria-label", "Next review");
     next.innerHTML = "&#8250;";
 
-    root.appendChild(prev);
-    root.appendChild(next);
+    var viewport = document.createElement("div");
+    viewport.className = "hm-t-viewport";
+    var track = document.createElement("div");
+    track.className = "hm-t-track";
+    cards.forEach(function (c) { track.appendChild(c); });
+    viewport.appendChild(track);
+
+    row.appendChild(prev);
+    row.appendChild(viewport);
+    row.appendChild(next);
+    root.appendChild(row);
 
     var dotsWrap = document.createElement("div");
     dotsWrap.className = "hm-t-dots";
