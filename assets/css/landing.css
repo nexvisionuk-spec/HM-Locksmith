@@ -23,7 +23,7 @@
   max-width:640px; margin:0 0 26px; }
 .hm-landing .hm-hero .hm-cta-row { display:flex; flex-wrap:wrap; gap:14px; margin:0 0 30px; }
 .hm-landing .hm-btn { display:inline-flex; align-items:center; justify-content:center;
-  font-family:var(--hm-font); font-weight:700; font-size:15px; letter-spacing:.05em;
+  font-family:var(--hm-font); font-weight:700; font-size:15px; letter-spacing:.05em; line-height:1.35;
   text-transform:uppercase; text-decoration:none; border-radius:6px; padding:16px 30px;
   transition:transform .12s ease, box-shadow .12s ease, background .12s ease; }
 .hm-landing .hm-btn:active { transform:translateY(1px); }
