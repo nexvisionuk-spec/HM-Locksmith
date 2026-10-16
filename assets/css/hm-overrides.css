@@ -13,13 +13,17 @@
   max-width: 1200px;
   margin: 50px auto 0;
   padding: 0 20px;
+  display: block !important;     /* override any e-flex column */
+  flex-direction: row !important;
 }
 .hm-locations-grid {
-  display: flex;
+  display: flex !important;
+  flex-direction: row !important;
   flex-wrap: wrap;
   gap: 40px;
   justify-content: center;
   align-items: flex-start;
+  width: 100%;
 }
 .hm-locations-col {
   flex: 1 1 280px;
@@ -29,15 +33,15 @@
 }
 .hm-locations-title {
   margin: 0 0 10px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   color: #ffffff;
-  letter-spacing: .02em;
+  letter-spacing: .03em;
 }
 .hm-locations-col p {
   margin: 0;
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.7;
   color: #ffffff;
 }
 
