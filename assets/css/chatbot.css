@@ -98,3 +98,8 @@
 @media (max-width: 480px) {
   .hmchat-teaser { right: 14px; bottom: 82px; max-width: calc(100vw - 90px); }
 }
+
+/* Hide the auto-greeting teaser bubble on phones/tablets — it overlaps page content; launcher remains. */
+@media (max-width: 768px) {
+  .hmchat-teaser { display: none !important; }
+}

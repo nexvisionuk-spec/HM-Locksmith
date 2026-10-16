@@ -138,6 +138,8 @@
     try { if (sessionStorage.getItem("hmchat_teaser")) return; } catch (e) {}
     setTimeout(function () {
       if (state.open || !el.teaser) return;
+      // Don't auto-pop the greeting bubble on small screens — it overlaps page content.
+      if (window.matchMedia && window.matchMedia("(max-width: 768px)").matches) return;
       el.teaser.hidden = false;
       void el.teaser.offsetWidth; // reflow so the transition runs
       el.teaser.classList.add("in");
