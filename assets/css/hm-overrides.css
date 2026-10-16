@@ -118,3 +118,56 @@ input[type="button"]:hover,
     min-height: 0 !important;
   }
 }
+
+/* ==========================================================================
+   4) FOOTER — mobile & tablet tidy-up  (scoped below 1280px, where the theme
+   switches the footer to its desktop 4-column layout)
+   Problems fixed: columns stacked with gap:0, long emails breaking mid-word,
+   the chat launcher covering the bottom bar.
+   ========================================================================== */
+@media (max-width: 1279px) {
+
+  /* brand column: space out logo / blurb / Office+Store */
+  .footer_wrap .elementor-element-f2011bf {
+    gap: 22px !important;
+  }
+
+  /* the Contact / Links / Get-in-Touch row: let it wrap so a column is never
+     so narrow that "info@hmlocksmithandsecurity.co.uk" breaks mid-word */
+  .footer_wrap .elementor-element-1dc555c {
+    gap: 34px 30px !important;
+    align-items: flex-start !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+  }
+  .footer_wrap .elementor-element-1dc555c > .e-con {
+    flex: 1 1 320px !important;
+    min-width: 0 !important;
+    width: auto !important;
+  }
+
+  /* long addresses/emails: never split a word mid-way */
+  .footer_wrap a[href^="mailto:"] {
+    display: inline-block;
+    overflow-wrap: normal !important;
+    word-break: keep-all !important;
+  }
+
+  /* bottom bar: room to breathe + clear of the chat launcher */
+  .footer_wrap .elementor-element-38cab91 {
+    gap: 10px 30px !important;
+    padding-top: 6px !important;
+    padding-bottom: 84px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  /* tighter address columns so Office and Store still fit side by side */
+  .footer-address-row { gap: 20px !important; }
+  .footer-address-col { min-width: 118px !important; }
+
+  .footer_wrap .elementor-element-34df354 { gap: 40px !important; }
+  .footer_wrap .elementor-element-1dc555c { gap: 34px !important; }
+}
+
+
