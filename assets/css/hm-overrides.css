@@ -421,6 +421,65 @@ input[type="button"]:hover,
 .hm-reviews-cta a.hm-reviews-cta-ghost { background: transparent; color: #141414; border: 2px solid #141414; }
 .hm-reviews-cta a.hm-reviews-cta-ghost:hover { background: var(--hm-tr); color: #fff; border-color: var(--hm-tr); }
 
+/* ---- testimonial carousel: one review centred, arrows either side ---- */
+.hm-testimonials {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hm-t-track {
+  display: flex;
+  transition: transform .45s cubic-bezier(.2,.7,.2,1);
+  will-change: transform;
+}
+.hm-t-track .hm-t-card {
+  flex: 0 0 100%;
+  max-width: 100%;
+  margin: 0;
+}
+.hm-t-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #141414;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-shadow: 0 6px 16px rgba(20,20,20,.14);
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+.hm-t-arrow:hover { background: #c41230; color: #fff; border-color: #c41230; }
+.hm-t-arrow.prev { left: 0; }
+.hm-t-arrow.next { right: 0; }
+.hm-t-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 22px;
+}
+.hm-t-dots button {
+  width: 9px; height: 9px; border-radius: 50%;
+  border: 0; padding: 0; background: #d5d5d5; cursor: pointer;
+  transition: background .15s ease, transform .15s ease;
+}
+.hm-t-dots button.is-active { background: #c41230; transform: scale(1.25); }
+@media (max-width: 640px) {
+  .hm-t-arrow { width: 40px; height: 40px; font-size: 22px; }
+}
+
 /* ==========================================================================
    4) FOOTER — mobile & tablet tidy-up  (scoped below 1280px, where the theme
    switches the footer to its desktop 4-column layout)
