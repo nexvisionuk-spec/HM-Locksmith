@@ -967,3 +967,20 @@ body.hm-svc-technical .elementor-element-e616330,
 body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
   background-image: url("/wp-content/uploads/2026/10/col-technical.webp") !important;
 }
+
+/* Homepage intro section: new portrait van-logo photo — cap the height so it
+   doesn't stretch the two-column layout on desktop. */
+.elementor-element-74c2f39 img {
+  max-height: 560px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  border-radius: 14px;
+  background: #111;
+}
+@media (max-width: 767px) {
+  .elementor-element-74c2f39 img {
+    max-height: 340px;
+    border-radius: 10px;
+  }
+}
