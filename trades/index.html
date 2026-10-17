@@ -404,46 +404,283 @@ document.addEventListener("DOMContentLoaded", function () {
 				</div>
 				</div>
 		</header>
+<div class="page_content_wrap">
+<div class="content_wrap_fullscreen">
+<div class="content">
+<span id="content_skip_link_anchor" class="infratech_skip_link_anchor"></span>
+<article class="post_item_single post_type_page hentry">
+<div class="post_content entry-content">
+
+<!-- ===== TRADES PAGE STYLES ===== -->
 <style>
-  .trades-overview { padding: 84px 0 96px; }
-  .trades-overview h6 { color: #c0392b; letter-spacing: .09em; margin-bottom: 14px; }
-  .trades-overview h1 { margin-bottom: 18px; }
-  .trades-overview .lead { max-width: 720px; font-size: 1.08rem; }
-  .trade-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 16px; margin-top: 42px; }
-  .trade-card { display: flex; align-items: center; justify-content: space-between; gap: 12px;
-                 padding: 18px 22px; border: 1px solid rgba(0,0,0,.12); border-radius: 10px;
-                 background: #fff; font-weight: 600; text-decoration: none;
-                 transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease; }
-  .trade-card:hover { border-color: #c0392b; transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0,0,0,.07); }
-  .trade-card svg { flex: none; opacity: .45; }
+:root{--red:#c41230;--red-dk:#a00f24;--ink:#141414;--ink2:#3a3a3d;--muted:#7a7a7e;--bg:#f9f9f9;--white:#fff;--radius:12px}
+
+/* PAGE BANNER */
+.hm-banner{position:relative;min-height:400px;display:flex;align-items:flex-end;background:url('/wp-content/uploads/2026/05/freepik__our-company-uniform-is-attached-companyshirt-i-wan__46283-scaled.jpg') center 35%/cover no-repeat;padding:0}
+.hm-banner::before{content:'';position:absolute;inset:0;background:linear-gradient(170deg,rgba(20,20,20,.62) 0%,rgba(20,20,20,.82) 100%)}
+.hm-banner-inner{position:relative;z-index:1;max-width:1180px;margin:0 auto;width:100%;padding:90px 40px 64px}
+.hm-banner h1{font-size:clamp(36px,5vw,64px);line-height:1.1;color:#fff;margin:0 0 14px;letter-spacing:-.02em}
+.hm-banner p{color:rgba(255,255,255,.78);font-size:18px;margin:0;max-width:640px}
+.hm-banner .hm-breadcrumb{display:flex;align-items:center;gap:8px;margin-bottom:22px;font-size:13.5px;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.08em}
+.hm-banner .hm-breadcrumb a{color:rgba(255,255,255,.55);text-decoration:none}.hm-banner .hm-breadcrumb a:hover{color:#fff}
+.hm-banner .hm-breadcrumb span{color:#fff;opacity:.55}
+
+/* INTRO STRIP */
+.hm-intro-strip{background:var(--red);color:#fff;text-align:center;padding:22px 40px;display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap;font-size:15px;font-weight:500}
+.hm-intro-strip a{color:#fff;border-bottom:1px solid rgba(255,255,255,.4);text-decoration:none}.hm-intro-strip a:hover{border-color:#fff}
+.hm-intro-strip .hm-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.5);flex:none}
+
+/* SERVICES SECTION */
+.hm-services-sec{max-width:1200px;margin:0 auto;padding:80px 40px 90px}
+.hm-services-sec .hm-eyebrow{color:var(--red);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
+.hm-services-sec h2{font-size:clamp(28px,3.6vw,44px);line-height:1.15;letter-spacing:-.02em;color:var(--ink);margin:0 0 14px}
+.hm-services-sec .hm-subtitle{color:var(--muted);font-size:16.5px;line-height:1.65;max-width:680px;margin:0 0 52px}
+.hm-service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:900px){.hm-service-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.hm-service-grid{grid-template-columns:1fr;gap:14px}}
+
+.hm-service-card{display:block;text-decoration:none;border:1.5px solid #e4e4e4;border-radius:var(--radius);padding:28px 28px 24px;background:var(--white);transition:border-color .2s,box-shadow .2s,transform .2s;position:relative;overflow:hidden}
+.hm-service-card:hover{border-color:var(--red);box-shadow:0 8px 32px rgba(196,18,48,.10);transform:translateY(-3px)}
+.hm-service-card::after{content:'';position:absolute;bottom:0;left:0;height:3px;width:0;background:var(--red);transition:width .25s ease}
+.hm-service-card:hover::after{width:100%}
+.hm-card-icon{width:46px;height:46px;background:#fdf1f3;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.hm-card-icon svg{width:22px;height:22px;fill:var(--red)}
+.hm-service-card h3{font-size:17px;font-weight:700;color:var(--ink);margin:0 0 9px;letter-spacing:-.01em}
+.hm-service-card p{font-size:14.5px;color:var(--muted);line-height:1.6;margin:0 0 18px}
+.hm-card-link{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.07em}
+.hm-card-link svg{width:14px;height:14px;fill:var(--red);transition:transform .18s}
+.hm-service-card:hover .hm-card-link svg{transform:translateX(3px)}
+
+/* BENEFITS STRIP */
+.hm-benefits{background:var(--ink);color:#fff;padding:72px 40px}
+.hm-benefits-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:40px}
+@media(max-width:900px){.hm-benefits-inner{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.hm-benefits-inner{grid-template-columns:1fr;gap:28px}}
+.hm-benefit-item{text-align:center}
+.hm-benefit-num{font-size:clamp(44px,5vw,64px);font-weight:800;color:var(--red);line-height:1;letter-spacing:-.03em;margin-bottom:8px}
+.hm-benefit-label{font-size:15px;color:rgba(255,255,255,.65);line-height:1.4}
+
+/* WHY CHOOSE */
+.hm-why{max-width:1200px;margin:0 auto;padding:80px 40px}
+.hm-why h2{font-size:clamp(26px,3.2vw,40px);letter-spacing:-.02em;color:var(--ink);margin:0 0 48px;text-align:center}
+.hm-why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
+@media(max-width:720px){.hm-why-grid{grid-template-columns:1fr}}
+.hm-why-item{display:flex;gap:20px;align-items:flex-start}
+.hm-why-icon{width:52px;height:52px;border-radius:12px;background:#fdf1f3;display:flex;align-items:center;justify-content:center;flex:none}
+.hm-why-icon svg{width:24px;height:24px;fill:var(--red)}
+.hm-why-item h4{font-size:16.5px;font-weight:700;color:var(--ink);margin:0 0 7px}
+.hm-why-item p{font-size:14.5px;color:var(--muted);margin:0;line-height:1.65}
+
+/* CTA BAND */
+.hm-cta-band{background:var(--red);padding:64px 40px;text-align:center}
+.hm-cta-band h2{font-size:clamp(26px,3.5vw,42px);color:#fff;margin:0 0 14px;letter-spacing:-.02em}
+.hm-cta-band p{color:rgba(255,255,255,.82);font-size:16.5px;margin:0 0 34px;max-width:560px;margin-left:auto;margin-right:auto}
+.hm-cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.hm-btn-primary{display:inline-flex;align-items:center;gap:9px;background:#fff;color:var(--red);font-size:14px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:16px 34px;border-radius:889px;text-decoration:none;transition:.2s}
+.hm-btn-primary:hover{background:var(--ink);color:#fff}
+.hm-btn-ghost{display:inline-flex;align-items:center;gap:9px;background:transparent;color:#fff;border:2px solid rgba(255,255,255,.55);font-size:14px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:14px 32px;border-radius:889px;text-decoration:none;transition:.2s}
+.hm-btn-ghost:hover{background:#fff;color:var(--red);border-color:#fff}
+.hm-btn-primary svg,.hm-btn-ghost svg{width:16px;height:16px;fill:currentColor}
+@media(max-width:560px){.hm-services-sec,.hm-why,.hm-benefits,.hm-cta-band{padding-left:22px;padding-right:22px}.hm-banner-inner{padding:70px 22px 48px}}
 </style>
 
-<section class="trades-overview">
-  <div class="elementor-container" style="max-width:1200px;margin:0 auto;padding:0 20px">
-    <h6 class="elementor-heading-title elementor-size-default">OUR TRADES &amp; SERVICES</h6>
-    <h1 class="elementor-heading-title elementor-size-default">Every trade you need, under one trusted team</h1>
-    <p class="lead">From emergency locksmiths and security systems to plumbing, electrical, painting and full
-    building refurbishments &mdash; one trusted company for your home or business, across London.</p>
-
-    <div class="trade-grid">
-        <a class="trade-card" href="/trades/locksmith/"><span>Locksmith &amp; Security</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="trade-card" href="/trades/home-security/"><span>Home Security</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="trade-card" href="/trades/cctv-entry/"><span>CCTV &amp; Entry</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="trade-card" href="/trades/gas-heating/"><span>Gas &amp; Heating</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="trade-card" href="/trades/plumbing/"><span>Plumbing</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="trade-card" href="/trades/electrical-mechanical-services-in-uk/"><span>Electrical &amp; Mechanical</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="trade-card" href="/trades/building-services/"><span>Building Services</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="trade-card" href="/trades/refurbishment/"><span>Refurbishment</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="trade-card" href="/trades/painting/"><span>Painting &amp; Decorating</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="trade-card" href="/trades/insurance-service/"><span>Insurance Service</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="trade-card" href="/trades/technical-services/"><span>Technical Services</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    </div>
-
-    <p style="margin-top:40px">Not sure which service you need? Call us 24/7 on
-    <a href="tel:02031051145">0203 105 1145</a> or
-    <a href="/contact-us/">send us a message</a> and we&#8217;ll point you to the right team.</p>
+<!-- PAGE BANNER -->
+<section class="hm-banner">
+  <div class="hm-banner-inner">
+    <nav class="hm-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>/</span><span aria-current="page">Our Trades &amp; Services</span>
+    </nav>
+    <h1>Every Trade You Need,<br>Under One Trusted Team</h1>
+    <p>Emergency locksmiths to full building refurbishments — one call, one company, all of London.</p>
   </div>
 </section>
+
+<!-- INTRO STRIP -->
+<div class="hm-intro-strip">
+  <span>Available 24/7, 365 days a year</span>
+  <span class="hm-dot"></span>
+  <span>Call us: <a href="tel:+442031051145">0203 105 1145</a></span>
+  <span class="hm-dot"></span>
+  <span>Covering all of London</span>
+  <span class="hm-dot"></span>
+  <span>Accredited &amp; Insured</span>
+</div>
+
+<!-- SERVICES GRID -->
+<section class="hm-services-sec">
+  <p class="hm-eyebrow">Our Trades &amp; Services</p>
+  <h2>Choose Your Service</h2>
+  <p class="hm-subtitle">Every trade delivered by qualified, vetted and uniformed H&amp;M engineers. Fixed upfront pricing, no call-out fee.</p>
+
+  <div class="hm-service-grid">
+
+    <a href="/trades/locksmith/" class="hm-service-card">
+      <div class="hm-card-icon"><svg viewBox="0 0 24 24"><path d="M12 1C8.68 1 6 3.68 6 7c0 2.6 1.57 4.84 3.83 5.77L9 21h6l-.83-8.23C16.43 11.84 18 9.6 18 7c0-3.32-2.68-6-6-6zm0 9a3 3 0 110-6 3 3 0 010 6z"/></svg></div>
+      <h3>Locksmith &amp; Security</h3>
+      <p>Emergency lockouts, lock replacement, auto keys and security upgrades — day or night.</p>
+      <span class="hm-card-link">Learn More <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></span>
+    </a>
+
+    <a href="/trades/home-security/" class="hm-service-card">
+      <div class="hm-card-icon"><svg viewBox="0 0 24 24"><path d="M10.5 13.5a3 3 0 100-6 3 3 0 000 6zm-7-1.5A7.5 7.5 0 0118 7.38V3h2v6h-6V7h3.13A5.5 5.5 0 103.5 12H1A8.5 8.5 0 0110.5 3.5zm1 3.5a1 1 0 11-2 0 1 1 0 012 0zM3 14h18v2H3v-2zm0 4h12v2H3v-2z"/></svg></div>
+      <h3>Home Security</h3>
+      <p>Alarm systems, door reinforcement, smart locks and security surveys for homes and businesses.</p>
+      <span class="hm-card-link">Learn More <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></span>
+    </a>
+
+    <a href="/trades/cctv-entry/" class="hm-service-card">
+      <div class="hm-card-icon"><svg viewBox="0 0 24 24"><path d="M17 10.5V7a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h12a1 1 0 001-1v-3.5l4 4v-11l-4 4z"/></svg></div>
+      <h3>CCTV &amp; Entry</h3>
+      <p>HD surveillance cameras, access control, door entry systems and remote monitoring.</p>
+      <span class="hm-card-link">Learn More <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></span>
+    </a>
+
+    <a href="/trades/gas-heating/" class="hm-service-card">
+      <div class="hm-card-icon"><svg viewBox="0 0 24 24"><path d="M13 2.05v2.02c3.95.49 7 3.85 7 7.93 0 3.21-1.81 6-4.72 7.28L13 17v5h5l-1.22-1.22C19.91 19.07 22 15.76 22 12c0-5.18-3.95-9.45-9-9.95zM11 2.05C5.95 2.55 2 6.82 2 12c0 3.76 2.09 7.07 5.22 8.78L6 22h5V2.05zM12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/></svg></div>
+      <h3>Gas &amp; Heating</h3>
+      <p>Gas Safe registered engineers for boiler installation, servicing, repairs and annual safety checks.</p>
+      <span class="hm-card-link">Learn More <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></span>
+    </a>
+
+    <a href="/trades/plumbing/" class="hm-service-card">
+      <div class="hm-card-icon"><svg viewBox="0 0 24 24"><path d="M2.5 19.5a2 2 0 002.83 0l5-5a2 2 0 000-2.83l-2-2a2 2 0 00-2.83 0l-5 5a2 2 0 000 2.83l2 2zM21 9a3 3 0 010-4.24L17.76 1.52 16.35 2.93l1.42 1.41L15.36 6.75 13.95 5.34 12.53 6.76l3.54 3.54L17.48 8.9 18.9 10.3 21 9zm-9.24.76a2 2 0 00-2.83 0L3 15.69V21h5.31l5.93-5.93a2 2 0 000-2.83L11.76 9.76z"/></svg></div>
+      <h3>Plumbing</h3>
+      <p>Leaks, bursts, bathroom fits, drain clearance and complete water system maintenance.</p>
+      <span class="hm-card-link">Learn More <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></span>
+    </a>
+
+    <a href="/trades/electrical-mechanical-services-in-uk/" class="hm-service-card">
+      <div class="hm-card-icon"><svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg></div>
+      <h3>Electrical &amp; Mechanical</h3>
+      <p>EICR certificates, fuse board upgrades, rewires, lighting and full mechanical installations.</p>
+      <span class="hm-card-link">Learn More <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></span>
+    </a>
+
+    <a href="/trades/building-services/" class="hm-service-card">
+      <div class="hm-card-icon"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></div>
+      <h3>Building Services</h3>
+      <p>General building, maintenance, repairs, extensions, and structural work across London.</p>
+      <span class="hm-card-link">Learn More <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></span>
+    </a>
+
+    <a href="/trades/refurbishment/" class="hm-service-card">
+      <div class="hm-card-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg></div>
+      <h3>Refurbishment</h3>
+      <p>Full property refurbishments — kitchens, bathrooms, living spaces — to the highest finish.</p>
+      <span class="hm-card-link">Learn More <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></span>
+    </a>
+
+    <a href="/trades/painting/" class="hm-service-card">
+      <div class="hm-card-icon"><svg viewBox="0 0 24 24"><path d="M18 4V3a1 1 0 00-1-1H5a1 1 0 00-1 1v4a1 1 0 001 1h12a1 1 0 001-1V6h2v4H9v11a1 1 0 001 1h4a1 1 0 001-1v-9h8V4h-5z"/></svg></div>
+      <h3>Painting &amp; Decorating</h3>
+      <p>Interior and exterior painting, wallpapering, coving and specialist finishes for any property.</p>
+      <span class="hm-card-link">Learn More <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></span>
+    </a>
+
+    <a href="/trades/insurance-service/" class="hm-service-card">
+      <div class="hm-card-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 4l5 2.18V11c0 3.43-2.3 6.65-5 7.93-2.7-1.28-5-4.5-5-7.93V7.18L12 5z"/></svg></div>
+      <h3>Insurance Service</h3>
+      <p>Insurance-grade work with full documentation, reports and 12-month workmanship guarantee.</p>
+      <span class="hm-card-link">Learn More <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></span>
+    </a>
+
+    <a href="/trades/technical-services/" class="hm-service-card">
+      <div class="hm-card-icon"><svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg></div>
+      <h3>Technical Services</h3>
+      <p>Planned preventive maintenance, fire safety systems, testing, and compliance inspections.</p>
+      <span class="hm-card-link">Learn More <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></span>
+    </a>
+
+  </div>
+</section>
+
+<!-- BENEFITS STATS -->
+<div class="hm-benefits">
+  <div class="hm-benefits-inner">
+    <div class="hm-benefit-item">
+      <div class="hm-benefit-num">17+</div>
+      <div class="hm-benefit-label">Years of trusted service</div>
+    </div>
+    <div class="hm-benefit-item">
+      <div class="hm-benefit-num">24/7</div>
+      <div class="hm-benefit-label">Emergency response, always</div>
+    </div>
+    <div class="hm-benefit-item">
+      <div class="hm-benefit-num">99%</div>
+      <div class="hm-benefit-label">Customer satisfaction rate</div>
+    </div>
+    <div class="hm-benefit-item">
+      <div class="hm-benefit-num">11</div>
+      <div class="hm-benefit-label">Trade services, one team</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY H&M -->
+<section class="hm-why">
+  <h2>Why Choose H&amp;M Group?</h2>
+  <div class="hm-why-grid">
+
+    <div class="hm-why-item">
+      <div class="hm-why-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
+      <div>
+        <h4>Rapid 24/7 Response</h4>
+        <p>Our team is on call round the clock. For emergencies we aim to reach you in 30 minutes anywhere in London.</p>
+      </div>
+    </div>
+
+    <div class="hm-why-item">
+      <div class="hm-why-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></div>
+      <div>
+        <h4>Accredited &amp; Insured</h4>
+        <p>Gas Safe, NICEIC, SafeContractor and Firequal registered. Fully insured for residential and commercial work.</p>
+      </div>
+    </div>
+
+    <div class="hm-why-item">
+      <div class="hm-why-icon"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div>
+      <div>
+        <h4>Fixed Upfront Pricing</h4>
+        <p>No hidden charges. You get a clear written quote before any work starts — and we stick to it.</p>
+      </div>
+    </div>
+
+    <div class="hm-why-item">
+      <div class="hm-why-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 4l5 2.18V11c0 3.43-2.3 6.65-5 7.93-2.7-1.28-5-4.5-5-7.93V7.18L12 5z"/></svg></div>
+      <div>
+        <h4>12-Month Guarantee</h4>
+        <p>All our work comes with a 12-month workmanship guarantee. If anything isn't right, we'll fix it at no cost.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="hm-cta-band">
+  <h2>Ready to Book a Service?</h2>
+  <p>Call our 24/7 team right now, or drop us a message and we'll get back to you within the hour.</p>
+  <div class="hm-cta-btns">
+    <a href="tel:+442031051145" class="hm-btn-primary">
+      <svg viewBox="0 0 512 512"><path d="M497.39 361.8l-112-48a24 24 0 00-28 6.9l-49.6 60.6A370.66 370.66 0 01130.6 204.11l60.6-49.6a23.94 23.94 0 006.9-28l-48-112A24.16 24.16 0 00122.6.61l-104 24A24 24 0 000 48c0 256.5 207.9 464 464 464a24 24 0 0023.4-18.6l24-104a24.29 24.29 0 00-14.01-27.6z"/></svg>
+      Call 0203 105 1145
+    </a>
+    <a href="/contact-us/" class="hm-btn-ghost">
+      <svg viewBox="0 0 512 512"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>
+      Send a Message
+    </a>
+    <a href="https://wa.me/447956128990" target="_blank" rel="noopener" class="hm-btn-ghost">
+      <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.5 15.3L2 22l4.9-1.4A10 10 0 1012 2zm5 14c-.2.7-1.2 1.3-1.9 1.4-.5.1-1.1.1-1.8 0-2.4-.5-4.5-1.9-6.1-3.9C5.6 11.3 5.5 8.9 6.6 7.4c.2-.3.5-.4.8-.4h.8c.2 0 .5 0 .7.5.3.7 1 2.2 1.1 2.4.1.2.1.4 0 .6-.1.2-.2.3-.4.5l-.6.6c-.2.2-.3.4-.1.7.2.4.9 1.5 1.9 2.4 1.3 1.2 2.4 1.6 2.8 1.8.3.1.5.1.7-.1l1-1.1c.2-.2.4-.3.7-.2.3 0 1.6.8 1.9 1 .3.2.5.2.6.3.1.2.1.6-.1 1z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</section>
+
+</div><!-- /.post_content -->
+</article>
+</div><!-- /.content -->
+</div><!-- /.content_wrap_fullscreen -->
+</div><!-- /.page_content_wrap -->
 <footer class="footer_wrap footer_custom footer_custom_4928 footer_custom_footer-main-dark">
 
 			<div data-elementor-type="cpt_layouts" data-elementor-id="4928" class="elementor elementor-4928" data-elementor-post-type="cpt_layouts">

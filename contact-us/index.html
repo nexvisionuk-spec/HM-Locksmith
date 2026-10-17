@@ -394,107 +394,301 @@ document.addEventListener("DOMContentLoaded", function () {
 				</div>
 				</div>
 		</header>
+<div class="page_content_wrap">
+<div class="content_wrap_fullscreen">
+<div class="content">
+<span id="content_skip_link_anchor" class="infratech_skip_link_anchor"></span>
+<article class="post_item_single post_type_page hentry">
+<div class="post_content entry-content">
 
+<!-- ===== CONTACT PAGE STYLES ===== -->
+<style>
+:root{--red:#c41230;--red-dk:#a00f24;--ink:#141414;--ink2:#3a3a3d;--muted:#7a7a7e;--bg:#f9f9f9;--white:#fff}
 
-			
-			<div class="page_content_wrap">
-								<div class="content_wrap_fullscreen">
+/* BANNER */
+.hm-ct-banner{position:relative;min-height:360px;display:flex;align-items:flex-end;background:url('/wp-content/uploads/2026/09/magnific_upscale_Syzh3p9Ub8-1-1-scaled.webp') center 35%/cover no-repeat}
+.hm-ct-banner::before{content:'';position:absolute;inset:0;background:linear-gradient(170deg,rgba(20,20,20,.60) 0%,rgba(20,20,20,.82) 100%)}
+.hm-ct-banner-inner{position:relative;z-index:1;max-width:1180px;margin:0 auto;width:100%;padding:80px 40px 60px}
+.hm-ct-banner .hm-eyebrow{color:rgba(255,255,255,.55);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px}
+.hm-ct-banner h1{font-size:clamp(34px,5vw,60px);line-height:1.1;color:#fff;margin:0 0 14px;letter-spacing:-.02em}
+.hm-ct-banner p{color:rgba(255,255,255,.76);font-size:17px;margin:0;max-width:560px}
 
-					
-					<div class="content">
-												<span id="content_skip_link_anchor" class="infratech_skip_link_anchor"></span>
-						
+/* EMERGENCY STRIP */
+.hm-emerg-strip{background:var(--red);display:flex;align-items:center;justify-content:center;gap:24px;padding:18px 40px;flex-wrap:wrap;font-size:15px;font-weight:600;color:#fff}
+.hm-emerg-strip a{color:#fff;text-decoration:none;font-size:17px;font-weight:700}
+.hm-emerg-strip a:hover{text-decoration:underline}
 
-<article id="post-5003"
+/* MAIN CONTACT GRID */
+.hm-contact-wrap{max-width:1200px;margin:0 auto;padding:80px 40px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+@media(max-width:860px){.hm-contact-wrap{grid-template-columns:1fr;gap:48px;padding:56px 22px}}
 
-	class="post_item_single post_type_page post-5003 page type-page status-publish hentry">
+/* CONTACT INFO */
+.hm-contact-info h2{font-size:clamp(24px,3vw,34px);color:var(--ink);letter-spacing:-.02em;margin:0 0 8px}
+.hm-contact-info .hm-lead{color:var(--muted);font-size:15.5px;line-height:1.65;margin:0 0 40px}
 
+.hm-division{border:1.5px solid #e4e4e4;border-radius:12px;padding:28px;margin-bottom:20px;position:relative;overflow:hidden}
+.hm-division::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--red)}
+.hm-division h3{font-size:16px;font-weight:700;color:var(--ink);margin:0 0 16px;letter-spacing:-.01em}
+.hm-division-row{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px}
+.hm-division-row:last-child{margin-bottom:0}
+.hm-division-row .hm-di{width:36px;height:36px;border-radius:8px;background:#fdf1f3;display:flex;align-items:center;justify-content:center;flex:none}
+.hm-division-row .hm-di svg{width:16px;height:16px;fill:var(--red)}
+.hm-division-row .hm-dt{font-size:14.5px;line-height:1.5}
+.hm-division-row .hm-dt strong{display:block;color:var(--ink);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
+.hm-division-row .hm-dt a{color:var(--ink);text-decoration:none}.hm-division-row .hm-dt a:hover{color:var(--red)}
 
+.hm-hours{background:#fdf1f3;border-radius:10px;padding:18px 22px;margin-top:24px;display:flex;align-items:center;gap:14px}
+.hm-hours svg{width:22px;height:22px;fill:var(--red);flex:none}
+.hm-hours p{margin:0;font-size:14.5px;color:var(--ink);line-height:1.5}
+.hm-hours strong{color:var(--red)}
 
-	
+/* CONTACT FORM */
+.hm-contact-form-box h2{font-size:clamp(22px,2.6vw,30px);color:var(--ink);letter-spacing:-.02em;margin:0 0 8px}
+.hm-contact-form-box .hm-lead{color:var(--muted);font-size:15px;margin:0 0 30px}
+.hm-form{display:flex;flex-direction:column;gap:14px}
+.hm-form input,.hm-form textarea,.hm-form select{width:100%;padding:14px 18px;border:1.5px solid #e0e0e0;border-radius:8px;font-family:inherit;font-size:15px;color:var(--ink);background:#fff;transition:border-color .2s;box-sizing:border-box}
+.hm-form input:focus,.hm-form textarea:focus,.hm-form select:focus{outline:none;border-color:var(--red)}
+.hm-form textarea{min-height:140px;resize:vertical}
+.hm-form select{color:var(--muted);cursor:pointer}
+.hm-form select:not([value=""]){color:var(--ink)}
+.hm-form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:500px){.hm-form-row{grid-template-columns:1fr}}
+.hm-form-submit{display:flex;gap:12px;flex-wrap:wrap;margin-top:4px}
+.hm-submit-btn{background:var(--red);color:#fff;border:none;padding:16px 38px;border-radius:889px;font-size:14px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;transition:.2s;font-family:inherit}
+.hm-submit-btn:hover{background:var(--red-dk)}
+.hm-wa-form-btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;background:#fff;color:var(--red);border:2px solid var(--red);padding:14px 26px;border-radius:889px;font-size:14px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;transition:.2s}
+.hm-wa-form-btn:hover{background:var(--red);color:#fff}
+.hm-wa-form-btn svg{width:16px;height:16px;fill:currentColor}
+.hm-form-note{font-size:12.5px;color:var(--muted);margin:6px 0 0}
+.hm-form-success,.hm-form-error{display:none;padding:14px 18px;border-radius:8px;font-size:14.5px;margin-top:8px}
+.hm-form-success{background:#edf7f0;color:#1a7a3a;border:1.5px solid #b0e0c0}
+.hm-form-error{background:#fef0f0;color:#b91c1c;border:1.5px solid #f5c0c0}
 
-	<div class="post_content entry-content">
+/* MAP SECTION */
+.hm-map-section{background:var(--bg);padding:0 40px 72px}
+.hm-map-section-inner{max-width:1200px;margin:0 auto}
+.hm-map-section h2{font-size:clamp(22px,2.8vw,34px);color:var(--ink);margin:0 0 8px;letter-spacing:-.02em;padding-top:72px}
+.hm-map-section .hm-lead{color:var(--muted);font-size:15.5px;margin:0 0 36px}
+.hm-locations-row{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:36px}
+@media(max-width:600px){.hm-locations-row{grid-template-columns:1fr}}
+.hm-loc-card{background:#fff;border:1.5px solid #e4e4e4;border-radius:12px;padding:24px;display:flex;gap:16px}
+.hm-loc-card .hm-lci{width:44px;height:44px;border-radius:10px;background:#fdf1f3;display:flex;align-items:center;justify-content:center;flex:none}
+.hm-loc-card .hm-lci svg{width:20px;height:20px;fill:var(--red)}
+.hm-loc-card h4{font-size:15px;font-weight:700;color:var(--ink);margin:0 0 6px}
+.hm-loc-card p{font-size:14px;color:var(--muted);margin:0 0 10px;line-height:1.6}
+.hm-loc-card a{font-size:13.5px;color:var(--red);font-weight:600;text-decoration:none}
+.hm-loc-card a:hover{text-decoration:underline}
 
-				<div data-elementor-type="wp-page" data-elementor-id="5003" class="elementor elementor-5003" data-elementor-post-type="page">
-				<div class="elementor-element elementor-element-7d42ef8 e-flex e-con-boxed sc_layouts_column_icons_position_left e-con e-parent" data-id="7d42ef8" data-element_type="container" data-e-type="container">
-					<div class="e-con-inner">
-				<div data-animation-type="block" class="elementor-element elementor-element-4fd74ab animation_type_block sc_fly_static elementor-invisible elementor-widget elementor-widget-heading" data-id="4fd74ab" data-element_type="widget" data-e-type="widget" data-settings="{&quot;_animation&quot;:&quot;ta_fadeinup&quot;}" data-widget_type="heading.default">
-					<h6 class="elementor-heading-title elementor-size-default">Common Questions</h6>				</div>
-		<div class="elementor-element elementor-element-aa874ed e-con-full e-flex sc_layouts_column_icons_position_left e-con e-child" data-id="aa874ed" data-element_type="container" data-e-type="container">
-		<div data-animation-type="block" class="elementor-element elementor-element-fbef5db e-con-full e-flex sc_layouts_column_icons_position_left animation_type_block elementor-invisible e-con e-child" data-id="fbef5db" data-element_type="container" data-e-type="container" data-settings="{&quot;animation&quot;:&quot;ta_fadeinup&quot;}">
-				<div class="elementor-element elementor-element-e79bd0d elementor-widget__width-initial sc_fly_static elementor-widget elementor-widget-heading" data-id="e79bd0d" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-					<h1 class="elementor-heading-title elementor-size-default">Have inquiries? Reach out to us!</h1>				</div>
-				<div class="elementor-element elementor-element-bf96935 elementor-widget__width-initial sc_fly_static elementor-widget elementor-widget-text-editor" data-id="bf96935" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
-									<p>Our team is ready to help you with any need or project inquiry. Reach out to H&M Group anytime.</p>								</div>
-				<div class="elementor-element elementor-element-6d4df30 trx-addons-icon-list-traditional elementor-list-item-link-inline trx-addons-icon-left sc_fly_static elementor-widget elementor-widget-trx_elm_icon_list" data-id="6d4df30" data-element_type="widget" data-e-type="widget" data-widget_type="trx_elm_icon_list.default">
-				<div class="elementor-widget-container">
-							<div class="trx-addons-list-container">
-			<ul class="trx-addons-list-items">
-																					<li class="trx-addons-icon-list-item trx-addons-icon-list-item-without-link elementor-repeater-item-2039fe8">
-										<span class="trx-addons-icon-wrapper">
-										<span class="trx-addons-icon-list-icon trx-addons-icon ">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.11 19.63"><path class="cls-1" d="M8.56,11.78c-1.94,0-3.51-1.57-3.51-3.51s1.57-3.51,3.51-3.51,3.51,1.57,3.51,3.51-1.58,3.51-3.51,3.51Zm0-5.72c-1.22,0-2.21,.99-2.21,2.21s.99,2.21,2.21,2.21,2.21-.99,2.21-2.21-.99-2.21-2.21-2.21Z"></path><path class="cls-1" d="M8.56,19.63c-1.35,0-2.7-.51-3.76-1.52C2.1,15.52-.88,11.39,.24,6.46H.24C1.26,2,5.15,0,8.55,0h0c3.41,0,7.3,2,8.31,6.46,1.12,4.93-1.87,9.06-4.57,11.65-1.05,1.01-2.4,1.52-3.75,1.52ZM1.51,6.74c-.98,4.34,1.74,8.07,4.19,10.43,1.6,1.54,4.11,1.54,5.71,0,2.46-2.36,5.18-6.08,4.2-10.43-.91-4.02-4.37-5.45-7.05-5.45h0C5.87,1.3,2.42,2.73,1.51,6.74h0Z"></path></svg></span>			</span>
-										<p class="trx-addons-icon-list-text">
-								124 Wilton Road, London, SW1V 1AJ							</p>
-													</li>
-													</ul>
-		</div>
-						</div>
-				</div>
-				<div class="elementor-element elementor-element-0351b2d trx-addons-icon-list-traditional elementor-list-item-link-inline trx-addons-icon-left sc_fly_static elementor-widget elementor-widget-trx_elm_icon_list" data-id="0351b2d" data-element_type="widget" data-e-type="widget" data-widget_type="trx_elm_icon_list.default">
-				<div class="elementor-widget-container">
-							<div class="trx-addons-list-container">
-			<ul class="trx-addons-list-items">
-																					<li class="trx-addons-icon-list-item trx-addons-icon-list-item-with-link elementor-repeater-item-2039fe8">
-															<a href="tel:+442031051145">
-											<span class="trx-addons-icon-wrapper">
-										<span class="trx-addons-icon-list-icon trx-addons-icon ">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.3 20.3"><path d="M10.27,20.3H5.02c-3.85,0-5.02-1.26-5.02-5.4V5.4C0,1.26,1.17,0,5.02,0h5.25c3.85,0,5.03,1.26,5.03,5.4V14.9c0,4.14-1.17,5.4-5.03,5.4ZM5.02,1.3C1.89,1.3,1.3,1.95,1.3,5.4V14.9c0,3.45,.59,4.1,3.73,4.1h5.25c3.13,0,3.72-.65,3.72-4.1V5.4c0-3.45-.59-4.1-3.72-4.1H5.02Z"></path><path d="M9.4,4.62h-3.5c-.36,0-.65-.29-.65-.65s.29-.65,.65-.65h3.5c.36,0,.65,.29,.65,.65s-.29,.65-.65,.65Z"></path><path d="M7.65,17.55c-1.11,0-2.01-.95-2.01-2.12s.9-2.12,2.01-2.12,2.01,.95,2.01,2.12-.9,2.12-2.01,2.12Zm0-2.95c-.39,0-.71,.37-.71,.82s.32,.82,.71,.82,.71-.37,.71-.82-.32-.82-.71-.82Z"></path></svg></span>			</span>
-										<h6 class="trx-addons-icon-list-text">
-								0203 105 1145							</h6>
-															</a>
-														</li>
-													</ul>
-		</div>
-						</div>
-				</div>
-				<div class="elementor-element elementor-element-16092f4 trx-addons-icon-list-traditional elementor-list-item-link-inline trx-addons-icon-left sc_fly_static elementor-widget elementor-widget-trx_elm_icon_list" data-id="16092f4" data-element_type="widget" data-e-type="widget" data-widget_type="trx_elm_icon_list.default">
-				<div class="elementor-widget-container">
-							<div class="trx-addons-list-container">
-			<ul class="trx-addons-list-items">
-																					<li class="trx-addons-icon-list-item trx-addons-icon-list-item-with-link elementor-repeater-item-2039fe8">
-															<a href="mailto:info@hmlocksmithandsecurity.co.uk">
-											<span class="trx-addons-icon-wrapper">
-										<span class="trx-addons-icon-list-icon trx-addons-icon ">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.63 16.88"><path d="M14.4,16.88H5.23c-3.33,0-5.23-1.91-5.23-5.23V5.23C0,1.91,1.91,0,5.23,0H14.4c3.33,0,5.23,1.91,5.23,5.23v6.42c0,3.33-1.91,5.23-5.23,5.23ZM5.23,1.3c-2.61,0-3.93,1.32-3.93,3.93v6.42c0,2.61,1.32,3.93,3.93,3.93H14.4c2.61,0,3.93-1.32,3.93-3.93V5.23c0-2.61-1.32-3.93-3.93-3.93H5.23Z"></path><path d="M9.81,9.2c-.76,0-1.53-.24-2.12-.71l-2.86-2.29c-.28-.22-.33-.63-.1-.91,.22-.28,.63-.33,.91-.1l2.86,2.29c.71,.57,1.91,.57,2.63,0l2.87-2.29c.28-.22,.69-.18,.91,.1s.18,.69-.1,.91l-2.87,2.29c-.6,.47-1.36,.71-2.12,.71Z"></path></svg></span>			</span>
-										<p class="trx-addons-icon-list-text">
-								info@hmlocksmithandsecurity.co.uk							</p>
-															</a>
-														</li>
-													</ul>
-		</div>
-						</div>
-				</div>
-				</div>
-		<div class="e-con-gap-no elementor-element elementor-element-e1f1343 e-con-full e-flex sc_layouts_column_icons_position_left animation_type_block elementor-invisible e-con e-child" data-animation-type="block" data-id="e1f1343" data-element_type="container" data-e-type="container" data-settings="{&quot;animation&quot;:&quot;ta_fadeinup&quot;,&quot;animation_delay&quot;:100}">
-				</div>
-				</div>
-					</div>
-				</div>
-				</div>
-			</div>
+/* CTA BAND */
+.hm-contact-cta{background:var(--ink);color:#fff;text-align:center;padding:64px 40px}
+.hm-contact-cta h2{font-size:clamp(24px,3.2vw,38px);color:#fff;margin:0 0 12px;letter-spacing:-.02em}
+.hm-contact-cta p{color:rgba(255,255,255,.70);font-size:16px;margin:0 0 32px;max-width:500px;margin-left:auto;margin-right:auto}
+.hm-contact-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.hm-ct-btn-r{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;border:2px solid var(--red);font-size:14px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:15px 32px;border-radius:889px;text-decoration:none;transition:.2s}
+.hm-ct-btn-r:hover{background:var(--red-dk);border-color:var(--red-dk)}
+.hm-ct-btn-w{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;border:2px solid rgba(255,255,255,.50);font-size:14px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:15px 32px;border-radius:889px;text-decoration:none;transition:.2s}
+.hm-ct-btn-w:hover{background:#fff;color:var(--ink)}
+.hm-ct-btn-r svg,.hm-ct-btn-w svg{width:16px;height:16px;fill:currentColor}
 
+@media(max-width:560px){.hm-ct-banner-inner,.hm-map-section{padding-left:22px;padding-right:22px}.hm-contact-cta{padding:52px 22px}}
+</style>
 
+<!-- BANNER -->
+<section class="hm-ct-banner">
+  <div class="hm-ct-banner-inner">
+    <p class="hm-eyebrow">Get In Touch</p>
+    <h1>We're Always Here to Help</h1>
+    <p>24/7 emergency and non-emergency support across London. Call, email or WhatsApp — we respond fast.</p>
+  </div>
+</section>
 
-	
+<!-- EMERGENCY STRIP -->
+<div class="hm-emerg-strip" role="complementary" aria-label="24/7 emergency line">
+  <svg width="18" height="18" viewBox="0 0 512 512" fill="#fff"><path d="M497.39 361.8l-112-48a24 24 0 00-28 6.9l-49.6 60.6A370.66 370.66 0 01130.6 204.11l60.6-49.6a23.94 23.94 0 006.9-28l-48-112A24.16 24.16 0 00122.6.61l-104 24A24 24 0 000 48c0 256.5 207.9 464 464 464a24 24 0 0023.4-18.6l24-104a24.29 24.29 0 00-14.01-27.6z"/></svg>
+  <span>24/7 Emergency Line:</span>
+  <a href="tel:+442031051145">0203 105 1145</a>
+  <span style="opacity:.4">|</span>
+  <span>Response typically within 30 minutes</span>
+</div>
 
+<!-- MAIN GRID: INFO + FORM -->
+<div class="hm-contact-wrap">
+
+  <!-- LEFT: CONTACT INFO -->
+  <div class="hm-contact-info">
+    <h2>Contact Us</h2>
+    <p class="hm-lead">Two specialist divisions, one trusted company. Find the right team for your enquiry below.</p>
+
+    <div class="hm-division">
+      <h3>🔐 H&amp;M Locksmith &amp; Security</h3>
+      <div class="hm-division-row">
+        <div class="hm-di"><svg viewBox="0 0 512 512"><path d="M497.39 361.8l-112-48a24 24 0 00-28 6.9l-49.6 60.6A370.66 370.66 0 01130.6 204.11l60.6-49.6a23.94 23.94 0 006.9-28l-48-112A24.16 24.16 0 00122.6.61l-104 24A24 24 0 000 48c0 256.5 207.9 464 464 464a24 24 0 0023.4-18.6l24-104a24.29 24.29 0 00-14.01-27.6z"/></svg></div>
+        <div class="hm-dt"><strong>Phone</strong><a href="tel:+442031051145">0203 105 1145</a></div>
+      </div>
+      <div class="hm-division-row">
+        <div class="hm-di"><svg viewBox="0 0 512 512"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg></div>
+        <div class="hm-dt"><strong>Email</strong><a href="mailto:info@hmlocksmithandsecurity.co.uk">info@hmlocksmithandsecurity.co.uk</a></div>
+      </div>
+      <div class="hm-division-row">
+        <div class="hm-di"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+        <div class="hm-dt"><strong>Address</strong>124 Wilton Road, London, SW1V 1AJ</div>
+      </div>
+      <div class="hm-division-row">
+        <div class="hm-di"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+        <div class="hm-dt"><strong>Store</strong>609 Harrow Road, London, W10 4RA</div>
+      </div>
+    </div>
+
+    <div class="hm-division">
+      <h3>🏗️ H&amp;M Domestic &amp; Building</h3>
+      <div class="hm-division-row">
+        <div class="hm-di"><svg viewBox="0 0 512 512"><path d="M497.39 361.8l-112-48a24 24 0 00-28 6.9l-49.6 60.6A370.66 370.66 0 01130.6 204.11l60.6-49.6a23.94 23.94 0 006.9-28l-48-112A24.16 24.16 0 00122.6.61l-104 24A24 24 0 000 48c0 256.5 207.9 464 464 464a24 24 0 0023.4-18.6l24-104a24.29 24.29 0 00-14.01-27.6z"/></svg></div>
+        <div class="hm-dt"><strong>Phone</strong><a href="tel:+442033024022">0203 302 4022</a></div>
+      </div>
+      <div class="hm-division-row">
+        <div class="hm-di"><svg viewBox="0 0 512 512"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg></div>
+        <div class="hm-dt"><strong>Email</strong><a href="mailto:info@hmlocksmithservices.co.uk">info@hmlocksmithservices.co.uk</a></div>
+      </div>
+    </div>
+
+    <div class="hm-hours">
+      <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+      <p><strong>Open 24/7, 365 days a year</strong><br>No call-out fee. Emergency response in ~30 minutes.</p>
+    </div>
+  </div>
+
+  <!-- RIGHT: CONTACT FORM -->
+  <div class="hm-contact-form-box">
+    <h2>Send Us a Message</h2>
+    <p class="hm-lead">Fill in the form and we'll get back to you within the hour — usually much sooner.</p>
+
+    <form class="hm-form" id="hm-contact-form" novalidate>
+      <div class="hm-form-row">
+        <input type="text" name="name" id="hm-ct-name" placeholder="Your name" required autocomplete="name">
+        <input type="email" name="email" id="hm-ct-email" placeholder="Email address" required autocomplete="email">
+      </div>
+      <input type="tel" name="phone" id="hm-ct-phone" placeholder="Phone number" autocomplete="tel">
+      <select name="service" id="hm-ct-service">
+        <option value="">What service do you need?</option>
+        <option>Locksmith &amp; Security</option>
+        <option>Home Security</option>
+        <option>CCTV &amp; Entry</option>
+        <option>Gas &amp; Heating</option>
+        <option>Plumbing</option>
+        <option>Electrical &amp; Mechanical</option>
+        <option>Building Services</option>
+        <option>Refurbishment</option>
+        <option>Painting &amp; Decorating</option>
+        <option>Insurance Service</option>
+        <option>Technical Services</option>
+        <option>Something else</option>
+      </select>
+      <textarea name="message" id="hm-ct-msg" placeholder="Tell us about your job or question…" required></textarea>
+      <div class="hm-form-submit">
+        <button type="submit" class="hm-submit-btn">Send Message</button>
+        <a href="https://wa.me/447956128990" target="_blank" rel="noopener" class="hm-wa-form-btn">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.5 15.3L2 22l4.9-1.4A10 10 0 1012 2zm5 14c-.2.7-1.2 1.3-1.9 1.4-.5.1-1.1.1-1.8 0-2.4-.5-4.5-1.9-6.1-3.9C5.6 11.3 5.5 8.9 6.6 7.4c.2-.3.5-.4.8-.4h.8c.2 0 .5 0 .7.5.3.7 1 2.2 1.1 2.4.1.2.1.4 0 .6-.1.2-.2.3-.4.5l-.6.6c-.2.2-.3.4-.1.7.2.4.9 1.5 1.9 2.4 1.3 1.2 2.4 1.6 2.8 1.8.3.1.5.1.7-.1l1-1.1c.2-.2.4-.3.7-.2.3 0 1.6.8 1.9 1 .3.2.5.2.6.3.1.2.1.6-.1 1z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+      <p class="hm-form-note">We reply within 1 hour during the day; for emergencies please call.</p>
+      <div class="hm-form-success" id="hm-ct-ok">✅ Thanks! We've received your message and will be in touch shortly.</div>
+      <div class="hm-form-error" id="hm-ct-err">⚠️ Something went wrong. Please call us on <a href="tel:+442031051145">0203 105 1145</a>.</div>
+    </form>
+
+    <!-- hidden Netlify form -->
+    <form name="contact-query" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name"><input type="email" name="email"><input type="text" name="phone">
+      <input type="text" name="service"><textarea name="message"></textarea><input type="text" name="page">
+      <input name="bot-field">
+    </form>
+
+    <script>
+    (function(){
+      var f=document.getElementById('hm-contact-form');
+      if(!f) return;
+      f.addEventListener('submit',function(e){
+        e.preventDefault();
+        var n=document.getElementById('hm-ct-name').value.trim();
+        var em=document.getElementById('hm-ct-email').value.trim();
+        var msg=document.getElementById('hm-ct-msg').value.trim();
+        if(!n||!em||!msg){alert('Please fill in your name, email and message.');return;}
+        var ok=document.getElementById('hm-ct-ok');
+        var er=document.getElementById('hm-ct-err');
+        var data=new URLSearchParams({
+          'form-name':'contact-query',
+          name:n,
+          email:em,
+          phone:document.getElementById('hm-ct-phone').value,
+          service:document.getElementById('hm-ct-service').value,
+          message:msg,
+          page:location.pathname
+        });
+        fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:data.toString()})
+          .then(function(r){
+            if(r.ok){ok.style.display='block';er.style.display='none';f.reset();}
+            else{er.style.display='block';ok.style.display='none';}
+          }).catch(function(){er.style.display='block';ok.style.display='none';});
+      });
+    })();
+    </script>
+  </div>
+</div>
+
+<!-- MAP SECTION -->
+<div class="hm-map-section">
+  <div class="hm-map-section-inner">
+    <h2>Find Us</h2>
+    <p class="hm-lead">Two London locations. All enquiries welcome at either address.</p>
+    <div class="hm-locations-row">
+      <div class="hm-loc-card">
+        <div class="hm-lci"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+        <div>
+          <h4>Head Office</h4>
+          <p>124 Wilton Road<br>London, SW1V 1AJ</p>
+          <a href="https://www.google.com/maps?cid=1214119125620460867" target="_blank" rel="noopener">★ 4.9 — Open on Google Maps</a>
+        </div>
+      </div>
+      <div class="hm-loc-card">
+        <div class="hm-lci"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8h16v10zm-2-1h-4v-2h4v2zm-6 0H6v-2h6v2zm6-4h-4v-2h4v2zm-6 0H6v-2h6v2z"/></svg></div>
+        <div>
+          <h4>Store</h4>
+          <p>609 Harrow Road<br>London, W10 4RA</p>
+          <a href="https://www.google.com/maps?cid=2993071067314997529" target="_blank" rel="noopener">★ 5.0 — Open on Google Maps</a>
+        </div>
+      </div>
+    </div>
+    <div class="hm-map-wrap">
+      <img class="hm-map-img" src="/assets/img/hm-locations-map.jpg" alt="Map showing H&amp;M Group Office at 124 Wilton Road SW1V 1AJ and Store at 609 Harrow Road W10 4RA" loading="lazy" decoding="async" width="1188" height="594">
+      <a class="hm-pin hm-pin-store" href="https://www.google.com/maps?cid=2993071067314997529" target="_blank" rel="noopener" title="H&amp;M Store, 609 Harrow Road, W10 4RA" aria-label="Store on Google Maps"></a>
+      <a class="hm-pin hm-pin-office" href="https://www.google.com/maps?cid=1214119125620460867" target="_blank" rel="noopener" title="H&amp;M Office, 124 Wilton Road, SW1V 1AJ" aria-label="Office on Google Maps"></a>
+    </div>
+  </div>
+</div>
+
+<!-- CTA BAND -->
+<section class="hm-contact-cta">
+  <h2>Need Help Right Now?</h2>
+  <p>Our emergency team is on call 24/7. Don't wait — call us directly for the fastest response.</p>
+  <div class="hm-contact-cta-btns">
+    <a href="tel:+442031051145" class="hm-ct-btn-r">
+      <svg viewBox="0 0 512 512"><path d="M497.39 361.8l-112-48a24 24 0 00-28 6.9l-49.6 60.6A370.66 370.66 0 01130.6 204.11l60.6-49.6a23.94 23.94 0 006.9-28l-48-112A24.16 24.16 0 00122.6.61l-104 24A24 24 0 000 48c0 256.5 207.9 464 464 464a24 24 0 0023.4-18.6l24-104a24.29 24.29 0 00-14.01-27.6z"/></svg>
+      0203 105 1145
+    </a>
+    <a href="https://wa.me/447956128990" target="_blank" rel="noopener" class="hm-ct-btn-w">
+      <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.5 15.3L2 22l4.9-1.4A10 10 0 1012 2zm5 14c-.2.7-1.2 1.3-1.9 1.4-.5.1-1.1.1-1.8 0-2.4-.5-4.5-1.9-6.1-3.9C5.6 11.3 5.5 8.9 6.6 7.4c.2-.3.5-.4.8-.4h.8c.2 0 .5 0 .7.5.3.7 1 2.2 1.1 2.4.1.2.1.4 0 .6-.1.2-.2.3-.4.5l-.6.6c-.2.2-.3.4-.1.7.2.4.9 1.5 1.9 2.4 1.3 1.2 2.4 1.6 2.8 1.8.3.1.5.1.7-.1l1-1.1c.2-.2.4-.3.7-.2.3 0 1.6.8 1.9 1 .3.2.5.2.6.3.1.2.1.6-.1 1z"/></svg>
+      WhatsApp Us
+    </a>
+    <a href="/trades/" class="hm-ct-btn-w">Browse All Services</a>
+  </div>
+</section>
+
+</div><!-- /.post_content -->
 </article>
-
-						</div>
-											</div>
-								</div>
-							<span id="footer_skip_link_anchor" class="infratech_skip_link_anchor"></span>
-				<footer class="footer_wrap footer_custom footer_custom_4928 footer_custom_footer-main-dark">
+</div><!-- /.content -->
+</div><!-- /.content_wrap_fullscreen -->
+</div><!-- /.page_content_wrap -->
+<footer class="footer_wrap footer_custom footer_custom_4928 footer_custom_footer-main-dark">
 
 			<div data-elementor-type="cpt_layouts" data-elementor-id="4928" class="elementor elementor-4928" data-elementor-post-type="cpt_layouts">
 				<div class="e-con-gap-no elementor-element elementor-element-7f59aa8 e-con-full e-flex sc_layouts_column_icons_position_left e-con e-parent" data-id="7f59aa8" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
