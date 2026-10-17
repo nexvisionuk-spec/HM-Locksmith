@@ -840,3 +840,49 @@ body[class*="hm-svc-"] .elementor-element-25f53175::before {
     text-shadow: 0 2px 16px rgba(0, 0, 0, .6), 0 1px 3px rgba(0, 0, 0, .45);
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Homepage intro: WhatsApp button beside the red "Contact Us" button.
+   Ghost treatment (white fill, red border) so the red CTA stays the primary.
+   --------------------------------------------------------------------------- */
+.elementor-element-b42a0ea,
+.elementor-element-b42a0ea .elementor-widget-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+.elementor-element-b42a0ea a.elementor-button.hm-wa-btn {
+  background: #ffffff !important;
+  color: #c41230 !important;
+  border: 2px solid #c41230;
+  padding: 16px 38px !important;   /* 2px border keeps the 56px height of the red button */
+  border-radius: 889px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+.elementor-element-b42a0ea a.elementor-button.hm-wa-btn:hover,
+.elementor-element-b42a0ea a.elementor-button.hm-wa-btn:focus-visible {
+  background: #c41230 !important;
+  color: #ffffff !important;
+  border-color: #c41230;
+}
+.elementor-element-b42a0ea a.elementor-button.hm-wa-btn .elementor-button-icon svg,
+.elementor-element-b42a0ea a.elementor-button.hm-wa-btn .hm-wa-svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  display: block;
+}
+@media (max-width: 1279px) {
+  .elementor-element-b42a0ea a.elementor-button.hm-wa-btn {
+    padding: 14px 34px !important;
+  }
+}
+@media (max-width: 767px) {
+  .elementor-element-b42a0ea a.elementor-button.hm-wa-btn {
+    padding: 12px 28px !important;
+  }
+}
