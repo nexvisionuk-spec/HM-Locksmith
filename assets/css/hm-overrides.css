@@ -663,3 +663,26 @@ input[type="button"]:hover,
   .hm-lb-next { right: 4px; }
   .hm-lb-img { max-height: 74vh; }
 }
+
+/* ---------- Home: "Book A Service Now" bar ---------- */
+.hm-book-msg {
+  margin: 10px 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+.hm-book-msg.is-err { color: #c41230; }
+.hm-book-msg.is-ok  { color: #1c7a4a; }
+.hm-book-msg a { color: inherit; text-decoration: underline; }
+.elementor-form .hm-invalid {
+  border-color: #c41230 !important;
+  box-shadow: 0 0 0 2px rgba(196, 18, 48, .16) !important;
+}
+@media (max-width: 767px) {
+  .hm-book-msg { text-align: center; }
+}
+
+/* Elementor's own form handler prints its own red "error" line when its
+   admin-ajax post fails on the static build; we handle the submit ourselves. */
+.elementor-element-fb4226f .elementor-message,
+.elementor-form[name="New Form"] .elementor-message { display: none !important; }
