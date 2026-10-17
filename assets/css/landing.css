@@ -40,6 +40,17 @@
 .hm-landing .hm-hero p { color:rgba(255,255,255,.85); font-size:17px; line-height:1.65;
   max-width:640px; margin:0 0 26px; }
 .hm-landing .hm-hero .hm-cta-row { display:flex; flex-wrap:wrap; gap:14px; margin:0 0 30px; }
+/* every CTA row gets spacing, not just the hero one (the red band buttons
+   were butting up against each other with no gap at all) */
+.hm-landing .hm-cta-row { display:flex; flex-wrap:wrap; align-items:center; gap:14px; }
+/* form submit + "call now" pair sitting inside the enquiry forms */
+.hm-landing .hm-form-actions { display:flex; flex-wrap:wrap; align-items:center; gap:14px; margin-top:20px; }
+@media (max-width:600px){
+  .hm-landing .hm-cta-row { flex-direction:column; align-items:stretch; gap:12px; }
+  .hm-landing .hm-cta-row .hm-btn { width:100%; }
+  .hm-landing .hm-form-actions { flex-direction:column; align-items:stretch; gap:12px; }
+  .hm-landing .hm-form-actions .hm-btn { width:100%; }
+}
 .hm-landing .hm-btn { display:inline-flex; align-items:center; justify-content:center;
   font-family:var(--hm-font); font-weight:700; font-size:15px; letter-spacing:.05em; line-height:1.35;
   text-transform:uppercase; text-decoration:none; border-radius:6px; padding:16px 30px;
