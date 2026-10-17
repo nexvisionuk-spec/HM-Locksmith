@@ -749,4 +749,41 @@ body[class*="hm-svc-"] .elementor-element-25f53175::before {
   }
 }
 
+/* ---------- Home services carousel: side arrows (desktop) ---------- */
+.elementor-element-c266de1 { position: relative; }
+.hm-car-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 58px;
+  height: 58px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #c41230;
+  color: #fff;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 30;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, .22);
+  transition: background .2s ease, box-shadow .2s ease;
+}
+.hm-car-arrow svg { width: 22px; height: 22px; fill: currentColor; display: block; }
+.hm-car-arrow:hover { background: #141414; box-shadow: 0 12px 30px rgba(0, 0, 0, .3); }
+.hm-car-arrow:focus-visible { outline: 3px solid #141414; outline-offset: 3px; }
+.hm-car-prev { left: 18px; }
+.hm-car-next { right: 18px; }
 
+/* desktop only - touch devices keep swiping */
+@media (min-width: 1025px) {
+  .hm-car-arrow { display: flex; }
+  /* hide Elementor's own arrows, which sit inside the sliding wrapper */
+  .hm-car-ready .elementor-swiper-button { display: none !important; }
+}
+@media (min-width: 1025px) and (max-width: 1279px) {
+  .hm-car-arrow { width: 50px; height: 50px; }
+  .hm-car-prev { left: 14px; }
+  .hm-car-next { right: 14px; }
+}
