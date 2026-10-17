@@ -748,3 +748,21 @@ body[class*="hm-svc-"] .elementor-element-25f53175::before {
     opacity: 1 !important;
   }
 }
+
+/* ---------- Home services carousel: card photos ---------- */
+/* Two cards were added for Painting and Insurance; they reuse the Gas & Heating
+   card's geometry via its class, so only the photo needs overriding. The
+   "Home Security" card (was Inspection, Testing & Compliance) also gets a photo
+   that matches its new label. */
+.elementor-element-5e34989.hm-card-painting .trx-addons-info-box-container-bg-imitator {
+  background-image: url('/assets/img/work/gallery-22.jpg') !important;
+  background-position: center !important;
+}
+.elementor-element-5e34989.hm-card-insurance .trx-addons-info-box-container-bg-imitator {
+  background-image: url('/wp-content/uploads/2026/04/11092.jpg') !important;
+  background-position: center !important;
+}
+.elementor-element-32c95f2 .trx-addons-info-box-container-bg-imitator {
+  background-image: url('/wp-content/uploads/2026/09/2151015244.jpg') !important;
+  background-position: center !important;
+}
