@@ -4,4 +4,4 @@ Allow: /
 Disallow: /_tools/
 Disallow: /netlify/
 
-# Sitemap: https://REPLACE-WITH-DOMAIN/sitemap.xml
+# Sitemap: https://hmlocksmithandsecurity.co.uk/sitemap.xml
