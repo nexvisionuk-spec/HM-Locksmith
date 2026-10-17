@@ -6,7 +6,7 @@
           GEMINI_API_KEY = <your key from https://aistudio.google.com/apikey>
    ========================================================================== */
 
-const MODEL = "gemini-2.0-flash"; // fast + free-tier friendly
+const MODEL = "gemini-flash-latest"; // fast + free-tier friendly (2.x names are retired)
 
 const SYSTEM_PROMPT = `
 You are "Harry", the friendly virtual assistant for H&M Locksmith & Building Services Ltd,
@@ -59,14 +59,21 @@ exports.handler = async (event) => {
     const text = (m.text || "").toString().slice(0, 1500);
     if (text) contents.push({ role, parts: [{ text }] });
   });
-  // Ensure the latest user message is present as the final turn.
-  if (message) contents.push({ role: "user", parts: [{ text: message }] });
+  // Ensure the latest user message is present as the final turn (don't duplicate it).
+  if (message) {
+    const msg = message.slice(0, 1500);
+    const last = contents[contents.length - 1];
+    if (!(last && last.role === "user" && last.parts[0].text === msg)) {
+      contents.push({ role: "user", parts: [{ text: msg }] });
+    }
+  }
   if (!contents.length) return json(400, { error: "Empty" });
 
   const body = {
     systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
     contents,
-    generationConfig: { temperature: 0.6, maxOutputTokens: 256, topP: 0.9 },
+    generationConfig: { temperature: 0.6, maxOutputTokens: 400, topP: 0.9,
+                        thinkingConfig: { thinkingBudget: 0 } },
     safetySettings: [
       { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_ONLY_HIGH" },
       { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_ONLY_HIGH" },

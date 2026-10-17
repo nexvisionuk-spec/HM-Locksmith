@@ -11,3 +11,6 @@ npm-debug.log*
 
 # Netlify
 .netlify/
+_tools/.gemini_key
+.env
+*.key

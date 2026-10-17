@@ -31,12 +31,12 @@
 
   /* Guided question flow (also the fallback when AI is off/unavailable) */
   var STEPS = [
-    { key: "service", prompt: "Hi! 👋 I'm Harry, the H&M virtual assistant — we're here 24/7. What do you need help with today?", chips: SERVICES },
-    { key: "name",    prompt: "Great, I can help with that. 😊 First, what's your name?" },
-    { key: "phone",   prompt: "Thanks{name}! What's the best phone number for our team to reach you on?", validate: "phone" },
-    { key: "area",    prompt: "And what's your postcode or area in London?" },
-    { key: "urgency", prompt: "How urgent is it?", chips: ["🚨 Emergency — right now", "📅 Today / this week", "💬 Just after a quote"] },
-    { key: "details", prompt: "Anything else you'd like the team to know? (Or tap Skip.)", chips: ["Skip"], optional: true }
+    { key: "service", prompt: "Hi! 👋 I'm Harry, the H&M virtual assistant — we're here 24/7. What do you need help with today?", reask: "So, what can our team help you with today?", chips: SERVICES },
+    { key: "name",    prompt: "Great, I can help with that. 😊 First, what's your name?", reask: "What's your name?" },
+    { key: "phone",   prompt: "Thanks{name}! What's the best phone number for our team to reach you on?", reask: "What's the best phone number to reach you on?", validate: "phone" },
+    { key: "area",    prompt: "And what's your postcode or area in London?", reask: "And your postcode or area in London?" },
+    { key: "urgency", prompt: "How urgent is it?", reask: "How urgent is it?", chips: ["🚨 Emergency — right now", "📅 Today / this week", "💬 Just after a quote"] },
+    { key: "details", prompt: "Anything else you'd like the team to know? (Or tap Skip.)", reask: "Anything else the team should know? (Or tap Skip.)", chips: ["Skip"], optional: true }
   ];
 
   var state = {
@@ -226,7 +226,7 @@
     var step = STEPS[state.stepIndex];
 
     // If they ask a question instead of answering, let the AI help, then re-ask.
-    if (step && !step.chips && looksLikeQuestion(text) && CONFIG.aiEndpoint) {
+    if (step && looksLikeQuestion(text) && CONFIG.aiEndpoint) {
       answerFreeform(text, function () { reAsk(step); });
       return;
     }
@@ -248,8 +248,8 @@
   }
 
   function reAsk(step) {
-    var prompt = step.prompt.replace("{name}", state.data.name ? " " + state.data.name : "");
-    botSay("Happy to help with anything else too. 👍 Back to it — " + prompt, function () {
+    var prompt = (step.reask || step.prompt).replace("{name}", state.data.name ? " " + state.data.name : "");
+    botSay("Happy to help with anything else too. 👍 " + prompt, function () {
       if (step.chips) {
         setChips(step.chips.map(function (label) {
           return { label: label, onClick: function () { handleUser(label); } };
