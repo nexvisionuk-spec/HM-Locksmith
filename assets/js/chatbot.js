@@ -135,15 +135,9 @@
     try { sessionStorage.setItem("hmchat_teaser", "1"); } catch (e) {}
   }
   function maybeShowTeaser() {
-    try { if (sessionStorage.getItem("hmchat_teaser")) return; } catch (e) {}
-    setTimeout(function () {
-      if (state.open || !el.teaser) return;
-      // Don't auto-pop the greeting bubble on small screens — it overlaps page content.
-      if (window.matchMedia && window.matchMedia("(max-width: 768px)").matches) return;
-      el.teaser.hidden = false;
-      void el.teaser.offsetWidth; // reflow so the transition runs
-      el.teaser.classList.add("in");
-    }, 9000);
+    // Proactive greeting bubble disabled — the user wants only the chat launcher
+    // button visible (no extra bubble/shadow above it).
+    return;
   }
 
   /* ------------------------------------------------------------- render */
