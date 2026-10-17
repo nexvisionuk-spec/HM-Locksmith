@@ -886,3 +886,16 @@ body[class*="hm-svc-"] .elementor-element-25f53175::before {
     padding: 12px 28px !important;
   }
 }
+
+/* Footer contact lines are now clickable tel:/mailto: links — keep them looking
+   like the rest of the footer copy instead of the theme's red link colour. */
+footer .elementor-widget-text-editor p a {
+  color: inherit !important;
+  text-decoration: none;
+  transition: color .18s ease;
+}
+footer .elementor-widget-text-editor p a:hover,
+footer .elementor-widget-text-editor p a:focus-visible {
+  color: #ff8a99 !important;   /* light red reads better than brand red on black */
+  text-decoration: underline;
+}
