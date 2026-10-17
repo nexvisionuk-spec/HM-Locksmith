@@ -684,5 +684,4 @@ input[type="button"]:hover,
 
 /* Elementor's own form handler prints its own red "error" line when its
    admin-ajax post fails on the static build; we handle the submit ourselves. */
-.elementor-element-fb4226f .elementor-message,
-.elementor-form[name="New Form"] .elementor-message { display: none !important; }
+.elementor-element-fb4226f .elementor-message { display: none !important; }
