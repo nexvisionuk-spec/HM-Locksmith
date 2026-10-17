@@ -994,3 +994,16 @@ a.trx_addons_scroll_to_top,
 .trx_addons_scroll_to_top {
   display: none !important;
 }
+
+/* ---------------------------------------------------------------------------
+   Netlify "Powered by Netlify" badge
+   Netlify injects an iframe (#nl-badge-frame) at bottom-right with
+   z-index 2147483645, which paints a dark bar over the chat launcher.
+   Nothing can out-stack that, so remove it from the page.
+--------------------------------------------------------------------------- */
+#nl-badge-frame,
+iframe[title="Powered by Netlify"] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
