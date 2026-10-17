@@ -1058,3 +1058,64 @@ iframe[title="Powered by Netlify"] {
   overflow-wrap: break-word;
   max-width: 100%;
 }
+
+/* ---------------------------------------------------------------------------
+   Mobile stat cards (the 2x2 "1,000+ / 17 / 500+ / 4.9" block).
+   Elementor sets --e-con-grid-template-rows: repeat(2, 1fr) on the grid and the
+   grid stretches to its flex parent, so below 768px each card ballooned to a
+   ~550px column with the number floating over the background. Pin the rows and
+   position the counter widget to the card box so it cannot overflow.
+--------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  .e-grid:has(.trx-addons-counter),
+  .elementor-element-39bc871,
+  .elementor-element-867250a {
+    grid-template-rows: repeat(2, 152px) !important;
+    grid-auto-rows: 152px !important;
+    align-content: start !important;
+    align-self: start !important;
+    height: auto !important;
+    min-height: 0 !important;
+    --min-height: 0 !important;
+  }
+  .e-grid:has(.trx-addons-counter) > .e-con,
+  .elementor-element-39bc871 > .e-con,
+  .elementor-element-867250a > .e-con {
+    position: relative !important;
+    overflow: hidden !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    padding: 0 !important;
+    justify-content: center !important;
+  }
+  /* The counter widget reports a stale ~375px height, so it overflowed the
+     card. Pin it to the card box and centre its content instead. */
+  .e-grid:has(.trx-addons-counter) > .e-con > .elementor-widget,
+  .elementor-element-39bc871 > .e-con > .elementor-widget,
+  .elementor-element-867250a > .e-con > .elementor-widget {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    height: auto !important;
+    width: auto !important;
+    padding: 14px 16px !important;
+    box-sizing: border-box !important;
+  }
+  .e-grid:has(.trx-addons-counter) > .e-con > .elementor-widget > .elementor-widget-container,
+  .elementor-element-39bc871 > .e-con > .elementor-widget > .elementor-widget-container,
+  .elementor-element-867250a > .e-con > .elementor-widget > .elementor-widget-container {
+    width: 100% !important;
+  }
+  .e-grid:has(.trx-addons-counter) .trx-addons-counter-title,
+  .elementor-element-39bc871 .trx-addons-counter-title,
+  .elementor-element-867250a .trx-addons-counter-title {
+    font-size: 15px !important;
+    line-height: 1.3 !important;
+  }
+}
