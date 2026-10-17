@@ -84,7 +84,7 @@
 .hm-landing .hm-band .hm-btn--ghost { border-color:#fff; }
 
 /* ---------- steps ---------- */
-.hm-landing .hm-steps { counter-reset:hm; display:grid; gap:24px; grid-template-columns:repeat(3,1fr); }
+.hm-landing .hm-steps { counter-reset:hm; display:grid; gap:24px; grid-template-columns:repeat(3,1fr); margin-top:48px; }
 @media (max-width:900px){ .hm-landing .hm-steps { grid-template-columns:1fr; } }
 .hm-landing .hm-step { position:relative; background:#fff; border:1px solid var(--hm-line);
   border-radius:10px; padding:30px 26px 26px; }
