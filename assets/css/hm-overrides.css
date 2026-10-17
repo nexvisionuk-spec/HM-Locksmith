@@ -916,3 +916,54 @@ div[id].elementor-element {
     scroll-margin-top: 100px;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Trade pages share one intro-column photo (the door + keys shot) because the
+   template CSS in post-8340.css is shared by all of them. Give every service a
+   relevant image instead. Each file is pre-framed at the column's aspect ratio
+   with the whole photo visible, so nothing is cropped.
+   --------------------------------------------------------------------------- */
+body.hm-svc-gas .elementor-element-e616330,
+body.hm-svc-gas .elementor-element-e616330 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+  background-image: url("/wp-content/uploads/2026/10/svc-gas-heating.webp") !important;
+}
+body.hm-svc-plumbing .elementor-element-e616330,
+body.hm-svc-plumbing .elementor-element-e616330 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+  background-image: url("/wp-content/uploads/2026/10/svc-plumbing.webp") !important;
+}
+body.hm-svc-electrical .elementor-element-e616330,
+body.hm-svc-electrical .elementor-element-e616330 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+  background-image: url("/wp-content/uploads/2026/10/svc-electrical.webp") !important;
+}
+body.hm-svc-locksmith .elementor-element-e616330,
+body.hm-svc-locksmith .elementor-element-e616330 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+  background-image: url("/wp-content/uploads/2026/10/svc-locksmith.webp") !important;
+}
+body.hm-svc-home-security .elementor-element-e616330,
+body.hm-svc-home-security .elementor-element-e616330 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+  background-image: url("/wp-content/uploads/2026/10/svc-home-security.webp") !important;
+}
+body.hm-svc-cctv .elementor-element-e616330,
+body.hm-svc-cctv .elementor-element-e616330 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+  background-image: url("/wp-content/uploads/2026/10/svc-cctv.webp") !important;
+}
+body.hm-svc-painting .elementor-element-e616330,
+body.hm-svc-painting .elementor-element-e616330 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+  background-image: url("/wp-content/uploads/2026/10/svc-painting.webp") !important;
+}
+body.hm-svc-refurb .elementor-element-e616330,
+body.hm-svc-refurb .elementor-element-e616330 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+  background-image: url("/wp-content/uploads/2026/10/svc-refurbishment.webp") !important;
+}
+body.hm-svc-building .elementor-element-e616330,
+body.hm-svc-building .elementor-element-e616330 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+  background-image: url("/wp-content/uploads/2026/10/svc-building.webp") !important;
+}
+body.hm-svc-insurance .elementor-element-e616330,
+body.hm-svc-insurance .elementor-element-e616330 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+  background-image: url("/wp-content/uploads/2026/10/svc-insurance.webp") !important;
+}
+body.hm-svc-technical .elementor-element-e616330,
+body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+  background-image: url("/wp-content/uploads/2026/10/svc-technical.webp") !important;
+}
