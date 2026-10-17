@@ -328,6 +328,14 @@ input[type="button"]:hover,
     align-items: center !important;
     justify-content: center !important;
   }
+  /* the widget wrapper is stretched to the full bar height, which pinned the
+     icon to the top edge; centre it both ways */
+  .top_panel .elementor-element-32a5cc45 .elementor-widget-container {
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
   .top_panel .elementor-element-32a5cc45 .trx-addons-hamburger-toggle {
     color: #141414 !important;
     width: 26px !important;
