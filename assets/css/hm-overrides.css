@@ -787,3 +787,56 @@ body[class*="hm-svc-"] .elementor-element-25f53175::before {
   .hm-car-prev { left: 14px; }
   .hm-car-next { right: 14px; }
 }
+
+/* ---------------------------------------------------------------------------
+   Homepage hero, 601–767px: Elementor switches the section to the mobile
+   photo background at 767px but only lightens the heading text at 600px, so
+   for 167px of width the headline sat dark on top of the photo. Match the
+   phone treatment (white type) across the whole photo range.
+   --------------------------------------------------------------------------- */
+@media (min-width: 601px) and (max-width: 767px) {
+  .elementor-element-78cf0e9 .elementor-heading-title,
+  .elementor-element-78cf0e9 .elementor-heading-title a,
+  .elementor-element-78cf0e9 h1,
+  .elementor-element-78cf0e9 h2,
+  .elementor-element-78cf0e9 h3 {
+    color: #ffffff !important;
+  }
+  /* keep the small "Happy clients" label readable too */
+  .elementor-element-78cf0e9 .elementor-heading-title span {
+    color: #ffffff !important;
+  }
+}
+
+/* Same band: the photo is bright behind the van, so a light scrim keeps the
+   white headline and the "Happy clients" label crisp. Desktop is untouched. */
+@media (min-width: 601px) and (max-width: 767px) {
+  .elementor-element-78cf0e9 { position: relative; }
+  .elementor-element-78cf0e9::before {
+    content: "" !important;
+    position: absolute;
+    inset: 0;
+    opacity: 1 !important;
+    background: linear-gradient(90deg,
+      rgba(0, 0, 0, .60) 0%,
+      rgba(0, 0, 0, .55) 38%,
+      rgba(0, 0, 0, .42) 62%,
+      rgba(0, 0, 0, .26) 82%,
+      rgba(0, 0, 0, .08) 100%) !important;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .elementor-element-78cf0e9 > .e-con-inner,
+  .elementor-element-78cf0e9 > .elementor-container {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+/* Belt and braces for that band: a soft shadow keeps white type legible even
+   where the van's bright panel sits directly behind the headline. */
+@media (min-width: 601px) and (max-width: 767px) {
+  .elementor-element-78cf0e9 .elementor-heading-title {
+    text-shadow: 0 2px 16px rgba(0, 0, 0, .6), 0 1px 3px rgba(0, 0, 0, .45);
+  }
+}
