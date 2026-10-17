@@ -899,3 +899,20 @@ footer .elementor-widget-text-editor p a:focus-visible {
   color: #ff8a99 !important;   /* light red reads better than brand red on black */
   text-decoration: underline;
 }
+
+/* In-page anchors (#services, #quote, #contact) were landing underneath the
+   sticky header, hiding the section heading. */
+#services,
+#quote,
+#contact,
+section[id],
+div[id].elementor-element {
+  scroll-margin-top: 124px;
+}
+@media (max-width: 767px) {
+  #services,
+  #quote,
+  #contact {
+    scroll-margin-top: 100px;
+  }
+}
