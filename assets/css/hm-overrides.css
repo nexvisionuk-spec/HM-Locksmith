@@ -1007,3 +1007,54 @@ iframe[title="Powered by Netlify"] {
   visibility: hidden !important;
   pointer-events: none !important;
 }
+
+/* ---------------------------------------------------------------------------
+   Services CTA — button directly under the homepage services carousel
+--------------------------------------------------------------------------- */
+.hm-services-cta {
+  display: flex;
+  justify-content: center;
+  flex: 1 1 100%;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 20px 64px;
+  box-sizing: border-box;
+}
+.hm-services-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #1a1a1a;
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 18px 36px;
+  border-radius: 889px;
+  text-decoration: none;
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+.hm-services-cta-btn svg { width: 17px; height: 17px; flex: none; }
+.hm-services-cta-btn:hover,
+.hm-services-cta-btn:focus {
+  background: #c41230;
+  color: #fff !important;
+  transform: translateY(-2px);
+}
+@media (max-width: 600px) {
+  .hm-services-cta { padding: 0 16px 44px; }
+  .hm-services-cta-btn { padding: 16px 26px; font-size: 0.94rem; }
+}
+
+/* ---------------------------------------------------------------------------
+   Stat counter labels: the theme forces white-space:nowrap, so a long label
+   ("Rating across all platform") spills out of its card and over the next
+   column. Let them wrap inside their card instead.
+--------------------------------------------------------------------------- */
+.trx-addons-counter-title {
+  white-space: normal !important;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
