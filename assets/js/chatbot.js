@@ -31,7 +31,7 @@
 
   /* Guided question flow (also the fallback when AI is off/unavailable) */
   var STEPS = [
-    { key: "service", prompt: "Hi! 👋 I'm Harry, the H&M virtual assistant — we're here 24/7. What do you need help with today?", reask: "So, what can our team help you with today?", chips: SERVICES },
+    { key: "service", prompt: "Hi! 👋 I'm Harry, the H&M virtual assistant — we're here 24/7. What do you need help with today?", reask: "So, what can our team help you with today?" },
     { key: "name",    prompt: "Great, I can help with that. 😊 First, what's your name?", reask: "What's your name?" },
     { key: "phone",   prompt: "Thanks{name}! What's the best phone number for our team to reach you on?", reask: "What's the best phone number to reach you on?", validate: "phone" },
     { key: "area",    prompt: "And what's your postcode or area in London?", reask: "And your postcode or area in London?" },

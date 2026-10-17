@@ -984,3 +984,13 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
     border-radius: 10px;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   1. Hide the theme's scroll-to-top button — it overlaps the chat launcher
+      and its dark background (#2E2828) shows as a "black line" beside it.
+   2. Remove the input-area top border inside the chat panel (clean look).
+   --------------------------------------------------------------------------- */
+a.trx_addons_scroll_to_top,
+.trx_addons_scroll_to_top {
+  display: none !important;
+}

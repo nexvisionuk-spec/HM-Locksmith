@@ -64,7 +64,7 @@
 .hmchat-chip.call:hover { background: var(--red-600, #cc2f3c); }
 
 /* Input */
-.hmchat-input { border-top: 1px solid #e6e6e6; background: #fff; padding: 12px; display: flex; gap: 8px; align-items: center; }
+.hmchat-input { border-top: none; background: #fff; padding: 12px; display: flex; gap: 8px; align-items: center; }
 .hmchat-input input { flex: 1; border: 1.5px solid #e6e6e6; border-radius: 999px; padding: 11px 16px; font: inherit; font-size: .95rem; outline: 0; }
 .hmchat-input input:focus { border-color: var(--gold-400, #c62f39); box-shadow: 0 0 0 3px rgba(242,177,52,.18); }
 .hmchat-input button { flex: none; width: 42px; height: 42px; border-radius: 50%; border: 0; padding: 0; background: var(--gold-400, #c62f39); color: var(--navy-900, #141414); cursor: pointer; display: grid; place-items: center; }
