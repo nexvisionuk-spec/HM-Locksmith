@@ -10,9 +10,27 @@
 .hm-landing .hm-wrap { max-width:1200px; margin:0 auto; padding-left:20px; padding-right:20px; }
 
 /* ---------- hero ---------- */
-.hm-landing .hm-hero { position:relative; color:#fff; background:#141414;
-  background:linear-gradient(120deg,rgba(20,20,20,.92),rgba(20,20,20,.55)),
-             radial-gradient(1200px 600px at 80% -10%,#3a2a2a 0%,#141414 60%); overflow:hidden; }
+.hm-landing .hm-hero { position:relative; color:#fff; background:#141414; overflow:hidden; isolation:isolate; }
+/* Shop-front photo behind the copy. Blurred + darkened so the shop's own
+   signage and price boards never compete with the headline. */
+.hm-landing .hm-hero:before {
+  content:""; position:absolute; inset:-8px; z-index:0;
+  background:url('/assets/img/hero-hm-shop.jpg') 58% 38% / cover no-repeat;
+  filter:blur(2.5px) brightness(.70) saturate(.95);
+  transform:scale(1.03);
+}
+.hm-landing .hm-hero:after {
+  content:""; position:absolute; inset:0; z-index:0;
+  background:linear-gradient(100deg,rgba(10,10,10,.82) 0%,rgba(10,10,10,.72) 46%,rgba(10,10,10,.52) 82%,rgba(10,10,10,.44) 100%);
+}
+.hm-landing .hm-hero > * { position:relative; z-index:1; }
+/* narrow screens crop the photo so the bright shop sign lands under the copy -
+   use a more even, darker wash there */
+@media (max-width: 767px) {
+  .hm-landing .hm-hero:after {
+    background:linear-gradient(180deg,rgba(10,10,10,.88) 0%,rgba(10,10,10,.84) 55%,rgba(10,10,10,.80) 100%);
+  }
+}
 .hm-landing .hm-hero .hm-badge { display:inline-flex; align-items:center; gap:6px;
   font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#fff;
   background:rgba(196,18,48,.92); padding:7px 14px; border-radius:999px; margin-bottom:22px; }
