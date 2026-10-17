@@ -16,7 +16,7 @@
 .hm-landing .hm-hero .hm-badge { display:inline-flex; align-items:center; gap:6px;
   font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#fff;
   background:rgba(196,18,48,.92); padding:7px 14px; border-radius:999px; margin-bottom:22px; }
-.hm-landing .hm-hero h1 { font-family:var(--hm-font); font-size:clamp(32px,5.4vw,58px);
+.hm-landing .hm-hero h1 { color:#fff; font-family:var(--hm-font); font-size:clamp(32px,5.4vw,58px);
   line-height:1.02; font-weight:700; letter-spacing:-.02em; margin:0 0 16px; }
 .hm-landing .hm-hero .hm-subtitle { font-size:clamp(16px,2vw,21px); font-weight:600; color:#ffe3e3; margin:0 0 14px; }
 .hm-landing .hm-hero p { color:rgba(255,255,255,.85); font-size:17px; line-height:1.65;

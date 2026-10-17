@@ -243,116 +243,150 @@ input[type="button"]:hover,
   color: #C41230 !important;
 }
 
-/* ---------- 3. Header: tablet / small-laptop (768px - 1366px) ----------
-   Below the desktop breakpoint the theme hid the desktop logo + menu but kept
-   the desktop stacking, leaving a tiny logo and a two-row, over-tall bar.
-   Lay it out as one row: logo left, phone + hamburger right.            */
+/* ---------- 3. Header: tablet (768px - 1366px) ----------
+   Desktop-style bar: white strip, big circular logo hanging below the edge and
+   the red 24/7 phone panel flush to the right edge. The inline menu can't fit
+   at these widths (8 items need ~820px on their own), so the burger replaces
+   it and opens the same full menu.                                        */
 
-/* 3a. Extend the clean mobile-style header up to 1366px (large-tablet /
-   small-laptop range): user wants logo + phone pill + burger across tablet
-   sizes, instead of the full desktop top strip + nav row that Elementor
-   switches on at >=1280px. */
-@media (min-width: 1280px) and (max-width: 1366px) {
-  /* hide the desktop top strip + main desktop row (nav + emergency pill) */
+@media (min-width: 768px) and (max-width: 1366px) {
+
+  /* keep the desktop strip + desktop row out of the way, use the compact row */
   .top_panel .elementor-element-01dd775,
   .top_panel .elementor-element-1445ceab { display: none !important; }
-  /* force the mobile header row to show at these widths */
+
+  .top_panel { background: #fff !important; position: relative; z-index: 40; }
+
   .top_panel .elementor-element-481bca {
     display: flex !important;
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
+    padding: 0 !important;
+    background: #fff !important;
+    min-height: 76px !important;
+    align-items: stretch !important;
   }
-  /* same single-row layout as the smaller tablet rule below */
+
   .top_panel .elementor-element-1f85929 {
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     justify-content: space-between !important;
-    align-items: center !important;
+    align-items: stretch !important;
     width: 100% !important;
+    min-height: 76px !important;
+    background: #fff !important;
+    padding: 0 0 0 30px !important;
+    gap: 0 !important;
+    position: relative !important;
+    box-shadow: 0 1px 0 rgba(0,0,0,.07);
   }
-  .top_panel .elementor-element-525999b0,
+
+  /* ---- logo: 96px circle, hanging 28px below the bar like desktop ---- */
+  .top_panel .elementor-element-525999b0 {
+    width: 96px !important;
+    flex: 0 0 96px !important;
+    height: 76px !important;
+    position: relative !important;
+    display: block !important;
+  }
+  .top_panel .elementor-element-c717ae7,
+  .top_panel .elementor-element-c717ae7 .elementor-widget-container { position: static !important; }
+  .top_panel .elementor-element-c717ae7 a {
+    display: block !important;
+    width: 96px !important;
+    height: 96px !important;
+  }
+  .top_panel .elementor-element-c717ae7 img,
+  .top_panel .elementor-element-c717ae7 .logo_image {
+    position: absolute !important;
+    top: 8px !important;
+    left: 0 !important;
+    width: 96px !important;
+    height: 96px !important;
+    max-width: none !important;
+    max-height: none !important;
+    border-radius: 50% !important;
+    z-index: 6;
+  }
+
+  /* ---- right hand group ---- */
   .top_panel .elementor-element-7d032b8b {
     width: auto !important;
     flex: 0 0 auto !important;
     max-width: none !important;
-  }
-  .top_panel .elementor-element-7d032b8b {
+    display: flex !important;
+    align-items: stretch !important;
     justify-content: flex-end !important;
+    gap: 0 !important;
+    height: 76px !important;
+  }
+
+  /* burger sits left of the red panel */
+  .top_panel .elementor-element-32a5cc45 {
+    order: -1 !important;
+    width: 64px !important;
+    height: 76px !important;
+    display: flex !important;
     align-items: center !important;
-    gap: 18px !important;
+    justify-content: center !important;
   }
-  .top_panel .elementor-element-c717ae7 a {
-    width: auto !important;
-    height: auto !important;
-    display: inline-block !important;
+  .top_panel .elementor-element-32a5cc45 .trx-addons-hamburger-toggle {
+    color: #141414 !important;
+    width: 26px !important;
+    height: 26px !important;
   }
-  .top_panel .elementor-element-c717ae7 img,
-  .top_panel .elementor-element-c717ae7 .logo_image {
-    width: auto !important;
-    height: auto !important;
-    max-width: none !important;
-    max-height: 46px !important;
+  .top_panel .elementor-element-32a5cc45 svg {
+    width: 26px !important;
+    height: 26px !important;
+    fill: #141414 !important;
+    color: #141414 !important;
   }
+
+  /* red 24/7 panel, flush to the right edge, full bar height */
+  .top_panel .elementor-element-3319298f { height: 76px !important; display: flex !important; background: #c41230 !important; }
+  .top_panel .elementor-element-3319298f .elementor-widget-container {
+    background: #c41230 !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 0 26px 0 22px !important;
+  }
+  .top_panel .elementor-element-3319298f .trx-addons-list-container,
+  .top_panel .elementor-element-3319298f .trx-addons-list-items,
+  .top_panel .elementor-element-3319298f li,
+  .top_panel .elementor-element-3319298f a {
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  .top_panel .elementor-element-3319298f a { gap: 12px !important; }
+  .top_panel .elementor-element-3319298f svg {
+    width: 28px !important;
+    height: 28px !important;
+    fill: #fff !important;
+    color: #fff !important;
+  }
+  .top_panel .elementor-element-3319298f h6 {
+    color: #fff !important;
+    font-size: 19px !important;
+    font-weight: 700 !important;
+    line-height: 1.1 !important;
+    letter-spacing: .01em !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+  }
+  .top_panel .elementor-element-3319298f h6::before {
+    content: "24/7 Emergency";
+    display: block !important;
+    font-size: 10.5px !important;
+    font-weight: 600 !important;
+    letter-spacing: .09em !important;
+    text-transform: uppercase !important;
+    color: rgba(255,255,255,.85) !important;
+    margin-bottom: 2px !important;
+  }
+
   .top_panel,
   .top_panel .elementor-4911 { min-height: 0 !important; }
-}
-
-@media (min-width: 768px) and (max-width: 1279px) {
-
-  .top_panel .elementor-element-481bca {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-    padding-left: 18px !important;
-    padding-right: 18px !important;
-  }
-
-  /* the header row: stack -> single row */
-  .top_panel .elementor-element-1f85929 {
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    width: 100% !important;
-  }
-
-  /* let both sides hug their content instead of holding 60% / 40% */
-  .top_panel .elementor-element-525999b0,
-  .top_panel .elementor-element-7d032b8b {
-    width: auto !important;
-    flex: 0 0 auto !important;
-    max-width: none !important;
-  }
-
-  /* phone + hamburger stay pinned to the right */
-  .top_panel .elementor-element-7d032b8b {
-    justify-content: flex-end !important;
-    align-items: center !important;
-    gap: 18px !important;
-  }
-
-  /* the mobile logo: the theme only caps max-height (26px) and lets the width
-     flow. Forcing a width squashed the square logo into 130x26 - so set the
-     height instead and let the width stay automatic. */
-  .top_panel .elementor-element-c717ae7 a {
-    width: auto !important;
-    height: auto !important;
-    display: inline-block !important;
-  }
-  .top_panel .elementor-element-c717ae7 img,
-  .top_panel .elementor-element-c717ae7 .logo_image {
-    width: auto !important;
-    height: auto !important;
-    max-width: none !important;
-    max-height: 46px !important;
-  }
-
-  /* header must not grow taller than its content */
-  .top_panel,
-  .top_panel .elementor-4911 {
-    min-height: 0 !important;
-  }
 }
 
 /* ---------- 5. Real customer testimonials (replaces empty widget) ---------- */
