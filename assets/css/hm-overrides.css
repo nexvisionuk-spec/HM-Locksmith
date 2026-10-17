@@ -570,3 +570,15 @@ input[type="button"]:hover,
   background-position: center center !important;
   background-color: #141414;
 }
+
+/* ---------- Our Work: giant "H&M Group" sign-off text ---------- */
+/* Was font-size:24.5vw + nowrap, so it overflowed the page and clipped mid-word.
+   Sized to fit the container on one line at every width. */
+.elementor-4993 .elementor-element.elementor-element-2706ac39 {
+  margin: 0 !important;          /* drop the -4vw / -7vw negative margins that let the footer cut the letters */
+}
+.elementor-4993 .elementor-element.elementor-element-2706ac39 .elementor-heading-title {
+  font-size: 17vw !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.03em;
+}
