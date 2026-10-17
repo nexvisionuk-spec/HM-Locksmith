@@ -558,4 +558,15 @@ input[type="button"]:hover,
   break-inside: avoid; -webkit-column-break-inside: avoid;
 }
 
-
+/* ---------- Homepage "We deliver" image column: show the WHOLE photo ---------- */
+/* The container was a 50%-wide box with background-size:cover, so the portrait
+   photo was cropped/zoomed. Match the box to the photo's 3:4 ratio and contain
+   the image, so the full frame is visible at every breakpoint. */
+.elementor-5286 .elementor-element.elementor-element-720d961b {
+  aspect-ratio: 3 / 4 !important;
+  min-height: 0 !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-color: #141414;
+}
