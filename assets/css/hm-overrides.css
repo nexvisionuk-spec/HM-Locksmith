@@ -1282,3 +1282,8 @@ a.elementor-button:hover,
 .trx-addons-advanced-title .sc_item_animated_block {
   color: inherit !important;
 }
+
+/* ---------- 12. Homepage: remove the DUPLICATE emergency CTA ----------
+   The "Need Urgent Assistance? … Call Now" black panel appeared twice. Keep the
+   first instance (elementor-element-e8b5968); hide the second (688b4cf). */
+.elementor-element-688b4cf { display: none !important; }
