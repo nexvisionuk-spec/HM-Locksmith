@@ -1292,3 +1292,12 @@ a.elementor-button:hover,
    With the van photo column gone, the intro kept the tall bottom padding that
    used to balance it, leaving a big empty band before the next section. */
 .elementor-element-098eb05 > .e-con-inner { padding-bottom: 8px !important; }
+
+/* ---------- 14. Service cards: show the WHOLE photo (no crop) ----------
+   One card used a portrait photo forced into the landscape box with
+   object-fit:cover, so it looked zoomed/cropped. Contain shows each photo in
+   full; 3:2 photos still fill the box, the portrait one simply sits inside it. */
+.elementor-element-ed08da9 .trx-addons-info-box-icon-wrap img {
+  object-fit: contain !important;
+  background: #f2f2f2;
+}
