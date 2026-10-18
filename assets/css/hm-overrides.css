@@ -1266,3 +1266,8 @@ a.elementor-button:hover,
 @media (prefers-reduced-motion: reduce) {
   .hm-reveal { opacity: 1 !important; transform: none !important; }
 }
+
+/* ---------- 10. Homepage intro: remove the night van-logo photo ----------
+   The image column sat under the "One Trusted Team" heading + CTAs; hiding the
+   whole column lets the sections below rise up to fill the space. */
+.elementor-element-7750283 { display: none !important; }
