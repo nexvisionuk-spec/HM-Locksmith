@@ -1271,3 +1271,14 @@ a.elementor-button:hover,
    The image column sat under the "One Trusted Team" heading + CTAs; hiding the
    whole column lets the sections below rise up to fill the space. */
 .elementor-element-7750283 { display: none !important; }
+
+/* ---------- 11. One colour per heading: drop the grey two-tone accent ----------
+   Split headings (e.g. "One Trusted Team FOR A WIDE RANGE OF Property…") coloured
+   the middle words warm grey (#AFACA2). Make every word inherit the heading's own
+   colour instead, so each heading reads as a single colour. Headings on dark
+   sections stay white; headings on light sections stay dark. */
+.trx-addons-advanced-title-item,
+.trx-addons-advanced-title-item *,
+.trx-addons-advanced-title .sc_item_animated_block {
+  color: inherit !important;
+}
