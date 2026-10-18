@@ -1287,3 +1287,8 @@ a.elementor-button:hover,
    The "Need Urgent Assistance? … Call Now" black panel appeared twice. Keep the
    first instance (elementor-element-e8b5968); hide the second (688b4cf). */
 .elementor-element-688b4cf { display: none !important; }
+
+/* ---------- 13. Homepage intro: close the gap left by the removed image ----
+   With the van photo column gone, the intro kept the tall bottom padding that
+   used to balance it, leaving a big empty band before the next section. */
+.elementor-element-098eb05 > .e-con-inner { padding-bottom: 8px !important; }
