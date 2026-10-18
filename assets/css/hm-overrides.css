@@ -1144,3 +1144,125 @@ body.page-id-90102 :is(h1,h2,h3,h4,h5,h6,p,li,a,span,div,strong,em,b,blockquote,
 .hm-landing :is(h1,h2,h3,h4,h5,h6,p,li,a,span,div,strong,em,b,blockquote,label,figcaption,button,td,th,dt,dd,summary,input,select,textarea):not(i):not(.eicon):not([class^="eicon-"]):not([class*="trx_addons_icon"]) {
   font-family: 'Hanken Grotesk', Arial, sans-serif !important;
 }
+
+/* ==========================================================================
+   POLISH REFRESH  (2026)
+   6) Typography — one premium family site-wide (Hanken Grotesk is the only
+      brand face actually loaded; DM Sans/Inter/Manrope never download, so body
+      copy was falling back to the system font). Unify + tune the scale.
+   7) Buttons — stop the two CTAs cramming side-by-side on phones; add life.
+   8) Hover micro-interactions.
+   9) Scroll-reveal motion (paired with /assets/js/hm-motion.js).
+   ========================================================================== */
+
+/* ---------- 6. Typography: unify to Hanken Grotesk on EVERY page ---------- */
+:root {
+  --e-global-typography-primary-font-family: "Hanken Grotesk";
+  --e-global-typography-secondary-font-family: "Hanken Grotesk";
+  --e-global-typography-text-font-family: "Hanken Grotesk";
+  --e-global-typography-accent-font-family: "Hanken Grotesk";
+}
+body,
+body :is(h1,h2,h3,h4,h5,h6,p,li,a,span,div,strong,em,b,blockquote,label,figcaption,button,td,th,dt,dd,summary,input,select,textarea,.elementor-button):not(i):not(.eicon):not([class^="eicon-"]):not([class*="trx_addons_icon"]):not([class*="icon-"]) {
+  font-family: 'Hanken Grotesk', Arial, sans-serif !important;
+}
+/* tighten the display type so headlines read premium, not loose */
+body h1, body h2,
+body .elementor-heading-title {
+  letter-spacing: -0.02em;
+}
+body h1 { line-height: 1.07; font-weight: 800; }
+body h2 { line-height: 1.12; font-weight: 800; }
+body h3 { line-height: 1.2;  font-weight: 700; letter-spacing: -0.01em; }
+/* body copy: a touch more leading for comfortable reading */
+body p, body li { line-height: 1.65; }
+/* kill sub-pixel jitter on the big grotesk */
+body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+
+/* ---------- 7. Buttons: comfortable, lively, and never cramped ---------- */
+/* a. base feel — bigger tap target, consistent weight, smooth motion */
+.elementor-button,
+a.elementor-button,
+.wp-block-button__link,
+.trx_addons_button,
+.sc_button {
+  min-height: 48px;
+  font-weight: 700 !important;
+  letter-spacing: .02em;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease,
+              transform .2s ease, box-shadow .2s ease !important;
+}
+.elementor-button:hover,
+a.elementor-button:hover,
+.wp-block-button__link:hover,
+.trx_addons_button:hover,
+.sc_button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(196, 18, 48, .22);
+}
+
+/* b. THE FIX — homepage hero "Contact Us" + "WhatsApp" pair.
+   They were sharing one row on phones, so each pill was pinched narrow.
+   Stack them full-width below 600px; keep the comfortable row above it. */
+.elementor-element-b42a0ea .elementor-widget-container,
+.elementor-element-b42a0ea {
+  gap: 16px;
+}
+@media (max-width: 600px) {
+  .elementor-element-b42a0ea,
+  .elementor-element-b42a0ea .elementor-widget-container {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .elementor-element-b42a0ea a.elementor-button,
+  .elementor-element-b42a0ea a.elementor-button.hm-wa-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    min-height: 54px;
+    padding: 15px 24px !important;
+    font-size: 1rem !important;
+  }
+}
+
+/* c. review CTAs: full-width + stacked on phones so they match */
+@media (max-width: 600px) {
+  .hm-reviews-cta { flex-direction: column; align-items: stretch; }
+  .hm-reviews-cta a { width: 100%; justify-content: center; }
+}
+
+/* ---------- 8. Hover micro-interactions ---------- */
+/* work gallery photos: gentle zoom (lightbox cursor already set) */
+.hm-work-grid img { transition: transform .4s cubic-bezier(.22,.61,.36,1), box-shadow .4s ease; }
+.hm-work-grid img:hover { transform: scale(1.025); box-shadow: 0 18px 40px rgba(20,20,20,.16); }
+/* project cards ("Bathroom Fittings", "Home Refurbishment") lift as a group */
+.hm-work-group img { backface-visibility: hidden; }
+/* client / accreditation logos: settle to full colour on hover */
+.elementor-widget-image img { transition: transform .35s ease, filter .35s ease; }
+/* testimonial arrows already styled; add a nudge */
+.hm-t-arrow:hover { transform: scale(1.06); }
+/* services carousel cards: lift the whole slide on hover (desktop) */
+@media (min-width: 1025px) {
+  .elementor-element-c266de1 .swiper-slide { transition: transform .35s cubic-bezier(.22,.61,.36,1); }
+  .elementor-element-c266de1 .swiper-slide:hover { transform: translateY(-6px); }
+}
+
+/* ---------- 9. Scroll-reveal motion (JS adds .hm-reveal / .hm-in) ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .hm-reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    will-change: opacity, transform;
+  }
+  .hm-reveal.hm-zoom { transform: translateY(26px) scale(.975); }
+  .hm-reveal.hm-in {
+    opacity: 1;
+    transform: none;
+    transition: opacity .7s cubic-bezier(.22,.61,.36,1),
+                transform .8s cubic-bezier(.22,.61,.36,1);
+  }
+}
+/* failsafe: anyone who prefers reduced motion (or if JS never clears it) sees
+   everything, immediately */
+@media (prefers-reduced-motion: reduce) {
+  .hm-reveal { opacity: 1 !important; transform: none !important; }
+}
