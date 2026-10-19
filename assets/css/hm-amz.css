@@ -22,3 +22,44 @@
   .hm-usp-bar { font-size: 11.5px; gap: 8px 16px; padding: 8px 12px; }
   .hm-usp-bar .hm-usp-sm-hide { display: none; }
 }
+
+/* ---------- 2. Hero: call-now card + reviews card ---------- */
+.hm-hero-cards {
+  display: flex; flex-wrap: wrap; gap: 14px; margin-top: 26px; max-width: 540px;
+}
+.hm-hero-cards .hm-hc {
+  flex: 1 1 230px; min-width: 0;
+  display: flex; align-items: center; gap: 13px;
+  padding: 14px 16px; border-radius: 14px; text-decoration: none;
+  font-family: 'Hanken Grotesk', Arial, sans-serif;
+}
+.hm-hc-call { background: #c41230; color: #fff; box-shadow: 0 12px 30px rgba(196,18,48,.3); transition: transform .18s ease, box-shadow .18s ease; }
+.hm-hc-call:hover { transform: translateY(-2px); box-shadow: 0 16px 38px rgba(196,18,48,.42); }
+.hm-hc-call .hm-hc-ic {
+  width: 40px; height: 40px; flex: none; border-radius: 50%;
+  background: rgba(255,255,255,.18); display: grid; place-items: center;
+}
+.hm-hc-call .hm-hc-ic svg { width: 20px; height: 20px; fill: #fff; }
+.hm-hc-call .hm-hc-body { display: flex; flex-direction: column; line-height: 1.15; }
+.hm-hc-call .hm-hc-body small { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; opacity: .9; }
+.hm-hc-call .hm-hc-body strong { font-size: 21px; font-weight: 800; letter-spacing: .01em; }
+
+.hm-hc-rev { background: #ffffff; color: #1a1a1a; border: 1px solid rgba(0,0,0,.08); box-shadow: 0 12px 30px rgba(0,0,0,.18); flex-direction: column; align-items: flex-start; gap: 4px; }
+.hm-hc-rev .hm-hc-stars { color: #f5a623; font-size: 15px; letter-spacing: 2px; }
+.hm-hc-rev .hm-hc-body { display: flex; flex-direction: column; line-height: 1.25; }
+.hm-hc-rev .hm-hc-body strong { font-size: 14px; font-weight: 800; color: #141414; }
+.hm-hc-rev .hm-hc-body small { font-size: 12px; color: #666; }
+
+/* beat the hero's blanket span colour so card text keeps its own colours */
+.hm-hero-cards .hm-hc-call,
+.hm-hero-cards .hm-hc-call span,
+.hm-hero-cards .hm-hc-call small,
+.hm-hero-cards .hm-hc-call strong { color: #fff !important; }
+.hm-hero-cards .hm-hc-rev .hm-hc-stars { color: #f5a623 !important; }
+.hm-hero-cards .hm-hc-rev strong { color: #141414 !important; }
+.hm-hero-cards .hm-hc-rev small { color: #666 !important; }
+
+@media (max-width: 767px) {
+  .hm-hero-cards { margin-top: 20px; max-width: 100%; }
+  .hm-hc { flex: 1 1 100%; }
+}

@@ -30,5 +30,26 @@
       var host = document.querySelector(".page_wrap") || document.body;
       host.insertBefore(bar, host.firstChild);
     } catch (e) {}
+
+    /* ---- 2. hero call-now + reviews cards ---- */
+    try {
+      var heroCol = document.querySelector(".elementor-element-3eb0787");
+      if (heroCol && !heroCol.querySelector(".hm-hero-cards")) {
+        var PHONE =
+          '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.9 15.9 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1l-2.1 2.2z"/></svg>';
+        var cards = document.createElement("div");
+        cards.className = "hm-hero-cards";
+        cards.innerHTML =
+          '<a class="hm-hc hm-hc-call" href="tel:02031051145" aria-label="Call 0203 105 1145">' +
+            '<span class="hm-hc-ic">' + PHONE + "</span>" +
+            '<span class="hm-hc-body"><small>24/7 Emergency — call now</small><strong>0203 105 1145</strong></span>' +
+          "</a>" +
+          '<div class="hm-hc hm-hc-rev">' +
+            '<span class="hm-hc-stars">★★★★★</span>' +
+            '<span class="hm-hc-body"><strong>Rated 5.0 on Google</strong><small>Trusted across London</small></span>' +
+          "</div>";
+        heroCol.appendChild(cards);
+      }
+    } catch (e2) {}
   });
 })();
