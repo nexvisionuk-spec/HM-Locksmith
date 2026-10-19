@@ -1297,6 +1297,22 @@ a.elementor-button:hover,
 .elementor-icon-list-item { padding-bottom: 8px !important; }
 .elementor-icon-list-items { line-height: 1.5; }
 
+/* ---------- 19. Breathing room pass (site-wide) ----------
+   The small red eyebrow labels sat ~10px on top of every heading, which made
+   sections feel cramped. Give each eyebrow real space before the heading, and
+   open up the dark feature cards' text→image stacking on mobile. */
+.elementor-widget-heading h6.elementor-heading-title {
+  margin-bottom: 12px;
+}
+.footer_wrap .elementor-widget-heading h6.elementor-heading-title { margin-bottom: 6px; }
+/* headings sit a touch off the body copy that follows */
+.elementor-widget-heading .elementor-heading-title { margin-bottom: 4px; }
+@media (max-width: 767px) {
+  /* Residential / Retail feature cards: space the text block off its photo */
+  .elementor-element-fdee842 .e-con.e-child,
+  .elementor-element-69f8f64 .e-con.e-child { gap: 22px !important; }
+}
+
 /* ---------- 17. Dark / light theme toggle button ---------- */
 .hm-theme-toggle {
   position: fixed; left: 16px; bottom: 16px; z-index: 97;
