@@ -59,6 +59,39 @@ html.hm-theme-dark body h6.elementor-heading-title:not([style*="color: #fff"]) {
   /* handled per-section below where needed */
 }
 
+/* ---------- mobile slide-out (burger) menu: dark panel, light links ----------
+   hm-overrides paints this panel white for the light theme; in dark mode flip
+   it to dark so the links (which inherit the light theme text colour) show. */
+html.hm-theme-dark .trx-addons-mobile-menu-outer-container {
+  background-color: #0d0d0f !important;
+  border-right: 1px solid rgba(255,255,255,.08) !important;
+}
+html.hm-theme-dark .trx-addons-mobile-menu .trx-addons-menu-link,
+html.hm-theme-dark .trx-addons-mobile-menu .trx-addons-submenu-link,
+html.hm-theme-dark .trx-addons-mobile-menu-container .trx-addons-menu-link,
+html.hm-theme-dark .trx-addons-mobile-menu-container .trx-addons-submenu-link {
+  color: #f2f2f2 !important;
+}
+html.hm-theme-dark .trx-addons-mobile-menu .trx-addons-menu-link:hover,
+html.hm-theme-dark .trx-addons-mobile-menu-container .trx-addons-menu-link:hover,
+html.hm-theme-dark .trx-addons-mobile-menu .trx-addons-submenu-link:hover {
+  color: var(--d-red2) !important;
+}
+html.hm-theme-dark .trx-addons-mobile-menu-container .trx-addons-submenu {
+  background-color: #141418 !important;
+  border-color: rgba(255,255,255,.08) !important;
+}
+html.hm-theme-dark .trx-addons-mobile-menu .trx-addons-dropdown-icon,
+html.hm-theme-dark .trx-addons-mobile-menu-container .trx-addons-dropdown-icon,
+html.hm-theme-dark .trx-addons-mobile-menu .trx-addons-dropdown-icon svg path,
+html.hm-theme-dark .trx-addons-mobile-menu-container .trx-addons-dropdown-icon svg path,
+html.hm-theme-dark .trx-addons-mobile-menu-close,
+html.hm-theme-dark .trx-addons-mobile-menu-close i,
+html.hm-theme-dark .trx-addons-mobile-menu-close svg path {
+  color: #f2f2f2 !important;
+  fill: #f2f2f2 !important;
+}
+
 /* ---------- header: dark bar, light nav ---------- */
 html.hm-theme-dark body .top_panel { background: #0b0b0d !important; box-shadow: 0 1px 0 rgba(255,255,255,.06); }
 html.hm-theme-dark body .top_panel .e-con,
