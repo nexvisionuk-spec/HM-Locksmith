@@ -75,3 +75,12 @@ html.hm-theme-dark body .elementor-element-11e96edd.e-con.e-parent,
 html.hm-theme-dark body .elementor-element-8b2ec58.e-con.e-parent {
   background-color: #130d0f !important;
 }
+
+/* ---------- Service-card photos: fill the frame, keep faces (crop bottom) ----
+   The portrait "Reactive Maintenance" photo was letterboxed; zoom it to fill
+   and anchor near the top so the face stays and the crop comes off the bottom. */
+.elementor-element-ed08da9 .trx-addons-info-box-icon-wrap img {
+  object-fit: cover !important;
+  object-position: center 14% !important;
+  background: transparent !important;
+}
