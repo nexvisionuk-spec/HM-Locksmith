@@ -120,6 +120,10 @@ body.home .elementor-element-17422a0 textarea {
 body.home .elementor-element-17422a0 input::placeholder { color: var(--d-faint) !important; }
 
 /* ---------- cards: service cards, stat cards, FAQ, testimonials, form ---------- */
+/* kill the light (#f8f8f8) card-column frame so only the dark card shows */
+body.home .elementor-element-ed08da9 .e-con,
+body.home .elementor-element-ed08da9 .elementor-element,
+body.home .elementor-element-ed08da9 .elementor-widget-wrap { background-color: transparent !important; }
 /* service cards */
 body.home .elementor-element-ed08da9 .trx-addons-info-box {
   background: var(--d-card) !important;
@@ -224,6 +228,14 @@ body.home .elementor-element-a7fde93 .e-con:has(.trx-addons-counter) {
   background: var(--d-card) !important;
   border: 1px solid var(--d-bd);
   border-radius: 14px;
+}
+
+/* ---------- service-card photos: letterbox matches the dark card ----------
+   The "show full photo" fix used a light (#f2f2f2) background behind the
+   portrait, which split the card white-on-top / black-below. Match it to the
+   card so each card reads as one solid dark panel with the photo inside. */
+body.home .elementor-element-ed08da9 .trx-addons-info-box-icon-wrap img {
+  background: var(--d-card) !important;
 }
 
 /* ---------- client logo strip: white chips so every logo stays visible ---------- */
