@@ -51,5 +51,15 @@
         heroCol.appendChild(cards);
       }
     } catch (e2) {}
+
+    /* ---- 3. surface the reviews section higher (right after "We deliver") ---- */
+    try {
+      var reviews = document.querySelector(".elementor-element-13b28435");
+      var anchor = document.querySelector(".elementor-element-11e96edd");
+      if (reviews && anchor && anchor.parentNode && !reviews.dataset.hmMoved) {
+        anchor.parentNode.insertBefore(reviews, anchor.nextSibling);
+        reviews.dataset.hmMoved = "1";
+      }
+    } catch (e3) {}
   });
 })();

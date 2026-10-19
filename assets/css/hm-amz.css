@@ -63,3 +63,15 @@
   .hm-hero-cards { margin-top: 20px; max-width: 100%; }
   .hm-hc { flex: 1 1 100%; }
 }
+
+/* ---------- 4. Soft red-tint section rhythm ("colour grid") ----------
+   Light mode: AMZ-style soft pink-red blocks alternating with white.
+   Dark mode: a subtle warm-dark so the rhythm still reads. */
+html:not(.hm-theme-dark) .elementor-element-11e96edd,
+html:not(.hm-theme-dark) .elementor-element-8b2ec58 {
+  background-color: #fbeef0 !important;
+}
+html.hm-theme-dark body .elementor-element-11e96edd.e-con.e-parent,
+html.hm-theme-dark body .elementor-element-8b2ec58.e-con.e-parent {
+  background-color: #130d0f !important;
+}
