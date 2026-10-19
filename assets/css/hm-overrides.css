@@ -1293,6 +1293,10 @@ a.elementor-button:hover,
    used to balance it, leaving a big empty band before the next section. */
 .elementor-element-098eb05 > .e-con-inner { padding-bottom: 8px !important; }
 
+/* ---------- 18. Looser checklists site-wide (were cramped) ---------- */
+.elementor-icon-list-item { padding-bottom: 8px !important; }
+.elementor-icon-list-items { line-height: 1.5; }
+
 /* ---------- 17. Dark / light theme toggle button ---------- */
 .hm-theme-toggle {
   position: fixed; left: 16px; bottom: 16px; z-index: 97;

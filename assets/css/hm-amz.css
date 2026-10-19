@@ -113,6 +113,16 @@ html.hm-theme-dark body .elementor-element-e840018 { border-top: 1px solid rgba(
 html:not(.hm-theme-dark) .elementor-element-ed08da9,
 html:not(.hm-theme-dark) .elementor-element-e840018 { border-top: 1px solid rgba(0,0,0,.1); }
 
+/* ---------- Breathing room in the service cards (were cramped) ----------
+   The checklist sat ~4px under each card; give it real space and looser rows. */
+#services .e-con.e-child { padding-top: 18px !important; padding-bottom: 34px !important; }
+#services .elementor-widget-icon-list { margin-top: 22px !important; }
+#services .elementor-icon-list-item { padding-bottom: 11px !important; }
+#services .elementor-icon-list-item:last-child { padding-bottom: 0 !important; }
+#services .e-con-inner { gap: 30px !important; }
+/* more air between the stacked cards */
+#services .elementor-element.e-con.e-child + .e-con.e-child { margin-top: 10px; }
+
 /* ---------- Service-card photos: fill the frame, keep faces (crop bottom) ----
    The portrait "Reactive Maintenance" photo was letterboxed; zoom it to fill
    and anchor near the top so the face stays and the crop comes off the bottom. */
