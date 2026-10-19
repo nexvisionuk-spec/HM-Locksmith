@@ -76,6 +76,43 @@ html.hm-theme-dark body .elementor-element-8b2ec58.e-con.e-parent {
   background-color: #130d0f !important;
 }
 
+/* ---------- Mix: contrasting secondary buttons + hairline dividers ----------
+   AMZ mixes black & white blocks. Here the SECONDARY buttons invert per theme
+   (white-on-dark in dark mode, black-on-light in light mode) and a few sections
+   get a thin contrasting divider line. Kept light — the red stays the primary. */
+
+/* secondary buttons: white in dark mode */
+html.hm-theme-dark body .hm-services-cta-btn,
+html.hm-theme-dark body .hm-reviews-cta a {
+  background: #ffffff !important;
+  color: #0b0b0d !important;
+  border: 2px solid #ffffff !important;
+  box-shadow: 0 8px 22px rgba(0,0,0,.42) !important;
+}
+html.hm-theme-dark body .hm-services-cta-btn:hover,
+html.hm-theme-dark body .hm-reviews-cta a:hover {
+  background: #e9e9e9 !important; color: #0b0b0d !important; border-color: #e9e9e9 !important;
+}
+html.hm-theme-dark body .hm-services-cta-btn svg { fill: #0b0b0d !important; color: #0b0b0d !important; }
+
+/* secondary buttons: black in light mode */
+html:not(.hm-theme-dark) .hm-services-cta-btn,
+html:not(.hm-theme-dark) .hm-reviews-cta a {
+  background: #111214 !important;
+  color: #ffffff !important;
+  border: 2px solid #111214 !important;
+}
+html:not(.hm-theme-dark) .hm-services-cta-btn:hover,
+html:not(.hm-theme-dark) .hm-reviews-cta a:hover {
+  background: #c41230 !important; color: #ffffff !important; border-color: #c41230 !important;
+}
+
+/* thin contrasting divider lines between a couple of sections */
+html.hm-theme-dark body .elementor-element-ed08da9,
+html.hm-theme-dark body .elementor-element-e840018 { border-top: 1px solid rgba(255,255,255,.12); }
+html:not(.hm-theme-dark) .elementor-element-ed08da9,
+html:not(.hm-theme-dark) .elementor-element-e840018 { border-top: 1px solid rgba(0,0,0,.1); }
+
 /* ---------- Service-card photos: fill the frame, keep faces (crop bottom) ----
    The portrait "Reactive Maintenance" photo was letterboxed; zoom it to fill
    and anchor near the top so the face stays and the crop comes off the bottom. */
