@@ -1293,6 +1293,31 @@ a.elementor-button:hover,
    used to balance it, leaving a big empty band before the next section. */
 .elementor-element-098eb05 > .e-con-inner { padding-bottom: 8px !important; }
 
+/* ---------- 17. Dark / light theme toggle button ---------- */
+.hm-theme-toggle {
+  position: fixed; left: 16px; bottom: 16px; z-index: 97;
+  width: 46px; height: 46px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; padding: 0;
+  background: #17171c; color: #fff;
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: 0 8px 22px rgba(0,0,0,.3);
+  transition: transform .15s ease, background .15s ease, color .15s ease;
+}
+.hm-theme-toggle:hover { transform: translateY(-2px); }
+.hm-theme-toggle svg { width: 22px; height: 22px; display: block; }
+html:not(.hm-theme-dark) .hm-theme-toggle {
+  background: #ffffff; color: #1a1a1a; border-color: rgba(0,0,0,.14);
+  box-shadow: 0 8px 22px rgba(0,0,0,.14);
+}
+@media (max-width: 1024px) { .hm-theme-toggle { bottom: 86px; } }
+
+/* ---------- 16. Emergency CTA heading: sentence case, not ALL CAPS ---------- */
+.elementor-element-506d51c .elementor-heading-title,
+.elementor-element-506d51c .elementor-heading-title * {
+  text-transform: none !important;
+}
+
 /* ---------- 15. Sticky mobile action bar: TikTok + WhatsApp ----------
    Fixed to the bottom on phones/tablets (like the reference design). Desktop
    users get TikTok in the footer instead, so the bar is hidden there. */

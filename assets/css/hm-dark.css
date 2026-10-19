@@ -1,11 +1,11 @@
 /* ==========================================================================
-   H&M — DARK PREMIUM  (homepage only; scoped to body.home)
+   H&M — DARK PREMIUM  (homepage only; scoped to html.hm-theme-dark body)
    A bold redesign layer loaded last on the homepage. Charcoal canvas, off-white
    type, deep-red accents with a subtle glow, dark card surfaces. Elementor's
    light section backgrounds are flipped to the dark palette; photos are kept.
    ========================================================================== */
 
-body.home {
+html.hm-theme-dark body {
   --d-bg:    #0b0b0d;   /* page */
   --d-panel: #141418;   /* banded sections */
   --d-card:  #191920;   /* cards */
@@ -20,211 +20,211 @@ body.home {
 }
 
 /* ---------- base canvas ---------- */
-body.home { background: var(--d-bg) !important; color: var(--d-mut); }
-body.home .elementor,
-body.home .elementor-section-wrap,
-body.home #content,
-body.home .site,
-body.home main { background: transparent !important; }
+html.hm-theme-dark body { background: var(--d-bg) !important; color: var(--d-mut); }
+html.hm-theme-dark body .elementor,
+html.hm-theme-dark body .elementor-section-wrap,
+html.hm-theme-dark body #content,
+html.hm-theme-dark body .site,
+html.hm-theme-dark body main { background: transparent !important; }
 
 /* Flip every light section to transparent so the dark canvas shows through.
    background-color only — photos (background-image) are untouched. */
-body.home .elementor-top-section,
-body.home .elementor-section,
-body.home .e-con.e-parent { background-color: transparent !important; }
+html.hm-theme-dark body .elementor-top-section,
+html.hm-theme-dark body .elementor-section,
+html.hm-theme-dark body .e-con.e-parent { background-color: transparent !important; }
 
 /* Banded panels for vertical rhythm (slightly lifted from the canvas) */
-body.home .elementor-element-17422a0,   /* Book a service bar */
-body.home .elementor-element-11e96edd,  /* We deliver */
-body.home .elementor-element-a7fde93,   /* stats */
-body.home .elementor-element-95cf590,   /* London coverage */
-body.home .elementor-element-8b2ec58 {  /* contact form */
+html.hm-theme-dark body .elementor-element-17422a0,   /* Book a service bar */
+html.hm-theme-dark body .elementor-element-11e96edd,  /* We deliver */
+html.hm-theme-dark body .elementor-element-a7fde93,   /* stats */
+html.hm-theme-dark body .elementor-element-95cf590,   /* London coverage */
+html.hm-theme-dark body .elementor-element-8b2ec58 {  /* contact form */
   background-color: var(--d-panel) !important;
 }
 
 /* ---------- typography colours ---------- */
-body.home :is(h1,h2,h3,h4,h5,h6),
-body.home .elementor-heading-title,
-body.home .trx-addons-advanced-title {
+html.hm-theme-dark body :is(h1,h2,h3,h4,h5,h6),
+html.hm-theme-dark body .elementor-heading-title,
+html.hm-theme-dark body .trx-addons-advanced-title {
   color: var(--d-tx) !important;
 }
-body.home :is(p,li,blockquote,figcaption,dd,dt,label,td,th,summary),
-body.home .elementor-widget-text-editor,
-body.home .elementor-icon-list-text {
+html.hm-theme-dark body :is(p,li,blockquote,figcaption,dd,dt,label,td,th,summary),
+html.hm-theme-dark body .elementor-widget-text-editor,
+html.hm-theme-dark body .elementor-icon-list-text {
   color: var(--d-mut) !important;
 }
 /* red eyebrow labels stay red on dark */
-body.home .elementor-element-6f1bae9 .elementor-heading-title, /* reliable property solutions */
-body.home h6.elementor-heading-title:not([style*="color: #fff"]) {
+html.hm-theme-dark body .elementor-element-6f1bae9 .elementor-heading-title, /* reliable property solutions */
+html.hm-theme-dark body h6.elementor-heading-title:not([style*="color: #fff"]) {
   /* handled per-section below where needed */
 }
 
 /* ---------- header: dark bar, light nav ---------- */
-body.home .top_panel { background: #0b0b0d !important; box-shadow: 0 1px 0 rgba(255,255,255,.06); }
-body.home .top_panel .e-con,
-body.home .top_panel .elementor-element:not(.elementor-element-3319298f):not(.elementor-element-1bbb9959):not(#head-button):not(.elementor-element-51784d5) {
+html.hm-theme-dark body .top_panel { background: #0b0b0d !important; box-shadow: 0 1px 0 rgba(255,255,255,.06); }
+html.hm-theme-dark body .top_panel .e-con,
+html.hm-theme-dark body .top_panel .elementor-element:not(.elementor-element-3319298f):not(.elementor-element-1bbb9959):not(#head-button):not(.elementor-element-51784d5) {
   background-color: transparent !important;
 }
-body.home .top_panel a,
-body.home .top_panel .trx-addons-menu-link-text,
-body.home .top_panel .sc_layouts_menu li a,
-body.home .top_panel nav a { color: #f2f2f2 !important; }
-body.home .top_panel .sc_layouts_menu li a:hover,
-body.home .top_panel nav a:hover { color: var(--d-red2) !important; }
-body.home .top_panel .trx-addons-hamburger-toggle,
-body.home .top_panel .sc_layouts_menu_mobile_button,
-body.home .top_panel .menu-button svg,
-body.home .top_panel .hamburger svg { color: #f2f2f2 !important; fill: #f2f2f2 !important; }
+html.hm-theme-dark body .top_panel a,
+html.hm-theme-dark body .top_panel .trx-addons-menu-link-text,
+html.hm-theme-dark body .top_panel .sc_layouts_menu li a,
+html.hm-theme-dark body .top_panel nav a { color: #f2f2f2 !important; }
+html.hm-theme-dark body .top_panel .sc_layouts_menu li a:hover,
+html.hm-theme-dark body .top_panel nav a:hover { color: var(--d-red2) !important; }
+html.hm-theme-dark body .top_panel .trx-addons-hamburger-toggle,
+html.hm-theme-dark body .top_panel .sc_layouts_menu_mobile_button,
+html.hm-theme-dark body .top_panel .menu-button svg,
+html.hm-theme-dark body .top_panel .hamburger svg { color: #f2f2f2 !important; fill: #f2f2f2 !important; }
 /* sticky header when it pins */
-body.home .elementor-sticky--active { background: rgba(11,11,13,.92) !important; backdrop-filter: blur(8px); }
+html.hm-theme-dark body .elementor-sticky--active { background: rgba(11,11,13,.92) !important; backdrop-filter: blur(8px); }
 
 /* ---------- hero (top) : dark it down, bigger type + red glow ---------- */
-body.home .elementor-element-78cf0e9 { position: relative; background-color: #0a0a0c !important; }
-body.home .elementor-element-78cf0e9 > .elementor-background-overlay { display: none !important; }
-body.home .elementor-element-78cf0e9::after {
+html.hm-theme-dark body .elementor-element-78cf0e9 { position: relative; background-color: #0a0a0c !important; }
+html.hm-theme-dark body .elementor-element-78cf0e9 > .elementor-background-overlay { display: none !important; }
+html.hm-theme-dark body .elementor-element-78cf0e9::after {
   content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
   background:
     radial-gradient(900px 520px at 80% 42%, rgba(229,20,47,.16), transparent 62%),
     linear-gradient(100deg, rgba(10,10,12,.97) 0%, rgba(10,10,12,.9) 52%, rgba(10,10,12,.74) 100%);
 }
-body.home .elementor-element-78cf0e9 > .e-con-inner,
-body.home .elementor-element-78cf0e9 > .elementor-container { position: relative; z-index: 1; }
-body.home .elementor-element-78cf0e9 .elementor-heading-title,
-body.home .elementor-element-78cf0e9 h1 {
+html.hm-theme-dark body .elementor-element-78cf0e9 > .e-con-inner,
+html.hm-theme-dark body .elementor-element-78cf0e9 > .elementor-container { position: relative; z-index: 1; }
+html.hm-theme-dark body .elementor-element-78cf0e9 .elementor-heading-title,
+html.hm-theme-dark body .elementor-element-78cf0e9 h1 {
   color: #ffffff !important;
   text-shadow: 0 2px 40px rgba(0,0,0,.55);
   letter-spacing: -0.035em;
   line-height: 1.02;
 }
-body.home .elementor-element-78cf0e9 p,
-body.home .elementor-element-78cf0e9 span { color: #d7d7dd !important; }
+html.hm-theme-dark body .elementor-element-78cf0e9 p,
+html.hm-theme-dark body .elementor-element-78cf0e9 span { color: #d7d7dd !important; }
 
 /* ---------- intro "One Trusted Team" ---------- */
-body.home .elementor-element-098eb05 { background: radial-gradient(1200px 500px at 15% 0%, rgba(229,20,47,.10), transparent 60%) !important; }
+html.hm-theme-dark body .elementor-element-098eb05 { background: radial-gradient(1200px 500px at 15% 0%, rgba(229,20,47,.10), transparent 60%) !important; }
 
 /* ---------- eyebrows / small caps labels: brand red ---------- */
-body.home .elementor-widget-heading h6.elementor-heading-title {
+html.hm-theme-dark body .elementor-widget-heading h6.elementor-heading-title {
   color: var(--d-red) !important;
   letter-spacing: .16em;
 }
 
 /* ---------- Book a Service bar: dark fields ---------- */
-body.home .elementor-element-17422a0 input,
-body.home .elementor-element-17422a0 select,
-body.home .elementor-element-17422a0 .nice-select,
-body.home .elementor-element-17422a0 textarea {
+html.hm-theme-dark body .elementor-element-17422a0 input,
+html.hm-theme-dark body .elementor-element-17422a0 select,
+html.hm-theme-dark body .elementor-element-17422a0 .nice-select,
+html.hm-theme-dark body .elementor-element-17422a0 textarea {
   background: #0f0f12 !important;
   border: 1px solid var(--d-bd2) !important;
   color: var(--d-tx) !important;
 }
-body.home .elementor-element-17422a0 input::placeholder { color: var(--d-faint) !important; }
+html.hm-theme-dark body .elementor-element-17422a0 input::placeholder { color: var(--d-faint) !important; }
 
 /* ---------- cards: service cards, stat cards, FAQ, testimonials, form ---------- */
 /* kill the light (#f8f8f8) card-column frame so only the dark card shows */
-body.home .elementor-element-ed08da9 .e-con,
-body.home .elementor-element-ed08da9 .elementor-element,
-body.home .elementor-element-ed08da9 .elementor-widget-wrap { background-color: transparent !important; }
+html.hm-theme-dark body .elementor-element-ed08da9 .e-con,
+html.hm-theme-dark body .elementor-element-ed08da9 .elementor-element,
+html.hm-theme-dark body .elementor-element-ed08da9 .elementor-widget-wrap { background-color: transparent !important; }
 /* service cards */
-body.home .elementor-element-ed08da9 .trx-addons-info-box {
+html.hm-theme-dark body .elementor-element-ed08da9 .trx-addons-info-box {
   background: var(--d-card) !important;
   border: 1px solid var(--d-bd);
   border-radius: 14px;
   overflow: hidden;
   transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
 }
-body.home .elementor-element-ed08da9 .trx-addons-info-box-container-link:hover + .trx-addons-info-box,
-body.home .elementor-element-ed08da9 .trx-addons-info-box:hover {
+html.hm-theme-dark body .elementor-element-ed08da9 .trx-addons-info-box-container-link:hover + .trx-addons-info-box,
+html.hm-theme-dark body .elementor-element-ed08da9 .trx-addons-info-box:hover {
   border-color: rgba(229,20,47,.5);
   transform: translateY(-6px);
   box-shadow: 0 20px 50px rgba(0,0,0,.5);
 }
 
 /* stat cards (1,000+ etc.) */
-body.home .elementor-element-a7fde93 .e-con.e-child,
-body.home .elementor-element-a7fde93 [class*="counter"] {
+html.hm-theme-dark body .elementor-element-a7fde93 .e-con.e-child,
+html.hm-theme-dark body .elementor-element-a7fde93 [class*="counter"] {
   color: var(--d-tx) !important;
 }
-body.home .trx-addons-counter-number,
-body.home .trx-addons-counter-number-wrap { color: #ffffff !important; }
-body.home .trx-addons-counter-title { color: var(--d-mut) !important; }
+html.hm-theme-dark body .trx-addons-counter-number,
+html.hm-theme-dark body .trx-addons-counter-number-wrap { color: #ffffff !important; }
+html.hm-theme-dark body .trx-addons-counter-title { color: var(--d-mut) !important; }
 
 /* FAQ toggles */
-body.home .elementor-widget-n-accordion .e-n-accordion-item,
-body.home .elementor-tab-title,
-body.home .elementor-tab-content {
+html.hm-theme-dark body .elementor-widget-n-accordion .e-n-accordion-item,
+html.hm-theme-dark body .elementor-tab-title,
+html.hm-theme-dark body .elementor-tab-content {
   background: var(--d-card) !important;
   border-color: var(--d-bd) !important;
   color: var(--d-mut) !important;
 }
 
 /* my testimonial cards */
-body.home .hm-testimonials .hm-t-card {
+html.hm-theme-dark body .hm-testimonials .hm-t-card {
   background: var(--d-card) !important;
   border-color: var(--d-bd) !important;
   box-shadow: 0 16px 40px rgba(0,0,0,.45);
 }
-body.home .hm-t-card .hm-t-name { color: var(--d-tx) !important; }
-body.home .hm-t-card .hm-t-text { color: var(--d-mut) !important; }
-body.home .hm-t-when, body.home .hm-t-branch { color: var(--d-faint) !important; }
-body.home .hm-t-arrow {
+html.hm-theme-dark body .hm-t-card .hm-t-name { color: var(--d-tx) !important; }
+html.hm-theme-dark body .hm-t-card .hm-t-text { color: var(--d-mut) !important; }
+html.hm-theme-dark body .hm-t-when, html.hm-theme-dark body .hm-t-branch { color: var(--d-faint) !important; }
+html.hm-theme-dark body .hm-t-arrow {
   background: var(--d-card) !important;
   border-color: var(--d-bd2) !important;
   color: var(--d-tx) !important;
 }
-body.home .hm-t-arrow:hover { background: var(--d-red) !important; border-color: var(--d-red) !important; }
+html.hm-theme-dark body .hm-t-arrow:hover { background: var(--d-red) !important; border-color: var(--d-red) !important; }
 
 /* contact form inputs */
-body.home .elementor-element-8b2ec58 input,
-body.home .elementor-element-8b2ec58 textarea,
-body.home .elementor-element-8b2ec58 select,
-body.home .elementor-field-group input,
-body.home .elementor-field-group textarea {
+html.hm-theme-dark body .elementor-element-8b2ec58 input,
+html.hm-theme-dark body .elementor-element-8b2ec58 textarea,
+html.hm-theme-dark body .elementor-element-8b2ec58 select,
+html.hm-theme-dark body .elementor-field-group input,
+html.hm-theme-dark body .elementor-field-group textarea {
   background: #0f0f12 !important;
   border: 1px solid var(--d-bd2) !important;
   color: var(--d-tx) !important;
 }
-body.home .elementor-field-group input::placeholder,
-body.home .elementor-field-group textarea::placeholder { color: var(--d-faint) !important; }
+html.hm-theme-dark body .elementor-field-group input::placeholder,
+html.hm-theme-dark body .elementor-field-group textarea::placeholder { color: var(--d-faint) !important; }
 
 /* ---------- buttons: red with glow; ghosts become light-on-dark ---------- */
-body.home .elementor-button:not(.hm-wa-btn),
-body.home .wp-block-button__link,
-body.home button[type="submit"],
-body.home .hm-services-cta-btn {
+html.hm-theme-dark body .elementor-button:not(.hm-wa-btn),
+html.hm-theme-dark body .wp-block-button__link,
+html.hm-theme-dark body button[type="submit"],
+html.hm-theme-dark body .hm-services-cta-btn {
   background: linear-gradient(180deg, var(--d-red) 0%, #c0122b 100%) !important;
   border: none !important;
   color: #fff !important;
   box-shadow: 0 8px 26px rgba(229,20,47,.35);
 }
-body.home .elementor-button:not(.hm-wa-btn):hover,
-body.home .wp-block-button__link:hover,
-body.home button[type="submit"]:hover,
-body.home .hm-services-cta-btn:hover {
+html.hm-theme-dark body .elementor-button:not(.hm-wa-btn):hover,
+html.hm-theme-dark body .wp-block-button__link:hover,
+html.hm-theme-dark body button[type="submit"]:hover,
+html.hm-theme-dark body .hm-services-cta-btn:hover {
   background: linear-gradient(180deg, var(--d-red2) 0%, var(--d-red) 100%) !important;
   color: #fff !important;
   box-shadow: 0 12px 36px rgba(229,20,47,.5) !important;
 }
 /* WhatsApp ghost: light outline on dark */
-body.home .elementor-element-b42a0ea a.elementor-button.hm-wa-btn {
+html.hm-theme-dark body .elementor-element-b42a0ea a.elementor-button.hm-wa-btn {
   background: transparent !important;
   color: var(--d-tx) !important;
   border: 2px solid var(--d-bd2) !important;
 }
-body.home .elementor-element-b42a0ea a.elementor-button.hm-wa-btn:hover {
+html.hm-theme-dark body .elementor-element-b42a0ea a.elementor-button.hm-wa-btn:hover {
   background: #fff !important;
   color: #0b0b0d !important;
   border-color: #fff !important;
 }
 /* review CTAs (were black) -> outlined */
-body.home .hm-reviews-cta a {
+html.hm-theme-dark body .hm-reviews-cta a {
   background: transparent !important;
   color: var(--d-tx) !important;
   border: 2px solid var(--d-bd2) !important;
 }
-body.home .hm-reviews-cta a:hover { background: var(--d-red) !important; border-color: var(--d-red) !important; }
+html.hm-theme-dark body .hm-reviews-cta a:hover { background: var(--d-red) !important; border-color: var(--d-red) !important; }
 
 /* ---------- stat cards (1,000+ / 17 / 500+ / 4.9) : dark tiles ---------- */
-body.home .elementor-element-a7fde93 .e-con:has(.trx-addons-counter) {
+html.hm-theme-dark body .elementor-element-a7fde93 .e-con:has(.trx-addons-counter) {
   background: var(--d-card) !important;
   border: 1px solid var(--d-bd);
   border-radius: 14px;
@@ -234,12 +234,12 @@ body.home .elementor-element-a7fde93 .e-con:has(.trx-addons-counter) {
    The "show full photo" fix used a light (#f2f2f2) background behind the
    portrait, which split the card white-on-top / black-below. Match it to the
    card so each card reads as one solid dark panel with the photo inside. */
-body.home .elementor-element-ed08da9 .trx-addons-info-box-icon-wrap img {
+html.hm-theme-dark body .elementor-element-ed08da9 .trx-addons-info-box-icon-wrap img {
   background: var(--d-card) !important;
 }
 
 /* ---------- client logo strip: white chips so every logo stays visible ---------- */
-body.home .elementor-element-5211d46 img {
+html.hm-theme-dark body .elementor-element-5211d46 img {
   background: #fff;
   border-radius: 10px;
   padding: 12px 18px;
@@ -249,8 +249,8 @@ body.home .elementor-element-5211d46 img {
 }
 
 /* ---------- dividers / shape fills that were white ---------- */
-body.home .elementor-shape .elementor-shape-fill { fill: var(--d-panel) !important; }
+html.hm-theme-dark body .elementor-shape .elementor-shape-fill { fill: var(--d-panel) !important; }
 
 /* ---------- the "01 / 02 / 03" feature row: separators ---------- */
-body.home .elementor-element-47967337 .elementor-widget-divider,
-body.home .elementor-divider-separator { border-color: var(--d-bd) !important; }
+html.hm-theme-dark body .elementor-element-47967337 .elementor-widget-divider,
+html.hm-theme-dark body .elementor-divider-separator { border-color: var(--d-bd) !important; }
