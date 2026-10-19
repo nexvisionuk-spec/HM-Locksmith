@@ -1,0 +1,24 @@
+/* ==========================================================================
+   H&M — AMZ-inspired structure layer (homepage)
+   Adopts layout signatures from amzlocksmith.co.uk in H&M's own style:
+   1) top red USP bar  2) hero call-now + reviews cards
+   3) reviews surfaced higher  4) soft red-tint section rhythm
+   Works in both light and dark themes.
+   ========================================================================== */
+
+/* ---------- 1. Top red USP bar ---------- */
+.hm-usp-bar {
+  display: flex; align-items: center; justify-content: center;
+  flex-wrap: wrap; gap: 10px 26px;
+  background: #c41230; color: #fff;
+  font-family: 'Hanken Grotesk', Arial, sans-serif;
+  font-size: 13px; font-weight: 700; letter-spacing: .02em;
+  padding: 9px 16px; text-align: center; line-height: 1.2;
+}
+.hm-usp-bar .hm-usp { display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; }
+.hm-usp-bar .hm-usp svg { width: 14px; height: 14px; fill: currentColor; flex: none; }
+.hm-usp-bar .hm-usp-star { color: #ffd54a; }
+@media (max-width: 860px) {
+  .hm-usp-bar { font-size: 11.5px; gap: 8px 16px; padding: 8px 12px; }
+  .hm-usp-bar .hm-usp-sm-hide { display: none; }
+}
