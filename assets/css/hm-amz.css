@@ -23,6 +23,37 @@
   .hm-usp-bar .hm-usp-sm-hide { display: none; }
 }
 
+/* ---------- Hero "Happy clients": drop the stock faces, keep stars + count ----
+   The original was a single composite image (faces + 1K + stars). Hide it and
+   rebuild a clean badge with no faces. */
+.elementor-element-78cf0e9 img.wp-image-7488,
+.elementor-element-78cf0e9 img[src*="custom-img-503-fourth"],
+.elementor-element-78cf0e9 .elementor-element-27e6e6d,
+.elementor-element-78cf0e9 .elementor-element-4d5baf7 { display: none !important; }
+.elementor-element-78cf0e9 .hm-happy { display: inline-flex; align-items: center; gap: 12px; margin-bottom: 4px; }
+.elementor-element-78cf0e9 .hm-happy-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 48px; height: 30px; padding: 0 11px; border-radius: 999px;
+  background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.28);
+  color: #fff !important; font-weight: 800; font-size: 13px; letter-spacing: .02em;
+  font-family: 'Hanken Grotesk', Arial, sans-serif;
+}
+.elementor-element-78cf0e9 .hm-happy-meta { display: flex; flex-direction: column; line-height: 1.15; }
+.elementor-element-78cf0e9 .hm-happy-stars { color: #e5142f !important; font-size: 15px; letter-spacing: 2px; }
+.elementor-element-78cf0e9 .hm-happy-label { color: #fff !important; font-weight: 700; font-size: 14px; font-family: 'Hanken Grotesk', Arial, sans-serif; }
+.elementor-element-78cf0e9 .hm-happy-label { text-shadow: 0 1px 6px rgba(0,0,0,.3); }
+/* light mode: hero is a photo on mobile (white text), a light grid on desktop (dark text) */
+html:not(.hm-theme-dark) .elementor-element-78cf0e9 .hm-happy-label { color: #ffffff !important; }
+html:not(.hm-theme-dark) .elementor-element-78cf0e9 .hm-happy-badge { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.32); color: #ffffff !important; }
+@media (min-width: 768px) {
+  html:not(.hm-theme-dark) .elementor-element-78cf0e9 .hm-happy-label { color: #1f242e !important; text-shadow: none; }
+  html:not(.hm-theme-dark) .elementor-element-78cf0e9 .hm-happy-badge { background: rgba(0,0,0,.06); border-color: rgba(0,0,0,.18); color: #1f242e !important; }
+}
+/* beat the dark hero's blanket span colour */
+html.hm-theme-dark body .elementor-element-78cf0e9 .hm-happy-stars { color: #e5142f !important; }
+html.hm-theme-dark body .elementor-element-78cf0e9 .hm-happy-label { color: #ffffff !important; }
+html.hm-theme-dark body .elementor-element-78cf0e9 .hm-happy-badge { color: #ffffff !important; }
+
 /* ---------- 2. Hero: call-now card + reviews card ---------- */
 .hm-hero-cards {
   display: flex; flex-wrap: wrap; gap: 14px; margin-top: 26px; max-width: 540px;

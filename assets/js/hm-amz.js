@@ -31,6 +31,22 @@
       host.insertBefore(bar, host.firstChild);
     } catch (e) {}
 
+    /* ---- hero "Happy clients" badge (faces removed) ---- */
+    try {
+      var faceImg = document.querySelector('.elementor-element-78cf0e9 img[src*="custom-img-503-fourth"]');
+      if (faceImg && !document.querySelector(".hm-happy")) {
+        var badge = document.createElement("div");
+        badge.className = "hm-happy";
+        badge.innerHTML =
+          '<span class="hm-happy-badge">+1K</span>' +
+          '<span class="hm-happy-meta">' +
+            '<span class="hm-happy-stars">★★★★★</span>' +
+            '<span class="hm-happy-label">Happy clients</span>' +
+          "</span>";
+        faceImg.insertAdjacentElement("beforebegin", badge);
+      }
+    } catch (eHappy) {}
+
     /* ---- 2. hero call-now + reviews cards ---- */
     try {
       var heroCol = document.querySelector(".elementor-element-3eb0787");
