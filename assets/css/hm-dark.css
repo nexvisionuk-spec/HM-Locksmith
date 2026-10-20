@@ -320,3 +320,13 @@ html.hm-theme-dark body .elementor-widget-icon-box .elementor-icon-box-wrapper,
 html.hm-theme-dark body .trx-addons-info-box {
   background-color: var(--d-card) !important;
 }
+
+/* hamburger icon: light on the dark header (was dark grey #494c4f) */
+html.hm-theme-dark body .trx-addons-hamburger-toggle,
+html.hm-theme-dark body .trx-addons-hamburger-toggle .trx-addons-toggle-text,
+html.hm-theme-dark body .trx-addons-hamburger-toggle svg,
+html.hm-theme-dark body .trx-addons-hamburger-toggle svg path,
+html.hm-theme-dark body .top_panel .trx-addons-hamburger-toggle svg path {
+  color: #f2f2f2 !important;
+  fill: #f2f2f2 !important;
+}
