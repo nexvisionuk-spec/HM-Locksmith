@@ -79,6 +79,15 @@ html.hm-theme-dark body .elementor-element-e8b5968 .elementor-element-339257b a.
   background: #0b0b0d !important; color: #ffffff !important;
 }
 
+/* ---------- Hero CTA button: size to its text, not full-width ---------- */
+.elementor-element-693f713 a.elementor-button {
+  width: auto !important;
+  display: inline-flex !important;
+  align-items: center;
+  padding: 15px 34px !important;
+  font-size: 15px !important;
+}
+
 /* ---------- 2. Hero: call-now card + reviews card ---------- */
 .hm-hero-cards {
   display: flex; flex-wrap: wrap; gap: 14px; margin-top: 26px; max-width: 540px;
