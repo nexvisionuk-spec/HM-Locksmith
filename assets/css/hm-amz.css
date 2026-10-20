@@ -54,6 +54,31 @@ html.hm-theme-dark body .elementor-element-78cf0e9 .hm-happy-stars { color: #e51
 html.hm-theme-dark body .elementor-element-78cf0e9 .hm-happy-label { color: #ffffff !important; }
 html.hm-theme-dark body .elementor-element-78cf0e9 .hm-happy-badge { color: #ffffff !important; }
 
+/* ---------- Emergency CTA: bold red panel ---------- */
+.elementor-element-e8b5968 .elementor-element-103073a,
+.elementor-element-e8b5968 .elementor-element-103073a > .elementor-widget-wrap.elementor-element-populated,
+html.hm-theme-dark body .elementor-element-e8b5968 .elementor-element-103073a,
+html.hm-theme-dark body .elementor-element-e8b5968 .elementor-element-103073a > .elementor-widget-wrap.elementor-element-populated {
+  background-image: linear-gradient(140deg, #e5142f 0%, #bd1328 55%, #8f0e20 100%) !important;
+  background-color: transparent !important;
+}
+.elementor-element-e8b5968 .elementor-background-overlay,
+html.hm-theme-dark body .elementor-element-e8b5968 .elementor-background-overlay {
+  opacity: .18 !important; mix-blend-mode: multiply;
+}
+.elementor-element-e8b5968 .elementor-element-3e31415 .elementor-heading-title,
+html.hm-theme-dark body .elementor-element-e8b5968 .elementor-element-3e31415 .elementor-heading-title {
+  color: #ffffff !important; opacity: .9;
+}
+.elementor-element-e8b5968 .elementor-element-339257b a.elementor-button,
+html.hm-theme-dark body .elementor-element-e8b5968 .elementor-element-339257b a.elementor-button {
+  background: #ffffff !important; color: #c41230 !important; box-shadow: 0 10px 26px rgba(0,0,0,.3) !important;
+}
+.elementor-element-e8b5968 .elementor-element-339257b a.elementor-button:hover,
+html.hm-theme-dark body .elementor-element-e8b5968 .elementor-element-339257b a.elementor-button:hover {
+  background: #0b0b0d !important; color: #ffffff !important;
+}
+
 /* ---------- 2. Hero: call-now card + reviews card ---------- */
 .hm-hero-cards {
   display: flex; flex-wrap: wrap; gap: 14px; margin-top: 26px; max-width: 540px;
