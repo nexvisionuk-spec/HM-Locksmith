@@ -287,3 +287,36 @@ html.hm-theme-dark body .elementor-shape .elementor-shape-fill { fill: var(--d-p
 /* ---------- the "01 / 02 / 03" feature row: separators ---------- */
 html.hm-theme-dark body .elementor-element-47967337 .elementor-widget-divider,
 html.hm-theme-dark body .elementor-divider-separator { border-color: var(--d-bd) !important; }
+
+/* ==========================================================================
+   GENERIC dark rules — apply on every page (not keyed to homepage IDs),
+   so the theme covers the trade/about/contact/etc. pages too.
+   ========================================================================== */
+/* stat / counter cards */
+html.hm-theme-dark body .e-con:has(.trx-addons-counter) {
+  background: var(--d-card) !important;
+  border: 1px solid var(--d-bd);
+  border-radius: 14px;
+}
+/* form fields everywhere */
+html.hm-theme-dark body :is(input, textarea, select):not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type="radio"]),
+html.hm-theme-dark body .elementor-field-group :is(input, textarea, select),
+html.hm-theme-dark body .nice-select {
+  background: #0f0f12 !important;
+  border: 1px solid var(--d-bd2) !important;
+  color: var(--d-tx) !important;
+}
+html.hm-theme-dark body input::placeholder,
+html.hm-theme-dark body textarea::placeholder { color: var(--d-faint) !important; }
+/* a card/column that holds a form → dark surface */
+html.hm-theme-dark body .e-con:has(> .elementor-widget-form),
+html.hm-theme-dark body .e-con:has(> * > .elementor-widget-form),
+html.hm-theme-dark body .e-con.e-child:has(.elementor-widget-form) {
+  background: var(--d-card) !important;
+}
+/* generic card surfaces that Elementor painted light (icon-box / info-box widgets
+   with their own background) */
+html.hm-theme-dark body .elementor-widget-icon-box .elementor-icon-box-wrapper,
+html.hm-theme-dark body .trx-addons-info-box {
+  background-color: var(--d-card) !important;
+}
