@@ -90,10 +90,21 @@ html.hm-theme-dark body .elementor-element-e8b5968 .elementor-element-339257b a.
 
 /* ---------- 2. Hero: call-now card + reviews card ---------- */
 .hm-hero-cards {
-  display: flex; flex-wrap: wrap; gap: 14px; margin-top: 26px; max-width: 540px;
+  display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; max-width: 500px;
+  align-items: stretch;
 }
+/* compact sizing (were too chunky) */
+.hm-hero-cards .hm-hc { padding: 11px 14px !important; border-radius: 12px; min-height: 0; }
+.hm-hero-cards .hm-hc-call .hm-hc-ic { width: 34px; height: 34px; }
+.hm-hero-cards .hm-hc-call .hm-hc-ic svg { width: 17px; height: 17px; }
+.hm-hero-cards .hm-hc-call .hm-hc-body small { font-size: 10px; }
+.hm-hero-cards .hm-hc-call .hm-hc-body strong { font-size: 18px; }
+.hm-hero-cards .hm-hc-rev { justify-content: center; gap: 3px; }
+.hm-hero-cards .hm-hc-rev .hm-hc-stars { font-size: 13px; letter-spacing: 1px; }
+.hm-hero-cards .hm-hc-rev .hm-hc-body strong { font-size: 13px; }
+.hm-hero-cards .hm-hc-rev .hm-hc-body small { font-size: 11px; }
 .hm-hero-cards .hm-hc {
-  flex: 1 1 230px; min-width: 0;
+  flex: 1 1 0; min-width: 0;
   display: flex; align-items: center; gap: 13px;
   padding: 14px 16px; border-radius: 14px; text-decoration: none;
   font-family: 'Hanken Grotesk', Arial, sans-serif;
