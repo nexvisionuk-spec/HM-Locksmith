@@ -74,7 +74,18 @@
 .hmchat-foot { text-align: center; font-size: .72rem; color: #8f8f91; padding: 0 0 10px; background: #fff; }
 
 @media (max-width: 480px) {
-  .hmchat-panel { right: 8px; bottom: 8px; height: calc(100vh - 16px); max-height: none; width: calc(100vw - 16px); }
+  /* Full-screen overlay on phones. inset:0 pins it to the real visible viewport
+     (fixes the 100vh bug that pushed the chat header off-screen) and the high
+     z-index lifts it above the site's floating header + sticky action bar. */
+  .hmchat-panel {
+    inset: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: 100% !important;
+    max-height: none !important;
+    border-radius: 0 !important;
+    z-index: 2147483000 !important;
+  }
   .hmchat-launch { right: 14px; bottom: 14px; padding: 13px 18px 13px 14px; }
   .hmchat-launch .label-sm { display: none; }
 }
