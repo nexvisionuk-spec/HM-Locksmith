@@ -501,8 +501,8 @@ document.addEventListener("DOMContentLoaded", function () {
       <a class="hm-cs-btn" href="https://footballschoolcanadablanch.com/" target="_blank" rel="noopener">Visit Football School Website</a>
     </div>
     <div class="hm-cs-media">
-      <img src="https://footballschoolcanadablanch.com/wp-content/uploads/2026/06/spanish-football-school-in-london-canada-blanch-1-1.png"
-           alt="Young player in H&amp;M sponsored Cañada Blanch kit" loading="lazy" class="hm-cs-hero-img">
+      <img src="/wp-content/uploads/2026/10/hm-cb-kit-stadium-1.webp"
+           alt="2026/27 kit unveiling — H&amp;M Group sponsored Cañada Blanch kit" loading="lazy" class="hm-cs-hero-img">
     </div>
   </div>
 </section>
@@ -513,22 +513,26 @@ document.addEventListener("DOMContentLoaded", function () {
       <h2>On the Pitch</h2>
       <p>Players representing Cañada Blanch — and our brand — across London.</p>
     </div>
-    <div class="hm-csg-grid">
-      <div class="hm-csg-img-wrap">
-        <img src="https://footballschoolcanadablanch.com/wp-content/uploads/2026/06/6c647e_ff0409fbb29e40de8d7c4c42ea900ceemv2.avif"
-             alt="Cañada Blanch players in H&amp;M sponsored kit" loading="lazy">
+    <div class="hm-csg-grid hm-csg-grid-5">
+      <div class="hm-csg-img-wrap hm-csg-kit-portrait">
+        <img src="/wp-content/uploads/2026/10/hm-cb-kit-red-blue-1.webp"
+             alt="Player in H&amp;M sponsored Cañada Blanch red kit" loading="lazy">
       </div>
-      <div class="hm-csg-img-wrap">
-        <img src="https://footballschoolcanadablanch.com/wp-content/uploads/2026/06/6c647e_ef63e703dabc48ffb8849f75a69c04b2mv2.avif"
-             alt="Team training session" loading="lazy">
+      <div class="hm-csg-img-wrap hm-csg-kit-portrait">
+        <img src="/wp-content/uploads/2026/10/hm-cb-kit-red-blue-2.webp"
+             alt="Player in H&amp;M sponsored Cañada Blanch red kit" loading="lazy">
       </div>
-      <div class="hm-csg-img-wrap">
-        <img src="https://footballschoolcanadablanch.com/wp-content/uploads/2026/06/6c647e_d82e0259603c4432999899d5d278249bmv2.avif"
-             alt="Cañada Blanch at international tournament" loading="lazy">
+      <div class="hm-csg-img-wrap hm-csg-kit-portrait">
+        <img src="/wp-content/uploads/2026/10/hm-cb-kit-gk-green.webp"
+             alt="2026/27 GK kit unveiling — green H&amp;M Group goalkeeper kit" loading="lazy">
       </div>
-      <div class="hm-csg-img-wrap hm-csg-wide">
-        <img src="https://footballschoolcanadablanch.com/wp-content/uploads/2026/06/Spanish-Football-Academy-in-London-canada-blanch.png"
-             alt="Spanish Football Academy London" loading="lazy">
+      <div class="hm-csg-img-wrap hm-csg-kit-poster">
+        <img src="/wp-content/uploads/2026/10/hm-cb-kit-stadium-1.webp"
+             alt="2026/27 kit unveiling — ready for the big stage" loading="lazy">
+      </div>
+      <div class="hm-csg-img-wrap hm-csg-kit-poster">
+        <img src="/wp-content/uploads/2026/10/hm-cb-kit-stadium-2.webp"
+             alt="2026/27 new kit available now" loading="lazy">
       </div>
     </div>
   </div>
@@ -584,9 +588,13 @@ document.addEventListener("DOMContentLoaded", function () {
 .hm-csg-head h2{font-family:'Hanken Grotesk',sans-serif;font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;color:#1F242E;margin-bottom:10px;}
 .hm-csg-head p{color:#666;}
 .hm-csg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-@media(max-width:767px){.hm-csg-grid{grid-template-columns:1fr 1fr;}}
+.hm-csg-grid-5{grid-template-columns:repeat(5,1fr);}
+@media(max-width:1023px){.hm-csg-grid-5{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:767px){.hm-csg-grid{grid-template-columns:1fr 1fr;}.hm-csg-grid-5{grid-template-columns:1fr 1fr;}}
 .hm-csg-img-wrap{border-radius:10px;overflow:hidden;aspect-ratio:4/3;}
-.hm-csg-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s;}
+.hm-csg-kit-portrait{aspect-ratio:2/3;}
+.hm-csg-kit-poster{aspect-ratio:3/4;}
+.hm-csg-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .4s;}
 .hm-csg-img-wrap:hover img{transform:scale(1.04);}
 .hm-csg-wide{grid-column:span 2;aspect-ratio:16/7;}
 .hm-cs-logos{background:#f7f4ec;padding:48px 24px;text-align:center;}
