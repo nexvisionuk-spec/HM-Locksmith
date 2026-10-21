@@ -42,13 +42,10 @@
 .elementor-element-78cf0e9 .hm-happy-stars { color: #e5142f !important; font-size: 15px; letter-spacing: 2px; }
 .elementor-element-78cf0e9 .hm-happy-label { color: #fff !important; font-weight: 700; font-size: 14px; font-family: 'Hanken Grotesk', Arial, sans-serif; }
 .elementor-element-78cf0e9 .hm-happy-label { text-shadow: 0 1px 6px rgba(0,0,0,.3); }
-/* light mode: hero is a photo on mobile (white text), a light grid on desktop (dark text) */
-html:not(.hm-theme-dark) .elementor-element-78cf0e9 .hm-happy-label { color: #ffffff !important; }
-html:not(.hm-theme-dark) .elementor-element-78cf0e9 .hm-happy-badge { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.32); color: #ffffff !important; }
-@media (min-width: 768px) {
-  html:not(.hm-theme-dark) .elementor-element-78cf0e9 .hm-happy-label { color: #1f242e !important; text-shadow: none; }
-  html:not(.hm-theme-dark) .elementor-element-78cf0e9 .hm-happy-badge { background: rgba(0,0,0,.06); border-color: rgba(0,0,0,.18); color: #1f242e !important; }
-}
+/* Hero is a dark team photo at ALL widths now, so the badge + label stay
+   light-on-dark everywhere (previously desktop assumed a light hero grid). */
+.elementor-element-78cf0e9 .hm-happy-label { color: #ffffff !important; }
+.elementor-element-78cf0e9 .hm-happy-badge { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.32); color: #ffffff !important; }
 /* beat the dark hero's blanket span colour */
 html.hm-theme-dark body .elementor-element-78cf0e9 .hm-happy-stars { color: #e5142f !important; }
 html.hm-theme-dark body .elementor-element-78cf0e9 .hm-happy-label { color: #ffffff !important; }
@@ -105,46 +102,49 @@ html.hm-theme-dark body .elementor-element-78cf0e9,
   max-width: 620px !important;
 }
 
-/* Override Elementor's own background — DESKTOP ONLY */
-@media (min-width: 768px) {
-  html body .elementor-5286 .elementor-element.elementor-element-78cf0e9,
-  html body .elementor-5286 .elementor-element.elementor-element-78cf0e9:not(.elementor-motion-effects-element-type-background) {
-    background-image: url('/wp-content/uploads/2026/09/magnific_upscale_WDCjAbecXe-scaled.webp') !important;
-    background-size: cover !important;
-    background-position: center top !important;
-    background-repeat: no-repeat !important;
-    min-height: 560px !important;
-  }
-  /* Gradient overlay: deep left fading to translucent right */
-  html body .elementor-5286 .elementor-element.elementor-element-78cf0e9::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: linear-gradient(100deg, rgba(8,8,11,.82) 0%, rgba(8,8,11,.58) 50%, rgba(8,8,11,.18) 100%);
-    z-index: 0; pointer-events: none;
-  }
+/* Hero background photo + dark overlay — ALL breakpoints.
+   Dark mode was removed, so the hero must carry its own dark background for the
+   white headline to stay readable (previously mobile relied on the dark theme). */
+html body .elementor-5286 .elementor-element.elementor-element-78cf0e9,
+html body .elementor-5286 .elementor-element.elementor-element-78cf0e9:not(.elementor-motion-effects-element-type-background) {
+  background-image: url('/wp-content/uploads/2026/09/magnific_upscale_WDCjAbecXe-scaled.webp') !important;
+  background-size: cover !important;
+  background-position: center top !important;
+  background-repeat: no-repeat !important;
+  min-height: 560px !important;
 }
-/* Mobile: revert — no background photo, no overlay, no forced min-height */
+/* Gradient overlay: deep left fading to translucent right (desktop) */
+html body .elementor-5286 .elementor-element.elementor-element-78cf0e9::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(100deg, rgba(8,8,11,.82) 0%, rgba(8,8,11,.58) 50%, rgba(8,8,11,.18) 100%);
+  z-index: 0; pointer-events: none;
+}
+/* Mobile: keep the photo, centre the crop on the team, and use a stronger, more
+   even scrim so the left-aligned white text stays crisp on a narrow screen. */
 @media (max-width: 767px) {
   html body .elementor-5286 .elementor-element.elementor-element-78cf0e9,
   html body .elementor-5286 .elementor-element.elementor-element-78cf0e9:not(.elementor-motion-effects-element-type-background) {
-    background-image: none !important;
+    background-position: center center !important;
     min-height: unset !important;
   }
   html body .elementor-5286 .elementor-element.elementor-element-78cf0e9::before {
-    display: none !important;
-  }
-  /* Restore mobile inner alignment */
-  .elementor-element-78cf0e9 > .e-con-inner {
-    justify-content: center !important;
-    padding-left: 0 !important;
+    background: linear-gradient(180deg, rgba(8,8,11,.86) 0%, rgba(8,8,11,.76) 45%, rgba(8,8,11,.84) 100%) !important;
   }
 }
-/* Lift inner content above the overlay; left-align the text block */
+/* Lift inner content above the overlay; left-align the text block (all widths) */
 .elementor-element-78cf0e9 > .e-con-inner {
   position: relative;
   z-index: 1;
   justify-content: flex-start !important;
   padding-left: 60px !important;
+}
+@media (max-width: 767px) {
+  .elementor-element-78cf0e9 > .e-con-inner {
+    justify-content: flex-start !important;
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+  }
 }
 
 /* Hero text: always white — photo bg is always dark regardless of theme */

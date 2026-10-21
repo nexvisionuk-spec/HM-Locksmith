@@ -1405,3 +1405,13 @@ html:not(.hm-theme-dark) .hm-theme-toggle {
   object-fit: contain !important;
   background: #f2f2f2;
 }
+
+/* ---------- 15. Soften SHOUTY all-caps (client request) ----------
+   Primary buttons and the hero call-card label were forced ALL-CAPS by the
+   theme. Show them in normal (title) case instead. Small section eyebrows are
+   left as-is so some intentional caps remain. */
+.elementor-button .elementor-button-text,
+.hm-services-cta-btn,
+.hm-hc-call .hm-hc-body small {
+  text-transform: none !important;
+}

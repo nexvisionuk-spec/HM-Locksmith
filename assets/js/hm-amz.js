@@ -58,7 +58,7 @@
         cards.innerHTML =
           '<a class="hm-hc hm-hc-call" href="tel:02031051145" aria-label="Call 0203 105 1145">' +
             '<span class="hm-hc-ic">' + PHONE + "</span>" +
-            '<span class="hm-hc-body"><small>24/7 Emergency — call now</small><strong>0203 105 1145</strong></span>' +
+            '<span class="hm-hc-body"><small>24/7 Emergency — Call Now</small><strong>0203 105 1145</strong></span>' +
           "</a>" +
           '<div class="hm-hc hm-hc-rev">' +
             '<span class="hm-hc-stars">★★★★★</span>' +
