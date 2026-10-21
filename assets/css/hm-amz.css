@@ -1,0 +1,316 @@
+/* ==========================================================================
+   H&M — AMZ-inspired structure layer (homepage)
+   Adopts layout signatures from amzlocksmith.co.uk in H&M's own style:
+   1) top red USP bar  2) hero call-now + reviews cards
+   3) reviews surfaced higher  4) soft red-tint section rhythm
+   Works in both light and dark themes.
+   ========================================================================== */
+
+/* ---------- 1. Top red USP bar ---------- */
+.hm-usp-bar {
+  display: flex; align-items: center; justify-content: center;
+  flex-wrap: wrap; gap: 10px 26px;
+  background: #c41230; color: #fff;
+  font-family: 'Hanken Grotesk', Arial, sans-serif;
+  font-size: 13px; font-weight: 700; letter-spacing: .02em;
+  padding: 9px 16px; text-align: center; line-height: 1.2;
+}
+.hm-usp-bar .hm-usp { display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; }
+.hm-usp-bar .hm-usp svg { width: 14px; height: 14px; fill: currentColor; flex: none; }
+.hm-usp-bar .hm-usp-star { color: #ffd54a; }
+@media (max-width: 860px) {
+  .hm-usp-bar { font-size: 11.5px; gap: 8px 16px; padding: 8px 12px; }
+  .hm-usp-bar .hm-usp-sm-hide { display: none; }
+}
+
+/* ---------- Hero "Happy clients": drop the stock faces, keep stars + count ----
+   The original was a single composite image (faces + 1K + stars). Hide it and
+   rebuild a clean badge with no faces. */
+.elementor-element-78cf0e9 img.wp-image-7488,
+.elementor-element-78cf0e9 img[src*="custom-img-503-fourth"],
+.elementor-element-78cf0e9 .elementor-element-27e6e6d,
+.elementor-element-78cf0e9 .elementor-element-4d5baf7 { display: none !important; }
+.elementor-element-78cf0e9 .hm-happy { display: inline-flex; align-items: center; gap: 12px; margin-bottom: 4px; }
+.elementor-element-78cf0e9 .hm-happy-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 48px; height: 30px; padding: 0 11px; border-radius: 999px;
+  background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.28);
+  color: #fff !important; font-weight: 800; font-size: 13px; letter-spacing: .02em;
+  font-family: 'Hanken Grotesk', Arial, sans-serif;
+}
+.elementor-element-78cf0e9 .hm-happy-meta { display: flex; flex-direction: column; line-height: 1.15; }
+.elementor-element-78cf0e9 .hm-happy-stars { color: #e5142f !important; font-size: 15px; letter-spacing: 2px; }
+.elementor-element-78cf0e9 .hm-happy-label { color: #fff !important; font-weight: 700; font-size: 14px; font-family: 'Hanken Grotesk', Arial, sans-serif; }
+.elementor-element-78cf0e9 .hm-happy-label { text-shadow: 0 1px 6px rgba(0,0,0,.3); }
+/* light mode: hero is a photo on mobile (white text), a light grid on desktop (dark text) */
+html:not(.hm-theme-dark) .elementor-element-78cf0e9 .hm-happy-label { color: #ffffff !important; }
+html:not(.hm-theme-dark) .elementor-element-78cf0e9 .hm-happy-badge { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.32); color: #ffffff !important; }
+@media (min-width: 768px) {
+  html:not(.hm-theme-dark) .elementor-element-78cf0e9 .hm-happy-label { color: #1f242e !important; text-shadow: none; }
+  html:not(.hm-theme-dark) .elementor-element-78cf0e9 .hm-happy-badge { background: rgba(0,0,0,.06); border-color: rgba(0,0,0,.18); color: #1f242e !important; }
+}
+/* beat the dark hero's blanket span colour */
+html.hm-theme-dark body .elementor-element-78cf0e9 .hm-happy-stars { color: #e5142f !important; }
+html.hm-theme-dark body .elementor-element-78cf0e9 .hm-happy-label { color: #ffffff !important; }
+html.hm-theme-dark body .elementor-element-78cf0e9 .hm-happy-badge { color: #ffffff !important; }
+
+/* ---------- Emergency CTA: bold red panel ---------- */
+.elementor-element-e8b5968 .elementor-element-103073a,
+.elementor-element-e8b5968 .elementor-element-103073a > .elementor-widget-wrap.elementor-element-populated,
+html.hm-theme-dark body .elementor-element-e8b5968 .elementor-element-103073a,
+html.hm-theme-dark body .elementor-element-e8b5968 .elementor-element-103073a > .elementor-widget-wrap.elementor-element-populated {
+  background-image: linear-gradient(140deg, #e5142f 0%, #bd1328 55%, #8f0e20 100%) !important;
+  background-color: transparent !important;
+}
+.elementor-element-e8b5968 .elementor-background-overlay,
+html.hm-theme-dark body .elementor-element-e8b5968 .elementor-background-overlay {
+  opacity: .18 !important; mix-blend-mode: multiply;
+}
+.elementor-element-e8b5968 .elementor-element-3e31415 .elementor-heading-title,
+html.hm-theme-dark body .elementor-element-e8b5968 .elementor-element-3e31415 .elementor-heading-title {
+  color: #ffffff !important; opacity: .9;
+}
+.elementor-element-e8b5968 .elementor-element-339257b a.elementor-button,
+html.hm-theme-dark body .elementor-element-e8b5968 .elementor-element-339257b a.elementor-button {
+  background: #ffffff !important; color: #c41230 !important; box-shadow: 0 10px 26px rgba(0,0,0,.3) !important;
+}
+.elementor-element-e8b5968 .elementor-element-339257b a.elementor-button:hover,
+html.hm-theme-dark body .elementor-element-e8b5968 .elementor-element-339257b a.elementor-button:hover {
+  background: #0b0b0d !important; color: #ffffff !important;
+}
+
+/* ---------- Hero: full-width team photo background ---------- */
+/* Kill the 1px white border the generic dark e-con rule adds to the hero */
+html.hm-theme-dark body .elementor-element-78cf0e9,
+.elementor-element-78cf0e9 {
+  border: none !important;
+  outline: none !important;
+}
+
+/* Review card: center all text inside it */
+.hm-hero-cards .hm-hc-rev {
+  align-items: center !important;
+  text-align: center !important;
+}
+.hm-hero-cards .hm-hc-rev .hm-hc-body { align-items: center !important; text-align: center; }
+
+/* Hide the right-column and its parent column — photo is the CSS background now */
+.elementor-element-78cf0e9 .elementor-element-e0ecd90 { display: none !important; }
+.elementor-element-78cf0e9 .elementor-element-7d4c71c {
+  display: none !important;
+}
+/* Text column takes the full width */
+.elementor-element-78cf0e9 > .e-con-inner > .elementor-element-3eb0787 {
+  flex: 0 0 100% !important;
+  max-width: 620px !important;
+}
+
+/* Override Elementor's own background — DESKTOP ONLY */
+@media (min-width: 768px) {
+  html body .elementor-5286 .elementor-element.elementor-element-78cf0e9,
+  html body .elementor-5286 .elementor-element.elementor-element-78cf0e9:not(.elementor-motion-effects-element-type-background) {
+    background-image: url('/wp-content/uploads/2026/09/magnific_upscale_WDCjAbecXe-scaled.webp') !important;
+    background-size: cover !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+    min-height: 560px !important;
+  }
+  /* Gradient overlay: deep left fading to translucent right */
+  html body .elementor-5286 .elementor-element.elementor-element-78cf0e9::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(100deg, rgba(8,8,11,.82) 0%, rgba(8,8,11,.58) 50%, rgba(8,8,11,.18) 100%);
+    z-index: 0; pointer-events: none;
+  }
+}
+/* Mobile: revert — no background photo, no overlay, no forced min-height */
+@media (max-width: 767px) {
+  html body .elementor-5286 .elementor-element.elementor-element-78cf0e9,
+  html body .elementor-5286 .elementor-element.elementor-element-78cf0e9:not(.elementor-motion-effects-element-type-background) {
+    background-image: none !important;
+    min-height: unset !important;
+  }
+  html body .elementor-5286 .elementor-element.elementor-element-78cf0e9::before {
+    display: none !important;
+  }
+  /* Restore mobile inner alignment */
+  .elementor-element-78cf0e9 > .e-con-inner {
+    justify-content: center !important;
+    padding-left: 0 !important;
+  }
+}
+/* Lift inner content above the overlay; left-align the text block */
+.elementor-element-78cf0e9 > .e-con-inner {
+  position: relative;
+  z-index: 1;
+  justify-content: flex-start !important;
+  padding-left: 60px !important;
+}
+
+/* Hero text: always white — photo bg is always dark regardless of theme */
+.elementor-element-78cf0e9 h1.elementor-heading-title,
+.elementor-element-78cf0e9 h2.elementor-heading-title,
+.elementor-element-78cf0e9 .elementor-heading-title,
+.elementor-element-78cf0e9 h1,
+html.hm-theme-dark body .elementor-element-78cf0e9 h1.elementor-heading-title,
+html:not(.hm-theme-dark) .elementor-element-78cf0e9 h1.elementor-heading-title {
+  color: #ffffff !important;
+  text-shadow: 0 2px 16px rgba(0,0,0,.45);
+}
+/* All other text/spans in hero also white */
+.elementor-element-78cf0e9 .elementor-element-3eb0787 p,
+.elementor-element-78cf0e9 .elementor-element-3eb0787 span:not(.hm-happy-stars):not(.hm-happy-badge):not(.hm-hc-stars):not(.hm-hc-body):not(.hm-hc-ic):not(.hm-hc-call):not(.hm-hc-rev) {
+  color: rgba(255,255,255,.9) !important;
+}
+
+
+/* ---------- Hero CTA button: size to its text, not full-width ---------- */
+.elementor-element-693f713 a.elementor-button {
+  width: auto !important;
+  display: inline-flex !important;
+  align-items: center;
+  padding: 15px 34px !important;
+  font-size: 15px !important;
+}
+
+/* ---------- 2. Hero: call-now card + reviews card ---------- */
+.hm-hero-cards {
+  display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; max-width: 500px;
+  align-items: stretch;
+}
+/* compact sizing (were too chunky) */
+.hm-hero-cards .hm-hc { padding: 11px 14px !important; border-radius: 12px; min-height: 0; }
+.hm-hero-cards .hm-hc-call .hm-hc-ic { width: 34px; height: 34px; }
+.hm-hero-cards .hm-hc-call .hm-hc-ic svg { width: 17px; height: 17px; }
+.hm-hero-cards .hm-hc-call .hm-hc-body small { font-size: 10px; }
+.hm-hero-cards .hm-hc-call .hm-hc-body strong { font-size: 18px; }
+.hm-hero-cards .hm-hc-rev { justify-content: center; gap: 3px; }
+.hm-hero-cards .hm-hc-rev .hm-hc-stars { font-size: 13px; letter-spacing: 1px; }
+.hm-hero-cards .hm-hc-rev .hm-hc-body strong { font-size: 13px; }
+.hm-hero-cards .hm-hc-rev .hm-hc-body small { font-size: 11px; }
+.hm-hero-cards .hm-hc {
+  flex: 1 1 0; min-width: 0;
+  display: flex; align-items: center; gap: 13px;
+  padding: 14px 16px; border-radius: 14px; text-decoration: none;
+  font-family: 'Hanken Grotesk', Arial, sans-serif;
+}
+.hm-hc-call { background: #c41230; color: #fff; box-shadow: 0 12px 30px rgba(196,18,48,.3); transition: transform .18s ease, box-shadow .18s ease; }
+.hm-hc-call:hover { transform: translateY(-2px); box-shadow: 0 16px 38px rgba(196,18,48,.42); }
+.hm-hc-call .hm-hc-ic {
+  width: 40px; height: 40px; flex: none; border-radius: 50%;
+  background: rgba(255,255,255,.18); display: grid; place-items: center;
+}
+.hm-hc-call .hm-hc-ic svg { width: 20px; height: 20px; fill: #fff; }
+.hm-hc-call .hm-hc-body { display: flex; flex-direction: column; line-height: 1.15; }
+.hm-hc-call .hm-hc-body small { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; opacity: .9; }
+.hm-hc-call .hm-hc-body strong { font-size: 21px; font-weight: 800; letter-spacing: .01em; }
+
+.hm-hc-rev { background: #ffffff; color: #1a1a1a; border: 1px solid rgba(0,0,0,.08); box-shadow: 0 12px 30px rgba(0,0,0,.18); flex-direction: column; align-items: flex-start; gap: 4px; }
+.hm-hc-rev .hm-hc-stars { color: #f5a623; font-size: 15px; letter-spacing: 2px; }
+.hm-hc-rev .hm-hc-body { display: flex; flex-direction: column; line-height: 1.25; align-items: center; text-align: center; }
+.hm-hc-rev .hm-hc-body strong { font-size: 14px; font-weight: 800; color: #141414; text-align: center; }
+.hm-hc-rev .hm-hc-body small { font-size: 12px; color: #666; text-align: center; }
+
+/* beat the hero's blanket span colour so card text keeps its own colours */
+.hm-hero-cards .hm-hc-call,
+.hm-hero-cards .hm-hc-call span,
+.hm-hero-cards .hm-hc-call small,
+.hm-hero-cards .hm-hc-call strong { color: #fff !important; }
+.hm-hero-cards .hm-hc-rev .hm-hc-stars { color: #f5a623 !important; }
+.hm-hero-cards .hm-hc-rev strong { color: #141414 !important; }
+.hm-hero-cards .hm-hc-rev small { color: #666 !important; }
+
+@media (max-width: 767px) {
+  .hm-hero-cards { margin-top: 20px; max-width: 100%; }
+  .hm-hc { flex: 1 1 100%; }
+}
+
+/* ---------- 4. Soft red-tint section rhythm ("colour grid") ----------
+   Light mode: AMZ-style soft pink-red blocks alternating with white.
+   Dark mode: a subtle warm-dark so the rhythm still reads. */
+html:not(.hm-theme-dark) .elementor-element-11e96edd,
+html:not(.hm-theme-dark) .elementor-element-8b2ec58 {
+  background-color: #fbeef0 !important;
+}
+html.hm-theme-dark body .elementor-element-11e96edd.e-con.e-parent,
+html.hm-theme-dark body .elementor-element-8b2ec58.e-con.e-parent {
+  background-color: #130d0f !important;
+}
+
+/* ---------- Mix: contrasting secondary buttons + hairline dividers ----------
+   AMZ mixes black & white blocks. Here the SECONDARY buttons invert per theme
+   (white-on-dark in dark mode, black-on-light in light mode) and a few sections
+   get a thin contrasting divider line. Kept light — the red stays the primary. */
+
+/* secondary buttons: white in dark mode */
+html.hm-theme-dark body .hm-services-cta-btn,
+html.hm-theme-dark body .hm-reviews-cta a {
+  background: #ffffff !important;
+  color: #0b0b0d !important;
+  border: 2px solid #ffffff !important;
+  box-shadow: 0 8px 22px rgba(0,0,0,.42) !important;
+}
+html.hm-theme-dark body .hm-services-cta-btn:hover,
+html.hm-theme-dark body .hm-reviews-cta a:hover {
+  background: #e9e9e9 !important; color: #0b0b0d !important; border-color: #e9e9e9 !important;
+}
+html.hm-theme-dark body .hm-services-cta-btn svg { fill: #0b0b0d !important; color: #0b0b0d !important; }
+
+/* secondary buttons: black in light mode */
+html:not(.hm-theme-dark) .hm-services-cta-btn,
+html:not(.hm-theme-dark) .hm-reviews-cta a {
+  background: #111214 !important;
+  color: #ffffff !important;
+  border: 2px solid #111214 !important;
+}
+html:not(.hm-theme-dark) .hm-services-cta-btn:hover,
+html:not(.hm-theme-dark) .hm-reviews-cta a:hover {
+  background: #c41230 !important; color: #ffffff !important; border-color: #c41230 !important;
+}
+
+/* thin contrasting divider lines between a couple of sections */
+html.hm-theme-dark body .elementor-element-ed08da9,
+html.hm-theme-dark body .elementor-element-e840018 { border-top: 1px solid rgba(255,255,255,.12); }
+html:not(.hm-theme-dark) .elementor-element-ed08da9,
+html:not(.hm-theme-dark) .elementor-element-e840018 { border-top: 1px solid rgba(0,0,0,.1); }
+
+/* ---------- Breathing room in the service cards (were cramped) ----------
+   The checklist sat ~4px under each card; give it real space and looser rows. */
+#services .e-con.e-child { padding-top: 18px !important; padding-bottom: 34px !important; }
+#services .elementor-widget-icon-list { margin-top: 22px !important; }
+#services .elementor-icon-list-item { padding-bottom: 11px !important; }
+#services .elementor-icon-list-item:last-child { padding-bottom: 0 !important; }
+#services .e-con-inner { gap: 30px !important; }
+/* more air between the stacked cards */
+#services .elementor-element.e-con.e-child + .e-con.e-child { margin-top: 10px; }
+
+/* ---------- Service-card photos: fill the frame, keep faces (crop bottom) ----
+   The portrait "Reactive Maintenance" photo was letterboxed; zoom it to fill
+   and anchor near the top so the face stays and the crop comes off the bottom. */
+.elementor-element-ed08da9 .trx-addons-info-box-icon-wrap img {
+  object-fit: cover !important;
+  object-position: center 14% !important;
+  background: transparent !important;
+}
+
+/* ---------- DESKTOP hero photo (right column) --------------------------------
+   The old hero art was a transparent cutout sitting on a baked-in dark circle.
+   The new shot is a plain rectangular uniform/team photo, so frame it as a
+   premium card: rounded corners, soft border + shadow, cover-cropped. Desktop
+   only (the hero image widget is hidden on tablet/mobile; mobile uses b66c3a1).*/
+.elementor-element-78cf0e9 img.hm-hero-photo {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 520px;
+  aspect-ratio: 16 / 11;
+  object-fit: cover !important;
+  object-position: center 28% !important;
+  border-radius: 22px !important;
+  box-shadow: 0 24px 60px rgba(0,0,0,.28), 0 2px 0 rgba(255,255,255,.04) inset;
+  border: 1px solid rgba(0,0,0,.08);
+  background: transparent !important;
+}
+html.hm-theme-dark body .elementor-element-78cf0e9 img.hm-hero-photo {
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: 0 26px 70px rgba(0,0,0,.55);
+}
