@@ -80,6 +80,20 @@ html.hm-theme-dark body .elementor-element-e8b5968 .elementor-element-339257b a.
 }
 
 /* ---------- Hero: full-width team photo background ---------- */
+/* Kill the 1px white border the generic dark e-con rule adds to the hero */
+html.hm-theme-dark body .elementor-element-78cf0e9,
+.elementor-element-78cf0e9 {
+  border: none !important;
+  outline: none !important;
+}
+
+/* Review card: center all text inside it */
+.hm-hero-cards .hm-hc-rev {
+  align-items: center !important;
+  text-align: center !important;
+}
+.hm-hero-cards .hm-hc-rev .hm-hc-body { align-items: center !important; text-align: center; }
+
 /* Hide the right-column and its parent column — photo is the CSS background now */
 .elementor-element-78cf0e9 .elementor-element-e0ecd90 { display: none !important; }
 .elementor-element-78cf0e9 .elementor-element-7d4c71c {
