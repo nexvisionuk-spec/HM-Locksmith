@@ -110,6 +110,22 @@ html body .elementor-5286 .elementor-element.elementor-element-78cf0e9::before {
 /* Lift inner content above the overlay */
 .elementor-element-78cf0e9 > .e-con-inner { position: relative; z-index: 1; }
 
+/* Hero text: always white — photo bg is always dark regardless of theme */
+.elementor-element-78cf0e9 h1.elementor-heading-title,
+.elementor-element-78cf0e9 h2.elementor-heading-title,
+.elementor-element-78cf0e9 .elementor-heading-title,
+.elementor-element-78cf0e9 h1,
+html.hm-theme-dark body .elementor-element-78cf0e9 h1.elementor-heading-title,
+html:not(.hm-theme-dark) .elementor-element-78cf0e9 h1.elementor-heading-title {
+  color: #ffffff !important;
+  text-shadow: 0 2px 16px rgba(0,0,0,.45);
+}
+/* All other text/spans in hero also white */
+.elementor-element-78cf0e9 .elementor-element-3eb0787 p,
+.elementor-element-78cf0e9 .elementor-element-3eb0787 span:not(.hm-happy-stars):not(.hm-happy-badge) {
+  color: rgba(255,255,255,.9) !important;
+}
+
 
 /* ---------- Hero CTA button: size to its text, not full-width ---------- */
 .elementor-element-693f713 a.elementor-button {
