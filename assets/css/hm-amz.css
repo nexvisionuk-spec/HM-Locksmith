@@ -207,3 +207,25 @@ html:not(.hm-theme-dark) .elementor-element-e840018 { border-top: 1px solid rgba
   object-position: center 14% !important;
   background: transparent !important;
 }
+
+/* ---------- DESKTOP hero photo (right column) --------------------------------
+   The old hero art was a transparent cutout sitting on a baked-in dark circle.
+   The new shot is a plain rectangular uniform/team photo, so frame it as a
+   premium card: rounded corners, soft border + shadow, cover-cropped. Desktop
+   only (the hero image widget is hidden on tablet/mobile; mobile uses b66c3a1).*/
+.elementor-element-78cf0e9 img.hm-hero-photo {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 520px;
+  aspect-ratio: 16 / 11;
+  object-fit: cover !important;
+  object-position: center 28% !important;
+  border-radius: 22px !important;
+  box-shadow: 0 24px 60px rgba(0,0,0,.28), 0 2px 0 rgba(255,255,255,.04) inset;
+  border: 1px solid rgba(0,0,0,.08);
+  background: transparent !important;
+}
+html.hm-theme-dark body .elementor-element-78cf0e9 img.hm-hero-photo {
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: 0 26px 70px rgba(0,0,0,.55);
+}
