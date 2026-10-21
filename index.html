@@ -1997,6 +1997,11 @@ document.addEventListener("DOMContentLoaded", function () {
 										</a>
 									</li>
 								<li class="elementor-icon-list-item">
+										<a href="/community/">
+										<span class="elementor-icon-list-text">Community</span>
+										</a>
+									</li>
+								<li class="elementor-icon-list-item">
 										<a href="/trades/">
 										<span class="elementor-icon-list-text">Trades</span>
 										</a>
@@ -2087,6 +2092,27 @@ document.addEventListener("DOMContentLoaded", function () {
 				</div>
 				</div>
 		</footer>
+<script>
+(function(){
+  var el = document.querySelector('.elementor-element-c266de1 .swiper-wrapper');
+  if(!el) return;
+  var done = false;
+  var obs = new IntersectionObserver(function(entries){
+    if(done || !entries[0].isIntersecting) return;
+    done = true;
+    obs.disconnect();
+    setTimeout(function(){
+      el.style.transition = 'transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94)';
+      el.style.transform = 'translateX(-60px)';
+      setTimeout(function(){
+        el.style.transform = 'translateX(0)';
+        setTimeout(function(){ el.style.transition = ''; }, 500);
+      }, 420);
+    }, 400);
+  }, {threshold: 0.3});
+  obs.observe(document.querySelector('.elementor-element-c266de1'));
+})();
+</script>
 			
 		</div>
 
