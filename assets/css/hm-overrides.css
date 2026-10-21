@@ -1337,9 +1337,12 @@ html:not(.hm-theme-dark) .hm-theme-toggle {
 }
 @media (max-width: 1024px) { .hm-theme-toggle { bottom: 86px; } }
 
-/* ---------- 16. Emergency CTA heading: sentence case, not ALL CAPS ---------- */
+/* ---------- 16. Emergency CTA heading: sentence case, not ALL CAPS ----------
+   Homepage uses widget id 506d51c; every trades page uses 4867459. */
 .elementor-element-506d51c .elementor-heading-title,
-.elementor-element-506d51c .elementor-heading-title * {
+.elementor-element-506d51c .elementor-heading-title *,
+.elementor-element-4867459 .elementor-heading-title,
+.elementor-element-4867459 .elementor-heading-title * {
   text-transform: none !important;
 }
 
