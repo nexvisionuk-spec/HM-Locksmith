@@ -138,12 +138,14 @@ html body .elementor-5286 .elementor-element.elementor-element-78cf0e9::before {
   z-index: 1;
   justify-content: flex-start !important;
   padding-left: 60px !important;
+  padding-bottom: 56px !important;   /* breathing room below the hero cards */
 }
 @media (max-width: 767px) {
   .elementor-element-78cf0e9 > .e-con-inner {
     justify-content: flex-start !important;
     padding-left: 22px !important;
     padding-right: 22px !important;
+    padding-bottom: 40px !important;
   }
 }
 
