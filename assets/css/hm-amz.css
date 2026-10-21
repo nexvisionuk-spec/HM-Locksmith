@@ -79,6 +79,32 @@ html.hm-theme-dark body .elementor-element-e8b5968 .elementor-element-339257b a.
   background: #0b0b0d !important; color: #ffffff !important;
 }
 
+/* ---------- Hero photo: full-width background on the hero section ---------- */
+/* Hide the img widget column — photo is now a CSS background */
+.elementor-element-78cf0e9 .elementor-element-e0ecd90 { display: none !important; }
+
+/* Full-bleed background on the hero wrapper */
+.elementor-element-78cf0e9.e-con {
+  background-image: url('/wp-content/uploads/2026/09/magnific_upscale_WDCjAbecXe-scaled.webp') !important;
+  background-size: cover !important;
+  background-position: center top !important;
+  background-repeat: no-repeat !important;
+  position: relative;
+  min-height: 540px !important;
+}
+/* Dark overlay so text stays readable */
+.elementor-element-78cf0e9.e-con::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(100deg, rgba(10,10,14,.80) 0%, rgba(10,10,14,.55) 55%, rgba(10,10,14,.20) 100%);
+  z-index: 0; pointer-events: none;
+}
+/* Lift content above overlay */
+.elementor-element-78cf0e9 > .e-con-inner { position: relative; z-index: 1; }
+/* Widen the text column to use the full space */
+.elementor-element-78cf0e9 > .e-con-inner > .elementor-element-3eb0787 { flex: 0 0 55% !important; max-width: 55% !important; }
+
+
 /* ---------- Hero CTA button: size to its text, not full-width ---------- */
 .elementor-element-693f713 a.elementor-button {
   width: auto !important;
