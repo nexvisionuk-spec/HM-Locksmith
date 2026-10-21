@@ -105,21 +105,39 @@ html.hm-theme-dark body .elementor-element-78cf0e9,
   max-width: 620px !important;
 }
 
-/* Override Elementor's own background (post-5286.css has the same specificity pattern) */
-html body .elementor-5286 .elementor-element.elementor-element-78cf0e9,
-html body .elementor-5286 .elementor-element.elementor-element-78cf0e9:not(.elementor-motion-effects-element-type-background) {
-  background-image: url('/wp-content/uploads/2026/09/magnific_upscale_WDCjAbecXe-scaled.webp') !important;
-  background-size: cover !important;
-  background-position: center top !important;
-  background-repeat: no-repeat !important;
-  min-height: 560px !important;
+/* Override Elementor's own background — DESKTOP ONLY */
+@media (min-width: 768px) {
+  html body .elementor-5286 .elementor-element.elementor-element-78cf0e9,
+  html body .elementor-5286 .elementor-element.elementor-element-78cf0e9:not(.elementor-motion-effects-element-type-background) {
+    background-image: url('/wp-content/uploads/2026/09/magnific_upscale_WDCjAbecXe-scaled.webp') !important;
+    background-size: cover !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+    min-height: 560px !important;
+  }
+  /* Gradient overlay: deep left fading to translucent right */
+  html body .elementor-5286 .elementor-element.elementor-element-78cf0e9::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(100deg, rgba(8,8,11,.82) 0%, rgba(8,8,11,.58) 50%, rgba(8,8,11,.18) 100%);
+    z-index: 0; pointer-events: none;
+  }
 }
-/* Gradient overlay: deep left (text side) fading to translucent right */
-html body .elementor-5286 .elementor-element.elementor-element-78cf0e9::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(100deg, rgba(8,8,11,.82) 0%, rgba(8,8,11,.58) 50%, rgba(8,8,11,.18) 100%);
-  z-index: 0; pointer-events: none;
+/* Mobile: revert — no background photo, no overlay, no forced min-height */
+@media (max-width: 767px) {
+  html body .elementor-5286 .elementor-element.elementor-element-78cf0e9,
+  html body .elementor-5286 .elementor-element.elementor-element-78cf0e9:not(.elementor-motion-effects-element-type-background) {
+    background-image: none !important;
+    min-height: unset !important;
+  }
+  html body .elementor-5286 .elementor-element.elementor-element-78cf0e9::before {
+    display: none !important;
+  }
+  /* Restore mobile inner alignment */
+  .elementor-element-78cf0e9 > .e-con-inner {
+    justify-content: center !important;
+    padding-left: 0 !important;
+  }
 }
 /* Lift inner content above the overlay; left-align the text block */
 .elementor-element-78cf0e9 > .e-con-inner {
