@@ -2094,23 +2094,18 @@ document.addEventListener("DOMContentLoaded", function () {
 		</footer>
 <script>
 (function(){
-  var el = document.querySelector('.elementor-element-c266de1 .swiper-wrapper');
-  if(!el) return;
-  var done = false;
-  var obs = new IntersectionObserver(function(entries){
-    if(done || !entries[0].isIntersecting) return;
-    done = true;
-    obs.disconnect();
-    setTimeout(function(){
-      el.style.transition = 'transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94)';
-      el.style.transform = 'translateX(-60px)';
-      setTimeout(function(){
-        el.style.transform = 'translateX(0)';
-        setTimeout(function(){ el.style.transition = ''; }, 500);
-      }, 420);
-    }, 400);
-  }, {threshold: 0.3});
-  obs.observe(document.querySelector('.elementor-element-c266de1'));
+  function startAutoplay(){
+    var el = document.querySelector('.elementor-element-c266de1 .e-n-carousel.swiper');
+    if(!el || !el.swiper) return false;
+    var s = el.swiper;
+    s.params.autoplay = {delay: 3500, disableOnInteraction: false, pauseOnMouseEnter: true};
+    s.autoplay.start();
+    return true;
+  }
+  if(!startAutoplay()){
+    var tries = 0;
+    var t = setInterval(function(){ if(startAutoplay() || ++tries > 50) clearInterval(t); }, 120);
+  }
 })();
 </script>
 			

@@ -1245,6 +1245,11 @@ a.elementor-button:hover,
   .elementor-element-c266de1 .swiper-slide { transition: transform .35s cubic-bezier(.22,.61,.36,1); }
   .elementor-element-c266de1 .swiper-slide:hover { transform: translateY(-6px); }
 }
+/* Centre background images in carousel cards so subjects are well framed */
+.elementor-element-c266de1 .trx-addons-info-box-container-bg-imitator {
+  background-position: center 30% !important;
+  background-size: cover !important;
+}
 
 /* ---------- 9. Scroll-reveal motion (JS adds .hm-reveal / .hm-in) ---------- */
 @media (prefers-reduced-motion: no-preference) {
