@@ -1423,3 +1423,41 @@ html:not(.hm-theme-dark) .hm-theme-toggle {
    Client didn't want this bar; hide it at every width (it was only hidden on
    the 768-1366 range before, so it still showed on wide desktop). */
 .top_panel .elementor-element-01dd775 { display: none !important; }
+
+/* ---------- 18. "Book A Service Now" form: clean stacked card on mobile -------
+   On desktop the fields form one pill; stacked on phones the last segment (the
+   red button) kept square top corners fused to the white fields. On mobile,
+   lay them out as separate rounded cards + a red pill button. */
+@media (max-width: 767px) {
+  .elementor-element-fb4226f .elementor-form-fields-wrapper {
+    display: flex !important; flex-direction: column; gap: 10px;
+    background: transparent !important; border: 0 !important;
+    border-radius: 0 !important; box-shadow: none !important;
+    overflow: visible !important; padding: 0 !important;
+  }
+  /* each input/select becomes its own rounded white card */
+  .elementor-element-fb4226f .elementor-field-group:not(.elementor-field-type-submit) {
+    width: 100% !important; margin: 0 !important;
+    background: #fff !important;
+    border: 1px solid rgba(0,0,0,.10) !important;
+    border-radius: 14px !important;
+    box-shadow: 0 6px 16px rgba(0,0,0,.06) !important;
+    overflow: hidden;
+  }
+  .elementor-element-fb4226f select.elementor-field-textual,
+  .elementor-element-fb4226f input.elementor-field-textual,
+  .elementor-element-fb4226f .elementor-select-wrapper {
+    background: transparent !important; border: 0 !important; box-shadow: none !important;
+  }
+  /* submit = red pill with breathing room, not a fused block */
+  .elementor-element-fb4226f .elementor-field-type-submit {
+    background: transparent !important; border: 0 !important; box-shadow: none !important;
+    padding: 0 !important; margin: 0 !important;
+  }
+  .elementor-element-fb4226f button.elementor-button {
+    width: 100% !important;
+    border-radius: 999px !important;
+    background: #c41230 !important;
+    padding: 16px 20px !important;
+  }
+}
