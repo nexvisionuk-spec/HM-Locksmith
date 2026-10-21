@@ -159,7 +159,7 @@ html:not(.hm-theme-dark) .elementor-element-78cf0e9 h1.elementor-heading-title {
 }
 /* All other text/spans in hero also white */
 .elementor-element-78cf0e9 .elementor-element-3eb0787 p,
-.elementor-element-78cf0e9 .elementor-element-3eb0787 span:not(.hm-happy-stars):not(.hm-happy-badge) {
+.elementor-element-78cf0e9 .elementor-element-3eb0787 span:not(.hm-happy-stars):not(.hm-happy-badge):not(.hm-hc-stars):not(.hm-hc-body):not(.hm-hc-ic):not(.hm-hc-call):not(.hm-hc-rev) {
   color: rgba(255,255,255,.9) !important;
 }
 
@@ -207,9 +207,9 @@ html:not(.hm-theme-dark) .elementor-element-78cf0e9 h1.elementor-heading-title {
 
 .hm-hc-rev { background: #ffffff; color: #1a1a1a; border: 1px solid rgba(0,0,0,.08); box-shadow: 0 12px 30px rgba(0,0,0,.18); flex-direction: column; align-items: flex-start; gap: 4px; }
 .hm-hc-rev .hm-hc-stars { color: #f5a623; font-size: 15px; letter-spacing: 2px; }
-.hm-hc-rev .hm-hc-body { display: flex; flex-direction: column; line-height: 1.25; }
-.hm-hc-rev .hm-hc-body strong { font-size: 14px; font-weight: 800; color: #141414; }
-.hm-hc-rev .hm-hc-body small { font-size: 12px; color: #666; }
+.hm-hc-rev .hm-hc-body { display: flex; flex-direction: column; line-height: 1.25; align-items: center; text-align: center; }
+.hm-hc-rev .hm-hc-body strong { font-size: 14px; font-weight: 800; color: #141414; text-align: center; }
+.hm-hc-rev .hm-hc-body small { font-size: 12px; color: #666; text-align: center; }
 
 /* beat the hero's blanket span colour so card text keeps its own colours */
 .hm-hero-cards .hm-hc-call,
