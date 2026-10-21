@@ -1418,3 +1418,8 @@ html:not(.hm-theme-dark) .hm-theme-toggle {
 .hm-hc-call .hm-hc-body small {
   text-transform: none !important;
 }
+
+/* ---------- 17. Remove the black top utility strip (email + "Our Work") ------
+   Client didn't want this bar; hide it at every width (it was only hidden on
+   the 768-1366 range before, so it still showed on wide desktop). */
+.top_panel .elementor-element-01dd775 { display: none !important; }
