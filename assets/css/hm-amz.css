@@ -314,3 +314,13 @@ html.hm-theme-dark body .elementor-element-78cf0e9 img.hm-hero-photo {
   border: 1px solid rgba(255,255,255,.10);
   box-shadow: 0 26px 70px rgba(0,0,0,.55);
 }
+
+/* ---------- Testimonials heading: fit two lines on mobile ---------------------
+   "Trusted by Homeowners & Businesses Across London" wrapped to three lines on
+   narrow phones; shrink it a touch so it lands on two. */
+@media (max-width: 767px) {
+  .elementor-element-1ad7c82 .elementor-heading-title {
+    font-size: 30px !important;
+    line-height: 1.18 !important;
+  }
+}
