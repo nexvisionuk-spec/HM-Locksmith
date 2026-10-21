@@ -221,8 +221,12 @@ html:not(.hm-theme-dark) .elementor-element-78cf0e9 h1.elementor-heading-title {
 .hm-hero-cards .hm-hc-rev small { color: #666 !important; }
 
 @media (max-width: 767px) {
-  .hm-hero-cards { margin-top: 20px; max-width: 100%; }
-  .hm-hc { flex: 1 1 100%; }
+  .hm-hero-cards { margin-top: 20px; max-width: 100%; flex-direction: column; }
+  /* stack the two cards full-width (beats .hm-hero-cards .hm-hc flex:1 1 0) so
+     the phone number has room to sit on one line */
+  .hm-hero-cards .hm-hc { flex: 1 1 auto; width: 100%; }
+  /* never wrap the number; shrink a touch only if a narrow phone still needs it */
+  .hm-hero-cards .hm-hc-call .hm-hc-body strong { white-space: nowrap; font-size: clamp(17px, 6vw, 21px); }
 }
 
 /* ---------- 4. Soft red-tint section rhythm ("colour grid") ----------
