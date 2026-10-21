@@ -324,3 +324,61 @@ html.hm-theme-dark body .elementor-element-78cf0e9 img.hm-hero-photo {
     line-height: 1.18 !important;
   }
 }
+
+/* ============================================================================
+   CORE-SERVICES cards redesign (#services top row: Building Services,
+   Insurance Services, Reactive Maintenance). Turn the three columns into
+   cohesive premium cards: full-bleed photo at the top, solid surface,
+   rounded corners, soft shadow, subtle hover lift. Light + dark.
+   ========================================================================== */
+#services > .e-con-inner > .e-con.e-child {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,.07);
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 0 0 26px !important;
+  box-shadow: 0 12px 30px rgba(0,0,0,.07);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+#services > .e-con-inner > .e-con.e-child:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 48px rgba(0,0,0,.13);
+}
+/* photo flush to the card's top + sides */
+#services .trx-addons-info-box-icon-wrap,
+#services .trx-addons-info-box-icon,
+#services .trx-addons-info-box-icon-inner { margin: 0 !important; width: 100% !important; display: block !important; }
+#services .elementor-widget-trx_elm_info_box > .elementor-widget-container { padding: 0 !important; }
+#services .trx-addons-info-box-icon-wrap img {
+  border-radius: 0 !important;
+  width: 100% !important;
+  height: 220px !important;
+  object-fit: cover !important;
+  object-position: center 24% !important;
+}
+/* pad the text, not the photo */
+#services .trx-addons-info-box-content { padding: 20px 24px 0 !important; }
+#services .elementor-widget-icon-list { padding: 0 24px !important; margin-top: 16px !important; }
+#services .trx-addons-info-box-title { margin: 0 0 8px !important; }
+
+/* dark-theme card surface */
+html.hm-theme-dark body #services > .e-con-inner > .e-con.e-child {
+  background: #161a22;
+  border-color: rgba(255,255,255,.08);
+  box-shadow: 0 16px 40px rgba(0,0,0,.5);
+}
+html.hm-theme-dark body #services > .e-con-inner > .e-con.e-child:hover {
+  box-shadow: 0 24px 54px rgba(0,0,0,.6);
+}
+
+/* The column is now the card, so flatten the inner info-box wrapper (it had its
+   own dark surface/border/radius, which made a nested box in dark mode). */
+#services .trx-addons-info-box,
+html.hm-theme-dark body #services .trx-addons-info-box {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  transform: none !important;
+}
