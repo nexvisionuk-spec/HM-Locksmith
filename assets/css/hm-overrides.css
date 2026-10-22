@@ -697,7 +697,10 @@ body.hm-svc-painting .elementor-element-25f53175:not(.elementor-motion-effects-e
 body.hm-svc-refurb .elementor-element-25f53175:not(.elementor-motion-effects-element-type-background),
 body.hm-svc-building .elementor-element-25f53175:not(.elementor-motion-effects-element-type-background),
 body.hm-svc-technical .elementor-element-25f53175:not(.elementor-motion-effects-element-type-background),
-body.hm-svc-insurance .elementor-element-25f53175:not(.elementor-motion-effects-element-type-background) {
+body.hm-svc-insurance .elementor-element-25f53175:not(.elementor-motion-effects-element-type-background),
+body.hm-svc-plumbing .elementor-element-25f53175:not(.elementor-motion-effects-element-type-background),
+body.hm-svc-gas .elementor-element-25f53175:not(.elementor-motion-effects-element-type-background),
+body.hm-svc-electrical .elementor-element-25f53175:not(.elementor-motion-effects-element-type-background) {
   background-size: cover !important;
   background-repeat: no-repeat !important;
   background-position: center 50% !important;
@@ -734,6 +737,18 @@ body.hm-svc-technical .elementor-element-25f53175:not(.elementor-motion-effects-
 body.hm-svc-insurance .elementor-element-25f53175:not(.elementor-motion-effects-element-type-background) {
   background-image: url('/wp-content/uploads/2026/04/11092.jpg') !important;
   background-position: center 45% !important;
+}
+body.hm-svc-plumbing .elementor-element-25f53175:not(.elementor-motion-effects-element-type-background) {
+  background-image: url('/wp-content/uploads/2026/10/svc-plumbing.webp') !important;
+  background-position: center 40% !important;
+}
+body.hm-svc-gas .elementor-element-25f53175:not(.elementor-motion-effects-element-type-background) {
+  background-image: url('/wp-content/uploads/2026/10/svc-gas-heating.webp') !important;
+  background-position: center 45% !important;
+}
+body.hm-svc-electrical .elementor-element-25f53175:not(.elementor-motion-effects-element-type-background) {
+  background-image: url('/wp-content/uploads/2026/10/svc-electrical.webp') !important;
+  background-position: center 35% !important;
 }
 
 /* the theme fades its overlay to .25, which is not enough over bright photos */
