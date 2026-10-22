@@ -1479,6 +1479,13 @@ html:not(.hm-theme-dark) .hm-theme-toggle {
   padding: 26px 22px 28px !important;
   box-shadow: 0 20px 50px rgba(20,20,30,.18);
 }
-/* heading reads dark on the light map */
-.elementor-element-17422a0 .elementor-heading-title { color: #1f242e !important; }
+/* heading: larger, bolder and clearly legible on the light map */
+.elementor-element-17422a0 .elementor-heading-title {
+  color: #1f242e !important;
+  font-size: clamp(26px, 5vw, 38px) !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+  margin-bottom: 16px !important;
+  text-shadow: 0 1px 10px rgba(255,255,255,.65);
+}
 .elementor-element-17422a0 .e-con-inner { background: transparent !important; }
