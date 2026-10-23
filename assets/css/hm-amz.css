@@ -412,3 +412,29 @@ html.hm-theme-dark body #services .trx-addons-info-box {
    The hero already has the red call-now card below, so the extra CTA button
    was redundant. */
 .elementor-element-693f713 { display: none !important; }
+
+/* ---------- Mobile: connect the header with the hero image --------------------
+   The header pill was a plain grey bar sitting above the hero. Make it
+   transparent and pull the hero image up behind it so the header reads as part
+   of the hero photo. Homepage only (this file loads on the homepage). */
+@media (max-width: 1024px) {
+  .elementor-element-1f85929 { background: transparent !important; box-shadow: none !important; }
+  /* pull the hero image up behind the transparent header (header is 88px tall) */
+  .elementor-element-78cf0e9 { margin-top: -88px !important; padding-top: 150px !important; }
+  /* soft dark gradient over the hero top so the header stays legible */
+  .elementor-element-78cf0e9::after {
+    content: ""; position: absolute; left: 0; right: 0; top: 0; height: 160px;
+    background: linear-gradient(180deg, rgba(10,12,18,.55) 0%, rgba(10,12,18,0) 100%);
+    pointer-events: none; z-index: 1;
+  }
+  /* lighten the hamburger so it reads on the photo */
+  .elementor-element-481bca .trx-addons-hamburger-toggle svg,
+  .elementor-element-481bca .trx-addons-hamburger-toggle svg path { fill: #ffffff !important; color: #ffffff !important; }
+  /* once the header sticks and scrolls over lighter content, give it a solid
+     dark bar so the white logo/phone/burger stay legible */
+  .elementor-element-481bca.elementor-sticky--active .elementor-element-1f85929 {
+    background: rgba(14,16,22,.94) !important;
+    -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+    box-shadow: 0 6px 20px rgba(0,0,0,.28) !important;
+  }
+}
