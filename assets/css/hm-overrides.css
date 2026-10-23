@@ -1535,11 +1535,11 @@ html:not(.hm-theme-dark) .hm-theme-toggle {
   }
   /* homepage hero: push text below the men's faces + clear the overlapping header */
   .elementor-element-78cf0e9 { padding-top: 220px !important; }
-  /* all other pages: hero content needs clearance below the overlapping header */
+  /* all other pages: 170px clears the announcement bar + header + gives breathing room */
   .elementor-element-25f53175,   /* trades service pages */
   .elementor-element-7f59aa8,    /* doors / emergency / community / contact-us / trades-hub */
   .elementor-element-efaa823 {   /* about-us */
-    padding-top: 104px !important;
+    padding-top: 170px !important;
   }
   /* transparent pill at the top */
   body:not(.page-id-4993):not(.page-id-4954):not(.page-id-8354) .elementor-element-481bca .elementor-element-1f85929 {
