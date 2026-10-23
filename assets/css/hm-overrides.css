@@ -1526,7 +1526,7 @@ html:not(.hm-theme-dark) .hm-theme-toggle {
   body:not(.page-id-4993):not(.page-id-4954):not(.page-id-8354) .elementor-element-481bca {
     margin-bottom: -88px !important; z-index: 100 !important;
   }
-  /* remove rounded corners on hero sections so they don't show over the header */
+  /* no rounded corners on hero sections (would show against transparent sticky header) */
   .elementor-element-78cf0e9,
   .elementor-element-25f53175,
   .elementor-element-7f59aa8,
