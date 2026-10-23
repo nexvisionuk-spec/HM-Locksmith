@@ -407,3 +407,8 @@ html.hm-theme-dark body #services .trx-addons-info-box {
   overflow: visible !important;
   transform: none !important;
 }
+
+/* ---------- Hero: remove the "Get Emergency Support Now" button (client) ------
+   The hero already has the red call-now card below, so the extra CTA button
+   was redundant. */
+.elementor-element-693f713 { display: none !important; }
