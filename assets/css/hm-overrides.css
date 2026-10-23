@@ -1512,56 +1512,43 @@ html:not(.hm-theme-dark) .hm-theme-toggle {
 }
 .elementor-element-17422a0 .e-con-inner { background: transparent !important; }
 
-/* ---------- 20. Connect the mobile header with the hero image -----------------
-   On pages that have a full-bleed hero behind the mobile header (home 78cf0e9,
-   trades 25f53175, about efaa823), make the header transparent and pull the
-   hero up behind it so they read as one image. At the top the hamburger is
-   white over the photo; once the header sticks and scrolls, it returns to the
-   original light pill with a dark hamburger. Other pages are unaffected. */
+/* ---------- 20. Connect the mobile header with the hero (whole site) ----------
+   Generic, every page: the header pulls whatever section sits below it up behind
+   itself (via its own negative margin — no per-page ids needed), becomes
+   transparent, and carries a soft dark gradient so the logo/phone/hamburger stay
+   legible over any hero. The hamburger is white over the hero; once the header
+   sticks and scrolls it returns to the original light pill with a dark hamburger
+   and the gradient fades out. */
+/* Excluded: the light text-only pages that have no hero behind the header —
+   our-work (page-id-4993), single-project (4954), terms (8354). */
 @media (max-width: 1024px) {
-  /* transparent header at the top (scoped to pages with a hero) */
-  body:has(.elementor-element-78cf0e9) .elementor-element-1f85929,
-  body:has(.elementor-element-25f53175) .elementor-element-1f85929,
-  body:has(.elementor-element-efaa823) .elementor-element-1f85929 {
-    background: transparent !important; box-shadow: none !important;
+  /* pull the section below the header up behind it */
+  body:not(.page-id-4993):not(.page-id-4954):not(.page-id-8354) .elementor-element-481bca {
+    margin-bottom: -88px !important; z-index: 100 !important;
   }
-  /* white hamburger over the photo */
-  body:has(.elementor-element-78cf0e9) .elementor-element-481bca .trx-addons-hamburger-toggle svg,
-  body:has(.elementor-element-78cf0e9) .elementor-element-481bca .trx-addons-hamburger-toggle svg path,
-  body:has(.elementor-element-25f53175) .elementor-element-481bca .trx-addons-hamburger-toggle svg,
-  body:has(.elementor-element-25f53175) .elementor-element-481bca .trx-addons-hamburger-toggle svg path,
-  body:has(.elementor-element-efaa823) .elementor-element-481bca .trx-addons-hamburger-toggle svg,
-  body:has(.elementor-element-efaa823) .elementor-element-481bca .trx-addons-hamburger-toggle svg path {
+  /* transparent pill at the top */
+  body:not(.page-id-4993):not(.page-id-4954):not(.page-id-8354) .elementor-element-481bca .elementor-element-1f85929 {
+    background: transparent !important; box-shadow: none !important; position: relative; z-index: 2;
+  }
+  /* soft dark gradient behind the header for legibility over any hero */
+  body:not(.page-id-4993):not(.page-id-4954):not(.page-id-8354) .elementor-element-481bca::before {
+    content: ""; position: absolute; left: 0; right: 0; top: 0; height: 190px;
+    background: linear-gradient(180deg, rgba(10,12,18,.60) 0%, rgba(10,12,18,.20) 55%, rgba(10,12,18,0) 100%);
+    pointer-events: none; z-index: 0;
+    transition: opacity .2s ease;
+  }
+  /* white hamburger over the hero */
+  body:not(.page-id-4993):not(.page-id-4954):not(.page-id-8354) .elementor-element-481bca .trx-addons-hamburger-toggle svg,
+  body:not(.page-id-4993):not(.page-id-4954):not(.page-id-8354) .elementor-element-481bca .trx-addons-hamburger-toggle svg path {
     fill: #ffffff !important; color: #ffffff !important;
   }
-  /* once stuck + scrolling: restore the original light pill + dark hamburger */
-  body:has(.elementor-element-78cf0e9) .elementor-element-481bca.elementor-sticky--active .elementor-element-1f85929,
-  body:has(.elementor-element-25f53175) .elementor-element-481bca.elementor-sticky--active .elementor-element-1f85929,
-  body:has(.elementor-element-efaa823) .elementor-element-481bca.elementor-sticky--active .elementor-element-1f85929 {
-    background: #e7e7e7 !important;
-    box-shadow: 0 6px 18px rgba(0,0,0,.14) !important;
+  /* stuck + scrolling: original light pill, dark hamburger, no gradient */
+  body:not(.page-id-4993):not(.page-id-4954):not(.page-id-8354) .elementor-element-481bca.elementor-sticky--active .elementor-element-1f85929 {
+    background: #e7e7e7 !important; box-shadow: 0 6px 18px rgba(0,0,0,.14) !important;
   }
-  body:has(.elementor-element-78cf0e9) .elementor-element-481bca.elementor-sticky--active .trx-addons-hamburger-toggle svg,
-  body:has(.elementor-element-78cf0e9) .elementor-element-481bca.elementor-sticky--active .trx-addons-hamburger-toggle svg path,
-  body:has(.elementor-element-25f53175) .elementor-element-481bca.elementor-sticky--active .trx-addons-hamburger-toggle svg,
-  body:has(.elementor-element-25f53175) .elementor-element-481bca.elementor-sticky--active .trx-addons-hamburger-toggle svg path,
-  body:has(.elementor-element-efaa823) .elementor-element-481bca.elementor-sticky--active .trx-addons-hamburger-toggle svg,
-  body:has(.elementor-element-efaa823) .elementor-element-481bca.elementor-sticky--active .trx-addons-hamburger-toggle svg path {
+  body:not(.page-id-4993):not(.page-id-4954):not(.page-id-8354) .elementor-element-481bca.elementor-sticky--active::before { opacity: 0 !important; }
+  body:not(.page-id-4993):not(.page-id-4954):not(.page-id-8354) .elementor-element-481bca.elementor-sticky--active .trx-addons-hamburger-toggle svg,
+  body:not(.page-id-4993):not(.page-id-4954):not(.page-id-8354) .elementor-element-481bca.elementor-sticky--active .trx-addons-hamburger-toggle svg path {
     fill: #2a2a2c !important; color: #2a2a2c !important;
-  }
-  /* pull each page's hero up behind the transparent header */
-  .elementor-element-78cf0e9,
-  .elementor-element-25f53175,
-  .elementor-element-efaa823 {
-    margin-top: -88px !important;
-    padding-top: 150px !important;
-  }
-  /* soft dark gradient at the hero top so header elements stay legible */
-  .elementor-element-78cf0e9::after,
-  .elementor-element-25f53175::after,
-  .elementor-element-efaa823::after {
-    content: ""; position: absolute; left: 0; right: 0; top: 0; height: 160px;
-    background: linear-gradient(180deg, rgba(10,12,18,.55) 0%, rgba(10,12,18,0) 100%);
-    pointer-events: none; z-index: 1;
   }
 }
