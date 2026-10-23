@@ -1526,10 +1526,16 @@ html:not(.hm-theme-dark) .hm-theme-toggle {
   body:not(.page-id-4993):not(.page-id-4954):not(.page-id-8354) .elementor-element-481bca {
     margin-bottom: -88px !important; z-index: 100 !important;
   }
-  /* homepage hero: its badge + heading sit high, so give top room to clear the
-     header (also makes the hero image taller again) */
-  .elementor-element-78cf0e9 { padding-top: 104px !important; }
-  /* all other pages: hero content needs same clearance below the overlapping header */
+  /* remove rounded corners on hero sections so they don't show over the header */
+  .elementor-element-78cf0e9,
+  .elementor-element-25f53175,
+  .elementor-element-7f59aa8,
+  .elementor-element-efaa823 {
+    border-radius: 0 !important;
+  }
+  /* homepage hero: push text below the men's faces + clear the overlapping header */
+  .elementor-element-78cf0e9 { padding-top: 220px !important; }
+  /* all other pages: hero content needs clearance below the overlapping header */
   .elementor-element-25f53175,   /* trades service pages */
   .elementor-element-7f59aa8,    /* doors / emergency / community / contact-us / trades-hub */
   .elementor-element-efaa823 {   /* about-us */
