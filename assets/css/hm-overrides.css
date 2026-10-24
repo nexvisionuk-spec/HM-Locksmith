@@ -1530,7 +1530,11 @@ html:not(.hm-theme-dark) .hm-theme-toggle {
   .elementor-element-78cf0e9,
   .elementor-element-25f53175,
   .elementor-element-7f59aa8,
-  .elementor-element-efaa823 {
+  .elementor-element-efaa823,
+  .hm-landing .hm-hero,
+  .hm-community-hero,
+  .hm-ct-banner,
+  .hm-banner {
     border-radius: 0 !important;
   }
   /* homepage hero: push text below the men's faces + clear the overlapping header */
