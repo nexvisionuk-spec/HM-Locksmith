@@ -77,5 +77,28 @@
         reviews.dataset.hmMoved = "1";
       }
     } catch (e3) {}
+
+    /* ---- 4. mobile burger menu: parent items that have a submenu (Trades,
+       Services) only toggled the submenu and never navigated. Make a tap on
+       the label text follow the link; the chevron icon still opens the submenu. */
+    try {
+      var mobMenu = document.querySelector(".trx-addons-mobile-menu");
+      if (mobMenu && !mobMenu.dataset.hmNavFix) {
+        mobMenu.dataset.hmNavFix = "1";
+        mobMenu.addEventListener("click", function (ev) {
+          /* let the chevron keep its expand/collapse behaviour */
+          if (ev.target.closest(".trx-addons-dropdown-icon")) return;
+          var link = ev.target.closest("a.trx-addons-menu-link-parent");
+          if (!link) return;
+          var li = link.closest("li");
+          if (!li || !li.classList.contains("menu-item-has-children")) return;
+          var href = link.getAttribute("href");
+          if (!href || href === "#" || href.charAt(0) === "#") return;
+          ev.stopImmediatePropagation();
+          ev.preventDefault();
+          window.location.href = href;
+        }, true); /* capture phase: run before the theme's toggle handler */
+      }
+    } catch (e4) {}
   });
 })();
