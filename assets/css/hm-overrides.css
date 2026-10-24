@@ -1537,10 +1537,14 @@ html:not(.hm-theme-dark) .hm-theme-toggle {
   .elementor-element-78cf0e9 { padding-top: 220px !important; }
   /* all other pages: 220px matches homepage treatment, clears announcement bar + header + gives breathing room */
   .elementor-element-25f53175,   /* trades service pages */
-  .elementor-element-7f59aa8,    /* doors / emergency / community / contact-us / trades-hub */
+  .elementor-element-7f59aa8,    /* footer on several pages - harmless */
   .elementor-element-efaa823 {   /* about-us */
     padding-top: 220px !important;
   }
+  /* custom hero sections on inner pages: these are NOT elementor elements, they're
+     handcrafted sections with their own padding — override to match the homepage */
+  .hm-landing .hm-hero    { padding-top: 220px !important; }  /* doors / emergency-locksmith */
+  .hm-community-hero      { padding-top: 220px !important; }  /* community page */
   /* transparent pill at the top */
   body:not(.page-id-4993):not(.page-id-4954):not(.page-id-8354) .elementor-element-481bca .elementor-element-1f85929 {
     background: transparent !important; box-shadow: none !important; position: relative; z-index: 2;
