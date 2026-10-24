@@ -1545,6 +1545,13 @@ html:not(.hm-theme-dark) .hm-theme-toggle {
      handcrafted sections with their own padding — override to match the homepage */
   .hm-landing .hm-hero    { padding-top: 220px !important; }  /* doors / emergency-locksmith */
   .hm-community-hero      { padding-top: 220px !important; }  /* community page */
+  /* contact-us + trades-hub image banners: they're bottom-aligned (flex-end) and
+     on mobile the content fills the banner, so the top line sits behind the pulled-up
+     header. Switch to top-alignment and push content clear of the header. */
+  .hm-ct-banner,
+  .hm-banner { align-items: flex-start !important; }
+  .hm-ct-banner .hm-ct-banner-inner,
+  .hm-banner .hm-banner-inner { padding-top: 200px !important; }
   /* transparent pill at the top */
   body:not(.page-id-4993):not(.page-id-4954):not(.page-id-8354) .elementor-element-481bca .elementor-element-1f85929 {
     background: transparent !important; box-shadow: none !important; position: relative; z-index: 2;
