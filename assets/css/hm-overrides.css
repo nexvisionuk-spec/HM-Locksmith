@@ -1201,27 +1201,34 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
   filter: brightness(1.05) !important;
 }
 
-/* accreditation logos below the card, centered */
+/* accreditation logos below the card: all five on one line */
 .elementor-element-17422a0 .elementor-element-6a775d2 {
   margin-top: 16px !important;
+  display: flex !important;
   flex-direction: row !important;
-  flex-wrap: wrap !important;
-  justify-content: flex-start !important;
-  align-items: center !important;
-  gap: 8px !important;
+  flex-wrap: nowrap !important;
+  justify-content: space-between !important;
+  align-items: stretch !important;
+  gap: 6px !important;
 }
 .elementor-element-17422a0 .elementor-element-6a775d2 .elementor-widget-image {
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
   width: auto !important;
-  flex: 0 0 auto !important;
+  margin: 0 !important;
+}
+.elementor-element-17422a0 .elementor-element-6a775d2 .elementor-widget-image > .elementor-widget-container {
+  height: 100% !important;
 }
 .elementor-element-17422a0 .elementor-element-6a775d2 img {
-  height: 38px !important;
-  width: auto !important;
-  max-width: 72px !important;
+  display: block !important;
+  height: 36px !important;
+  width: 100% !important;
+  max-width: 100% !important;
   object-fit: contain !important;
   background: #ffffff !important;
   border-radius: 8px !important;
-  padding: 4px 6px !important;
+  padding: 4px 4px !important;
   box-shadow: 0 4px 12px rgba(10, 16, 38, .14) !important;
 }
 
