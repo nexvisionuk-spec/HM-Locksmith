@@ -1206,7 +1206,7 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
    individual logo gets its own (mismatched) white box. The logo PNGs are
    transparent and sit directly on the strip. */
 .elementor-element-17422a0 .elementor-element-6a775d2 {
-  margin: 16px auto 0 !important;
+  margin: 16px auto 40px !important;   /* gap below the logos before the next section */
   max-width: 580px !important;        /* align with the centred booking card */
   background: #ffffff !important;
   border-radius: 14px !important;
