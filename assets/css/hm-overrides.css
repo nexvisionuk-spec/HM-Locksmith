@@ -1673,6 +1673,9 @@ html:not(.hm-theme-dark) .hm-theme-toggle {
   /* lift the chat launcher (and open panel) above the bar */
   .hmchat-launch { bottom: 86px !important; }
   .hmchat-panel { bottom: 86px !important; }
+  /* lift the proactive greeting teaser clear of the launcher + sticky bar
+     (it was overlapping/hidden behind the bar on phones) */
+  .hmchat-teaser { bottom: 150px !important; right: 14px !important; max-width: calc(100vw - 86px) !important; }
 }
 
 /* footer TikTok icon injected by hm-social.js — match the other social icons */

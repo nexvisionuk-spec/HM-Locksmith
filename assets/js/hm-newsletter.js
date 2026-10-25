@@ -15,6 +15,11 @@
   function read(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
 
   function shouldShow() {
+    // ?hm_news=1 in the URL always shows it (handy for testing on a device
+    // that already dismissed/signed up and is snoozed).
+    try {
+      if (/[?&]hm_news=1\b/.test(window.location.search)) return true;
+    } catch (e) {}
     if (read(KEY_DONE)) return false;                 // already signed up
     var seen = parseInt(read(KEY_SEEN) || "0", 10);
     if (seen && (Date.now() - seen) < SNOOZE_DAYS * 864e5) return false;
