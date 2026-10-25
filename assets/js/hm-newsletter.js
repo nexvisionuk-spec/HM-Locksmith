@@ -4,7 +4,7 @@
 (function () {
   "use strict";
 
-  var SHOW_AFTER_MS = 15000;     // delay before first appearance
+  var SHOW_AFTER_MS = 7000;      // delay before first appearance
   var SNOOZE_DAYS   = 7;         // don't re-show for this many days after close
   var KEY_SEEN = "hm_news_seen";
   var KEY_DONE = "hm_news_done";
