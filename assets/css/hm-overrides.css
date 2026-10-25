@@ -1222,14 +1222,22 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
 }
 .elementor-element-17422a0 .elementor-element-6a775d2 img {
   display: block !important;
-  height: 36px !important;
+  height: 40px !important;
   width: 100% !important;
   max-width: 100% !important;
   object-fit: contain !important;
   background: #ffffff !important;
   border-radius: 8px !important;
-  padding: 4px 4px !important;
+  padding: 6px 6px !important;
   box-shadow: 0 4px 12px rgba(10, 16, 38, .14) !important;
+  box-sizing: border-box !important;   /* padding stays inside the fixed height */
+}
+/* FireQual (5th) is a wide, dense wordmark that fills its card, so it reads
+   larger than the compact badge logos — extra padding shrinks it to match.
+   High-specificity selector so it also wins inside the mobile media query. */
+.elementor-element-17422a0 .elementor-element-6a775d2 .elementor-element-7dc39d6 img {
+  padding: 9px 12px !important;
+  object-fit: contain !important;
 }
 
 /* phones: same frameless white card as desktop (no navy frame) */
@@ -1252,8 +1260,8 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
     gap: 5px !important;
   }
   .elementor-element-17422a0 .elementor-element-6a775d2 img {
-    height: 32px !important;
-    padding: 3px !important;
+    height: 38px !important;
+    padding: 5px !important;
   }
 }
 
