@@ -1031,16 +1031,15 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
   display: none !important;
 }
 
-/* 2. White connected booking card (customer's box design, image 1)
-   Deep-navy outer frame → one white rounded card holding: a service row with
-   a search icon, a divider, a second field row, and a full-width red button.
-   All text is dark navy on white so it is always visible (fixes the empty
-   white boxes seen on mobile). */
+/* 2. Polished white booking card (no navy frame)
+   One clean white card floating on the hero: a small heading, two rounded
+   pill fields (service with a search icon, postcode with a pin icon) and a
+   smooth gradient red button. Dark navy text so everything stays legible. */
 .elementor-element-17422a0 {
   background: none !important;
   padding: 0 !important;
   box-shadow: none !important;
-  max-width: 460px !important;
+  max-width: 430px !important;
   margin-left: 0 !important;
   margin-right: auto !important;
 }
@@ -1048,42 +1047,63 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
   background: transparent !important;
   padding: 0 !important;
 }
-/* the deep-navy frame wraps the white card (matches customer's box design) */
+/* form widget is a pass-through now — no frame */
 .elementor-element-17422a0 .elementor-element-fb4226f {
   width: 100% !important;
   margin: 0 !important;
-  background-color: #0a1838 !important;
-  border-radius: 28px !important;
-  padding: 14px !important;
-  box-shadow: 0 24px 60px rgba(10, 14, 30, .40) !important;
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
 }
 
-/* the white card = the form fields wrapper */
+/* the white card */
 .elementor-element-17422a0 .elementor-form-fields-wrapper {
   display: flex !important;
   flex-direction: column !important;
-  gap: 0 !important;
+  gap: 11px !important;
   background: #ffffff !important;
   border: 0 !important;
-  border-radius: 20px !important;
-  padding: 8px 20px 20px !important;
-  box-shadow: none !important;
-  overflow: hidden !important;
+  border-radius: 22px !important;
+  padding: 24px 22px !important;
+  box-shadow: 0 30px 70px rgba(10, 16, 38, .28), 0 4px 14px rgba(10, 16, 38, .10) !important;
+  overflow: visible !important;
 }
 
-/* each field row */
+/* injected card header */
+.hm-book-head { margin: 0 2px 3px; }
+.hm-book-head strong {
+  display: block;
+  font-size: 21px;
+  font-weight: 800;
+  color: #0a1838;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+.hm-book-head span {
+  display: block;
+  margin-top: 4px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+/* field pills */
 .elementor-element-17422a0 .elementor-field-group:not(.elementor-field-type-submit) {
   width: 100% !important;
   margin: 0 !important;
   padding: 0 !important;
-  background: transparent !important;
-  border: 0 !important;
-  border-radius: 0 !important;
+  position: relative !important;
+  background: #f5f7fb !important;
+  border: 1.5px solid #e7eaf1 !important;
+  border-radius: 14px !important;
   box-shadow: none !important;
+  transition: border-color .18s ease, background .18s ease, box-shadow .18s ease;
 }
-/* divider between the two input rows */
-.elementor-element-17422a0 .elementor-field-group-field_e38bc1d {
-  border-top: 1px solid #e6e8ee !important;
+.elementor-element-17422a0 .elementor-field-group:not(.elementor-field-type-submit):focus-within {
+  border-color: #c41230 !important;
+  background: #ffffff !important;
+  box-shadow: 0 0 0 3px rgba(196, 18, 48, .10) !important;
 }
 
 /* inputs + selects: dark navy text on white (always visible) */
@@ -1093,19 +1113,19 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
   border: 0 !important;
   border-radius: 0 !important;
   color: #0a1838 !important;
-  font-size: 17px !important;
+  font-size: 16px !important;
   font-weight: 600 !important;
-  height: 58px !important;
-  padding: 0 8px !important;
+  height: 56px !important;
+  padding: 0 16px 0 44px !important;   /* left room for the icon */
   box-shadow: none !important;
   outline: none !important;
   width: 100% !important;
 }
 .elementor-element-17422a0 select.elementor-field-textual {
-  padding-left: 34px !important;   /* room for the search icon */
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  padding-right: 34px !important;      /* room for the chevron */
 }
 .elementor-element-17422a0 select.elementor-field-textual option {
   color: #141414 !important;
@@ -1117,47 +1137,52 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
   font-weight: 500;
 }
 
-/* search icon on the service row */
-.elementor-element-17422a0 .elementor-field-group-field_62fdbea {
-  position: relative !important;
-}
-.elementor-element-17422a0 .elementor-field-group-field_62fdbea::before {
+/* field icons */
+.elementor-element-17422a0 .elementor-field-group-field_62fdbea::before,
+.elementor-element-17422a0 .elementor-field-group-field_e38bc1d::before {
   content: "";
   position: absolute;
-  left: 4px;
+  left: 15px;
   top: 50%;
   transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230a1838' stroke-width='2.5' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cline x1='16.5' y1='16.5' x2='22' y2='22'/%3E%3C/svg%3E") no-repeat center / contain;
+  width: 19px;
+  height: 19px;
   z-index: 2;
   pointer-events: none;
+}
+/* search icon on the service row */
+.elementor-element-17422a0 .elementor-field-group-field_62fdbea::before {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230a1838' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cline x1='16.5' y1='16.5' x2='22' y2='22'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+/* location pin on the postcode row */
+.elementor-element-17422a0 .elementor-field-group-field_e38bc1d::before {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230a1838' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z'/%3E%3Ccircle cx='12' cy='10' r='2.5'/%3E%3C/svg%3E") no-repeat center / contain;
 }
 
 /* chevron on the right of the select */
 .elementor-element-17422a0 .select-caret-down-wrapper {
-  right: 4px !important;
+  right: 12px !important;
 }
 .elementor-element-17422a0 .select-caret-down-wrapper svg path {
   fill: #8a90a0 !important;
 }
 
-/* submit: full-width red pill inside the card */
+/* submit: smooth gradient red button */
 .elementor-element-17422a0 .elementor-field-type-submit {
   width: 100% !important;
   background: transparent !important;
   border: 0 !important;
   box-shadow: none !important;
   padding: 0 !important;
-  margin: 14px 0 0 !important;
+  margin: 3px 0 0 !important;
 }
 .elementor-element-17422a0 button.elementor-button {
   width: 100% !important;
-  background: #e8122e !important;
+  background: linear-gradient(180deg, #e8122e 0%, #c70f27 100%) !important;
   border: 0 !important;
-  border-radius: 999px !important;
-  padding: 17px 24px !important;
-  font-size: 18px !important;
+  border-radius: 14px !important;
+  padding: 16px 24px !important;
+  font-size: 17px !important;
   font-weight: 700 !important;
   white-space: nowrap !important;
   min-height: 0 !important;
@@ -1166,21 +1191,22 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
   letter-spacing: 0.01em !important;
   text-transform: none !important;
   transform: none !important;
-  box-shadow: none !important;
-  transition: background .2s ease !important;
+  box-shadow: 0 10px 24px rgba(196, 18, 48, .34) !important;
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease !important;
 }
 .elementor-element-17422a0 button.elementor-button:hover {
-  background: #c41230 !important;
-  transform: none !important;
-  box-shadow: none !important;
+  background: linear-gradient(180deg, #e8122e 0%, #c70f27 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 16px 34px rgba(196, 18, 48, .44) !important;
+  filter: brightness(1.05) !important;
 }
 
-/* accreditation logos below the card, centered on the navy frame */
+/* accreditation logos below the card, centered */
 .elementor-element-17422a0 .elementor-element-6a775d2 {
-  margin-top: 14px !important;
+  margin-top: 16px !important;
   flex-direction: row !important;
   flex-wrap: wrap !important;
-  justify-content: center !important;
+  justify-content: flex-start !important;
   align-items: center !important;
   gap: 8px !important;
 }
@@ -1189,31 +1215,39 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
   flex: 0 0 auto !important;
 }
 .elementor-element-17422a0 .elementor-element-6a775d2 img {
-  height: 40px !important;
+  height: 38px !important;
   width: auto !important;
-  max-width: 76px !important;
+  max-width: 72px !important;
   object-fit: contain !important;
   background: #ffffff !important;
-  border-radius: 7px !important;
+  border-radius: 8px !important;
   padding: 4px 6px !important;
+  box-shadow: 0 4px 12px rgba(10, 16, 38, .14) !important;
 }
 
-/* phones: full width, taller tap targets */
+/* phones: keep the navy "box" frame around the white card (mobile only) */
 @media (max-width: 767px) {
   .elementor-element-17422a0 {
     max-width: 100% !important;
     margin: 0 auto !important;
-    border-radius: 24px !important;
-    padding: 12px !important;
+  }
+  .elementor-element-17422a0 .elementor-element-fb4226f {
+    background-color: #0a1838 !important;
+    border-radius: 26px !important;
+    padding: 13px !important;
+    box-shadow: 0 22px 54px rgba(10, 14, 30, .40) !important;
   }
   .elementor-element-17422a0 .elementor-form-fields-wrapper {
     border-radius: 18px !important;
-    padding: 6px 16px 16px !important;
+    padding: 18px 16px !important;
+    box-shadow: none !important;   /* the navy frame provides the depth */
   }
   .elementor-element-17422a0 select.elementor-field-textual,
   .elementor-element-17422a0 input.elementor-field-textual {
-    height: 60px !important;
-    font-size: 16px !important;
+    height: 58px !important;
+  }
+  .elementor-element-17422a0 .elementor-element-6a775d2 {
+    justify-content: center !important;
   }
 }
 
