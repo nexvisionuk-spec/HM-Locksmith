@@ -431,3 +431,11 @@ html.hm-theme-dark body #services .trx-addons-info-box {
 .elementor-element-78cf0e9 .elementor-element-17422a0 > .e-con-inner {
   padding-top: 4px !important;
 }
+
+/* ---------- Sections removed at client request (to be replaced) -----------
+   Hidden rather than deleted so they can be swapped for new sections. */
+.elementor-element-e840018,   /* "Why Choose Us" intro + dark reason cards */
+.elementor-element-95cf590,   /* "London-Wide Coverage" heading + London map */
+.elementor-element-47967337 { /* numbered 01/02/03 list */
+  display: none !important;
+}
