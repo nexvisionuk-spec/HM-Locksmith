@@ -135,9 +135,16 @@
     try { sessionStorage.setItem("hmchat_teaser", "1"); } catch (e) {}
   }
   function maybeShowTeaser() {
-    // Proactive greeting bubble disabled — the user wants only the chat launcher
-    // button visible (no extra bubble/shadow above it).
-    return;
+    // Proactive greeting bubble: shows once per session, a few seconds after
+    // arrival, unless already dismissed or the chat is open.
+    if (state.open) return;
+    try { if (sessionStorage.getItem("hmchat_teaser")) return; } catch (e) {}
+    setTimeout(function () {
+      if (state.open || !el.teaser) return;
+      el.teaser.hidden = false;
+      void el.teaser.offsetWidth;      // force reflow so the transition runs
+      el.teaser.classList.add("in");
+    }, 2800);
   }
 
   /* ------------------------------------------------------------- render */
