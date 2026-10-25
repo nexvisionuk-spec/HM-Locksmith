@@ -59,11 +59,7 @@
           '<a class="hm-hc hm-hc-call" href="tel:02031051145" aria-label="Call 0203 105 1145">' +
             '<span class="hm-hc-ic">' + PHONE + "</span>" +
             '<span class="hm-hc-body"><small>24/7 Emergency — Call Now</small><strong>0203 105 1145</strong></span>' +
-          "</a>" +
-          '<div class="hm-hc hm-hc-rev">' +
-            '<span class="hm-hc-stars">★★★★★</span>' +
-            '<span class="hm-hc-body"><strong>Rated 5.0 on Google</strong><small>Trusted across London</small></span>' +
-          "</div>";
+          "</a>";
         heroCol.appendChild(cards);
       }
     } catch (e2) {}
@@ -77,6 +73,17 @@
         reviews.dataset.hmMoved = "1";
       }
     } catch (e3) {}
+
+    /* ---- 3b. move "Book A Service Now" up into the hero section ---- */
+    try {
+      var heroSec = document.querySelector(".elementor-element-78cf0e9");
+      var bookSec = document.querySelector(".elementor-element-17422a0");
+      if (heroSec && bookSec && !bookSec.dataset.hmInHero) {
+        heroSec.appendChild(bookSec);
+        bookSec.dataset.hmInHero = "1";
+        heroSec.classList.add("hm-hero-has-book");
+      }
+    } catch (e3b) {}
 
     /* ---- 4. mobile burger menu: parent items that have a submenu (Trades,
        Services) only toggled the submenu and never navigated. Make a tap on
