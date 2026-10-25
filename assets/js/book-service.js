@@ -96,7 +96,7 @@
       if (label) label.textContent = 'Opening WhatsApp…';
       setTimeout(function () {
         button.disabled = false;
-        if (label) label.textContent = 'Book Us Now';
+        if (label) label.textContent = 'Request a booking';
       }, 2600);
     }
 
