@@ -414,3 +414,13 @@ html.hm-theme-dark body #services .trx-addons-info-box {
 .elementor-element-693f713 { display: none !important; }
 /* NOTE: the "connect header with hero" treatment moved to hm-overrides.css
    (section 20) so it can apply to the trades and about pages too. */
+
+/* ---------- Book A Service Now moved onto the hero (client) ----------------
+   Drop the map/gradient card background so the form controls sit directly on
+   the hero image. */
+.elementor-element-78cf0e9 .elementor-element-17422a0 {
+  background: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
