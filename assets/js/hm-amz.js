@@ -31,13 +31,22 @@
       host.insertBefore(bar, host.firstChild);
     } catch (e) {}
 
-    /* ---- 2b. booking box: rename submit button ---- */
+    /* ---- 2b. booking box: card heading + rename submit button ---- */
     try {
       var bookForm = document.querySelector(".elementor-element-17422a0 .elementor-form");
       if (bookForm && !bookForm.dataset.hmStyled) {
         bookForm.dataset.hmStyled = "1";
         var btn = bookForm.querySelector("button.elementor-button .elementor-button-text");
         if (btn) btn.textContent = "Request a booking";
+        var wrapper = bookForm.querySelector(".elementor-form-fields-wrapper");
+        if (wrapper && !wrapper.querySelector(".hm-book-head")) {
+          var head = document.createElement("div");
+          head.className = "hm-book-head";
+          head.innerHTML =
+            "<strong>Book a service</strong>" +
+            "<span>Tell us what you need &mdash; we cover all of London</span>";
+          wrapper.insertBefore(head, wrapper.firstChild);
+        }
       }
     } catch (eBook) {}
 
