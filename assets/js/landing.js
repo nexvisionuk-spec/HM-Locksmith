@@ -6,10 +6,13 @@
     if (!f) return;
     e.preventDefault();
     var lines = [];
-    ["hm-field-type","hm-field-service","hm-field-name","hm-field-phone",
-     "hm-field-postcode","hm-field-msg"].forEach(function(n){
-      var el = f.querySelector("[data-hm='"+n+"']");
-      if (el && el.value) lines.push((el.getAttribute("data-hm-label")||n.replace("hm-field-","")) + ": " + el.value);
+    // collect every field carrying a data-hm attribute, in DOM order
+    Array.prototype.forEach.call(f.querySelectorAll("[data-hm]"), function(el){
+      if (el.type === "file") {
+        if (el.files && el.files.length) lines.push((el.getAttribute("data-hm-label")||"Photos") + ": " + el.files.length + " photo(s) to follow");
+        return;
+      }
+      if (el.value) lines.push((el.getAttribute("data-hm-label")||el.getAttribute("data-hm").replace("hm-field-","")) + ": " + el.value);
     });
     var type = f.getAttribute("data-hm-type") || "enquiry";
     var text = "Hello H&M (" + type + ") - " + (lines.join(" | ") || "I'd like a free quotation");
