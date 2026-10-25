@@ -1207,15 +1207,14 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
   max-width: 580px !important;        /* align the logos with the centred booking card */
   margin-left: auto !important;
   margin-right: auto !important;
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
-  justify-content: space-between !important;
+  /* grid with minmax(0,1fr) keeps all five columns equal and prevents the
+     last (FireQual) tile from overflowing on narrow screens */
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
   align-items: stretch !important;
   gap: 6px !important;
 }
 .elementor-element-17422a0 .elementor-element-6a775d2 .elementor-widget-image {
-  flex: 1 1 0 !important;
   min-width: 0 !important;
   width: auto !important;
   margin: 0 !important;
