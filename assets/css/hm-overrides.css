@@ -1007,6 +1007,185 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
   }
 }
 
+/* ==========================================================================
+   Hero redesign: remove all text / CTAs, new dark navy booking box
+   ========================================================================== */
+
+/* 1. Hide all hero text, ratings, counter labels and emergency CTAs */
+.elementor-element-99ee843,
+.elementor-element-bc25ce4,
+.elementor-element-27e6e6d,
+.elementor-element-4bccb01,
+.elementor-element-693f713,
+.elementor-element-336e1b2,
+.elementor-element-9189c25,
+.elementor-element-2fbdb29,
+.elementor-element-490f081,
+.elementor-element-3f30e98,
+.elementor-element-6ce7229,
+.elementor-element-71f943f,
+.elementor-element-71aa2fa,
+.hm-happy,
+.hm-hc-call,
+.hm-hero-cards {
+  display: none !important;
+}
+
+/* 2. Dark navy booking box */
+.elementor-element-17422a0 {
+  background-image: none !important;
+  background-color: #141e35 !important;
+  border-radius: 20px !important;
+  padding: 28px 28px 24px !important;
+  box-shadow: 0 24px 60px rgba(10, 14, 30, .38) !important;
+}
+.elementor-element-17422a0 .e-con-inner { background: transparent !important; }
+.elementor-element-17422a0 .elementor-heading-title {
+  color: #ffffff !important;
+  text-shadow: none !important;
+  font-size: 22px !important;
+  margin-bottom: 16px !important;
+}
+
+/* Form pill */
+.elementor-element-17422a0 .elementor-form-fields-wrapper {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 0 !important;
+  background: rgba(255, 255, 255, .09) !important;
+  border: 1px solid rgba(255, 255, 255, .14) !important;
+  border-radius: 999px !important;
+  padding: 5px 5px 5px 18px !important;
+  overflow: visible !important;
+}
+
+/* Search icon (injected by JS) */
+.hm-book-search-icon {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  margin-right: 6px;
+}
+.hm-book-search-icon svg {
+  width: 18px;
+  height: 18px;
+  color: rgba(255,255,255,.55);
+  stroke: rgba(255,255,255,.55);
+  display: block;
+}
+
+/* Field groups */
+.elementor-element-17422a0 .elementor-field-group:not(.elementor-field-type-submit) {
+  flex: 1 1 auto;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  min-width: 0;
+}
+.elementor-element-17422a0 .elementor-field-group-field_e38bc1d {
+  border-left: 1px solid rgba(255, 255, 255, .15) !important;
+  flex: 0 0 160px;
+}
+
+/* Inputs + selects */
+.elementor-element-17422a0 select.elementor-field-textual,
+.elementor-element-17422a0 input.elementor-field-textual {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  color: #ffffff !important;
+  font-size: 15px !important;
+  height: 46px !important;
+  padding: 0 10px !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+.elementor-element-17422a0 select.elementor-field-textual option {
+  color: #141414 !important;
+  background: #fff !important;
+}
+.elementor-element-17422a0 input.elementor-field-textual::placeholder {
+  color: rgba(255,255,255,.45) !important;
+}
+.elementor-element-17422a0 .select-caret-down-wrapper svg path {
+  fill: rgba(255,255,255,.45) !important;
+}
+
+/* Submit pill */
+.elementor-element-17422a0 .elementor-field-type-submit {
+  flex: 0 0 auto !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.elementor-element-17422a0 button.elementor-button {
+  background: #c41230 !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  padding: 12px 22px !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  white-space: nowrap !important;
+  min-height: 0 !important;
+  height: auto !important;
+  color: #ffffff !important;
+  letter-spacing: 0.01em !important;
+  text-transform: none !important;
+  transform: none !important;
+  box-shadow: none !important;
+  transition: background .2s ease !important;
+}
+.elementor-element-17422a0 button.elementor-button:hover {
+  background: #a8102a !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Mobile: stack fields */
+@media (max-width: 767px) {
+  .elementor-element-17422a0 {
+    padding: 20px 16px !important;
+    border-radius: 16px !important;
+  }
+  .elementor-element-17422a0 .elementor-form-fields-wrapper {
+    flex-direction: column !important;
+    border-radius: 14px !important;
+    padding: 10px !important;
+    gap: 8px !important;
+  }
+  .elementor-element-17422a0 .elementor-field-group:not(.elementor-field-type-submit) {
+    width: 100% !important;
+    border-left: 0 !important;
+    background: rgba(255,255,255,.08) !important;
+    border-radius: 12px !important;
+    flex: 0 0 auto !important;
+  }
+  .elementor-element-17422a0 .elementor-field-group-field_e38bc1d {
+    flex: 0 0 auto !important;
+    border-left: 0 !important;
+  }
+  .elementor-element-17422a0 .hm-book-search-icon { display: none !important; }
+  .elementor-element-17422a0 select.elementor-field-textual,
+  .elementor-element-17422a0 input.elementor-field-textual {
+    height: 50px !important;
+    padding: 0 16px !important;
+    font-size: 16px !important;
+  }
+  .elementor-element-17422a0 .elementor-field-type-submit { width: 100% !important; }
+  .elementor-element-17422a0 button.elementor-button {
+    width: 100% !important;
+    padding: 16px 20px !important;
+    font-size: 16px !important;
+    border-radius: 12px !important;
+  }
+}
+
 /* ---------------------------------------------------------------------------
    1. Hide the theme's scroll-to-top button — it overlaps the chat launcher
       and its dark background (#2E2828) shows as a "black line" beside it.

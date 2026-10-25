@@ -31,38 +31,25 @@
       host.insertBefore(bar, host.firstChild);
     } catch (e) {}
 
-    /* ---- hero "Happy clients" badge (faces removed) ---- */
+    /* ---- 2b. booking box: search icon + rename submit button ---- */
     try {
-      var faceImg = document.querySelector('.elementor-element-78cf0e9 img[src*="custom-img-503-fourth"]');
-      if (faceImg && !document.querySelector(".hm-happy")) {
-        var badge = document.createElement("div");
-        badge.className = "hm-happy";
-        badge.innerHTML =
-          '<span class="hm-happy-badge">+1K</span>' +
-          '<span class="hm-happy-meta">' +
-            '<span class="hm-happy-stars">★★★★★</span>' +
-            '<span class="hm-happy-label">Happy clients</span>' +
-          "</span>";
-        faceImg.insertAdjacentElement("beforebegin", badge);
+      var bookForm = document.querySelector(".elementor-element-17422a0 .elementor-form");
+      if (bookForm && !bookForm.dataset.hmStyled) {
+        bookForm.dataset.hmStyled = "1";
+        var btn = bookForm.querySelector("button.elementor-button .elementor-button-text");
+        if (btn) btn.textContent = "Request a booking";
+        var wrapper = bookForm.querySelector(".elementor-form-fields-wrapper");
+        var firstField = wrapper && wrapper.querySelector(".elementor-field-group");
+        if (wrapper && firstField) {
+          var iconWrap = document.createElement("span");
+          iconWrap.className = "hm-book-search-icon";
+          iconWrap.innerHTML =
+            '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">' +
+            '<circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>';
+          wrapper.insertBefore(iconWrap, firstField);
+        }
       }
-    } catch (eHappy) {}
-
-    /* ---- 2. hero call-now + reviews cards ---- */
-    try {
-      var heroCol = document.querySelector(".elementor-element-3eb0787");
-      if (heroCol && !heroCol.querySelector(".hm-hero-cards")) {
-        var PHONE =
-          '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.9 15.9 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1l-2.1 2.2z"/></svg>';
-        var cards = document.createElement("div");
-        cards.className = "hm-hero-cards";
-        cards.innerHTML =
-          '<a class="hm-hc hm-hc-call" href="tel:02031051145" aria-label="Call 0203 105 1145">' +
-            '<span class="hm-hc-ic">' + PHONE + "</span>" +
-            '<span class="hm-hc-body"><small>24/7 Emergency — Call Now</small><strong>0203 105 1145</strong></span>' +
-          "</a>";
-        heroCol.appendChild(cards);
-      }
-    } catch (e2) {}
+    } catch (eBook) {}
 
     /* ---- 3. surface the reviews section higher (right after "We deliver") ---- */
     try {
