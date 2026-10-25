@@ -7,7 +7,7 @@
 .hm-reno{
   --rn-ink:#1c1c1e; --rn-ink2:#44444a; --rn-muted:#7b7b82;
   --rn-line:#e9e4dc; --rn-bg:#ffffff; --rn-stone:#f6f3ee; --rn-stone2:#efe8dd;
-  --rn-gold:#b08d57; --rn-gold-d:#8c6d3f;
+  --rn-gold:#C41230; --rn-gold-d:#A00F24;
   --rn-red:#C41230; --rn-red-d:#A00F24; --rn-dark:#15161a;
   --rn-radius:16px;
   --rn-head:'Hanken Grotesk',-apple-system,Segoe UI,Arial,sans-serif;
@@ -27,8 +27,8 @@
 .hm-reno .hm-rn-btn svg{width:18px;height:18px;fill:currentColor;flex:none}
 .hm-reno .hm-rn-btn--primary{background:var(--rn-red);color:#fff;box-shadow:0 10px 26px rgba(196,18,48,.28)}
 .hm-reno .hm-rn-btn--primary:hover{background:var(--rn-red-d);color:#fff;transform:translateY(-2px)}
-.hm-reno .hm-rn-btn--gold{background:var(--rn-gold);color:#fff;box-shadow:0 10px 26px rgba(176,141,87,.30)}
-.hm-reno .hm-rn-btn--gold:hover{background:var(--rn-gold-d);color:#fff;transform:translateY(-2px)}
+.hm-reno .hm-rn-btn--gold{background:#fff;color:var(--rn-red);border:1.6px solid var(--rn-red);box-shadow:0 8px 22px rgba(196,18,48,.12)}
+.hm-reno .hm-rn-btn--gold:hover{background:var(--rn-red);color:#fff;border-color:var(--rn-red);transform:translateY(-2px)}
 .hm-reno .hm-rn-btn--dark{background:var(--rn-dark);color:#fff}
 .hm-reno .hm-rn-btn--dark:hover{background:#000;color:#fff;transform:translateY(-2px)}
 .hm-reno .hm-rn-btn--ghost{background:transparent;color:var(--rn-ink);border:1.6px solid var(--rn-line)}
@@ -85,7 +85,7 @@
 .hm-reno .hm-ba-slider img,.hm-reno .hm-ba-before{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hm-reno .hm-ba-after-wrap{position:absolute;inset:0;width:50%;overflow:hidden;border-right:3px solid #fff}
 .hm-reno .hm-ba-after-wrap img{width:100vw;max-width:none}
-.hm-reno .hm-ba-before{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#ede6db,#ded3c2);color:#8c7a5e;text-align:center;padding:20px}
+.hm-reno .hm-ba-before{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#fbeef0,#f3dde1);color:#a4616b;text-align:center;padding:20px}
 .hm-reno .hm-ba-before svg{width:40px;height:40px;fill:var(--rn-red)}
 .hm-reno .hm-ba-before span{font-size:13px;font-weight:600;max-width:200px}
 .hm-reno .hm-ba-handle{position:absolute;top:0;bottom:0;left:50%;width:40px;transform:translateX(-50%);z-index:3;display:flex;align-items:center;justify-content:center;pointer-events:none}
@@ -210,7 +210,7 @@
 /* ---------- plain (no-photo) hero + photo placeholders (Kitchen until real photos supplied) ---------- */
 .hm-reno .hm-reno-hero--plain{background:radial-gradient(130% 130% at 82% -10%,#2c2d34 0%,#17181c 55%,#0e0f12 100%)}
 .hm-reno .hm-reno-hero--plain::after{background:linear-gradient(180deg,rgba(14,15,18,.35),rgba(14,15,18,.72))}
-.hm-reno .hm-ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#efe8dd,#ded3c2);color:#8c7a5e;text-align:center;padding:24px;min-height:220px;height:100%}
+.hm-reno .hm-ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#fbeef0,#f3dde1);color:#a4616b;text-align:center;padding:24px;min-height:220px;height:100%}
 .hm-reno .hm-ph svg{width:38px;height:38px;fill:var(--rn-red)}
 .hm-reno .hm-ph span{font-size:12.5px;font-weight:600;max-width:210px;line-height:1.5}
 .hm-reno .hm-gal figure .hm-ph{aspect-ratio:4/3;min-height:0;border-radius:14px}
