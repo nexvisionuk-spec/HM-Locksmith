@@ -60,20 +60,20 @@
 .hm-reno .hm-hero-cta{display:flex;flex-wrap:wrap;gap:14px}
 .hm-reno .hm-hero-ticks{list-style:none;margin:34px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 26px;max-width:620px}
 .hm-reno .hm-hero-ticks li{position:relative;padding-left:30px;font-size:15px;color:rgba(255,255,255,.94);font-weight:500}
-.hm-reno .hm-hero-ticks li svg{position:absolute;left:0;top:1px;width:20px;height:20px;fill:var(--rn-gold)}
+.hm-reno .hm-hero-ticks li svg{position:absolute;left:0;top:1px;width:20px;height:20px;fill:#fff}
 
 /* ---------- TRUST BAR ---------- */
 .hm-reno .hm-trustbar{background:var(--rn-stone);border-bottom:1px solid var(--rn-line)}
 .hm-reno .hm-trustbar .hm-rn-wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 38px;padding-top:22px;padding-bottom:22px}
 .hm-reno .hm-trust-item{display:inline-flex;align-items:center;gap:10px;font-size:14.5px;font-weight:600;color:var(--rn-ink2)}
-.hm-reno .hm-trust-item svg{width:20px;height:20px;fill:var(--rn-gold);flex:none}
+.hm-reno .hm-trust-item svg{width:20px;height:20px;fill:var(--rn-red);flex:none}
 
 /* ---------- SERVICE CARDS ---------- */
 .hm-reno .hm-svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .hm-reno .hm-svc-card{background:#fff;border:1px solid var(--rn-line);border-radius:var(--rn-radius);padding:32px 30px;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
 .hm-reno .hm-svc-card:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(28,28,30,.09);border-color:#dcd4c7}
-.hm-reno .hm-svc-ic{width:54px;height:54px;border-radius:13px;background:var(--rn-stone);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
-.hm-reno .hm-svc-ic svg{width:27px;height:27px;fill:var(--rn-gold)}
+.hm-reno .hm-svc-ic{width:54px;height:54px;border-radius:13px;background:var(--rn-red);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.hm-reno .hm-svc-ic svg{width:27px;height:27px;fill:#fff}
 .hm-reno .hm-svc-card h3{font-size:19px;margin-bottom:10px}
 .hm-reno .hm-svc-card p{color:var(--rn-muted);font-size:14.5px}
 .hm-reno .hm-sec-cta{margin-top:44px;text-align:center}
@@ -86,7 +86,7 @@
 .hm-reno .hm-ba-after-wrap{position:absolute;inset:0;width:50%;overflow:hidden;border-right:3px solid #fff}
 .hm-reno .hm-ba-after-wrap img{width:100vw;max-width:none}
 .hm-reno .hm-ba-before{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#ede6db,#ded3c2);color:#8c7a5e;text-align:center;padding:20px}
-.hm-reno .hm-ba-before svg{width:40px;height:40px;fill:#b7a684}
+.hm-reno .hm-ba-before svg{width:40px;height:40px;fill:var(--rn-red)}
 .hm-reno .hm-ba-before span{font-size:13px;font-weight:600;max-width:200px}
 .hm-reno .hm-ba-handle{position:absolute;top:0;bottom:0;left:50%;width:40px;transform:translateX(-50%);z-index:3;display:flex;align-items:center;justify-content:center;pointer-events:none}
 .hm-reno .hm-ba-handle i{width:40px;height:40px;border-radius:50%;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.3);display:flex;align-items:center;justify-content:center}
@@ -96,13 +96,13 @@
 .hm-reno .hm-ba-text h3{font-size:clamp(22px,3vw,30px);margin-bottom:12px}
 .hm-reno .hm-ba-text p{color:var(--rn-muted);margin-bottom:18px}
 .hm-reno .hm-ba-loc{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--rn-gold-d);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px}
-.hm-reno .hm-ba-loc svg{width:15px;height:15px;fill:var(--rn-gold)}
+.hm-reno .hm-ba-loc svg{width:15px;height:15px;fill:var(--rn-red)}
 
 /* ---------- WHY CHOOSE ---------- */
 .hm-reno .hm-why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
 .hm-reno .hm-why-card{background:#fff;border:1px solid var(--rn-line);border-radius:var(--rn-radius);padding:30px 28px}
-.hm-reno .hm-why-ic{width:50px;height:50px;border-radius:12px;background:var(--rn-stone);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
-.hm-reno .hm-why-ic svg{width:25px;height:25px;fill:none;stroke:var(--rn-gold);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.hm-reno .hm-why-ic{width:50px;height:50px;border-radius:12px;background:var(--rn-red);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.hm-reno .hm-why-ic svg{width:25px;height:25px;fill:none;stroke:#fff;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .hm-reno .hm-why-card h3{font-size:18px;margin-bottom:9px}
 .hm-reno .hm-why-card p{color:var(--rn-muted);font-size:14.5px}
 
@@ -152,7 +152,7 @@
 .hm-reno .hm-costs-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:start}
 .hm-reno .hm-costs-factors{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px 24px}
 .hm-reno .hm-costs-factors li{position:relative;padding-left:26px;font-size:15px;color:var(--rn-ink2)}
-.hm-reno .hm-costs-factors li svg{position:absolute;left:0;top:3px;width:17px;height:17px;fill:var(--rn-gold)}
+.hm-reno .hm-costs-factors li svg{position:absolute;left:0;top:3px;width:17px;height:17px;fill:var(--rn-red)}
 .hm-reno .hm-costs-card{background:var(--rn-stone);border:1px solid var(--rn-line);border-radius:var(--rn-radius);padding:34px}
 .hm-reno .hm-costs-card p{color:var(--rn-ink2);margin-bottom:20px}
 
@@ -160,7 +160,7 @@
 .hm-reno .hm-areas-grid{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
 .hm-reno .hm-area-chip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--rn-line);border-radius:999px;padding:11px 20px;font-size:14.5px;font-weight:600;color:var(--rn-ink2);text-decoration:none;transition:.15s}
 .hm-reno .hm-area-chip:hover{border-color:var(--rn-gold);color:var(--rn-gold-d)}
-.hm-reno .hm-area-chip svg{width:15px;height:15px;fill:var(--rn-gold)}
+.hm-reno .hm-area-chip svg{width:15px;height:15px;fill:var(--rn-red)}
 
 /* ---------- FAQ ---------- */
 .hm-reno .hm-faq{max-width:820px;margin:0 auto}
@@ -188,7 +188,7 @@
 .hm-reno .hm-enq-side p{color:var(--rn-muted);font-size:16px;margin-bottom:24px}
 .hm-reno .hm-enq-contact{display:flex;flex-direction:column;gap:14px;margin-top:8px}
 .hm-reno .hm-enq-contact a{display:inline-flex;align-items:center;gap:12px;font-weight:700;color:var(--rn-ink);text-decoration:none;font-size:16px}
-.hm-reno .hm-enq-contact a svg{width:22px;height:22px;fill:var(--rn-gold);flex:none}
+.hm-reno .hm-enq-contact a svg{width:22px;height:22px;fill:var(--rn-red);flex:none}
 .hm-reno .hm-enq-priv{font-size:12px;color:var(--rn-muted);margin-top:16px;line-height:1.6}
 
 /* ---------- RESPONSIVE ---------- */
@@ -211,7 +211,7 @@
 .hm-reno .hm-reno-hero--plain{background:radial-gradient(130% 130% at 82% -10%,#2c2d34 0%,#17181c 55%,#0e0f12 100%)}
 .hm-reno .hm-reno-hero--plain::after{background:linear-gradient(180deg,rgba(14,15,18,.35),rgba(14,15,18,.72))}
 .hm-reno .hm-ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#efe8dd,#ded3c2);color:#8c7a5e;text-align:center;padding:24px;min-height:220px;height:100%}
-.hm-reno .hm-ph svg{width:38px;height:38px;fill:#b7a684}
+.hm-reno .hm-ph svg{width:38px;height:38px;fill:var(--rn-red)}
 .hm-reno .hm-ph span{font-size:12.5px;font-weight:600;max-width:210px;line-height:1.5}
 .hm-reno .hm-gal figure .hm-ph{aspect-ratio:4/3;min-height:0;border-radius:14px}
 .hm-reno .hm-note{max-width:1180px;margin:0 auto 26px;padding:12px 18px;background:#fff;border:1px dashed var(--rn-gold);border-radius:10px;color:var(--rn-gold-d);font-size:13.5px;font-weight:600;text-align:center}
