@@ -31,23 +31,13 @@
       host.insertBefore(bar, host.firstChild);
     } catch (e) {}
 
-    /* ---- 2b. booking box: search icon + rename submit button ---- */
+    /* ---- 2b. booking box: rename submit button ---- */
     try {
       var bookForm = document.querySelector(".elementor-element-17422a0 .elementor-form");
       if (bookForm && !bookForm.dataset.hmStyled) {
         bookForm.dataset.hmStyled = "1";
         var btn = bookForm.querySelector("button.elementor-button .elementor-button-text");
         if (btn) btn.textContent = "Request a booking";
-        var wrapper = bookForm.querySelector(".elementor-form-fields-wrapper");
-        var firstField = wrapper && wrapper.querySelector(".elementor-field-group");
-        if (wrapper && firstField) {
-          var iconWrap = document.createElement("span");
-          iconWrap.className = "hm-book-search-icon";
-          iconWrap.innerHTML =
-            '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">' +
-            '<circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>';
-          wrapper.insertBefore(iconWrap, firstField);
-        }
       }
     } catch (eBook) {}
 
