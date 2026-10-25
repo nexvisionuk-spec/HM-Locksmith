@@ -1031,105 +1031,133 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
   display: none !important;
 }
 
-/* 2. Dark navy booking box */
+/* 2. White connected booking card (customer's box design, image 1)
+   Deep-navy outer frame → one white rounded card holding: a service row with
+   a search icon, a divider, a second field row, and a full-width red button.
+   All text is dark navy on white so it is always visible (fixes the empty
+   white boxes seen on mobile). */
 .elementor-element-17422a0 {
-  background-image: none !important;
-  background-color: #141e35 !important;
-  border-radius: 20px !important;
-  padding: 28px 28px 24px !important;
-  box-shadow: 0 24px 60px rgba(10, 14, 30, .38) !important;
+  background: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  max-width: 460px !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
 }
-.elementor-element-17422a0 .e-con-inner { background: transparent !important; }
-.elementor-element-17422a0 .elementor-heading-title {
-  color: #ffffff !important;
-  text-shadow: none !important;
-  font-size: 22px !important;
-  margin-bottom: 16px !important;
+.elementor-element-17422a0 > .e-con-inner {
+  background: transparent !important;
+  padding: 0 !important;
+}
+/* the deep-navy frame wraps the white card (matches customer's box design) */
+.elementor-element-17422a0 .elementor-element-fb4226f {
+  width: 100% !important;
+  margin: 0 !important;
+  background-color: #0a1838 !important;
+  border-radius: 28px !important;
+  padding: 14px !important;
+  box-shadow: 0 24px 60px rgba(10, 14, 30, .40) !important;
 }
 
-/* Form pill */
+/* the white card = the form fields wrapper */
 .elementor-element-17422a0 .elementor-form-fields-wrapper {
   display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
+  flex-direction: column !important;
   gap: 0 !important;
-  background: rgba(255, 255, 255, .09) !important;
-  border: 1px solid rgba(255, 255, 255, .14) !important;
-  border-radius: 999px !important;
-  padding: 5px 5px 5px 18px !important;
-  overflow: visible !important;
+  background: #ffffff !important;
+  border: 0 !important;
+  border-radius: 20px !important;
+  padding: 8px 20px 20px !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
 }
 
-/* Search icon (injected by JS) */
-.hm-book-search-icon {
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-  margin-right: 6px;
-}
-.hm-book-search-icon svg {
-  width: 18px;
-  height: 18px;
-  color: rgba(255,255,255,.55);
-  stroke: rgba(255,255,255,.55);
-  display: block;
-}
-
-/* Field groups */
+/* each field row */
 .elementor-element-17422a0 .elementor-field-group:not(.elementor-field-type-submit) {
-  flex: 1 1 auto;
+  width: 100% !important;
   margin: 0 !important;
   padding: 0 !important;
   background: transparent !important;
   border: 0 !important;
-  box-shadow: none !important;
   border-radius: 0 !important;
-  min-width: 0;
+  box-shadow: none !important;
 }
+/* divider between the two input rows */
 .elementor-element-17422a0 .elementor-field-group-field_e38bc1d {
-  border-left: 1px solid rgba(255, 255, 255, .15) !important;
-  flex: 0 0 160px;
+  border-top: 1px solid #e6e8ee !important;
 }
 
-/* Inputs + selects */
+/* inputs + selects: dark navy text on white (always visible) */
 .elementor-element-17422a0 select.elementor-field-textual,
 .elementor-element-17422a0 input.elementor-field-textual {
   background: transparent !important;
   border: 0 !important;
   border-radius: 0 !important;
-  color: #ffffff !important;
-  font-size: 15px !important;
-  height: 46px !important;
-  padding: 0 10px !important;
+  color: #0a1838 !important;
+  font-size: 17px !important;
+  font-weight: 600 !important;
+  height: 58px !important;
+  padding: 0 8px !important;
   box-shadow: none !important;
   outline: none !important;
+  width: 100% !important;
+}
+.elementor-element-17422a0 select.elementor-field-textual {
+  padding-left: 34px !important;   /* room for the search icon */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .elementor-element-17422a0 select.elementor-field-textual option {
   color: #141414 !important;
   background: #fff !important;
+  font-weight: 600;
 }
 .elementor-element-17422a0 input.elementor-field-textual::placeholder {
-  color: rgba(255,255,255,.45) !important;
-}
-.elementor-element-17422a0 .select-caret-down-wrapper svg path {
-  fill: rgba(255,255,255,.45) !important;
+  color: #8a90a0 !important;
+  font-weight: 500;
 }
 
-/* Submit pill */
+/* search icon on the service row */
+.elementor-element-17422a0 .elementor-field-group-field_62fdbea {
+  position: relative !important;
+}
+.elementor-element-17422a0 .elementor-field-group-field_62fdbea::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230a1838' stroke-width='2.5' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cline x1='16.5' y1='16.5' x2='22' y2='22'/%3E%3C/svg%3E") no-repeat center / contain;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* chevron on the right of the select */
+.elementor-element-17422a0 .select-caret-down-wrapper {
+  right: 4px !important;
+}
+.elementor-element-17422a0 .select-caret-down-wrapper svg path {
+  fill: #8a90a0 !important;
+}
+
+/* submit: full-width red pill inside the card */
 .elementor-element-17422a0 .elementor-field-type-submit {
-  flex: 0 0 auto !important;
+  width: 100% !important;
   background: transparent !important;
   border: 0 !important;
   box-shadow: none !important;
   padding: 0 !important;
-  margin: 0 !important;
+  margin: 14px 0 0 !important;
 }
 .elementor-element-17422a0 button.elementor-button {
-  background: #c41230 !important;
+  width: 100% !important;
+  background: #e8122e !important;
   border: 0 !important;
   border-radius: 999px !important;
-  padding: 12px 22px !important;
-  font-size: 14px !important;
+  padding: 17px 24px !important;
+  font-size: 18px !important;
   font-weight: 700 !important;
   white-space: nowrap !important;
   min-height: 0 !important;
@@ -1142,47 +1170,50 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
   transition: background .2s ease !important;
 }
 .elementor-element-17422a0 button.elementor-button:hover {
-  background: #a8102a !important;
+  background: #c41230 !important;
   transform: none !important;
   box-shadow: none !important;
 }
 
-/* Mobile: stack fields */
+/* accreditation logos below the card, centered on the navy frame */
+.elementor-element-17422a0 .elementor-element-6a775d2 {
+  margin-top: 14px !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+.elementor-element-17422a0 .elementor-element-6a775d2 .elementor-widget-image {
+  width: auto !important;
+  flex: 0 0 auto !important;
+}
+.elementor-element-17422a0 .elementor-element-6a775d2 img {
+  height: 40px !important;
+  width: auto !important;
+  max-width: 76px !important;
+  object-fit: contain !important;
+  background: #ffffff !important;
+  border-radius: 7px !important;
+  padding: 4px 6px !important;
+}
+
+/* phones: full width, taller tap targets */
 @media (max-width: 767px) {
   .elementor-element-17422a0 {
-    padding: 20px 16px !important;
-    border-radius: 16px !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    border-radius: 24px !important;
+    padding: 12px !important;
   }
   .elementor-element-17422a0 .elementor-form-fields-wrapper {
-    flex-direction: column !important;
-    border-radius: 14px !important;
-    padding: 10px !important;
-    gap: 8px !important;
+    border-radius: 18px !important;
+    padding: 6px 16px 16px !important;
   }
-  .elementor-element-17422a0 .elementor-field-group:not(.elementor-field-type-submit) {
-    width: 100% !important;
-    border-left: 0 !important;
-    background: rgba(255,255,255,.08) !important;
-    border-radius: 12px !important;
-    flex: 0 0 auto !important;
-  }
-  .elementor-element-17422a0 .elementor-field-group-field_e38bc1d {
-    flex: 0 0 auto !important;
-    border-left: 0 !important;
-  }
-  .elementor-element-17422a0 .hm-book-search-icon { display: none !important; }
   .elementor-element-17422a0 select.elementor-field-textual,
   .elementor-element-17422a0 input.elementor-field-textual {
-    height: 50px !important;
-    padding: 0 16px !important;
+    height: 60px !important;
     font-size: 16px !important;
-  }
-  .elementor-element-17422a0 .elementor-field-type-submit { width: 100% !important; }
-  .elementor-element-17422a0 button.elementor-button {
-    width: 100% !important;
-    padding: 16px 20px !important;
-    font-size: 16px !important;
-    border-radius: 12px !important;
   }
 }
 
@@ -1624,72 +1655,6 @@ html:not(.hm-theme-dark) .hm-theme-toggle {
    Client didn't want this bar; hide it at every width (it was only hidden on
    the 768-1366 range before, so it still showed on wide desktop). */
 .top_panel .elementor-element-01dd775 { display: none !important; }
-
-/* ---------- 18. "Book A Service Now" form: clean stacked card on mobile -------
-   On desktop the fields form one pill; stacked on phones the last segment (the
-   red button) kept square top corners fused to the white fields. On mobile,
-   lay them out as separate rounded cards + a red pill button. */
-@media (max-width: 767px) {
-  .elementor-element-fb4226f .elementor-form-fields-wrapper {
-    display: flex !important; flex-direction: column; gap: 10px;
-    background: transparent !important; border: 0 !important;
-    border-radius: 0 !important; box-shadow: none !important;
-    overflow: visible !important; padding: 0 !important;
-  }
-  /* each input/select becomes its own rounded white card */
-  .elementor-element-fb4226f .elementor-field-group:not(.elementor-field-type-submit) {
-    width: 100% !important; margin: 0 !important;
-    background: #fff !important;
-    border: 1px solid rgba(0,0,0,.10) !important;
-    border-radius: 14px !important;
-    box-shadow: 0 6px 16px rgba(0,0,0,.06) !important;
-    overflow: hidden;
-  }
-  .elementor-element-fb4226f select.elementor-field-textual,
-  .elementor-element-fb4226f input.elementor-field-textual,
-  .elementor-element-fb4226f .elementor-select-wrapper {
-    background: transparent !important; border: 0 !important; box-shadow: none !important;
-  }
-  /* submit = red pill with breathing room, not a fused block */
-  .elementor-element-fb4226f .elementor-field-type-submit {
-    background: transparent !important; border: 0 !important; box-shadow: none !important;
-    padding: 0 !important; margin: 0 !important;
-  }
-  .elementor-element-fb4226f button.elementor-button {
-    width: 100% !important;
-    border-radius: 999px !important;
-    background: #c41230 !important;
-    padding: 16px 20px !important;
-  }
-}
-
-/* ---------- 19. "Book A Service Now" box: image background (navy-tinted) ------
-   Client wanted the booking box to sit on an image. Use the on-brand London
-   coverage map under a navy gradient so it reads as a premium navy panel with
-   a subtle London texture; the white form + red button sit on top. */
-.elementor-element-17422a0 {
-  /* London map on its natural (light) tone — no blue tint; a soft neutral wash
-     just lifts contrast so the white form cards and dark heading stay legible. */
-  background-image:
-    linear-gradient(160deg, rgba(255,255,255,.30) 0%, rgba(255,255,255,.42) 100%),
-    url("/wp-content/uploads/2026/09/london.webp") !important;
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  border-radius: 22px !important;
-  padding: 26px 22px 28px !important;
-  box-shadow: 0 20px 50px rgba(20,20,30,.18);
-}
-/* heading: larger, bolder and clearly legible on the light map */
-.elementor-element-17422a0 .elementor-heading-title {
-  color: #1f242e !important;
-  font-size: clamp(26px, 5vw, 38px) !important;
-  font-weight: 800 !important;
-  line-height: 1.15 !important;
-  margin-bottom: 16px !important;
-  text-shadow: 0 1px 10px rgba(255,255,255,.65);
-}
-.elementor-element-17422a0 .e-con-inner { background: transparent !important; }
 
 /* ---------- 20. Connect the mobile header with the hero (whole site) ----------
    Generic, every page: the header pulls whatever section sits below it up behind
