@@ -1232,29 +1232,28 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
   box-shadow: 0 4px 12px rgba(10, 16, 38, .14) !important;
 }
 
-/* phones: keep the navy "box" frame around the white card (mobile only) */
+/* phones: same frameless white card as desktop (no navy frame) */
 @media (max-width: 767px) {
   .elementor-element-17422a0 {
     max-width: 100% !important;
     margin: 0 auto !important;
   }
-  .elementor-element-17422a0 .elementor-element-fb4226f {
-    background-color: #0a1838 !important;
-    border-radius: 26px !important;
-    padding: 13px !important;
-    box-shadow: 0 22px 54px rgba(10, 14, 30, .40) !important;
-  }
   .elementor-element-17422a0 .elementor-form-fields-wrapper {
-    border-radius: 18px !important;
-    padding: 18px 16px !important;
-    box-shadow: none !important;   /* the navy frame provides the depth */
+    border-radius: 20px !important;
+    padding: 20px 16px !important;
   }
   .elementor-element-17422a0 select.elementor-field-textual,
   .elementor-element-17422a0 input.elementor-field-textual {
     height: 58px !important;
   }
+  /* keep all five logos on one line on phones too */
   .elementor-element-17422a0 .elementor-element-6a775d2 {
-    justify-content: center !important;
+    flex-wrap: nowrap !important;
+    gap: 5px !important;
+  }
+  .elementor-element-17422a0 .elementor-element-6a775d2 img {
+    height: 32px !important;
+    padding: 3px !important;
   }
 }
 
