@@ -1040,6 +1040,113 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
    client-logos carousel; tame the oversized "Our Core Services" heading ------- */
 .elementor-element-c9f9297 { display: none !important; }
 
+/* ---------- Service feature cards (Residential / Retail) redesign --------------
+   Eyebrow + divider, bold white title, muted body, and a red pill "More Details"
+   button with an arrow — injected labels/arrows come from hm-amz.js. */
+.hm-card-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 14px;
+}
+.hm-card-eyebrow span {
+  font-family: 'Hanken Grotesk', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: #b9bcc4;
+  white-space: nowrap;
+}
+.hm-card-eyebrow i { flex: 1; height: 1px; background: rgba(255, 255, 255, .18); }
+
+.elementor-element-1b82d32 .elementor-heading-title,
+.elementor-element-95fdff0 .elementor-heading-title {
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  font-size: 30px !important;
+  line-height: 1.12 !important;
+  letter-spacing: -.01em;
+}
+@media (max-width: 767px) {
+  .elementor-element-1b82d32 .elementor-heading-title,
+  .elementor-element-95fdff0 .elementor-heading-title { font-size: 27px !important; }
+}
+.elementor-element-6ef7ca8 .elementor-heading-title,
+.elementor-element-3a55d50 .elementor-heading-title {
+  color: #c6c8ce !important;
+  font-weight: 400 !important;
+}
+
+/* "More Details" pill on the left + circular outline arrow button on the right */
+.elementor-element-d32e9ce h6,
+.elementor-element-36c3658 h6 {
+  margin: 20px 0 0 !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.elementor-element-d32e9ce a:not(.hm-card-arrow-btn),
+.elementor-element-36c3658 a:not(.hm-card-arrow-btn) {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 10px;
+  background: #c41230;
+  color: #ffffff !important;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none !important;
+  transition: background .18s ease, transform .18s ease;
+}
+.elementor-element-d32e9ce a:not(.hm-card-arrow-btn):hover,
+.elementor-element-36c3658 a:not(.hm-card-arrow-btn):hover {
+  background: #a00f24;
+  transform: translateY(-2px);
+}
+.hm-arr { width: 18px; height: 18px; flex: none; }
+
+/* circular outline arrow button (matches the mockup) */
+.elementor-element-d32e9ce a.hm-card-arrow-btn,
+.elementor-element-36c3658 a.hm-card-arrow-btn {
+  flex: none;
+  width: 50px;
+  height: 50px;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  border: 1.5px solid rgba(255, 255, 255, .45) !important;
+  background: transparent !important;
+  color: #ffffff !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none !important;
+  transition: background .18s ease, border-color .18s ease, transform .18s ease;
+}
+.elementor-element-d32e9ce a.hm-card-arrow-btn:hover,
+.elementor-element-36c3658 a.hm-card-arrow-btn:hover {
+  background: #c41230 !important;
+  border-color: #c41230 !important;
+  transform: translateY(-2px);
+}
+.hm-card-arrow-btn svg { width: 20px; height: 20px; flex: none; }
+
+/* phones: both cards stack image-on-top, text below (consistent with the
+   mockup). Card 1 was "row" (text first) and card 2 "row-reverse" (image
+   first) — force both to column with the image ordered to the top. */
+@media (max-width: 767px) {
+  .elementor-element-fdee842 > .e-con-inner,
+  .elementor-element-69f8f64 > .e-con-inner {
+    flex-direction: column !important;
+  }
+  .elementor-element-3a1bd11,
+  .elementor-element-aac2c14 {
+    order: -1 !important;
+  }
+}
+
 .hm-trusted-by {
   text-align: center;
   font-family: 'Hanken Grotesk', Arial, sans-serif;
@@ -1808,10 +1915,11 @@ html:not(.hm-theme-dark) .hm-theme-toggle {
   .elementor-element-78cf0e9 { padding-top: 220px !important; }
   /* all other pages: 220px matches homepage treatment, clears announcement bar + header + gives breathing room */
   .elementor-element-25f53175,   /* trades service pages */
-  .elementor-element-7f59aa8,    /* footer on several pages - harmless */
   .elementor-element-efaa823 {   /* about-us */
     padding-top: 220px !important;
   }
+  /* NOTE: 7f59aa8 is the FOOTER on the homepage — never give it 220px top
+     padding (that produced a big black gap above the footer logo). */
   /* custom hero sections on inner pages: these are NOT elementor elements, they're
      handcrafted sections with their own padding — override to match the homepage */
   .hm-landing .hm-hero    { padding-top: 220px !important; }  /* doors / emergency-locksmith */

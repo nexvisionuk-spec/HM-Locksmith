@@ -80,6 +80,32 @@
       }
     } catch (eTrust) {}
 
+    /* ---- 2e. service feature cards: eyebrow + divider, arrow in "More Details" ---- */
+    try {
+      var CARD_EYEBROW = { "1b82d32": "Residential", "95fdff0": "Commercial" };
+      Object.keys(CARD_EYEBROW).forEach(function (tid) {
+        var title = document.querySelector(".elementor-element-" + tid);
+        if (title && !(title.previousElementSibling && title.previousElementSibling.className === "hm-card-eyebrow")) {
+          var eb = document.createElement("div");
+          eb.className = "hm-card-eyebrow";
+          eb.innerHTML = "<span>" + CARD_EYEBROW[tid] + "</span><i></i>";
+          title.parentNode.insertBefore(eb, title);
+        }
+      });
+      var ARROW = '<svg class="hm-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+      var ARROW_PLAIN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+      ["d32e9ce", "36c3658"].forEach(function (mid) {
+        var a = document.querySelector(".elementor-element-" + mid + " a");
+        if (!a) return;
+        if (!a.querySelector("svg")) a.insertAdjacentHTML("beforeend", ARROW);
+        var h6 = a.closest("h6");
+        if (h6 && !h6.querySelector(".hm-card-arrow-btn")) {
+          var href = a.getAttribute("href") || "/trades/";
+          h6.insertAdjacentHTML("beforeend", '<a class="hm-card-arrow-btn" href="' + href + '" aria-label="More details">' + ARROW_PLAIN + "</a>");
+        }
+      });
+    } catch (eCard) {}
+
     /* ---- 3. surface the reviews section higher (right after "We deliver") ---- */
     try {
       var reviews = document.querySelector(".elementor-element-13b28435");
