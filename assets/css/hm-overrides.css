@@ -1137,11 +1137,20 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
    Featured Projects showcase (homepage, after the service cards)
    ========================================================================== */
 .hm-featured {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: none !important;
+  width: 100% !important;
+  margin: 0 !important;
   padding: 56px 20px;
+  box-sizing: border-box;
 }
-.hm-featured-head { text-align: center; margin: 0 0 34px; }
+/* keep the inner content aligned to the site's boxed width like other sections */
+.hm-featured-head,
+.hm-featured-grid {
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hm-featured-head { text-align: center; margin: 0 auto 34px; }
 .hm-featured-eyebrow {
   display: block;
   font-family: 'Hanken Grotesk', Arial, sans-serif;
