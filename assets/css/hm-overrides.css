@@ -1055,10 +1055,10 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
   font-weight: 700;
   letter-spacing: .18em;
   text-transform: uppercase;
-  color: #b9bcc4;
+  color: #d4d6dc;
   white-space: nowrap;
 }
-.hm-card-eyebrow i { flex: 1; height: 1px; background: rgba(255, 255, 255, .18); }
+.hm-card-eyebrow i { flex: 1; height: 1px; background: rgba(255, 255, 255, .42); }
 
 .elementor-element-1b82d32 .elementor-heading-title,
 .elementor-element-95fdff0 .elementor-heading-title {
@@ -1133,6 +1133,118 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
 }
 .hm-card-arrow-btn svg { width: 20px; height: 20px; flex: none; }
 
+/* ==========================================================================
+   Featured Projects showcase (homepage, after the service cards)
+   ========================================================================== */
+.hm-featured {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 56px 20px;
+}
+.hm-featured-head { text-align: center; margin: 0 0 34px; }
+.hm-featured-eyebrow {
+  display: block;
+  font-family: 'Hanken Grotesk', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  color: #c41230;
+  margin: 0 0 10px;
+}
+.hm-featured-title {
+  font-family: 'Hanken Grotesk', Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: #1f242e;
+  margin: 0;
+  letter-spacing: -.01em;
+}
+.hm-featured-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.hm-featured-card {
+  position: relative;
+  display: block;
+  border-radius: 20px;
+  overflow: hidden;
+  min-height: 470px;
+  background-size: cover;
+  background-position: center;
+  text-decoration: none;
+  box-shadow: 0 20px 50px rgba(10, 16, 38, .18);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.hm-featured-card:hover { transform: translateY(-4px); box-shadow: 0 28px 64px rgba(10, 16, 38, .28); }
+.hm-featured-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.hm-featured-card:hover .hm-featured-img { transform: none; }
+.hm-featured-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(8, 9, 12, .9) 0%, rgba(8, 9, 12, .42) 42%, rgba(8, 9, 12, 0) 68%);
+}
+.hm-featured-body {
+  position: absolute;
+  left: 28px;
+  right: 92px;
+  bottom: 26px;
+  display: flex;
+  flex-direction: column;
+}
+.hm-featured-tag {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .82);
+  margin-bottom: 8px;
+}
+.hm-featured-name {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 9px;
+}
+.hm-featured-loc {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, .9);
+}
+.hm-featured-loc svg { width: 16px; height: 16px; flex: none; }
+.hm-featured-arrow {
+  position: absolute;
+  bottom: 26px;
+  right: 24px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #15181f;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+.hm-featured-card:hover .hm-featured-arrow { background: #c41230; color: #ffffff; transform: translateY(-2px); }
+.hm-featured-arrow svg { width: 22px; height: 22px; }
+@media (max-width: 767px) {
+  .hm-featured { padding: 40px 16px; }
+  .hm-featured-grid { grid-template-columns: 1fr; gap: 18px; }
+  .hm-featured-title { font-size: 25px; }
+  .hm-featured-card { min-height: 420px; }
+}
+
 /* phones: both cards stack image-on-top, text below (consistent with the
    mockup). Card 1 was "row" (text first) and card 2 "row-reverse" (image
    first) — force both to column with the image ordered to the top. */
@@ -1144,6 +1256,16 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
   .elementor-element-3a1bd11,
   .elementor-element-aac2c14 {
     order: -1 !important;
+  }
+  /* card 1's image container kept the BOTTOM-rounded corners (from when it sat
+     at the bottom) + no top padding, which made the notch/"cut" look once it
+     moved to the top. Mirror card 2: round the top, pad all sides. */
+  .elementor-element-3a1bd11 {
+    border-radius: 8px 8px 0 0 !important;
+    padding: 20px !important;
+  }
+  .elementor-element-ce60e0d {
+    border-radius: 0 0 8px 8px !important;
   }
 }
 
@@ -1160,13 +1282,30 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
 
 @media (max-width: 767px) {
   .elementor-element-39aa06a .elementor-heading-title {
-    font-size: 30px !important;
+    font-size: 26px !important;
     line-height: 1.18 !important;
     hyphens: none !important;
     -webkit-hyphens: none !important;
     word-break: normal !important;
     overflow-wrap: normal !important;
   }
+}
+
+/* ---------- Section headings: smaller + no forced capitals (eyebrows not
+   all-caps, "We handle…" in its natural sentence case). The "Complete
+   Property Solutions" heading keeps its Title Case. --------------------------- */
+.elementor-element-97c5b7f .elementor-heading-title,
+.elementor-element-3c6b662 .elementor-heading-title,
+.elementor-element-fe58060 .elementor-heading-title {
+  text-transform: none !important;
+}
+.elementor-element-39aa06a .elementor-heading-title { font-size: 28px !important; }
+.elementor-element-fe58060 .elementor-heading-title {
+  font-size: 28px !important;
+  line-height: 1.15 !important;
+}
+@media (max-width: 767px) {
+  .elementor-element-fe58060 .elementor-heading-title { font-size: 25px !important; }
 }
 
 /* ==========================================================================
