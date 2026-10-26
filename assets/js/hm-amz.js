@@ -69,6 +69,17 @@
       });
     } catch (eStat) {}
 
+    /* ---- 2d. "Trusted by" label above the client-logos carousel ---- */
+    try {
+      var logoSec = document.querySelector(".elementor-element-5211d46");
+      if (logoSec && !logoSec.querySelector(".hm-trusted-by")) {
+        var tb = document.createElement("div");
+        tb.className = "hm-trusted-by";
+        tb.textContent = "Trusted by leading brands";
+        logoSec.insertBefore(tb, logoSec.firstChild);
+      }
+    } catch (eTrust) {}
+
     /* ---- 3. surface the reviews section higher (right after "We deliver") ---- */
     try {
       var reviews = document.querySelector(".elementor-element-13b28435");
