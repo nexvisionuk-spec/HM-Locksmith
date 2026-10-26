@@ -19,7 +19,10 @@
 .hm-usp-bar .hm-usp svg { width: 14px; height: 14px; fill: currentColor; flex: none; }
 .hm-usp-bar .hm-usp-star { color: #ffd54a; }
 @media (max-width: 860px) {
-  .hm-usp-bar { font-size: 11.5px; gap: 8px 16px; padding: 8px 12px; }
+  /* keep all items on ONE line on phones */
+  .hm-usp-bar { flex-wrap: nowrap; font-size: clamp(9px, 2.5vw, 11.5px); gap: 10px; padding: 7px 8px; }
+  .hm-usp-bar .hm-usp { gap: 4px; }
+  .hm-usp-bar .hm-usp svg { width: 12px; height: 12px; }
   .hm-usp-bar .hm-usp-sm-hide { display: none; }
 }
 
