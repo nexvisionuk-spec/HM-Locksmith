@@ -1178,7 +1178,8 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
   display: block;
   border-radius: 20px;
   overflow: hidden;
-  min-height: 470px;
+  aspect-ratio: 4 / 5;   /* taller/portrait so the photo isn't cropped so hard */
+  min-height: 0;
   background-size: cover;
   background-position: center;
   text-decoration: none;
