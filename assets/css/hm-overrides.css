@@ -243,13 +243,15 @@ input[type="button"]:hover,
   color: #C41230 !important;
 }
 
-/* ---------- 3. Header: tablet (768px - 1366px) ----------
+/* ---------- 3. Header: small-desktop (1025px - 1366px) ----------
    Desktop-style bar: white strip, big circular logo hanging below the edge and
    the red 24/7 phone panel flush to the right edge. The inline menu can't fit
    at these widths (8 items need ~820px on their own), so the burger replaces
-   it and opens the same full menu.                                        */
+   it and opens the same full menu.
+   Starts at 1025px so 768-1024px uses the clean mobile header (section 20)
+   instead of clashing with it (which looked dark/muddy at ~993px).         */
 
-@media (min-width: 768px) and (max-width: 1366px) {
+@media (min-width: 1025px) and (max-width: 1366px) {
 
   /* keep the desktop strip + desktop row out of the way, use the compact row */
   .top_panel .elementor-element-01dd775,
@@ -1008,6 +1010,33 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
 }
 
 /* ==========================================================================
+   Stat counter icons (home / calendar / users / star) — injected by hm-amz.js
+   Pink circle with a red glyph above each number, plus a short red underline
+   under the label (matches the reference design).
+   ========================================================================== */
+.hm-stat-ic {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  margin: 0 0 14px;
+  border-radius: 50%;
+  background: #fbe4e8;
+  color: #c41230;
+}
+.hm-stat-ic svg { width: 22px; height: 22px; display: block; }
+.elementor-element-39bc871 .trx-addons-counter-title::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 3px;
+  margin-top: 12px;
+  background: #c41230;
+  border-radius: 2px;
+}
+
+/* ==========================================================================
    Hero redesign: remove all text / CTAs, new dark navy booking box
    ========================================================================== */
 
@@ -1575,6 +1604,8 @@ a.elementor-button:hover,
    With the van photo column gone, the intro kept the tall bottom padding that
    used to balance it, leaving a big empty band before the next section. */
 .elementor-element-098eb05 > .e-con-inner { padding-bottom: 8px !important; }
+/* Remove the "One Trusted Team" intro section entirely (client request) */
+.elementor-element-098eb05 { display: none !important; }
 
 /* ---------- 18. Looser checklists site-wide (were cramped) ---------- */
 .elementor-icon-list-item { padding-bottom: 8px !important; }
@@ -1715,9 +1746,16 @@ html:not(.hm-theme-dark) .hm-theme-toggle {
 /* Excluded: the light text-only pages that have no hero behind the header —
    our-work (page-id-4993), single-project (4954), terms (8354). */
 @media (max-width: 1024px) {
-  /* pull the section below the header up behind it */
+  /* pull the section below the header up behind it, and make the bar itself
+     transparent so the hero shows through (the dark gradient then sits over the
+     photo, like true mobile). Otherwise the gradient over the white bar reads as
+     a grey band at 768-1024px. */
   body:not(.page-id-4993):not(.page-id-4954):not(.page-id-8354) .elementor-element-481bca {
     margin-bottom: -88px !important; z-index: 100 !important;
+    background: transparent !important;
+  }
+  body:not(.page-id-4993):not(.page-id-4954):not(.page-id-8354) .top_panel {
+    background: transparent !important;
   }
   /* no rounded corners on hero sections (would show against transparent sticky header) */
   .elementor-element-78cf0e9,

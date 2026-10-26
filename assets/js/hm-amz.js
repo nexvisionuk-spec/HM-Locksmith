@@ -50,6 +50,25 @@
       }
     } catch (eBook) {}
 
+    /* ---- 2c. stat counter icons (home / calendar / users / star) ---- */
+    try {
+      var STAT_ICONS = {
+        "b18b307": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>',
+        "1a88f71": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v3M16 3v3"/></svg>',
+        "162ea48": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/><path d="M16 5.5a3 3 0 0 1 0 5.8M21 20c0-2.4-1.3-4.3-3.3-5.1"/></svg>',
+        "1b57108": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.9 5.9 6.1.9-4.5 4.4 1 6.1-5.5-2.9-5.5 2.9 1-6.1L3 9.8l6.1-.9z"/></svg>'
+      };
+      Object.keys(STAT_ICONS).forEach(function (id) {
+        var wrap = document.querySelector(".trx-addons-counter-" + id + " .trx-addons-counter-number-title-wrap");
+        if (wrap && !wrap.querySelector(".hm-stat-ic")) {
+          var ic = document.createElement("span");
+          ic.className = "hm-stat-ic";
+          ic.innerHTML = STAT_ICONS[id];
+          wrap.insertBefore(ic, wrap.firstChild);
+        }
+      });
+    } catch (eStat) {}
+
     /* ---- 3. surface the reviews section higher (right after "We deliver") ---- */
     try {
       var reviews = document.querySelector(".elementor-element-13b28435");
