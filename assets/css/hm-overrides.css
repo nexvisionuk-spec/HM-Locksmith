@@ -1302,11 +1302,21 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
   }
   .elementor-element-17422a0 .elementor-form-fields-wrapper {
     border-radius: 16px !important;
-    padding: 13px 13px !important;
+    padding: 11px 12px !important;
+    gap: 7px !important;
   }
+  /* drop the subtitle + shrink the heading so the card is as short as possible */
+  .elementor-element-17422a0 .hm-book-head { margin: 0 2px 1px !important; }
+  .elementor-element-17422a0 .hm-book-head span { display: none !important; }
+  .elementor-element-17422a0 .hm-book-head strong { font-size: 15px !important; }
   .elementor-element-17422a0 select.elementor-field-textual,
   .elementor-element-17422a0 input.elementor-field-textual {
-    height: 46px !important;
+    height: 42px !important;
+    font-size: 14.5px !important;
+  }
+  .elementor-element-17422a0 button.elementor-button {
+    padding: 10px 24px !important;
+    font-size: 14.5px !important;
   }
   /* keep all five logos on one strip on phones too */
   .elementor-element-17422a0 .elementor-element-6a775d2 {
