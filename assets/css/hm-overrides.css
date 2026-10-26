@@ -1036,6 +1036,32 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
   border-radius: 2px;
 }
 
+/* ---------- Homepage: remove black word-marquee; "Trusted by" label above the
+   client-logos carousel; tame the oversized "Our Core Services" heading ------- */
+.elementor-element-c9f9297 { display: none !important; }
+
+.hm-trusted-by {
+  text-align: center;
+  font-family: 'Hanken Grotesk', Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #4b5563;
+  letter-spacing: -.01em;
+  margin: 0 0 24px;
+}
+@media (max-width: 767px) { .hm-trusted-by { font-size: 19px; } }
+
+@media (max-width: 767px) {
+  .elementor-element-39aa06a .elementor-heading-title {
+    font-size: 30px !important;
+    line-height: 1.18 !important;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+  }
+}
+
 /* ==========================================================================
    Hero redesign: remove all text / CTAs, new dark navy booking box
    ========================================================================== */
@@ -1089,20 +1115,20 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
 .elementor-element-17422a0 .elementor-form-fields-wrapper {
   display: flex !important;
   flex-direction: column !important;
-  gap: 11px !important;
+  gap: 6px !important;
   background: #ffffff !important;
   border: 0 !important;
-  border-radius: 22px !important;
-  padding: 24px 22px !important;
+  border-radius: 18px !important;
+  padding: 14px 16px !important;
   box-shadow: 0 30px 70px rgba(10, 16, 38, .28), 0 4px 14px rgba(10, 16, 38, .10) !important;
   overflow: visible !important;
 }
 
 /* injected card header */
-.hm-book-head { margin: 0 2px 3px; }
+.hm-book-head { margin: 0 2px 1px; }
 .hm-book-head strong {
   display: block;
-  font-size: 21px;
+  font-size: 16px;
   font-weight: 800;
   color: #0a1838;
   letter-spacing: -0.01em;
@@ -1110,11 +1136,11 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
 }
 .hm-book-head span {
   display: block;
-  margin-top: 4px;
-  font-size: 13.5px;
+  margin-top: 2px;
+  font-size: 11.5px;
   font-weight: 500;
   color: #6b7280;
-  line-height: 1.4;
+  line-height: 1.3;
 }
 
 /* field pills */
@@ -1142,10 +1168,10 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
   border: 0 !important;
   border-radius: 0 !important;
   color: #0a1838 !important;
-  font-size: 16px !important;
+  font-size: 15px !important;
   font-weight: 600 !important;
-  height: 56px !important;
-  padding: 0 16px 0 44px !important;   /* left room for the icon */
+  height: 44px !important;
+  padding: 0 16px 0 42px !important;   /* left room for the icon */
   box-shadow: none !important;
   outline: none !important;
   width: 100% !important;
@@ -1209,9 +1235,9 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
   width: 100% !important;
   background: linear-gradient(180deg, #e8122e 0%, #c70f27 100%) !important;
   border: 0 !important;
-  border-radius: 14px !important;
-  padding: 16px 24px !important;
-  font-size: 17px !important;
+  border-radius: 11px !important;
+  padding: 11px 24px !important;
+  font-size: 15px !important;
   font-weight: 700 !important;
   white-space: nowrap !important;
   min-height: 0 !important;
@@ -1275,12 +1301,12 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
     margin: 0 auto !important;
   }
   .elementor-element-17422a0 .elementor-form-fields-wrapper {
-    border-radius: 20px !important;
-    padding: 20px 16px !important;
+    border-radius: 16px !important;
+    padding: 13px 13px !important;
   }
   .elementor-element-17422a0 select.elementor-field-textual,
   .elementor-element-17422a0 input.elementor-field-textual {
-    height: 58px !important;
+    height: 46px !important;
   }
   /* keep all five logos on one strip on phones too */
   .elementor-element-17422a0 .elementor-element-6a775d2 {
