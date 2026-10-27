@@ -1133,6 +1133,55 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
 }
 .hm-card-arrow-btn svg { width: 20px; height: 20px; flex: none; }
 
+/* "More Details" pill + circular arrow button on the Core Services cards
+   (light card background, so the arrow button uses a red outline not white) */
+.hm-card-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 22px 2px;
+  margin-top: auto;            /* stick the buttons to the bottom of each card */
+  padding-top: 24px;           /* always keep breathing room above the buttons */
+  position: relative;
+  z-index: 2;
+}
+.hm-card-md-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #c41230;
+  color: #ffffff !important;
+  padding: 11px 20px;
+  border-radius: 999px;
+  font-size: 14.5px;
+  font-weight: 700;
+  text-decoration: none !important;
+  transition: background .18s ease, transform .18s ease;
+}
+.hm-card-md-btn:hover { background: #a00f24; transform: translateY(-2px); }
+.hm-card-arrow-btn--light {
+  flex: none;
+  width: 46px;
+  height: 46px;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  border: 1.5px solid rgba(196, 18, 48, .35) !important;
+  background: transparent !important;
+  color: #c41230 !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none !important;
+  transition: background .18s ease, border-color .18s ease, color .18s ease, transform .18s ease;
+}
+.hm-card-arrow-btn--light:hover {
+  background: #c41230 !important;
+  border-color: #c41230 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
 /* ==========================================================================
    Featured Projects showcase (homepage, after the service cards)
    ========================================================================== */
@@ -2032,6 +2081,23 @@ html:not(.hm-theme-dark) .hm-theme-toggle {
 .elementor-element-ed08da9 .trx-addons-info-box-icon-wrap img {
   object-fit: contain !important;
   background: #f2f2f2;
+}
+/* Core Services grid now holds 5 cards (Residential & Commercial + Retail &
+   Hospitality merged in). The theme's 3-column grid runs 768px and up; the
+   two new cards need the same responsive grid-column as the original cards
+   (whose rule is keyed to their own ids), and on the 3-col rows the last row
+   has 2 cards + an empty cell, so we shift those two to centre it. */
+@media (min-width: 768px) {
+  .elementor-element-ed08da9 > .e-con-inner > .elementor-element-hmres0,
+  .elementor-element-ed08da9 > .e-con-inner > .elementor-element-hmret0 {
+    transform: translateX(calc(50% + 15px));
+  }
+}
+@media (max-width: 767px) {
+  .elementor-element-ed08da9 > .e-con-inner > .elementor-element-hmres0,
+  .elementor-element-ed08da9 > .e-con-inner > .elementor-element-hmret0 {
+    grid-column: span 3 !important;
+  }
 }
 
 /* ---------- 15. Soften SHOUTY all-caps (client request) ----------

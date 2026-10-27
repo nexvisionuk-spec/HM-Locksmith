@@ -106,6 +106,25 @@
       });
     } catch (eCard) {}
 
+    /* ---- 2f. "More Details" + circular arrow buttons on the Core Services cards ---- */
+    try {
+      var MD_ARR = '<svg class="hm-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+      var CIRC_ARR = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+      var coreCards = document.querySelectorAll("#services .e-con-inner > .e-child");
+      Array.prototype.forEach.call(coreCards, function (card) {
+        if (!card.querySelector(".trx-addons-info-box")) return;      /* skip the heading block */
+        if (card.querySelector(".hm-card-cta")) return;               /* idempotent */
+        var link = card.querySelector(".trx-addons-info-box-container-link");
+        var href = (link && link.getAttribute("href")) || "/trades/";
+        var cta = document.createElement("div");
+        cta.className = "hm-card-cta";
+        cta.innerHTML =
+          '<a class="hm-card-md-btn" href="' + href + '">More Details ' + MD_ARR + '</a>' +
+          '<a class="hm-card-arrow-btn hm-card-arrow-btn--light" href="' + href + '" aria-label="More details">' + CIRC_ARR + '</a>';
+        card.appendChild(cta);
+      });
+    } catch (e2f) {}
+
     /* ---- 3. surface the reviews section higher (right after "We deliver") ---- */
     try {
       var reviews = document.querySelector(".elementor-element-13b28435");
