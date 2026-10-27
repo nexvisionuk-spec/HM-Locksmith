@@ -127,6 +127,16 @@
       }
     } catch (e3b) {}
 
+    /* ---- 3c. move the "Trusted by" logos strip up to right after the hero ---- */
+    try {
+      var trustedSec = document.querySelector(".elementor-element-5211d46");
+      var heroForTrust = document.querySelector(".elementor-element-78cf0e9");
+      if (trustedSec && heroForTrust && heroForTrust.parentNode && !trustedSec.dataset.hmMovedTop) {
+        heroForTrust.parentNode.insertBefore(trustedSec, heroForTrust.nextSibling);
+        trustedSec.dataset.hmMovedTop = "1";
+      }
+    } catch (e3c) {}
+
     /* ---- 4. mobile burger menu: parent items that have a submenu (Trades,
        Services) only toggled the submenu and never navigated. Make a tap on
        the label text follow the link; the chevron icon still opens the submenu. */
