@@ -15,8 +15,9 @@
   function read(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
 
   function shouldShow() {
-    // Appears on every page load — no per-visitor snooze, no signup memory.
-    return true;
+    // Show once per visitor: never again after it has been shown/closed, or
+    // after the visitor has signed up.
+    return !read(KEY_SEEN) && !read(KEY_DONE);
   }
 
   var CSS = ''
@@ -105,7 +106,10 @@
     var done  = overlay.querySelector(".hm-news-done");
     var btn   = overlay.querySelector(".hm-news-btn");
 
-    function open() { overlay.classList.add("is-open"); }
+    function open() {
+      overlay.classList.add("is-open");
+      store(KEY_SEEN, String(Date.now()));   // mark seen now, so it never reappears on any later page/visit
+    }
     function close() {
       overlay.classList.remove("is-open");
       store(KEY_SEEN, String(Date.now()));

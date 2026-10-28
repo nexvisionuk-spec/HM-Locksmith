@@ -2094,6 +2094,15 @@ html:not(.hm-theme-dark) .hm-theme-toggle {
     transform: translateX(calc(50% + 15px));
   }
 }
+/* The scroll-reveal fade (ta_fadeinup) also animates transform, which fought
+   the centring translateX above and made the two cards briefly overlap while
+   the animation ran. Skip the fade on these two so the centring stays stable;
+   force them visible since the fade is what normally reveals them. */
+.elementor-element-ed08da9 > .e-con-inner > .elementor-element-hmres0,
+.elementor-element-ed08da9 > .e-con-inner > .elementor-element-hmret0 {
+  animation: none !important;
+  opacity: 1 !important;
+}
 @media (max-width: 767px) {
   .elementor-element-ed08da9 > .e-con-inner > .elementor-element-hmres0,
   .elementor-element-ed08da9 > .e-con-inner > .elementor-element-hmret0 {
