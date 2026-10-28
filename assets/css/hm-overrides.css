@@ -1139,31 +1139,34 @@ body.hm-svc-technical .elementor-element-e616330 > .elementor-motion-effects-con
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  margin: 0 22px 2px;
+  gap: 10px;
+  margin: 0 20px 2px;
   margin-top: auto;            /* stick the buttons to the bottom of each card */
-  padding-top: 24px;           /* always keep breathing room above the buttons */
+  padding-top: 20px;           /* always keep breathing room above the buttons */
   position: relative;
   z-index: 2;
 }
 .hm-card-md-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   background: #c41230;
   color: #ffffff !important;
-  padding: 11px 20px;
+  padding: 9px 16px;
   border-radius: 999px;
-  font-size: 14.5px;
+  font-size: 13.5px;
   font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;         /* keep "More Details" on one line */
   text-decoration: none !important;
   transition: background .18s ease, transform .18s ease;
 }
 .hm-card-md-btn:hover { background: #a00f24; transform: translateY(-2px); }
+.hm-card-md-btn .hm-arr { width: 15px; height: 15px; }
 .hm-card-arrow-btn--light {
   flex: none;
-  width: 46px;
-  height: 46px;
+  width: 40px;
+  height: 40px;
   padding: 0 !important;
   border-radius: 50% !important;
   border: 1.5px solid rgba(196, 18, 48, .35) !important;
@@ -2083,30 +2086,31 @@ html:not(.hm-theme-dark) .hm-theme-toggle {
   object-fit: contain !important;
   background: #f2f2f2;
 }
-/* Core Services grid now holds 5 cards (Residential & Commercial + Retail &
-   Hospitality merged in). The theme's 3-column grid runs 768px and up; the
-   two new cards need the same responsive grid-column as the original cards
-   (whose rule is keyed to their own ids), and on the 3-col rows the last row
-   has 2 cards + an empty cell, so we shift those two to centre it. */
-@media (min-width: 768px) {
-  .elementor-element-ed08da9 > .e-con-inner > .elementor-element-hmres0,
-  .elementor-element-ed08da9 > .e-con-inner > .elementor-element-hmret0 {
-    transform: translateX(calc(50% + 15px));
-  }
+/* Core Services holds 5 cards (Residential & Commercial + Retail & Hospitality
+   merged in). Lay them out as a centred flex-wrap rather than a fixed 3-column
+   grid: the trailing cards now centre themselves (no transform hack, so the
+   normal scroll-reveal fade plays on ALL five cards instead of just the first
+   three), cards stay roomy at narrow widths (they drop to 2 per row rather than
+   squeezing into 3), and the "More Details" buttons fit on one line. */
+.elementor-element-ed08da9 > .e-con-inner {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: stretch !important;
+  gap: 30px !important;
 }
-/* The scroll-reveal fade (ta_fadeinup) also animates transform, which fought
-   the centring translateX above and made the two cards briefly overlap while
-   the animation ran. Skip the fade on these two so the centring stays stable;
-   force them visible since the fade is what normally reveals them. */
-.elementor-element-ed08da9 > .e-con-inner > .elementor-element-hmres0,
-.elementor-element-ed08da9 > .e-con-inner > .elementor-element-hmret0 {
-  animation: none !important;
-  opacity: 1 !important;
+.elementor-element-ed08da9 > .e-con-inner > .elementor-element-2be7367 {
+  flex: 0 0 100% !important;   /* heading block spans the full width */
+}
+.elementor-element-ed08da9 > .e-con-inner > .e-child:not(.elementor-element-2be7367) {
+  flex: 1 1 320px !important;   /* basis keeps it to 3 per row max on the boxed (~1290px) container */
+  max-width: 372px !important;
+  min-width: 0 !important;
 }
 @media (max-width: 767px) {
-  .elementor-element-ed08da9 > .e-con-inner > .elementor-element-hmres0,
-  .elementor-element-ed08da9 > .e-con-inner > .elementor-element-hmret0 {
-    grid-column: span 3 !important;
+  .elementor-element-ed08da9 > .e-con-inner > .e-child:not(.elementor-element-2be7367) {
+    flex: 1 1 100% !important;
+    max-width: none !important;
   }
 }
 
