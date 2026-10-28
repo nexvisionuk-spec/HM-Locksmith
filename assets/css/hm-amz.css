@@ -112,7 +112,7 @@ html body .elementor-5286 .elementor-element.elementor-element-78cf0e9,
 html body .elementor-5286 .elementor-element.elementor-element-78cf0e9:not(.elementor-motion-effects-element-type-background) {
   background-image: url('/wp-content/uploads/2026/09/magnific_upscale_WDCjAbecXe-scaled.webp') !important;
   background-size: cover !important;
-  background-position: center top !important;
+  background-position: center 38% !important;   /* frame the team head-to-waist on wide desktop (image is taller than the hero there) */
   background-repeat: no-repeat !important;
   min-height: 560px !important;
 }
