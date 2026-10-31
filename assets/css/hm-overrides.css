@@ -2234,3 +2234,18 @@ html:not(.hm-theme-dark) .hm-theme-toggle {
     fill: #2a2a2c !important; color: #2a2a2c !important;
   }
 }
+
+/* ---------- 21. Fix "Complete Property Solutions" section overflow (mobile) ----
+   This boxed grid container (#services) has a fixed 720px grid column that
+   Elementor never made responsive, so on phones/tablets its content was
+   centred inside a 720px track and shoved off the right edge of the screen
+   (empty left half, cut-off heading). Collapse the track to the real width. */
+@media (max-width: 1024px) {
+  .elementor-element-ed08da9 {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  .elementor-element-ed08da9 > .e-con-inner {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
