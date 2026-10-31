@@ -113,6 +113,20 @@
       var coreCards = document.querySelectorAll("#services .e-con-inner > .e-child");
       Array.prototype.forEach.call(coreCards, function (card) {
         if (!card.querySelector(".trx-addons-info-box")) return;      /* skip the heading block */
+        /* category eyebrow + divider above the title (mockup design) */
+        var content = card.querySelector(".trx-addons-info-box-content");
+        if (content && !content.querySelector(".hm-card-eyebrow")) {
+          var titleEl = card.querySelector(".trx-addons-info-box-title");
+          var tt = (titleEl && titleEl.textContent) || "";
+          var CATS = [["Building","Construction"],["Insurance","Insurance"],["Reactive","Maintenance"],
+                      ["Residential","Residential"],["Retail","Commercial"],["Technical","Technical"],["Property","Property"]];
+          var cat = "Services";
+          for (var ci = 0; ci < CATS.length; ci++) { if (tt.indexOf(CATS[ci][0]) >= 0) { cat = CATS[ci][1]; break; } }
+          var eb = document.createElement("div");
+          eb.className = "hm-card-eyebrow";
+          eb.innerHTML = "<span>" + cat + "</span><i></i>";
+          content.insertBefore(eb, content.firstChild);
+        }
         if (card.querySelector(".hm-card-cta")) return;               /* idempotent */
         var link = card.querySelector(".trx-addons-info-box-container-link");
         var href = (link && link.getAttribute("href")) || "/trades/";
