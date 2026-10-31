@@ -453,6 +453,7 @@ html.hm-theme-dark body #services .trx-addons-info-box {
   border:1px solid rgba(255,255,255,.08) !important;
   border-top:1px solid rgba(255,255,255,.08) !important;
   border-radius:20px !important;
+  margin-left:22px !important; margin-right:22px !important;   /* gap between the card and the screen edges */
   padding:26px 28px 26px !important;              /* wide / roomier card with the image inset */
   box-shadow:0 16px 40px rgba(0,0,0,.28) !important;
 }
