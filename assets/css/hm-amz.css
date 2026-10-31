@@ -453,19 +453,19 @@ html.hm-theme-dark body #services .trx-addons-info-box {
   border:1px solid rgba(255,255,255,.07) !important;
   border-top:1px solid rgba(255,255,255,.07) !important;
   border-radius:20px !important;
-  padding:14px 14px 18px !important;
+  padding:26px 28px 26px !important;              /* roomier inset to match the mockup */
   box-shadow:0 16px 40px rgba(0,0,0,.30) !important;
 }
 #services .trx-addons-info-box-icon-wrap img{
-  border-radius:14px !important; height:190px !important; object-position:center 30% !important;
+  border-radius:16px !important; height:200px !important; object-position:center 30% !important;
 }
-#services .trx-addons-info-box-content{ padding:16px 4px 0 !important; }
-#services .trx-addons-info-box-title{ margin:0 0 10px !important; padding-bottom:0 !important; font-size:22px !important; }
+#services .trx-addons-info-box-content{ padding:24px 2px 0 !important; }
+#services .trx-addons-info-box-title{ margin:0 0 16px !important; padding-bottom:0 !important; font-size:26px !important; line-height:1.15 !important; }
 #services .trx-addons-info-box-title::after{ display:none !important; }   /* drop the red underline */
-#services .trx-addons-info-box-description{ color:rgba(255,255,255,.72) !important; }
+#services .trx-addons-info-box-description{ color:rgba(255,255,255,.72) !important; font-size:16px !important; line-height:1.55 !important; }
 #services .elementor-widget-icon-list{ display:none !important; }         /* mockup shows no checklist */
-#services .hm-card-cta{ margin:16px 4px 2px !important; padding-top:4px !important; }
-#services .hm-card-eyebrow{ margin:0 0 12px !important; }
+#services .hm-card-cta{ margin:22px 2px 2px !important; padding-top:4px !important; }
+#services .hm-card-eyebrow{ margin:0 0 16px !important; }
 /* circular arrow button → white outline (card is dark), matching the mockup */
 #services .hm-card-arrow-btn,
 #services .hm-card-arrow-btn--light{
