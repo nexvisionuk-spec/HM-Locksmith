@@ -440,3 +440,36 @@ html.hm-theme-dark body #services .trx-addons-info-box {
 .elementor-element-47967337 { /* numbered 01/02/03 list */
   display: none !important;
 }
+
+/* ============================================================================
+   CORE-SERVICES cards — customer mockup redesign
+   Inset rounded image, category eyebrow + divider, clean white title (no red
+   underline), muted body, red "More Details" pill + white-outline circular
+   arrow. Checklist hidden to match the mockup. Overrides the earlier dark
+   full-bleed card styling above (this block loads later = wins).
+   ========================================================================== */
+#services > .e-con-inner > .e-con.e-child:has(.trx-addons-info-box){
+  background:linear-gradient(180deg,#1b1d23 0%,#121318 100%) !important;
+  border:1px solid rgba(255,255,255,.07) !important;
+  border-top:1px solid rgba(255,255,255,.07) !important;
+  border-radius:20px !important;
+  padding:14px 14px 18px !important;
+  box-shadow:0 16px 40px rgba(0,0,0,.30) !important;
+}
+#services .trx-addons-info-box-icon-wrap img{
+  border-radius:14px !important; height:190px !important; object-position:center 30% !important;
+}
+#services .trx-addons-info-box-content{ padding:16px 4px 0 !important; }
+#services .trx-addons-info-box-title{ margin:0 0 10px !important; padding-bottom:0 !important; font-size:22px !important; }
+#services .trx-addons-info-box-title::after{ display:none !important; }   /* drop the red underline */
+#services .trx-addons-info-box-description{ color:rgba(255,255,255,.72) !important; }
+#services .elementor-widget-icon-list{ display:none !important; }         /* mockup shows no checklist */
+#services .hm-card-cta{ margin:16px 4px 2px !important; padding-top:4px !important; }
+#services .hm-card-eyebrow{ margin:0 0 12px !important; }
+/* circular arrow button → white outline (card is dark), matching the mockup */
+#services .hm-card-arrow-btn,
+#services .hm-card-arrow-btn--light{
+  border:1.5px solid rgba(255,255,255,.42) !important; color:#ffffff !important; background:transparent !important;
+}
+#services .hm-card-arrow-btn:hover,
+#services .hm-card-arrow-btn--light:hover{ background:#c41230 !important; border-color:#c41230 !important; }
