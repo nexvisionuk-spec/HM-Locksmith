@@ -341,24 +341,32 @@ html.hm-theme-dark body .elementor-element-78cf0e9 img.hm-hero-photo {
    rounded corners, soft shadow, subtle hover lift. Light + dark.
    ========================================================================== */
 #services > .e-con-inner > .e-con.e-child:has(.trx-addons-info-box) {
-  /* branded backdrop: faint red dot texture over a soft white->pink wash */
+  /* dark "blackish" card surface: faint white dot texture + red top accent */
   background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22'%3E%3Ccircle cx='11' cy='11' r='1.1' fill='%23c41230' fill-opacity='0.07'/%3E%3C/svg%3E"),
-    linear-gradient(180deg, #ffffff 0%, #ffffff 46%, #fdeff1 100%);
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22'%3E%3Ccircle cx='11' cy='11' r='1.1' fill='%23ffffff' fill-opacity='0.05'/%3E%3C/svg%3E"),
+    linear-gradient(180deg, #232732 0%, #141720 100%);
   background-repeat: repeat, no-repeat;
   background-size: 22px 22px, 100% 100%;
-  border: 1px solid rgba(196,18,48,.14);
+  border: 1px solid rgba(255,255,255,.09);
   border-top: 3px solid #c41230;            /* red accent frames the top of each card */
   border-radius: 18px;
   overflow: hidden;
   padding: 0 0 26px !important;
-  box-shadow: 0 14px 34px rgba(20,20,30,.08);
+  box-shadow: 0 16px 40px rgba(0,0,0,.30);
   transition: transform .25s ease, box-shadow .25s ease;
 }
 #services > .e-con-inner > .e-con.e-child:has(.trx-addons-info-box):hover {
   transform: translateY(-5px);
-  box-shadow: 0 24px 50px rgba(196,18,48,.16);
+  box-shadow: 0 24px 54px rgba(0,0,0,.42);
 }
+/* white / light text on the dark card surface */
+#services .trx-addons-info-box-title { color: #ffffff !important; }
+#services .trx-addons-info-box-description,
+#services .trx-addons-info-box-content,
+#services .trx-addons-info-box-content p { color: rgba(255,255,255,.74) !important; }
+#services .elementor-icon-list-text { color: rgba(255,255,255,.80) !important; }
+#services .elementor-icon-list-icon i,
+#services .elementor-icon-list-icon svg { color: #ff4d5f !important; fill: #ff4d5f !important; }
 /* photo flush to the card's top + sides */
 #services .trx-addons-info-box-icon-wrap,
 #services .trx-addons-info-box-icon,
