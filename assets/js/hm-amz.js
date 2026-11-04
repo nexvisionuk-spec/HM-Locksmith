@@ -75,7 +75,7 @@
       if (logoSec && !logoSec.querySelector(".hm-trusted-by")) {
         var tb = document.createElement("div");
         tb.className = "hm-trusted-by";
-        tb.textContent = "Trusted by leading brands";
+        tb.textContent = "Trusted by";
         logoSec.insertBefore(tb, logoSec.firstChild);
       }
     } catch (eTrust) {}

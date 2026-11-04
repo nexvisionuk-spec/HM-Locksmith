@@ -2288,3 +2288,23 @@ a.hm-btn-primary[href^="tel:"] {
   hyphens: none !important;
   overflow-wrap: break-word;
 }
+
+/* ---------- 25. "Trusted by" logo marquee: even, consistent spacing -----------
+   Logos were forced into distorting 140px squares (object-fit:fill), and the
+   source canvases' uneven whitespace made the gaps look irregular. The images
+   are now trimmed to their artwork; size each by a common height so widths are
+   proportional, with one equal separator gap between every logo. */
+.elementor-element-5211d46 .trx-addons-marquee-item-image {
+  width: auto !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+.elementor-element-5211d46 .trx-addons-marquee-item-image img {
+  width: auto !important;
+  height: 40px !important;
+  max-width: 120px !important;
+  object-fit: contain !important;
+}
+.elementor-element-5211d46 .trx-addons-marquee-item-separator {
+  width: 44px !important;
+}
