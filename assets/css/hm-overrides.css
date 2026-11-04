@@ -2249,3 +2249,22 @@ html:not(.hm-theme-dark) .hm-theme-toggle {
     max-width: 100% !important;
   }
 }
+
+/* ---------- 22. Tighten two mobile gaps (client request) ----------------------
+   (a) big empty space between the "Trusted by leading brands" logo strip and
+       the "Our Trades & Services" block; and
+   (b) white gap between the pink contact-form section and the dark footer,
+       right under the "Send Your Query" button.
+   Phones/small tablets only — desktop spacing is left unchanged. */
+@media (max-width: 767px) {
+  /* (a) pull the logo strip's bottom in, lift the services block up */
+  .elementor-element-5211d46[data-hm-moved-top] {
+    margin-top: 28px !important;
+    padding-bottom: 14px !important;
+  }
+  .hm-tcopy .hm-services-sec { padding-top: 26px !important; }
+
+  /* (b) close the gap under the contact form, above the footer */
+  .elementor-element-12f9e47 { margin-bottom: 4px !important; }
+  .elementor-element-b605d91 { padding-bottom: 12px !important; }
+}
