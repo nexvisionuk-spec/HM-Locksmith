@@ -7,6 +7,8 @@
    3) Header layout fix for tablet / small-laptop widths (768px - 1279px)
    ========================================================================== */
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap');
+
 /* ---------- 0a. Locations row (Office + Store side-by-side) ---------- */
 .hm-locations-row {
   width: 100%;
@@ -2086,6 +2088,13 @@ html:not(.hm-theme-dark) .hm-theme-toggle {
   object-fit: contain !important;
   background: #f2f2f2;
 }
+/* The section is an Elementor boxed grid whose single column is a FIXED 720px.
+   On phones (viewport < 720) that column overflows the screen, so the centred
+   inner gets shoved ~144px to the right. Let the column shrink to fit. */
+.elementor-element-ed08da9 {
+  grid-template-columns: minmax(0, 720px) !important;
+  justify-content: center !important;
+}
 /* Core Services holds 5 cards (Residential & Commercial + Retail & Hospitality
    merged in). Lay them out as a centred flex-wrap rather than a fixed 3-column
    grid: the trailing cards now centre themselves (no transform hack, so the
@@ -2233,4 +2242,25 @@ html:not(.hm-theme-dark) .hm-theme-toggle {
   body:not(.page-id-4993):not(.page-id-4954):not(.page-id-8354) .elementor-element-481bca.elementor-sticky--active .trx-addons-hamburger-toggle svg path {
     fill: #2a2a2c !important; color: #2a2a2c !important;
   }
+}
+
+/* ============================================================
+   Nov 2026 — header call button number → Montserrat ExtraBold
+   (header only; other number buttons left as they were)
+   ============================================================ */
+.emegency-button .elementor-icon-box-description:not(#_) {
+  font-family: 'Montserrat', 'Hanken Grotesk', Arial, sans-serif !important;
+  font-weight: 900 !important;
+  font-style: normal !important;
+  -webkit-text-stroke: 1px currentColor !important;
+  text-stroke: 1px currentColor !important;
+}
+
+/* Headings: never hyphenate / split words across lines
+   (was breaking as "Ser-vices", "Lon-don" on narrow widths) */
+.elementor-heading-title {
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
 }
