@@ -2268,3 +2268,23 @@ html:not(.hm-theme-dark) .hm-theme-toggle {
   .elementor-element-12f9e47 { margin-bottom: 4px !important; }
   .elementor-element-b605d91 { padding-bottom: 12px !important; }
 }
+
+/* ---------- 23. Call-button numbers bold + italic (client request) ------------
+   Make the phone NUMBER shown in call buttons/pills bold and italic, site-wide:
+   the header "0203 105 1145" pill and the "Call 0203 105 1145" CTA buttons.
+   Deliberately NOT the "Get Emergency Service Now" buttons — they carry no
+   number and share the same base classes, so they are left as-is. */
+.emegency-button .elementor-icon-box-description,
+a.hm-btn-primary[href^="tel:"] {
+  font-weight: 800 !important;
+  font-style: italic !important;
+}
+
+/* ---------- 24. Stop mid-word hyphenation on headings (client request) --------
+   The About Us hero (and any long heading) was breaking words with hyphens
+   ("Ser-vices", "Lon-don"). Keep whole words; wrap at spaces instead. */
+.elementor-heading-title {
+  -webkit-hyphens: none !important;
+  hyphens: none !important;
+  overflow-wrap: break-word;
+}
