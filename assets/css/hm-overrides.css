@@ -2276,13 +2276,13 @@ html:not(.hm-theme-dark) .hm-theme-toggle {
    the header "0203 105 1145" pill and the "Call 0203 105 1145" CTA buttons.
    Deliberately NOT the "Get Emergency Service Now" buttons — they carry no
    number and share the same base classes, so they are left as-is.
-   Uses Montserrat ExtraBold (800) for a thick, very-visible number.
+   Uses Montserrat Bold (700) for a thick, very-visible number.
    The :not() chain lifts specificity above the global "force Hanken Grotesk"
    rule (section 6) which otherwise wins the font-family. */
 .emegency-button .elementor-icon-box-description:not(.eicon):not([class*="trx_addons_icon"]):not([class^="eicon-"]):not(i),
 a.hm-btn-primary[href^="tel:"]:not(.eicon):not([class*="trx_addons_icon"]):not([class^="eicon-"]):not(i) {
   font-family: 'Montserrat', 'Hanken Grotesk', Arial, sans-serif !important;
-  font-weight: 800 !important;
+  font-weight: 700 !important;
   font-style: italic !important;
   letter-spacing: .01em !important;
 }
