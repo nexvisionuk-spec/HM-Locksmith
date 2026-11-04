@@ -2308,3 +2308,58 @@ a.hm-btn-primary[href^="tel:"] {
 .elementor-element-5211d46 .trx-addons-marquee-item-separator {
   width: 44px !important;
 }
+
+/* ---------- 26. Section backgrounds — visual rhythm (all pages) ----------------
+   Gives each transparent section a distinct background so the page reads as a
+   series of clearly separated panels (client request: "do this for all other
+   sections"). We only target sections confirmed to be rgba(0,0,0,0) transparent
+   or Elementor-plain-white, to avoid overriding intentionally-coloured sections. */
+
+/* ---- Homepage ---- */
+
+/* Trust / rating tile (mobile helper section) */
+.elementor-element-742cd69 { background-color: #f5f6f8 !important; }
+
+/* "Trusted Property Experts" intro band — has a buildings SVG shape divider
+   at the bottom. Dark bg makes the grey buildings silhouette visible. */
+.elementor-element-7317ad4 { background-color: #111318 !important; }
+.elementor-element-7317ad4 .elementor-heading-title,
+.elementor-element-7317ad4 .elementor-text-editor,
+.elementor-element-7317ad4 p { color: #fff !important; }
+
+/* Services / carousel slider section */
+.elementor-element-ca3cde5 { background-color: #f5f6f8 !important; }
+
+/* "Why Choose Us" section */
+.elementor-element-e840018 { background-color: #faf8f5 !important; }
+
+/* Testimonials (moved near top by hm-amz.js) */
+.elementor-element-13b28435 { background-color: #f5f6f8 !important; }
+
+/* ---- All trade sub-pages (gas-heating, locksmith, painting … all 10 share
+   the same Elementor template so one rule hits every trade page at once) ---- */
+
+/* Intro / services content panel */
+.elementor-element-6f7ecb9 { background-color: #f5f6f8 !important; }
+
+/* Testimonials panel */
+.elementor-element-83546a0 { background-color: #faf8f5 !important; }
+
+/* ---- Gallery page (our-work-2) ---- */
+
+/* Page intro heading section */
+.elementor-element-26f085d { background-color: #111318 !important; }
+.elementor-element-26f085d .elementor-heading-title,
+.elementor-element-26f085d .elementor-text-editor,
+.elementor-element-26f085d p { color: #fff !important; }
+
+/* Gallery content / work section */
+.elementor-element-1b8253f { background-color: #f5f6f8 !important; }
+
+/* ---- About Us ---- */
+
+/* Team / credentials grid (Elementor-set white → distinct light grey) */
+.elementor-element-487b77a { background-color: #f5f6f8 !important; }
+
+/* Values / content text section */
+.elementor-element-7d524124 { background-color: #faf8f5 !important; }
