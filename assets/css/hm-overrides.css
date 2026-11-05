@@ -2383,3 +2383,14 @@ a.hm-btn-primary[href^="tel:"] {
   grid-template-columns: minmax(0, 720px) !important;
   justify-content: center !important;
 }
+
+/* The VISIBLE header call number is the trx-addons icon-list widget (the
+   .elementor-icon-box-description copy is hidden). Make the real one heavy
+   Montserrat too, so the header number actually reads thick. Header only. */
+.sc_layouts_item a[href^="tel"] .trx-addons-icon-list-text:not(#_) {
+  font-family: 'Montserrat', 'Hanken Grotesk', Arial, sans-serif !important;
+  font-weight: 900 !important;
+  font-style: normal !important;
+  -webkit-text-stroke: 1px currentColor !important;
+  text-stroke: 1px currentColor !important;
+}
