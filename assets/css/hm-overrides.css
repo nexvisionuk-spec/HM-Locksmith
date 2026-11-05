@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap");
 /* ==========================================================================
    H&M — site overrides
    Loaded LAST on every page so these rules always win.
@@ -6,8 +7,6 @@
    2) Button hover: white background, red text
    3) Header layout fix for tablet / small-laptop widths (768px - 1279px)
    ========================================================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap');
 
 /* ---------- 0a. Locations row (Office + Store side-by-side) ---------- */
 .hm-locations-row {
@@ -2088,13 +2087,6 @@ html:not(.hm-theme-dark) .hm-theme-toggle {
   object-fit: contain !important;
   background: #f2f2f2;
 }
-/* The section is an Elementor boxed grid whose single column is a FIXED 720px.
-   On phones (viewport < 720) that column overflows the screen, so the centred
-   inner gets shoved ~144px to the right. Let the column shrink to fit. */
-.elementor-element-ed08da9 {
-  grid-template-columns: minmax(0, 720px) !important;
-  justify-content: center !important;
-}
 /* Core Services holds 5 cards (Residential & Commercial + Retail & Hospitality
    merged in). Lay them out as a centred flex-wrap rather than a fixed 3-column
    grid: the trailing cards now centre themselves (no transform hack, so the
@@ -2244,10 +2236,136 @@ html:not(.hm-theme-dark) .hm-theme-toggle {
   }
 }
 
-/* ============================================================
-   Nov 2026 — header call button number → Montserrat ExtraBold
-   (header only; other number buttons left as they were)
-   ============================================================ */
+/* ---------- 21. Fix "Complete Property Solutions" section overflow (mobile) ----
+   This boxed grid container (#services) has a fixed 720px grid column that
+   Elementor never made responsive, so on phones/tablets its content was
+   centred inside a 720px track and shoved off the right edge of the screen
+   (empty left half, cut-off heading). Collapse the track to the real width. */
+@media (max-width: 1024px) {
+  .elementor-element-ed08da9 {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  .elementor-element-ed08da9 > .e-con-inner {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ---------- 22. Tighten two mobile gaps (client request) ----------------------
+   (a) big empty space between the "Trusted by leading brands" logo strip and
+       the "Our Trades & Services" block; and
+   (b) white gap between the pink contact-form section and the dark footer,
+       right under the "Send Your Query" button.
+   Phones/small tablets only — desktop spacing is left unchanged. */
+@media (max-width: 767px) {
+  /* (a) pull the logo strip's bottom in, lift the services block up */
+  .elementor-element-5211d46[data-hm-moved-top] {
+    margin-top: 28px !important;
+    padding-bottom: 14px !important;
+  }
+  .hm-tcopy .hm-services-sec { padding-top: 26px !important; }
+
+  /* (b) close the gap under the contact form, above the footer */
+  .elementor-element-12f9e47 { margin-bottom: 4px !important; }
+  .elementor-element-b605d91 { padding-bottom: 12px !important; }
+}
+
+/* ---------- 23. Call-button numbers bold + italic (client request) ------------
+   Make the phone NUMBER shown in call buttons/pills bold and italic, site-wide:
+   the header "0203 105 1145" pill and the "Call 0203 105 1145" CTA buttons.
+   Deliberately NOT the "Get Emergency Service Now" buttons — they carry no
+   number and share the same base classes, so they are left as-is. */
+.emegency-button .elementor-icon-box-description,
+a.hm-btn-primary[href^="tel:"] {
+  font-weight: 800 !important;
+  font-style: italic !important;
+}
+
+/* ---------- 24. Stop mid-word hyphenation on headings (client request) --------
+   The About Us hero (and any long heading) was breaking words with hyphens
+   ("Ser-vices", "Lon-don"). Keep whole words; wrap at spaces instead. */
+.elementor-heading-title {
+  -webkit-hyphens: none !important;
+  hyphens: none !important;
+  overflow-wrap: break-word;
+}
+
+/* ---------- 25. "Trusted by" logo marquee: even, consistent spacing -----------
+   Logos were forced into distorting 140px squares (object-fit:fill), and the
+   source canvases' uneven whitespace made the gaps look irregular. The images
+   are now trimmed to their artwork; size each by a common height so widths are
+   proportional, with one equal separator gap between every logo. */
+.elementor-element-5211d46 .trx-addons-marquee-item-image {
+  width: auto !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+.elementor-element-5211d46 .trx-addons-marquee-item-image img {
+  width: auto !important;
+  height: 72px !important;
+  max-width: 190px !important;
+  object-fit: contain !important;
+}
+.elementor-element-5211d46 .trx-addons-marquee-item-separator {
+  width: 44px !important;
+}
+
+/* ---------- 26. Section backgrounds — visual rhythm (all pages) ----------------
+   Gives each transparent section a distinct background so the page reads as a
+   series of clearly separated panels (client request: "do this for all other
+   sections"). We only target sections confirmed to be rgba(0,0,0,0) transparent
+   or Elementor-plain-white, to avoid overriding intentionally-coloured sections. */
+
+/* ---- Homepage ---- */
+
+/* Trust / rating tile (mobile helper section) */
+.elementor-element-742cd69 { background-color: #f5f6f8 !important; }
+
+/* "Trusted Property Experts" intro band — has a buildings SVG shape divider
+   at the bottom. Dark bg makes the grey buildings silhouette visible. */
+.elementor-element-7317ad4 { background-color: #111318 !important; }
+.elementor-element-7317ad4 .elementor-heading-title,
+.elementor-element-7317ad4 .elementor-text-editor,
+.elementor-element-7317ad4 p { color: #fff !important; }
+
+/* Services / carousel slider section */
+.elementor-element-ca3cde5 { background-color: #f5f6f8 !important; }
+
+/* "Why Choose Us" section */
+.elementor-element-e840018 { background-color: #faf8f5 !important; }
+
+/* Testimonials (moved near top by hm-amz.js) */
+.elementor-element-13b28435 { background-color: #f5f6f8 !important; }
+
+/* ---- All trade sub-pages (gas-heating, locksmith, painting … all 10 share
+   the same Elementor template so one rule hits every trade page at once) ---- */
+
+/* Intro / services content panel */
+.elementor-element-6f7ecb9 { background-color: #f5f6f8 !important; }
+
+/* Testimonials panel */
+.elementor-element-83546a0 { background-color: #faf8f5 !important; }
+
+/* ---- Gallery page (our-work-2) ---- */
+
+/* Page intro heading section */
+.elementor-element-26f085d { background-color: #111318 !important; }
+.elementor-element-26f085d .elementor-heading-title,
+.elementor-element-26f085d .elementor-text-editor,
+.elementor-element-26f085d p { color: #fff !important; }
+
+/* Gallery content / work section */
+.elementor-element-1b8253f { background-color: #f5f6f8 !important; }
+
+/* ---- About Us ---- */
+
+/* Team / credentials grid (Elementor-set white → distinct light grey) */
+.elementor-element-487b77a { background-color: #f5f6f8 !important; }
+
+/* Values / content text section */
+.elementor-element-7d524124 { background-color: #faf8f5 !important; }
+
+/* ===== Nov 2026 — header number + mobile fixes (re-applied after merge) ===== */
 .emegency-button .elementor-icon-box-description:not(#_) {
   font-family: 'Montserrat', 'Hanken Grotesk', Arial, sans-serif !important;
   font-weight: 900 !important;
@@ -2255,12 +2373,13 @@ html:not(.hm-theme-dark) .hm-theme-toggle {
   -webkit-text-stroke: 1px currentColor !important;
   text-stroke: 1px currentColor !important;
 }
-
-/* Headings: never hyphenate / split words across lines
-   (was breaking as "Ser-vices", "Lon-don" on narrow widths) */
 .elementor-heading-title {
   hyphens: none !important;
   -webkit-hyphens: none !important;
   word-break: normal !important;
   overflow-wrap: normal !important;
+}
+.elementor-element-ed08da9 {
+  grid-template-columns: minmax(0, 720px) !important;
+  justify-content: center !important;
 }
