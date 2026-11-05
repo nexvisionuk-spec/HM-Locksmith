@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap");
 /* ==========================================================================
    H&M — site overrides
    Loaded LAST on every page so these rules always win.
@@ -2363,3 +2364,22 @@ a.hm-btn-primary[href^="tel:"] {
 
 /* Values / content text section */
 .elementor-element-7d524124 { background-color: #faf8f5 !important; }
+
+/* ===== Nov 2026 — header number + mobile fixes (re-applied after merge) ===== */
+.emegency-button .elementor-icon-box-description:not(#_) {
+  font-family: 'Montserrat', 'Hanken Grotesk', Arial, sans-serif !important;
+  font-weight: 900 !important;
+  font-style: normal !important;
+  -webkit-text-stroke: 1px currentColor !important;
+  text-stroke: 1px currentColor !important;
+}
+.elementor-heading-title {
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+}
+.elementor-element-ed08da9 {
+  grid-template-columns: minmax(0, 720px) !important;
+  justify-content: center !important;
+}
