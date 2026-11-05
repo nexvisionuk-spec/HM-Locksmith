@@ -2368,10 +2368,8 @@ a.hm-btn-primary[href^="tel:"] {
 /* ===== Nov 2026 — header number + mobile fixes (re-applied after merge) ===== */
 .emegency-button .elementor-icon-box-description:not(#_) {
   font-family: 'Montserrat', 'Hanken Grotesk', Arial, sans-serif !important;
-  font-weight: 900 !important;
+  font-weight: 800 !important;
   font-style: normal !important;
-  -webkit-text-stroke: 1px currentColor !important;
-  text-stroke: 1px currentColor !important;
 }
 .elementor-heading-title {
   hyphens: none !important;
@@ -2389,8 +2387,6 @@ a.hm-btn-primary[href^="tel:"] {
    Montserrat too, so the header number actually reads thick. Header only. */
 .sc_layouts_item a[href^="tel"] .trx-addons-icon-list-text:not(#_) {
   font-family: 'Montserrat', 'Hanken Grotesk', Arial, sans-serif !important;
-  font-weight: 900 !important;
+  font-weight: 800 !important;
   font-style: normal !important;
-  -webkit-text-stroke: 1px currentColor !important;
-  text-stroke: 1px currentColor !important;
 }
