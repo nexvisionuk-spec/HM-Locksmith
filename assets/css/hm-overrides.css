@@ -2419,3 +2419,20 @@ body.parent-pageid-8323 article .elementor .e-grid.e-child:has(.elementor-widget
 body.parent-pageid-8323 article .elementor .e-grid.e-child:has(.elementor-widget-image) img {
   width: 100% !important; height: auto !important;
 }
+
+/* 5) Service/landing pages — per-page colour bands (dark sections protected) */
+/* doors (.hm-landing--doors) */
+.hm-landing--doors > section:nth-of-type(2) { background-color:#fbeef0 !important; }
+.hm-landing--doors > section:nth-of-type(5) { background-color:#f5f6f8 !important; }
+.hm-landing--doors > section:nth-of-type(7) { background-color:#fbeef0 !important; }
+.hm-landing--doors > section:nth-of-type(9) { background-color:#f5f6f8 !important; }
+/* emergency-locksmith (.hm-landing--emergency) — keeps dark sections 1,3,11 */
+.hm-landing--emergency > section:nth-of-type(2)  { background-color:#fbeef0 !important; }
+.hm-landing--emergency > section:nth-of-type(5)  { background-color:#f5f6f8 !important; }
+.hm-landing--emergency > section:nth-of-type(8)  { background-color:#fbeef0 !important; }
+.hm-landing--emergency > section:nth-of-type(10) { background-color:#f5f6f8 !important; }
+/* kitchen + bathroom renovations (.hm-reno) — keeps dark hero */
+.hm-reno > section:nth-of-type(3)  { background-color:#fbeef0 !important; }
+.hm-reno > section:nth-of-type(5)  { background-color:#f5f6f8 !important; }
+.hm-reno > section:nth-of-type(9)  { background-color:#fbeef0 !important; }
+.hm-reno > section:nth-of-type(11) { background-color:#f5f6f8 !important; }
