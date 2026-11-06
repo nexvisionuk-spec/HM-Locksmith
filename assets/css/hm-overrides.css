@@ -2436,3 +2436,29 @@ body.parent-pageid-8323 article .elementor .e-grid.e-child:has(.elementor-widget
 .hm-reno > section:nth-of-type(5)  { background-color:#f5f6f8 !important; }
 .hm-reno > section:nth-of-type(9)  { background-color:#fbeef0 !important; }
 .hm-reno > section:nth-of-type(11) { background-color:#f5f6f8 !important; }
+
+/* 6) Community page (custom hm-community-*) — band the light sections, protect hero + dark CTA.
+      Page inline <style> uses `html body .hm-cs-*` (0,1,2); :not(#_) lifts us to id-level to win. */
+.hm-cs-announce:not(#_) { background-color:#fbeef0 !important; }
+.hm-cs-gallery:not(#_)  { background-color:#f5f6f8 !important; }
+.hm-cs-logos:not(#_)    { background-color:#fbeef0 !important; }
+
+/* 7) Contact page (custom hm-contact-*) — tinted band with white cards popping on it */
+.hm-contact-wrap { background-color:#f5f6f8 !important; }
+.hm-contact-wrap .hm-division { background-color:#ffffff !important; }
+.hm-contact-form-box {
+  background-color:#ffffff !important;
+  border:1px solid #e4e7ec !important;
+  border-radius:16px !important;
+  padding:28px !important;
+  box-shadow:0 6px 24px rgba(18,23,37,.06) !important;
+}
+
+/* 8) Trade-page hero stat cards (shared ids across all 11 /trades/ pages) —
+      their desktop "break the frame" negative offsets (99% right:-31px, 17+ left:-15px)
+      push them off a narrow phone screen. On mobile only, pull them back inside the viewport.
+      Desktop/tablet (>767px) keep the intended overlap. */
+@media (max-width:767px){
+  body.parent-pageid-8323 .elementor-element-27872c2 { right:8px !important; left:auto !important; }
+  body.parent-pageid-8323 .elementor-element-e01971b { left:8px !important; right:auto !important; }
+}
