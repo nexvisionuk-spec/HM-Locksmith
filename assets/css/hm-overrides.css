@@ -2390,3 +2390,32 @@ a.hm-btn-primary[href^="tel:"] {
   font-weight: 800 !important;
   font-style: normal !important;
 }
+
+/* ===== Colourful content-page sections (client request, Nov 2026) =====
+   Scoped to the pages verified safe: trade pages (children of the Trades
+   parent = body.parent-pageid-8323) and About-us (page-id-5104). Other pages
+   use inconsistent markup and are handled separately. */
+
+/* 1) Drop the decorative "MULTI-TRADE…" marquee strips */
+:is(body.parent-pageid-8323, body.page-id-5104) .e-con:has(> .trx_addons_has_bg_text) { display: none !important; }
+
+/* 2) about-us: explicit soft pink + grey bands */
+body.page-id-5104 .elementor-element-487b77a { background-color: #fbeef0 !important; }
+body.page-id-5104 .elementor-element-d426f69 { background-color: #f5f6f8 !important; }
+
+/* 3) Trade pages: alternating grey -> pink -> white bands (hero = first child, left alone) */
+body.parent-pageid-8323 article .elementor > :nth-child(3n+2) { background-color: #f5f6f8 !important; }
+body.parent-pageid-8323 article .elementor > :nth-child(3n+3) { background-color: #fbeef0 !important; }
+body.parent-pageid-8323 article .elementor > :nth-child(3n+4) { background-color: #ffffff !important; }
+
+/* 4) Accreditation logo grids -> one compact line (trade pages) */
+body.parent-pageid-8323 article .elementor .e-grid.e-child:has(.elementor-widget-image) {
+  display: flex !important; flex-wrap: nowrap !important;
+  justify-content: center !important; align-items: center !important; gap: 8px !important;
+}
+body.parent-pageid-8323 article .elementor .e-grid.e-child:has(.elementor-widget-image) > * {
+  flex: 1 1 0 !important; min-width: 0 !important; max-width: 130px !important; margin: 0 !important;
+}
+body.parent-pageid-8323 article .elementor .e-grid.e-child:has(.elementor-widget-image) img {
+  width: 100% !important; height: auto !important;
+}
