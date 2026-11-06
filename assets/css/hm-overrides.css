@@ -2462,3 +2462,7 @@ body.parent-pageid-8323 article .elementor .e-grid.e-child:has(.elementor-widget
   body.parent-pageid-8323 .elementor-element-27872c2 { right:8px !important; left:auto !important; }
   body.parent-pageid-8323 .elementor-element-e01971b { left:8px !important; right:auto !important; }
 }
+
+/* 9) Home page — "Ready to Book a Service?" rooftop shape divider: recolour the
+      64px strip from dark (#111318) to the CTA red so the rooftop blends into the band. */
+body.home .elementor-element-7317ad4 { background-color:#c41230 !important; }
