@@ -179,7 +179,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <link property="stylesheet" rel='stylesheet' id='trx_addons-responsive-css' href='/wp-content/plugins/trx_addons/css/__responsive.css' media='(max-width:1439px)' />
 <link property="stylesheet" rel='stylesheet' id='infratech-responsive-css' href='/wp-content/themes/infratech/skins/default/css/__responsive.css' media='(max-width:1679px)' />
 <link property="stylesheet" rel='stylesheet' id='infratech-responsive-child-css' href='/wp-content/themes/infratech-child/responsive.css' media='(max-width:1679px)' />  <link rel="stylesheet" href="/assets/css/chatbot.css?v=3">
-  <link rel="stylesheet" href="/assets/css/hm-overrides.css?v=104">
+  <link rel="stylesheet" href="/assets/css/hm-overrides.css?v=105">
   <link rel="stylesheet" href="/assets/css/hm-amz.css?v=79">
 
 <!-- hm-schema:business -->
@@ -510,6 +510,20 @@ document.addEventListener("DOMContentLoaded", function () {
 				</div>
 		<div class="elementor-element elementor-element-4f08298 e-con-full e-flex sc_layouts_column_icons_position_left e-con e-child" data-id="4f08298" data-element_type="container" data-e-type="container">
 <div class="hm-work-gallery">
+  <section class="hm-work-group hm-ba-group">
+    <h3>Before &amp; After — Sloane Square Bathroom</h3>
+    <p class="hm-ba-sub">Drag the slider to reveal the transformation — from full strip-out to a finished marble wet room.</p>
+    <div class="hm-ba" data-ba>
+      <img class="hm-ba-img hm-ba-after" src="/assets/img/work/sloane-after.jpg" alt="Finished Sloane Square bathroom with marble herringbone tiling" width="1201" height="901" loading="lazy">
+      <div class="hm-ba-beforewrap">
+        <img class="hm-ba-img hm-ba-before" src="/assets/img/work/sloane-before.jpg" alt="Sloane Square bathroom stripped out before renovation" width="1201" height="901" loading="lazy">
+      </div>
+      <div class="hm-ba-divider" aria-hidden="true"><span class="hm-ba-handle"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c41230" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg></span></div>
+      <span class="hm-ba-tag hm-ba-tag--before">Before</span>
+      <span class="hm-ba-tag hm-ba-tag--after">After</span>
+      <input class="hm-ba-range" type="range" min="0" max="100" value="50" aria-label="Reveal before and after of the Sloane Square bathroom">
+    </div>
+  </section>
   <section class="hm-work-group">
     <h3>Bathrooms & Wet Rooms</h3>
     <div class="hm-work-grid">
@@ -523,6 +537,10 @@ document.addEventListener("DOMContentLoaded", function () {
       <img src="/assets/img/work/gallery-12.jpg" alt="Brushed-steel shower controls with recessed niche" loading="lazy" width="800" height="1200">
       <img src="/assets/img/work/gallery-16.jpg" alt="Walk-in shower with rainfall head and window slot" loading="lazy" width="800" height="1200">
       <img src="/assets/img/work/gallery-17.jpg" alt="Vanity with mirror cabinet and shower tray" loading="lazy" width="800" height="1200">
+      <img src="/assets/img/work/gallery-27.jpg" alt="Chelsea bathroom with stone-effect tiling, rainfall shower and white vanity" loading="lazy" width="1440" height="1800">
+      <img src="/assets/img/work/gallery-28.jpg" alt="Sloane Square basin with mirror cabinet and marble herringbone shower wall" loading="lazy" width="1201" height="901">
+      <img src="/assets/img/work/gallery-29.jpg" alt="Sloane Square bath with glass screen and marble herringbone wall" loading="lazy" width="1200" height="900">
+      <img src="/assets/img/work/gallery-30.jpg" alt="Cloakroom with a backlit recessed mirror" loading="lazy" width="1440" height="1800">
     </div>
   </section>
   <section class="hm-work-group">
@@ -545,9 +563,39 @@ document.addEventListener("DOMContentLoaded", function () {
       <img src="/assets/img/work/gallery-23.jpg" alt="Dining area with marble table and walnut sideboard" loading="lazy" width="1200" height="789">
       <img src="/assets/img/work/gallery-25.webp" alt="Open-plan living and dining room with marble table and rust velvet armchairs, Earl's Court" loading="lazy" width="1440" height="1800">
       <img src="/assets/img/work/gallery-26.webp" alt="Living room with bouclé ottomans, built-in shelving and a cream sofa, Earl's Court" loading="lazy" width="1440" height="1800">
+      <img src="/assets/img/work/gallery-31.jpg" alt="Elegant dining room with marble fireplace and velvet chairs, Notting Hill" loading="lazy" width="1440" height="1800">
+      <img src="/assets/img/work/gallery-32.jpg" alt="Living room with marble fireplace, bespoke shelving and velvet seating, Notting Hill" loading="lazy" width="1440" height="1800">
+      <img src="/assets/img/work/gallery-33.jpg" alt="Restored living room with oak flooring, fireplace and sash windows, Chelsea" loading="lazy" width="1440" height="1800">
     </div>
   </section>
 </div>
+<script>
+(function(){
+  document.querySelectorAll('[data-ba]').forEach(function(ba){
+    var range=ba.querySelector('.hm-ba-range');
+    if(!range)return;
+    function set(v){ba.style.setProperty('--pos',v+'%');}
+    range.addEventListener('input',function(){set(range.value);});
+    set(range.value);
+    if('IntersectionObserver' in window){
+      var played=false;
+      var io=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting && !played){
+            played=true;
+            var seq=[50,70,32,50], i=0;
+            var t=setInterval(function(){
+              if(i>=seq.length){clearInterval(t);return;}
+              range.value=seq[i]; set(seq[i]); i++;
+            },430);
+          }
+        });
+      },{threshold:0.45});
+      io.observe(ba);
+    }
+  });
+})();
+</script>
 			</div>
 				</div>
 		<div class="elementor-element elementor-element-1b8253f e-con-full e-flex sc_layouts_column_icons_position_left e-con e-parent" data-id="1b8253f" data-element_type="container" data-e-type="container">
