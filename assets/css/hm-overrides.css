@@ -2507,3 +2507,42 @@ body.home .elementor-element-7317ad4 { background-color:#c41230 !important; }
 .hm-ba-range::-moz-range-thumb{ width:46px; height:999px; border:0; background:transparent; cursor:ew-resize; }
 .hm-ba-range::-webkit-slider-runnable-track{ background:transparent; }
 .hm-ba-range::-moz-range-track{ background:transparent; }
+
+/* ---------- FAQ section on crimson background (client request) ----------------
+   Homepage "Common questions answered" section (7f3bea5): red panel + light text. */
+.elementor-element-7f3bea5 {
+  background-color: #c41230 !important;
+  background-image: linear-gradient(158deg, #c8172f 0%, #a90f27 100%) !important;
+}
+.elementor-element-7f3bea5 .elementor-heading-title,
+.elementor-element-7f3bea5 .elementor-widget-text-editor,
+.elementor-element-7f3bea5 .elementor-widget-text-editor p,
+.elementor-element-7f3bea5 p,
+.elementor-element-7f3bea5 .trx-addons-accordion-title-text,
+.elementor-element-7f3bea5 .trx-addons-accordion-tab-content,
+.elementor-element-7f3bea5 .trx-addons-accordion-tab-content * {
+  color: #ffffff !important;
+}
+.elementor-element-7f3bea5 h6.elementor-heading-title { color: rgba(255,255,255,.8) !important; }
+.elementor-element-7f3bea5 .elementor-widget-text-editor p { color: rgba(255,255,255,.9) !important; }
+.elementor-element-7f3bea5 .trx-addons-accordion-tab-content,
+.elementor-element-7f3bea5 .trx-addons-accordion-tab-content p { color: rgba(255,255,255,.85) !important; }
+.elementor-element-7f3bea5 .trx-addons-accordion-item,
+.elementor-element-7f3bea5 .trx-addons-accordion-tab-title {
+  border-color: rgba(255,255,255,.25) !important;
+}
+.elementor-element-7f3bea5 .trx-addons-accordion-toggle-icon,
+.elementor-element-7f3bea5 .trx-addons-accordion-toggle-icon * {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  border-color: rgba(255,255,255,.55) !important;
+}
+
+/* ---------- "Our Recent Works" section on black (client request) --------------
+   Featured-works section (.hm-featured): dark panel, white text, crimson eyebrow. */
+.hm-featured {
+  background: linear-gradient(158deg, #1b1e23 0%, #0e1013 100%) !important;
+}
+.hm-featured-eyebrow { color: #e2384f !important; }
+.hm-featured-title { color: #ffffff !important; }
+.hm-featured-sub { color: rgba(255,255,255,.82) !important; }
