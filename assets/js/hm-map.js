@@ -9,18 +9,27 @@
 
   var LOCATIONS = [
     {
-      name: "Store",
+      type: "Store · Shop",
+      name: "H&M Locksmith & Security",
       addr: "609 Harrow Road, London W10 4RA",
+      addrShort: "609 Harrow Road, W10 4RA",
+      photo: "/assets/img/hero-hm-shop.jpg",
       lat: 51.527958, lng: -0.216658,
       gmap: "https://www.google.com/maps?cid=2993071067314997529"
     },
     {
-      name: "Head Office",
+      type: "Head Office",
+      name: "The H&M Group — Office",
       addr: "124 Wilton Road, London SW1V 1AJ",
+      addrShort: "124 Wilton Road, SW1V 1AJ",
+      photo: null,
       lat: 51.493997, lng: -0.142223,
       gmap: "https://www.google.com/maps?cid=1214119125620460867"
     }
   ];
+
+  var OFFICE_ICON =
+    '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M3 21V7l7-4 7 4v3h4v11h-6v-5h-2v5H3zm4-6h2v-2H7v2zm0-4h2V9H7v2zm4 4h2v-2h-2v2zm0-4h2V9h-2v2z"/></svg>';
 
   var LEAFLET_CSS = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css";
   var LEAFLET_JS  = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js";
@@ -41,7 +50,27 @@
       ".hm-map-pop strong{display:block;font-size:14px;color:#141414;margin-bottom:2px}" +
       ".hm-map-pop span{display:block;font-size:12.5px;color:#555;line-height:1.5;margin-bottom:7px}" +
       ".hm-map-pop a{font-size:12.5px;font-weight:700;color:#c41230;text-decoration:none}" +
-      ".hm-map-pop a:hover{text-decoration:underline}";
+      ".hm-map-pop a:hover{text-decoration:underline}" +
+      /* always-visible location cards on each pin */
+      ".hm-loc-tip.leaflet-tooltip{background:transparent;border:0;box-shadow:none;padding:0;white-space:nowrap}" +
+      ".hm-loc-tip.leaflet-tooltip::before{display:none}" +
+      ".hm-loc-card{display:flex;align-items:center;gap:9px;width:204px;background:#fff;" +
+        "border-radius:12px;overflow:hidden;box-shadow:0 8px 22px rgba(20,20,30,.25);" +
+        "border:1px solid rgba(0,0,0,.06);text-decoration:none;font-family:'Hanken Grotesk',Arial,sans-serif}" +
+      ".hm-loc-media{width:66px;height:66px;flex:none;background:#c41230;display:block}" +
+      ".hm-loc-media img{width:100%;height:100%;object-fit:cover;display:block}" +
+      ".hm-loc-media--icon{display:grid;place-items:center}" +
+      ".hm-loc-media--icon svg{width:30px;height:30px}" +
+      ".hm-loc-body{padding:7px 12px 7px 0;min-width:0;white-space:normal}" +
+      ".hm-loc-type{display:block;font-size:10px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#c41230;margin-bottom:1px}" +
+      ".hm-loc-card strong{display:block;font-size:13px;color:#141414;line-height:1.18}" +
+      ".hm-loc-addr{display:block;font-size:11px;color:#6a6a6a;line-height:1.3;margin-top:1px}" +
+      /* tablet: slightly smaller, drop the address line */
+      "@media (max-width:1024px){.hm-loc-card{width:188px}.hm-loc-media{width:56px;height:56px}.hm-loc-addr{display:none}}" +
+      /* mobile: tiny chip — show only the Office/Store label so it always fits */
+      "@media (max-width:600px){.hm-loc-card{width:auto}.hm-loc-media{display:none}" +
+        ".hm-loc-body{padding:5px 12px;white-space:nowrap}.hm-loc-card strong,.hm-loc-addr{display:none}" +
+        ".hm-loc-type{font-size:11px;margin:0}}";
     document.head.appendChild(s);
   })();
 
@@ -95,6 +124,23 @@
     var pts = [];
     LOCATIONS.forEach(function (loc) {
       var m = L.marker([loc.lat, loc.lng], { icon: icon, title: loc.name }).addTo(map);
+
+      // always-visible labelled card so it's clear which pin is the Office vs Store
+      var media = loc.photo
+        ? '<span class="hm-loc-media"><img src="' + loc.photo + '" alt="" loading="lazy"></span>'
+        : '<span class="hm-loc-media hm-loc-media--icon">' + OFFICE_ICON + "</span>";
+      m.bindTooltip(
+        '<a class="hm-loc-card" href="' + loc.gmap + '" target="_blank" rel="noopener">' +
+          media +
+          '<span class="hm-loc-body">' +
+            '<span class="hm-loc-type">' + loc.type + "</span>" +
+            "<strong>" + loc.name + "</strong>" +
+            '<span class="hm-loc-addr">' + loc.addrShort + "</span>" +
+          "</span>" +
+        "</a>",
+        { permanent: true, direction: "top", offset: [0, -30], className: "hm-loc-tip", interactive: true, opacity: 1 }
+      );
+
       m.bindPopup(
         '<div class="hm-map-pop"><strong>' + loc.name + "</strong>" +
         "<span>" + loc.addr + "</span>" +
@@ -103,7 +149,12 @@
       pts.push([loc.lat, loc.lng]);
     });
 
-    map.fitBounds(pts, { padding: [48, 48], maxZoom: 14 });
+    // responsive padding so the always-visible cards have room and never clip
+    var vw = window.innerWidth, pad;
+    if (vw < 600)       pad = { tl: [52, 72],  br: [52, 48] };   // mobile (compact chips)
+    else if (vw < 1025) pad = { tl: [104, 112], br: [104, 70] }; // tablet
+    else                pad = { tl: [124, 128], br: [124, 76] }; // desktop
+    map.fitBounds(pts, { paddingTopLeft: pad.tl, paddingBottomRight: pad.br, maxZoom: 13 });
     // keep tiles sharp after the container animates/reveals
     setTimeout(function () { map.invalidateSize(); }, 300);
   }
