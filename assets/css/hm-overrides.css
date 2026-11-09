@@ -2404,3 +2404,13 @@ a.hm-btn-primary[href^="tel:"]:not(.eicon):not([class*="trx_addons_icon"]):not([
   fill: #ffffff !important;
   border-color: rgba(255,255,255,.55) !important;
 }
+
+/* ---------- 28. "Our Recent Works" section on crimson (client request) --------
+   Featured-works section (.hm-featured): red panel + light text. Project cards
+   below keep their own styling. */
+.hm-featured {
+  background: linear-gradient(158deg, #c8172f 0%, #a90f27 100%) !important;
+}
+.hm-featured-eyebrow { color: rgba(255,255,255,.85) !important; }
+.hm-featured-title { color: #ffffff !important; }
+.hm-featured-sub { color: rgba(255,255,255,.9) !important; }
