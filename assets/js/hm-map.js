@@ -22,7 +22,7 @@
       name: "The H&M Group — Office",
       addr: "124 Wilton Road, London SW1V 1AJ",
       addrShort: "124 Wilton Road, SW1V 1AJ",
-      photo: null,
+      photo: "/assets/img/office-google.jpg",
       lat: 51.493997, lng: -0.142223,
       gmap: "https://www.google.com/maps?cid=1214119125620460867"
     }
@@ -65,12 +65,12 @@
       ".hm-loc-type{display:block;font-size:10px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#c41230;margin-bottom:1px}" +
       ".hm-loc-card strong{display:block;font-size:13px;color:#141414;line-height:1.18}" +
       ".hm-loc-addr{display:block;font-size:11px;color:#6a6a6a;line-height:1.3;margin-top:1px}" +
-      /* tablet: slightly smaller, drop the address line */
-      "@media (max-width:1024px){.hm-loc-card{width:188px}.hm-loc-media{width:56px;height:56px}.hm-loc-addr{display:none}}" +
-      /* mobile: tiny chip — show only the Office/Store label so it always fits */
-      "@media (max-width:600px){.hm-loc-card{width:auto}.hm-loc-media{display:none}" +
-        ".hm-loc-body{padding:5px 12px;white-space:nowrap}.hm-loc-card strong,.hm-loc-addr{display:none}" +
-        ".hm-loc-type{font-size:11px;margin:0}}";
+      /* tablet: a touch smaller, keep name + address */
+      "@media (max-width:1024px){.hm-loc-card{width:196px}.hm-loc-media{width:58px;height:58px}}" +
+      /* mobile: compact card — small photo + name + address */
+      "@media (max-width:600px){.hm-loc-card{width:168px;gap:8px}.hm-loc-media{width:46px;height:46px}" +
+        ".hm-loc-body{padding:6px 9px 6px 0}.hm-loc-card strong{font-size:11.5px;line-height:1.12}" +
+        ".hm-loc-addr{font-size:9.5px;line-height:1.25}}";
     document.head.appendChild(s);
   })();
 
@@ -133,7 +133,6 @@
         '<a class="hm-loc-card" href="' + loc.gmap + '" target="_blank" rel="noopener">' +
           media +
           '<span class="hm-loc-body">' +
-            '<span class="hm-loc-type">' + loc.type + "</span>" +
             "<strong>" + loc.name + "</strong>" +
             '<span class="hm-loc-addr">' + loc.addrShort + "</span>" +
           "</span>" +
@@ -151,7 +150,7 @@
 
     // responsive padding so the always-visible cards have room and never clip
     var vw = window.innerWidth, pad;
-    if (vw < 600)       pad = { tl: [52, 72],  br: [52, 48] };   // mobile (compact chips)
+    if (vw < 600)       pad = { tl: [88, 98],  br: [88, 56] };   // mobile (compact cards)
     else if (vw < 1025) pad = { tl: [104, 112], br: [104, 70] }; // tablet
     else                pad = { tl: [124, 128], br: [124, 76] }; // desktop
     map.fitBounds(pts, { paddingTopLeft: pad.tl, paddingBottomRight: pad.br, maxZoom: 13 });
