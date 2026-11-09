@@ -2370,3 +2370,37 @@ a.hm-btn-primary[href^="tel:"]:not(.eicon):not([class*="trx_addons_icon"]):not([
 
 /* Values / content text section */
 .elementor-element-7d524124 { background-color: #faf8f5 !important; }
+
+/* ---------- 27. FAQ section on crimson background (client request) ------------
+   Homepage "Common questions answered" section (7f3bea5): red panel + light text. */
+.elementor-element-7f3bea5 {
+  background-color: #c41230 !important;
+  background-image: linear-gradient(158deg, #c8172f 0%, #a90f27 100%) !important;
+}
+/* headings, body text, accordion text -> white */
+.elementor-element-7f3bea5 .elementor-heading-title,
+.elementor-element-7f3bea5 .elementor-widget-text-editor,
+.elementor-element-7f3bea5 .elementor-widget-text-editor p,
+.elementor-element-7f3bea5 p,
+.elementor-element-7f3bea5 .trx-addons-accordion-title-text,
+.elementor-element-7f3bea5 .trx-addons-accordion-tab-content,
+.elementor-element-7f3bea5 .trx-addons-accordion-tab-content * {
+  color: #ffffff !important;
+}
+/* eyebrow (h6) + intro subtext slightly softened */
+.elementor-element-7f3bea5 h6.elementor-heading-title { color: rgba(255,255,255,.8) !important; }
+.elementor-element-7f3bea5 .elementor-widget-text-editor p { color: rgba(255,255,255,.9) !important; }
+.elementor-element-7f3bea5 .trx-addons-accordion-tab-content,
+.elementor-element-7f3bea5 .trx-addons-accordion-tab-content p { color: rgba(255,255,255,.85) !important; }
+/* accordion dividers / borders on red */
+.elementor-element-7f3bea5 .trx-addons-accordion-item,
+.elementor-element-7f3bea5 .trx-addons-accordion-tab-title {
+  border-color: rgba(255,255,255,.25) !important;
+}
+/* +/- toggle icons white */
+.elementor-element-7f3bea5 .trx-addons-accordion-toggle-icon,
+.elementor-element-7f3bea5 .trx-addons-accordion-toggle-icon * {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  border-color: rgba(255,255,255,.55) !important;
+}
