@@ -2546,3 +2546,25 @@ body.home .elementor-element-7317ad4 { background-color:#c41230 !important; }
 .hm-featured-eyebrow { color: #e2384f !important; }
 .hm-featured-title { color: #ffffff !important; }
 .hm-featured-sub { color: rgba(255,255,255,.82) !important; }
+
+/* ---------- Core Services: wider desktop grid (client request) ----------------
+   The boxed container capped .e-con-inner at 720px on desktop, so the 5 service
+   cards stacked one-per-row and looked tiny with huge empty margins. Widen the
+   track on desktop (>1024px) so the cards lay out 3 per row, bigger and filling
+   the section. Mobile/tablet (<=1024px) is untouched — it already looks right. */
+@media (min-width: 1025px) {
+  /* the section is a grid with a fixed 720px column — collapse it to full width */
+  .elementor-element-ed08da9 {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  .elementor-element-ed08da9 > .e-con-inner {
+    max-width: 1240px !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .elementor-element-ed08da9 > .e-con-inner > .e-child:not(.elementor-element-2be7367) {
+    flex: 1 1 340px !important;
+    max-width: 392px !important;
+  }
+}
