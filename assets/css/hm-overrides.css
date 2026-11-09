@@ -2409,8 +2409,8 @@ a.hm-btn-primary[href^="tel:"]:not(.eicon):not([class*="trx_addons_icon"]):not([
    Featured-works section (.hm-featured): red panel + light text. Project cards
    below keep their own styling. */
 .hm-featured {
-  background: linear-gradient(158deg, #c8172f 0%, #a90f27 100%) !important;
+  background: linear-gradient(158deg, #1b1e23 0%, #0e1013 100%) !important;
 }
-.hm-featured-eyebrow { color: rgba(255,255,255,.85) !important; }
+.hm-featured-eyebrow { color: #e2384f !important; }
 .hm-featured-title { color: #ffffff !important; }
-.hm-featured-sub { color: rgba(255,255,255,.9) !important; }
+.hm-featured-sub { color: rgba(255,255,255,.82) !important; }
