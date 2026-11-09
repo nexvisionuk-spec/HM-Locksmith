@@ -22,7 +22,7 @@
       name: "The H&M Group — Office",
       addr: "124 Wilton Road, London SW1V 1AJ",
       addrShort: "124 Wilton Road, SW1V 1AJ",
-      photo: "/assets/img/office-google.jpg",
+      photo: "/assets/img/office-interior.jpg",
       lat: 51.493997, lng: -0.142223,
       gmap: "https://www.google.com/maps?cid=1214119125620460867"
     }
