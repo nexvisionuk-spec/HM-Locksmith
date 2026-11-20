@@ -615,11 +615,11 @@ table.hm-pl tbody tr:nth-child(even) th,table.hm-pl tbody tr:nth-child(even) td{
 table.hm-pl tbody tr:hover th,table.hm-pl tbody tr:hover td{background:#fbeef0!important}
 .hm-pl-note{font-size:.9rem;line-height:1.55;color:#5b6372;margin:0 0 30px}
 .hm-pl-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;background:#c41230;color:#fff;border-radius:16px;padding:22px 28px}
-.hm-pl-cta strong{font-size:1.18rem;font-weight:800}
-.hm-pl-cta .hm-pl-btns{display:flex;flex-wrap:wrap;gap:12px}
-.hm-pl-cta a{display:inline-block;background:#fff;color:#c41230;font-weight:800;text-decoration:none;padding:12px 22px;border-radius:999px}
+.hm-pl-cta strong{font-size:clamp(13px,4vw,1.3rem);font-weight:800;white-space:nowrap;letter-spacing:-.01em;font-family:'Montserrat',Arial,sans-serif}
+.hm-pl-cta .hm-pl-btns{display:flex;flex-wrap:nowrap;gap:12px}
+.hm-pl-cta a{display:inline-block;white-space:nowrap;background:#fff;color:#c41230;font-weight:800;text-decoration:none;padding:12px 22px;border-radius:999px}
 .hm-pl-cta a.ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.7)}
-@media(max-width:600px){.hm-pl-cta{flex-direction:column;align-items:flex-start}}
+@media(max-width:600px){.hm-pl-cta{flex-direction:column;align-items:center;text-align:center;gap:16px;padding:20px 14px}.hm-pl-cta .hm-pl-btns{width:100%;justify-content:center}.hm-pl-cta a{padding:11px 16px;font-size:.95rem}}
 </style>
 <div class="hm-pricelist">
 <div class="hm-pl-tablewrap"><table class="hm-pl"><caption>Monday &ndash; Friday</caption><thead><tr><th>Service</th><th>7am&ndash;6pm</th><th>6pm&ndash;12am</th><th>12am&ndash;7am</th></tr></thead><tbody>
@@ -661,7 +661,7 @@ table.hm-pl tbody tr:hover th,table.hm-pl tbody tr:hover td{background:#fbeef0!i
 <tr><th>Boiler Service &amp; Gas Safety Cert Combined</th><td>£380</td><td>£390</td><td>—</td></tr>
 </tbody></table></div>
 <p class="hm-pl-note">*** Drone estimate / survey is subject to site access and weather conditions. Prices shown are call-out rates and exclude materials and VAT where applicable. For a fixed written quote tailored to your job, please get in touch.</p>
-<div class="hm-pl-cta"><strong>Need a service? We cover all of London, 24/7.</strong><span class="hm-pl-btns"><a href="tel:+442031051145">Call 0203 105 1145</a><a class="ghost" href="/contact-us/">Book online</a></span></div>
+<div class="hm-pl-cta"><strong>Need a service? We cover all of London, 24/7</strong><span class="hm-pl-btns"><a href="tel:+442031051145">Call 0203 105 1145</a><a class="ghost" href="/contact-us/">Book online</a></span></div>
 </div>
 </div>
 </article>
