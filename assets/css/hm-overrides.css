@@ -2602,3 +2602,14 @@ body.home .elementor-element-7317ad4 { background-color:#c41230 !important; }
   transform: scale(.65);
   transform-origin: right top;
 }
+
+/* ------------------------------------------------------------------
+   Trade-page FAQ ("Common questions answered", container 40615e2) was
+   landing on a grey alternating band (#f5f6f8), which looked like a dull
+   box. Drop the grey so it reads clean/white. Shared across all 11 trade
+   pages via the same element id. The homepage FAQ (red, element 7f3bea5)
+   and any other red FAQ are a different element and stay as they are.
+   Specificity (0,3,2) matches the band rule and wins by source order. */
+body.parent-pageid-8323 article .elementor > .elementor-element-40615e2{
+  background-color:#fff !important;
+}
