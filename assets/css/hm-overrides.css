@@ -2613,3 +2613,19 @@ body.home .elementor-element-7317ad4 { background-color:#c41230 !important; }
 body.parent-pageid-8323 article .elementor > .elementor-element-40615e2{
   background-color:#fff !important;
 }
+
+/* ------------------------------------------------------------------
+   Landing-page CTA buttons (emergency-locksmith etc.): long labels like
+   "CALL NOW, 24/7 EMERGENCY LOCKSMITH" wrapped onto two lines on mobile.
+   Tighten font-size / letter-spacing / padding on small screens and keep
+   each label on a single line. ------------------------------------- */
+@media (max-width:600px){
+  .hm-landing .hm-cta-row .hm-btn,
+  .hm-landing .hm-form-actions .hm-btn,
+  .hm-landing .hm-hero .hm-btn{
+    font-size:12.5px !important;
+    letter-spacing:.015em !important;
+    padding:15px 12px !important;
+    white-space:nowrap !important;
+  }
+}
