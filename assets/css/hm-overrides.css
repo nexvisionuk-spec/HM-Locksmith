@@ -644,26 +644,40 @@ input[type="button"]:hover,
   border-radius: 6px; box-shadow: 0 24px 70px rgba(0,0,0,.65); background: #111;
 }
 .hm-lb-cap { display: block !important; color: #fff; font-size: 14px; opacity: .72; text-align: center; max-width: 80vw; }
+/* !important + resets: the theme styles every <button> crimson and its
+   :hover/:focus rule outranks a plain class, and it auto-focuses the close on
+   open — so force our clean translucent circular buttons. */
 .hm-lb-btn {
   position: absolute; top: 50%; transform: translateY(-50%);
-  width: 52px; height: 52px; border: 0; border-radius: 50%;
-  background: rgba(255,255,255,.12); color: #fff; font-size: 30px; line-height: 1;
-  cursor: pointer; display: grid; place-items: center; transition: background .2s ease;
+  width: 56px !important; height: 56px !important; padding: 0 !important;
+  border: 0 !important; border-radius: 50% !important; box-sizing: border-box;
+  background: rgba(255,255,255,.14) !important; color: #fff !important;
+  font-size: 30px; line-height: 1; cursor: pointer; display: grid; place-items: center;
+  -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
+  box-shadow: 0 4px 16px rgba(0,0,0,.35);
+  transition: background .2s ease, transform .15s ease;
 }
-.hm-lb-btn:hover { background: #c41230; }
-.hm-lb-prev { left: 12px; }
-.hm-lb-next { right: 12px; }
+.hm-lb-btn:hover { background: #c41230 !important; transform: translateY(-50%) scale(1.06); }
+.hm-lb-prev { left: 18px; }
+.hm-lb-next { right: 18px; }
 .hm-lb-close {
-  position: absolute; top: 12px; right: 14px; width: 44px; height: 44px;
-  border: 0; background: none; color: #fff; font-size: 34px; line-height: 1;
-  cursor: pointer; transition: color .2s ease;
+  position: absolute; top: 16px; right: 16px;
+  width: 46px !important; height: 46px !important; padding: 0 !important;
+  border: 0 !important; border-radius: 50% !important; box-sizing: border-box;
+  background: rgba(255,255,255,.14) !important; color: #fff !important;
+  font-size: 26px; line-height: 1; cursor: pointer; display: grid; place-items: center;
+  -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
+  box-shadow: 0 4px 16px rgba(0,0,0,.35);
+  transition: background .2s ease, transform .15s ease;
 }
-.hm-lb-close:hover { color: #c41230; }
+.hm-lb-close:hover { background: #c41230 !important; color: #fff !important; transform: scale(1.06); }
+.hm-lb-btn:focus-visible, .hm-lb-close:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 @media (max-width: 767px) {
   .hm-lightbox { padding: 64px 10px 48px; }
-  .hm-lb-btn { width: 42px; height: 42px; font-size: 24px; }
-  .hm-lb-prev { left: 4px; }
-  .hm-lb-next { right: 4px; }
+  .hm-lb-btn { width: 44px !important; height: 44px !important; font-size: 24px; }
+  .hm-lb-close { width: 42px !important; height: 42px !important; font-size: 24px; }
+  .hm-lb-prev { left: 8px; }
+  .hm-lb-next { right: 8px; }
   .hm-lb-img { max-height: 74vh; }
 }
 
@@ -2436,6 +2450,9 @@ body.parent-pageid-8323 article .elementor .e-grid.e-child:has(.elementor-widget
 .hm-reno > section:nth-of-type(5)  { background-color:#f5f6f8 !important; }
 .hm-reno > section:nth-of-type(9)  { background-color:#fbeef0 !important; }
 .hm-reno > section:nth-of-type(11) { background-color:#f5f6f8 !important; }
+/* Before/After project card: drop the white box so it blends into the coloured
+   section band (scoped to renovation pages — leaves the Our Work slider alone) */
+.hm-reno .hm-ba { background: transparent !important; box-shadow: none !important; }
 
 /* 6) Community page (custom hm-community-*) — band the light sections, protect hero + dark CTA.
       Page inline <style> uses `html body .hm-cs-*` (0,1,2); :not(#_) lifts us to id-level to win. */
