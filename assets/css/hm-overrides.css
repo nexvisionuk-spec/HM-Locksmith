@@ -2643,3 +2643,12 @@ body.parent-pageid-8323 article .elementor > .elementor-element-40615e2{
   font-family:'Montserrat','Hanken Grotesk',Arial,sans-serif !important;
   font-weight:700 !important;
 }
+
+/* ------------------------------------------------------------------
+   FAQ ("Common questions answered"): the first question sat too close to
+   the intro line. Add breathing room above the accordion. Covers the
+   homepage (red) and the shared trade-page FAQ. */
+.elementor-element-7f3bea5 .elementor-widget-trx_elm_accordion,
+.elementor-element-40615e2 .elementor-widget-trx_elm_accordion{
+  margin-top: 22px !important;
+}

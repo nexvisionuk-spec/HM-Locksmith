@@ -15,15 +15,17 @@
       addrShort: "609 Harrow Road, W10 4RA",
       photo: "/assets/img/hero-hm-shop.jpg",
       lat: 51.527958, lng: -0.216658,
+      dir: "top",
       gmap: "https://www.google.com/maps?cid=2993071067314997529"
     },
     {
       type: "Head Office",
-      name: "The H&M Group — Office",
+      name: "The H&M Group Office",
       addr: "124 Wilton Road, London SW1V 1AJ",
       addrShort: "124 Wilton Road, SW1V 1AJ",
       photo: "/assets/img/office-interior.jpg",
       lat: 51.493997, lng: -0.142223,
+      dir: "bottom",
       gmap: "https://www.google.com/maps?cid=1214119125620460867"
     }
   ];
@@ -41,7 +43,7 @@
     s.id = "hm-map-style";
     s.textContent =
       ".hm-map-wrap .hm-map-img,.hm-map-wrap .hm-pin{display:none!important}" +
-      ".hm-map-live{width:100%;height:clamp(320px,52vw,460px);border-radius:16px;" +
+      ".hm-map-live{width:100%;height:clamp(390px,64vw,500px);border-radius:16px;" +
         "overflow:hidden;box-shadow:0 14px 34px rgba(20,20,30,.14);z-index:1}" +
       ".hm-map-live .leaflet-container{height:100%;width:100%;font:inherit;background:#e8eaed}" +
       ".hm-map-pin{display:grid;place-items:center}" +
@@ -114,7 +116,8 @@
     el.className = "hm-map-live";
     wrap.appendChild(el);
 
-    var map = L.map(el, { scrollWheelZoom: true, zoomControl: true });
+    var map = L.map(el, { scrollWheelZoom: true, zoomControl: false });
+    L.control.zoom({ position: "topright" }).addTo(map);
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 19,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -137,7 +140,9 @@
             '<span class="hm-loc-addr">' + loc.addrShort + "</span>" +
           "</span>" +
         "</a>",
-        { permanent: true, direction: "top", offset: [0, -30], className: "hm-loc-tip", interactive: true, opacity: 1 }
+        { permanent: true, direction: loc.dir || "top",
+          offset: (loc.dir === "bottom") ? [0, 6] : [0, -30],
+          className: "hm-loc-tip", interactive: true, opacity: 1 }
       );
 
       m.bindPopup(
@@ -150,9 +155,9 @@
 
     // responsive padding so the always-visible cards have room and never clip
     var vw = window.innerWidth, pad;
-    if (vw < 600)       pad = { tl: [88, 98],  br: [88, 56] };   // mobile (compact cards)
-    else if (vw < 1025) pad = { tl: [104, 112], br: [104, 70] }; // tablet
-    else                pad = { tl: [124, 128], br: [124, 76] }; // desktop
+    if (vw < 600)       pad = { tl: [86, 96],   br: [86, 104] };  // mobile: Store card above, Office card below
+    else if (vw < 1025) pad = { tl: [104, 112], br: [104, 118] }; // tablet
+    else                pad = { tl: [124, 128], br: [124, 128] }; // desktop
     map.fitBounds(pts, { paddingTopLeft: pad.tl, paddingBottomRight: pad.br, maxZoom: 13 });
     // keep tiles sharp after the container animates/reveals
     setTimeout(function () { map.invalidateSize(); }, 300);
