@@ -54,25 +54,25 @@
       ".hm-map-pop a{font-size:12.5px;font-weight:700;color:#c41230;text-decoration:none}" +
       ".hm-map-pop a:hover{text-decoration:underline}" +
       /* always-visible location cards on each pin */
-      ".hm-loc-tip.leaflet-tooltip{background:transparent;border:0;box-shadow:none;padding:0;white-space:nowrap}" +
-      ".hm-loc-tip.leaflet-tooltip::before{display:none}" +
-      ".hm-loc-card{display:flex;align-items:center;gap:9px;width:204px;background:#fff;" +
+      ".hm-mapcard-tip.leaflet-tooltip{background:transparent;border:0;box-shadow:none;padding:0;white-space:nowrap}" +
+      ".hm-mapcard-tip.leaflet-tooltip::before{display:none}" +
+      ".hm-mapcard{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:9px;width:204px;background:#fff;" +
         "border-radius:12px;overflow:hidden;box-shadow:0 8px 22px rgba(20,20,30,.25);" +
         "border:1px solid rgba(0,0,0,.06);text-decoration:none;font-family:'Hanken Grotesk',Arial,sans-serif}" +
-      ".hm-loc-media{width:66px;height:66px;flex:none;background:#c41230;display:block}" +
-      ".hm-loc-media img{width:100%;height:100%;object-fit:cover;display:block}" +
-      ".hm-loc-media--icon{display:grid;place-items:center}" +
-      ".hm-loc-media--icon svg{width:30px;height:30px}" +
-      ".hm-loc-body{padding:7px 12px 7px 0;min-width:0;white-space:normal}" +
-      ".hm-loc-type{display:block;font-size:10px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#c41230;margin-bottom:1px}" +
-      ".hm-loc-card strong{display:block;font-size:13px;color:#141414;line-height:1.18}" +
-      ".hm-loc-addr{display:block;font-size:11px;color:#6a6a6a;line-height:1.3;margin-top:1px}" +
+      ".hm-mapcard-media{width:66px;height:66px;flex:none;background:#c41230;display:block}" +
+      ".hm-mapcard-media img{width:100%;height:100%;object-fit:cover;display:block}" +
+      ".hm-mapcard-media--icon{display:grid;place-items:center}" +
+      ".hm-mapcard-media--icon svg{width:30px;height:30px}" +
+      ".hm-mapcard-body{min-width:0;padding:7px 12px 7px 0;white-space:normal}" +
+      ".hm-mapcard-type{display:block;font-size:10px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#c41230;margin-bottom:1px}" +
+      ".hm-mapcard strong{display:block;font-size:13px;color:#141414;line-height:1.18}" +
+      ".hm-mapcard-addr{display:block;font-size:11px;color:#6a6a6a;line-height:1.3;margin-top:1px}" +
       /* tablet: a touch smaller, keep name + address */
-      "@media (max-width:1024px){.hm-loc-card{width:196px}.hm-loc-media{width:58px;height:58px}}" +
+      "@media (max-width:1024px){.hm-mapcard{width:196px}.hm-mapcard-media{width:58px;height:58px}}" +
       /* mobile: compact card — small photo + name + address */
-      "@media (max-width:600px){.hm-loc-card{width:168px;gap:8px}.hm-loc-media{width:46px;height:46px}" +
-        ".hm-loc-body{padding:6px 9px 6px 0}.hm-loc-card strong{font-size:11.5px;line-height:1.12}" +
-        ".hm-loc-addr{font-size:9.5px;line-height:1.25}}";
+      "@media (max-width:600px){.hm-mapcard{width:168px;gap:8px}.hm-mapcard-media{width:46px;height:46px}" +
+        ".hm-mapcard-body{padding:6px 9px 6px 0}.hm-mapcard strong{font-size:11.5px;line-height:1.12}" +
+        ".hm-mapcard-addr{font-size:9.5px;line-height:1.25}}";
     document.head.appendChild(s);
   })();
 
@@ -130,19 +130,19 @@
 
       // always-visible labelled card so it's clear which pin is the Office vs Store
       var media = loc.photo
-        ? '<span class="hm-loc-media"><img src="' + loc.photo + '" alt="" loading="lazy"></span>'
-        : '<span class="hm-loc-media hm-loc-media--icon">' + OFFICE_ICON + "</span>";
+        ? '<span class="hm-mapcard-media"><img src="' + loc.photo + '" alt="" loading="lazy"></span>'
+        : '<span class="hm-mapcard-media hm-mapcard-media--icon">' + OFFICE_ICON + "</span>";
       m.bindTooltip(
-        '<a class="hm-loc-card" href="' + loc.gmap + '" target="_blank" rel="noopener">' +
+        '<a class="hm-mapcard" href="' + loc.gmap + '" target="_blank" rel="noopener">' +
           media +
-          '<span class="hm-loc-body">' +
+          '<span class="hm-mapcard-body">' +
             "<strong>" + loc.name + "</strong>" +
-            '<span class="hm-loc-addr">' + loc.addrShort + "</span>" +
+            '<span class="hm-mapcard-addr">' + loc.addrShort + "</span>" +
           "</span>" +
         "</a>",
         { permanent: true, direction: loc.dir || "top",
           offset: (loc.dir === "bottom") ? [0, 6] : [0, -30],
-          className: "hm-loc-tip", interactive: true, opacity: 1 }
+          className: "hm-mapcard-tip", interactive: true, opacity: 1 }
       );
 
       m.bindPopup(
@@ -155,9 +155,9 @@
 
     // responsive padding so the always-visible cards have room and never clip
     var vw = window.innerWidth, pad;
-    if (vw < 600)       pad = { tl: [86, 96],   br: [86, 104] };  // mobile: Store card above, Office card below
-    else if (vw < 1025) pad = { tl: [104, 112], br: [104, 118] }; // tablet
-    else                pad = { tl: [124, 128], br: [124, 128] }; // desktop
+    if (vw < 600)       pad = { tl: [90, 112],  br: [90, 112] };  // mobile: Store card above, Office card below
+    else if (vw < 1025) pad = { tl: [108, 122], br: [108, 122] }; // tablet
+    else                pad = { tl: [128, 132], br: [128, 132] }; // desktop
     map.fitBounds(pts, { paddingTopLeft: pad.tl, paddingBottomRight: pad.br, maxZoom: 13 });
     // keep tiles sharp after the container animates/reveals
     setTimeout(function () { map.invalidateSize(); }, 300);
