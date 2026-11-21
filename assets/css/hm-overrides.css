@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap");
 /* ==========================================================================
    H&M — site overrides
    Loaded LAST on every page so these rules always win.
@@ -644,26 +644,40 @@ input[type="button"]:hover,
   border-radius: 6px; box-shadow: 0 24px 70px rgba(0,0,0,.65); background: #111;
 }
 .hm-lb-cap { display: block !important; color: #fff; font-size: 14px; opacity: .72; text-align: center; max-width: 80vw; }
+/* !important + resets: the theme styles every <button> crimson and its
+   :hover/:focus rule outranks a plain class, and it auto-focuses the close on
+   open — so force our clean translucent circular buttons. */
 .hm-lb-btn {
   position: absolute; top: 50%; transform: translateY(-50%);
-  width: 52px; height: 52px; border: 0; border-radius: 50%;
-  background: rgba(255,255,255,.12); color: #fff; font-size: 30px; line-height: 1;
-  cursor: pointer; display: grid; place-items: center; transition: background .2s ease;
+  width: 56px !important; height: 56px !important; padding: 0 !important;
+  border: 0 !important; border-radius: 50% !important; box-sizing: border-box;
+  background: rgba(255,255,255,.14) !important; color: #fff !important;
+  font-size: 30px; line-height: 1; cursor: pointer; display: grid; place-items: center;
+  -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
+  box-shadow: 0 4px 16px rgba(0,0,0,.35);
+  transition: background .2s ease, transform .15s ease;
 }
-.hm-lb-btn:hover { background: #c41230; }
-.hm-lb-prev { left: 12px; }
-.hm-lb-next { right: 12px; }
+.hm-lb-btn:hover { background: #c41230 !important; transform: translateY(-50%) scale(1.06); }
+.hm-lb-prev { left: 18px; }
+.hm-lb-next { right: 18px; }
 .hm-lb-close {
-  position: absolute; top: 12px; right: 14px; width: 44px; height: 44px;
-  border: 0; background: none; color: #fff; font-size: 34px; line-height: 1;
-  cursor: pointer; transition: color .2s ease;
+  position: absolute; top: 16px; right: 16px;
+  width: 46px !important; height: 46px !important; padding: 0 !important;
+  border: 0 !important; border-radius: 50% !important; box-sizing: border-box;
+  background: rgba(255,255,255,.14) !important; color: #fff !important;
+  font-size: 26px; line-height: 1; cursor: pointer; display: grid; place-items: center;
+  -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
+  box-shadow: 0 4px 16px rgba(0,0,0,.35);
+  transition: background .2s ease, transform .15s ease;
 }
-.hm-lb-close:hover { color: #c41230; }
+.hm-lb-close:hover { background: #c41230 !important; color: #fff !important; transform: scale(1.06); }
+.hm-lb-btn:focus-visible, .hm-lb-close:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 @media (max-width: 767px) {
   .hm-lightbox { padding: 64px 10px 48px; }
-  .hm-lb-btn { width: 42px; height: 42px; font-size: 24px; }
-  .hm-lb-prev { left: 4px; }
-  .hm-lb-next { right: 4px; }
+  .hm-lb-btn { width: 44px !important; height: 44px !important; font-size: 24px; }
+  .hm-lb-close { width: 42px !important; height: 42px !important; font-size: 24px; }
+  .hm-lb-prev { left: 8px; }
+  .hm-lb-next { right: 8px; }
   .hm-lb-img { max-height: 74vh; }
 }
 
@@ -2436,6 +2450,9 @@ body.parent-pageid-8323 article .elementor .e-grid.e-child:has(.elementor-widget
 .hm-reno > section:nth-of-type(5)  { background-color:#f5f6f8 !important; }
 .hm-reno > section:nth-of-type(9)  { background-color:#fbeef0 !important; }
 .hm-reno > section:nth-of-type(11) { background-color:#f5f6f8 !important; }
+/* Before/After project card: drop the white box so it blends into the coloured
+   section band (scoped to renovation pages — leaves the Our Work slider alone) */
+.hm-reno .hm-ba { background: transparent !important; box-shadow: none !important; }
 
 /* 6) Community page (custom hm-community-*) — band the light sections, protect hero + dark CTA.
       Page inline <style> uses `html body .hm-cs-*` (0,1,2); :not(#_) lifts us to id-level to win. */
@@ -2567,4 +2584,71 @@ body.home .elementor-element-7317ad4 { background-color:#c41230 !important; }
     flex: 1 1 340px !important;
     max-width: 392px !important;
   }
+}
+
+/* ------------------------------------------------------------------
+   Hero stat cards (service / trade pages): the "17+ Years of experience"
+   and "99% Customer Satisfaction" overlay cards were so large they covered
+   most of the hero photo. Shrink each card toward its own anchored corner
+   so it stays exactly where it is but reveals more of the image.
+   Targeted by the shared counter layout classes (element IDs differ per
+   page); only the two absolutely-positioned card containers match, not the
+   flex group that holds them. ------------------------------------------- */
+.e-con:has(> .elementor-widget-trx_elm_counter > .elementor-widget-container .trx-addons-counter-layout-1){
+  transform: scale(.65);
+  transform-origin: left bottom;
+}
+.e-con:has(> .elementor-widget-trx_elm_counter > .elementor-widget-container .trx-addons-counter-layout-6){
+  transform: scale(.65);
+  transform-origin: right top;
+}
+
+/* ------------------------------------------------------------------
+   Trade-page FAQ ("Common questions answered", container 40615e2) was
+   landing on a grey alternating band (#f5f6f8), which looked like a dull
+   box. Drop the grey so it reads clean/white. Shared across all 11 trade
+   pages via the same element id. The homepage FAQ (red, element 7f3bea5)
+   and any other red FAQ are a different element and stay as they are.
+   Specificity (0,3,2) matches the band rule and wins by source order. */
+body.parent-pageid-8323 article .elementor > .elementor-element-40615e2{
+  background-color:#fff !important;
+}
+
+/* ------------------------------------------------------------------
+   Landing-page CTA buttons (emergency-locksmith etc.): long labels like
+   "CALL NOW, 24/7 EMERGENCY LOCKSMITH" wrapped onto two lines on mobile.
+   Tighten font-size / letter-spacing / padding on small screens and keep
+   each label on a single line. ------------------------------------- */
+@media (max-width:600px){
+  .hm-landing .hm-cta-row .hm-btn,
+  .hm-landing .hm-form-actions .hm-btn,
+  .hm-landing .hm-hero .hm-btn{
+    font-size:12.5px !important;
+    letter-spacing:.015em !important;
+    padding:15px 12px !important;
+    white-space:nowrap !important;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Call-to-action buttons → Montserrat Bold (brand consistency, matches
+   the header call button). Covers landing-page buttons (emergency, doors),
+   the trades-hub / renovation CTA bands, and service-card buttons. The
+   price-list CTA is already Montserrat and is left as-is. */
+.hm-landing .hm-btn:not(#hm),
+.hm-btn-primary:not(#hm),
+.hm-btn-ghost:not(#hm),
+.hm-cta-band .hm-btn-primary:not(#hm),
+.hm-cta-band .hm-btn-ghost:not(#hm){
+  font-family:'Montserrat','Hanken Grotesk',Arial,sans-serif !important;
+  font-weight:700 !important;
+}
+
+/* ------------------------------------------------------------------
+   FAQ ("Common questions answered"): the first question sat too close to
+   the intro line. Add breathing room above the accordion. Covers the
+   homepage (red) and the shared trade-page FAQ. */
+.elementor-element-7f3bea5 .elementor-widget-trx_elm_accordion,
+.elementor-element-40615e2 .elementor-widget-trx_elm_accordion{
+  margin-top: 22px !important;
 }
