@@ -2585,3 +2585,20 @@ body.home .elementor-element-7317ad4 { background-color:#c41230 !important; }
     max-width: 392px !important;
   }
 }
+
+/* ------------------------------------------------------------------
+   Hero stat cards (service / trade pages): the "17+ Years of experience"
+   and "99% Customer Satisfaction" overlay cards were so large they covered
+   most of the hero photo. Shrink each card toward its own anchored corner
+   so it stays exactly where it is but reveals more of the image.
+   Targeted by the shared counter layout classes (element IDs differ per
+   page); only the two absolutely-positioned card containers match, not the
+   flex group that holds them. ------------------------------------------- */
+.e-con:has(> .elementor-widget-trx_elm_counter > .elementor-widget-container .trx-addons-counter-layout-1){
+  transform: scale(.65);
+  transform-origin: left bottom;
+}
+.e-con:has(> .elementor-widget-trx_elm_counter > .elementor-widget-container .trx-addons-counter-layout-6){
+  transform: scale(.65);
+  transform-origin: right top;
+}
