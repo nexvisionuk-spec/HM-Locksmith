@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap");
 /* ==========================================================================
    H&M — site overrides
    Loaded LAST on every page so these rules always win.
@@ -2628,4 +2628,18 @@ body.parent-pageid-8323 article .elementor > .elementor-element-40615e2{
     padding:15px 12px !important;
     white-space:nowrap !important;
   }
+}
+
+/* ------------------------------------------------------------------
+   Call-to-action buttons → Montserrat Bold (brand consistency, matches
+   the header call button). Covers landing-page buttons (emergency, doors),
+   the trades-hub / renovation CTA bands, and service-card buttons. The
+   price-list CTA is already Montserrat and is left as-is. */
+.hm-landing .hm-btn:not(#hm),
+.hm-btn-primary:not(#hm),
+.hm-btn-ghost:not(#hm),
+.hm-cta-band .hm-btn-primary:not(#hm),
+.hm-cta-band .hm-btn-ghost:not(#hm){
+  font-family:'Montserrat','Hanken Grotesk',Arial,sans-serif !important;
+  font-weight:700 !important;
 }
